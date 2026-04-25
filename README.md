@@ -1,55 +1,64 @@
 # IELTS Speaking Master Platform
 
-A comprehensive, structured IELTS Speaking preparation system designed for both students and teachers.
+A structured IELTS Speaking preparation system designed to develop real-time speaking ability through organized frameworks, guided practice, and examiner-aligned training.
 
-## 🎯 Overview
+## Overview
 
-This platform integrates:
+This platform integrates student practice materials and teacher training resources into a single system. It is designed to support both language development and standardized test preparation.
 
-- Part 1, Part 2, and Part 3 speaking systems
-- Answer frameworks and fluency-building strategies
-- SSAP (Extending & Repairing Answers) training
-- Real test simulation techniques
-- Teacher training and examiner standardization resources
+The system covers all three parts of the IELTS Speaking test and emphasizes fluency, coherence, idea development, and performance under test conditions.
 
-It is designed to move beyond memorization and help learners develop real-time speaking ability using pattern-based fluency and idea development.
+## Structure
 
----
+The platform is organized into two main portals:
 
-## 🧩 Features
+### Student Portal
 
-### 🧑‍🎓 Student Portal
-- Structured speaking practice for all test parts
-- Guided answer frameworks
-- Fluency and idea development systems
-- Real IELTS-style questions and drills
+- Part 1: Personal response development and fluency building
+- Part 2: Long-turn structuring and idea organization
+- Part 3: Abstract discussion and analytical thinking
+- Answer frameworks and guided speaking patterns
+- Techniques for extending and repairing responses (SSAP)
 
-### 👩‍🏫 Teacher Portal
-- Full training handbook (20-module system)
-- Mock test administration protocols
-- Examiner language and behavior guidelines
-- Scoring systems and band descriptor breakdowns
-- Standardization and calibration tools
+### Teacher Portal
 
----
+- Full teacher training handbook (20-module system)
+- IELTS Speaking test architecture and administration
+- Mock test protocols and examiner behavior guidelines
+- Band descriptor analysis and scoring systems
+- Standardization and calibration resources
+- Observation tools and scoring templates
 
-## 🧠 Methodology
+## Methodology
 
-The system is built on a structured speaking model:
+The system is based on a structured speaking model:
 
-- **Input → Develop → Express → Advance (IDEA Framework)**
-- Focus on **pattern-based fluency**, not memorization
-- Emphasis on **real-time response building**
-- Alignment with official IELTS band descriptors
+Input → Develop → Express → Advance
 
----
+This framework supports:
 
-## 🚀 Deployment
+- Activation of ideas and vocabulary
+- Logical development of responses
+- Fluent and coherent delivery
+- Extension and refinement of answers
 
-This project is designed to be hosted via GitHub Pages and embedded into platforms such as Google Sites.
+The approach prioritizes pattern-based fluency and real-time response construction over memorization.
 
----
+## Assessment Alignment
 
-## 📌 Author
+All materials are aligned with the four IELTS Speaking assessment criteria:
 
-Created by Marc Gerald Pajela
+- Fluency and Coherence
+- Lexical Resource
+- Grammatical Range and Accuracy
+- Pronunciation
+
+The teacher resources are designed to support evidence-based scoring and standardized test administration.
+
+## Deployment
+
+This project is designed to be hosted via GitHub Pages and embedded into platforms such as Google Sites for classroom use.
+
+## Author
+
+Marc Gerald Pajela
