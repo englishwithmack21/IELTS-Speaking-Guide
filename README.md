@@ -1,12 +1,55 @@
-# IELTS Speaking Master Site v3
+# IELTS Speaking Master Platform
 
-Open `index.html` first. It now asks the user to choose:
+A comprehensive, structured IELTS Speaking preparation system designed for both students and teachers.
 
-- `student.html` — limited student-facing portal with Speaking Part 1, Part 2, Part 3, and SSAP Extending & Repairing.
-- `teacher.html` — full teacher-facing portal with all student materials plus teacher training, band descriptor/scoring guide, JIC scoresheet, teacher handbook, and the updated mock test teacher training handbook.
+## 🎯 Overview
 
-The previous `Mastering Mock Speaking Tests.pdf` resource has been replaced with:
+This platform integrates:
 
-`pdfs/ielts-speaking-mock-test-teacher-training-handbook.pdf`
+- Part 1, Part 2, and Part 3 speaking systems
+- Answer frameworks and fluency-building strategies
+- SSAP (Extending & Repairing Answers) training
+- Real test simulation techniques
+- Teacher training and examiner standardization resources
 
-For GitHub Pages, keep `index.html` as the landing page.
+It is designed to move beyond memorization and help learners develop real-time speaking ability using pattern-based fluency and idea development.
+
+---
+
+## 🧩 Features
+
+### 🧑‍🎓 Student Portal
+- Structured speaking practice for all test parts
+- Guided answer frameworks
+- Fluency and idea development systems
+- Real IELTS-style questions and drills
+
+### 👩‍🏫 Teacher Portal
+- Full training handbook (20-module system)
+- Mock test administration protocols
+- Examiner language and behavior guidelines
+- Scoring systems and band descriptor breakdowns
+- Standardization and calibration tools
+
+---
+
+## 🧠 Methodology
+
+The system is built on a structured speaking model:
+
+- **Input → Develop → Express → Advance (IDEA Framework)**
+- Focus on **pattern-based fluency**, not memorization
+- Emphasis on **real-time response building**
+- Alignment with official IELTS band descriptors
+
+---
+
+## 🚀 Deployment
+
+This project is designed to be hosted via GitHub Pages and embedded into platforms such as Google Sites.
+
+---
+
+## 📌 Author
+
+Created by Marc Gerald Pajela
