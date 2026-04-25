@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>IELTS Speaking Part 1 — Pattern-Based Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream:     #FDFAF5;
+    --warm-white:#FFF8F0;
+    --blue-soft: #D6E8F0;
+    --blue-mid:  #7BAFC0;
+    --blue-deep: #4A8A9F;
+    --sage:      #BDD5B4;
+    --sage-mid:  #7EAD72;
+    --peach:     #F5D9C0;
+    --peach-mid: #E8A87C;
+    --mauve:     #E2CEDF;
+    --mauve-mid: #B888B0;
+    --lavender:  #DDD8F0;
+    --lav-mid:   #8E82CC;
+    --yellow:    #F5EAC0;
+    --yellow-mid:#D4B84A;
+    --text-dark: #2E2A26;
+    --text-mid:  #5A5148;
+    --text-light:#8A7F75;
+    --border:    #E8DDD5;
+    --shadow:    rgba(80,60,40,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--text-dark);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  /* ─── HEADER ─── */
+  .site-header {
+    background: var(--warm-white);
+    border-bottom: 2px solid var(--border);
+    padding: 32px 48px 24px;
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .header-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--blue-deep);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .site-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    color: var(--text-dark);
+    line-height: 1.2;
+  }
+  .site-header h1 span { color: var(--blue-deep); }
+  .header-meta {
+    margin-left: auto;
+    text-align: right;
+    font-size: 12.5px;
+    color: var(--text-light);
+    line-height: 1.9;
+  }
+  .header-meta strong { color: var(--text-mid); }
+
+  /* ─── NAV ─── */
+  .top-nav {
+    background: var(--blue-deep);
+    padding: 0 48px;
+    display: flex;
+    gap: 2px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+  .top-nav a {
+    display: inline-block;
+    padding: 13px 17px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .top-nav a:hover, .top-nav a.active {
+    color: #fff;
+    border-bottom-color: var(--peach-mid);
+  }
+
+  /* ─── LAYOUT ─── */
+  .content-wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  /* ─── SECTION TITLES ─── */
+  .section-block { margin-bottom: 72px; scroll-margin-top: 70px; }
+  .section-tag {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blue-deep);
+    background: var(--blue-soft);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .section-block > h2 {
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .section-intro {
+    color: var(--text-mid);
+    font-size: 14.5px;
+    max-width: 680px;
+    margin-bottom: 28px;
+    border-left: 3px solid var(--blue-mid);
+    padding-left: 14px;
+  }
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 40px 0;
+  }
+
+  /* ─── INFO BOXES ─── */
+  .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 28px; }
+  .info-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    border-top: 4px solid var(--blue-mid);
+  }
+  .info-card.sage  { border-top-color: var(--sage-mid); }
+  .info-card.peach { border-top-color: var(--peach-mid); }
+  .info-card.mauve { border-top-color: var(--mauve-mid); }
+  .info-card.lav   { border-top-color: var(--lav-mid); }
+  .info-card h3 {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+  }
+  .info-card p, .info-card li { font-size: 13.5px; color: var(--text-mid); }
+  .info-card ul { padding-left: 16px; }
+  .info-card li { margin-bottom: 4px; }
+
+  /* ─── PATTERN CARDS ─── */
+  .pattern-grid { display: grid; gap: 18px; }
+  .pattern-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .pattern-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 22px;
+    background: var(--blue-soft);
+  }
+  .pattern-header.sage   { background: var(--sage); }
+  .pattern-header.peach  { background: var(--peach); }
+  .pattern-header.mauve  { background: var(--mauve); }
+  .pattern-header.lav    { background: var(--lavender); }
+  .pattern-header.yellow { background: var(--yellow); }
+  .pattern-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--blue-deep);
+    min-width: 36px;
+  }
+  .pattern-header.sage   .pattern-num { color: var(--sage-mid); }
+  .pattern-header.peach  .pattern-num { color: var(--peach-mid); }
+  .pattern-header.mauve  .pattern-num { color: var(--mauve-mid); }
+  .pattern-header.lav    .pattern-num { color: var(--lav-mid); }
+  .pattern-header.yellow .pattern-num { color: var(--yellow-mid); }
+  .pattern-meta { flex: 1; }
+  .pattern-name {
+    font-family: 'Lora', serif;
+    font-size: 15.5px;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+  .pattern-when {
+    font-size: 12px;
+    color: var(--text-mid);
+    margin-top: 2px;
+  }
+  .pattern-body { padding: 18px 22px; }
+  .formula-box {
+    background: var(--cream);
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--blue-deep);
+    margin-bottom: 14px;
+    font-family: 'Lora', serif;
+    letter-spacing: 0.3px;
+  }
+  .formula-box.sage   { color: var(--sage-mid); }
+  .formula-box.peach  { color: var(--peach-mid); }
+  .formula-box.mauve  { color: var(--mauve-mid); }
+  .formula-box.lav    { color: var(--lav-mid); }
+  .formula-box.yellow { color: var(--yellow-mid); }
+  .examples-list { list-style: none; }
+  .examples-list li {
+    font-size: 13.5px;
+    color: var(--text-mid);
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+    padding-left: 18px;
+    position: relative;
+    font-style: italic;
+  }
+  .examples-list li:last-child { border-bottom: none; }
+  .examples-list li::before {
+    content: '"';
+    position: absolute;
+    left: 2px;
+    color: var(--blue-mid);
+    font-size: 18px;
+    font-family: 'Lora', serif;
+    line-height: 1;
+    top: 6px;
+  }
+  .examples-list li::after {
+    content: '"';
+    color: var(--blue-mid);
+    font-family: 'Lora', serif;
+  }
+
+  /* ─── LENGTH EXAMPLES ─── */
+  .compare-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  @media(max-width: 600px) { .compare-block { grid-template-columns: 1fr; } }
+  .compare-card {
+    border-radius: 12px;
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+  }
+  .compare-card.bad  { background: #FFF0F0; border-color: #E8BBBB; }
+  .compare-card.good { background: #F0F8F0; border-color: #BBD5BB; }
+  .compare-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .compare-card.bad  .compare-label { color: #B85050; }
+  .compare-card.good .compare-label { color: #4A8A4A; }
+  .compare-card p { font-size: 13.5px; font-style: italic; color: var(--text-mid); }
+  .compare-card .why { font-style: normal; font-size: 12px; margin-top: 8px; color: var(--text-light); }
+
+  /* ─── TOPIC SECTIONS ─── */
+  .topic-block {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 22px;
+    overflow: hidden;
+  }
+  .topic-header {
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .topic-header.blue   { background: var(--blue-soft); }
+  .topic-header.sage   { background: var(--sage); }
+  .topic-header.peach  { background: var(--peach); }
+  .topic-header.mauve  { background: var(--mauve); }
+  .topic-header.lav    { background: var(--lavender); }
+  .topic-header.yellow { background: var(--yellow); }
+  .topic-header.mint   { background: #D4EEE4; }
+  .topic-header.rose   { background: #F0D8D8; }
+  .topic-title {
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+  .topic-body { padding: 18px 22px; }
+  .qa-row {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .qa-row:last-child { border-bottom: none; }
+  .qa-q {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+  .qa-a { font-size: 13px; color: var(--text-mid); font-style: italic; }
+  .qa-a .pattern-tag {
+    display: inline-block;
+    font-style: normal;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background: var(--blue-soft);
+    color: var(--blue-deep);
+    border-radius: 10px;
+    padding: 2px 8px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .qa-a .pattern-tag.sage   { background: var(--sage);    color: var(--sage-mid); }
+  .qa-a .pattern-tag.peach  { background: var(--peach);   color: var(--peach-mid); }
+  .qa-a .pattern-tag.mauve  { background: var(--mauve);   color: var(--mauve-mid); }
+  .qa-a .pattern-tag.lav    { background: var(--lavender);color: var(--lav-mid); }
+  .qa-a .pattern-tag.yellow { background: var(--yellow);  color: var(--yellow-mid); }
+
+  /* ─── NATURALNESS ─── */
+  .natural-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 20px; }
+  .filler-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .filler-word {
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--blue-deep);
+    margin-bottom: 6px;
+  }
+  .filler-card p { font-size: 12.5px; color: var(--text-mid); font-style: italic; }
+
+  /* ─── LANGUAGE BANK ─── */
+  .lang-section { margin-bottom: 28px; }
+  .lang-section h3 {
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--border);
+  }
+  .lang-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .lang-table th {
+    background: var(--blue-soft);
+    color: var(--blue-deep);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    text-align: left;
+  }
+  .lang-table tr:nth-child(even) { background: var(--warm-white); }
+  .lang-table tr:nth-child(odd)  { background: var(--cream); }
+  .lang-table td { padding: 9px 14px; color: var(--text-mid); border-bottom: 1px solid var(--border); }
+  .lang-table td:first-child { font-weight: 600; color: var(--text-dark); font-style: italic; }
+  .lang-table.sage-head th   { background: var(--sage);    color: var(--sage-mid); }
+  .lang-table.peach-head th  { background: var(--peach);   color: var(--peach-mid); }
+  .lang-table.mauve-head th  { background: var(--mauve);   color: var(--mauve-mid); }
+  .lang-table.lav-head th    { background: var(--lavender);color: var(--lav-mid); }
+  .lang-table.yellow-head th { background: var(--yellow);  color: var(--yellow-mid); }
+
+  /* ─── PROBLEMS ─── */
+  .problem-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--blue-mid);
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 18px;
+    overflow: hidden;
+  }
+  .problem-card.peach { border-left-color: var(--peach-mid); }
+  .problem-card.sage  { border-left-color: var(--sage-mid); }
+  .problem-card.mauve { border-left-color: var(--mauve-mid); }
+  .problem-card.lav   { border-left-color: var(--lav-mid); }
+  .problem-header {
+    padding: 12px 20px;
+    background: var(--cream);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .problem-title {
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+  .problem-body { padding: 14px 20px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  @media(max-width:650px) { .problem-body { grid-template-columns: 1fr; } }
+  .prob-col-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 5px;
+  }
+  .prob-col p { font-size: 13px; color: var(--text-mid); }
+
+  /* ─── DRILLS ─── */
+  .drill-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+  .drill-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .drill-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--blue-soft);
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+  .drill-q { font-size: 13.5px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
+  .drill-a { font-size: 12.5px; color: var(--text-mid); font-style: italic; }
+  .drill-a .pt { font-style: normal; font-size: 10px; font-weight: 600; color: var(--blue-deep); background: var(--blue-soft); border-radius: 8px; padding: 1px 7px; }
+
+  /* ─── MOCK TEST ─── */
+  .mock-set {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+  .mock-set-header {
+    padding: 14px 22px;
+    border-bottom: 1px solid var(--border);
+  }
+  .mock-set-header.blue   { background: var(--blue-soft); }
+  .mock-set-header.sage   { background: var(--sage); }
+  .mock-set-header.peach  { background: var(--peach); }
+  .mock-set-title {
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+  .mock-set-sub { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+  .mock-set-body { padding: 18px 22px; }
+  .mock-qa { margin-bottom: 18px; }
+  .mock-qa:last-child { margin-bottom: 0; }
+  .mock-q { font-size: 13.5px; font-weight: 600; color: var(--text-dark); margin-bottom: 6px; }
+  .mock-a { font-size: 13.5px; color: var(--text-mid); font-style: italic; line-height: 1.8; }
+  .mock-label {
+    display: inline-block;
+    font-style: normal;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: var(--blue-soft);
+    color: var(--blue-deep);
+    border-radius: 10px;
+    padding: 2px 9px;
+    margin-top: 5px;
+  }
+  .mock-label.sage   { background: var(--sage);    color: var(--sage-mid); }
+  .mock-label.peach  { background: var(--peach);   color: var(--peach-mid); }
+  .mock-label.mauve  { background: var(--mauve);   color: var(--mauve-mid); }
+  .mock-label.lav    { background: var(--lavender);color: var(--lav-mid); }
+  .mock-label.yellow { background: var(--yellow);  color: var(--yellow-mid); }
+
+  /* ─── TIP BOX ─── */
+  .tip-box {
+    background: var(--yellow);
+    border: 1px solid var(--yellow-mid);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 13.5px;
+    color: var(--text-mid);
+    margin: 16px 0;
+  }
+  .tip-box strong { color: var(--text-dark); }
+
+  /* ─── KEY RULE BOX ─── */
+  .rule-box {
+    background: var(--lavender);
+    border-left: 4px solid var(--lav-mid);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 13.5px;
+    color: var(--text-mid);
+  }
+  .rule-box strong { color: var(--lav-mid); font-family: 'Lora', serif; }
+
+  /* ─── EXTENSION STEPS ─── */
+  .step-flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  .step-pill {
+    background: var(--blue-soft);
+    color: var(--blue-deep);
+    border-radius: 24px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .step-arrow { color: var(--text-light); font-size: 18px; }
+
+  /* ─── PROGRESS FOOTER ─── */
+  .guide-footer {
+    border-top: 2px solid var(--border);
+    padding: 28px 48px;
+    background: var(--warm-white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .guide-footer p { font-size: 12.5px; color: var(--text-light); }
+  .guide-footer strong { color: var(--blue-deep); }
+/* === PASTEL MASTER SITE PATCH === */
+:root{
+  --cream:#fbf8f3; --warm-white:#fffdf9; --blue-soft:#dcecf6; --blue-mid:#8bbbd2; --blue-deep:#517f9b;
+  --sage:#dcefe5; --sage-mid:#6fa58f; --peach:#fde5d5; --peach-mid:#d89a78;
+  --mauve:#ebe5f7; --mauve-mid:#9d86c4; --lavender:#e9e5f8; --lav-mid:#7f74ba;
+  --yellow:#f7e8b9; --yellow-mid:#c6a74e; --text-dark:#2d2a27; --text-mid:#5d5550; --text-light:#847b74; --border:#e8ded2;
+}
+body { background:#fbf8f3 !important; display:block !important; }
+.site-header{position:fixed; left:0; top:0; width:280px; height:178px; z-index:120; display:block; padding:24px 22px 18px; background:linear-gradient(135deg,#e9e5f8,#dcecf6 70%,#dcefe5); border-right:1px solid var(--border); border-bottom:1px solid var(--border);}
+.header-label{font-size:10px; color:#7d6ab4; margin-bottom:8px;}.site-header h1{font-size:22px; line-height:1.18;}.site-header h1 span{color:#517f9b;}.header-meta{display:none;}
+.top-nav{position:fixed; left:0; top:178px; bottom:0; width:280px; z-index:110; display:flex; flex-direction:column; gap:2px; overflow-y:auto; padding:16px 14px 28px; background:#fffdf9; border-right:1px solid var(--border);}
+.top-nav a{display:block; color:#5d5550; border:0; border-left:4px solid transparent; border-radius:12px; padding:10px 12px; font-size:12.5px; white-space:normal; line-height:1.35;}.top-nav a:hover,.top-nav a.active{background:#dcecf6; color:#517f9b; border-left-color:#8bbbd2;}
+.content-wrap{max-width:980px; margin:0 0 0 280px; padding:48px 52px 80px;}.section-block{scroll-margin-top:28px;}.section-tag{background:#dcecf6; color:#517f9b;}.section-block > h2{font-size:28px;}.guide-footer{margin-left:280px; background:#fffdf9 !important; border-top:1px solid var(--border);}
+.card, .info-card, .pattern-card, .topic-block, .mock-set, .drill-card, .problem-card, .example-box, .worksheet-card, .answer-card, .structure-card, .lang-box, .filler-card { box-shadow:0 8px 24px rgba(64,48,36,.06) !important; }
+@media(max-width:900px){.site-header{position:relative; width:auto; height:auto; padding:28px 24px; border-right:0;}.top-nav{position:sticky; top:0; width:auto; flex-direction:row; overflow-x:auto; padding:0 14px; border-right:0; border-bottom:1px solid var(--border);}.top-nav a{white-space:nowrap; border-left:0; border-bottom:3px solid transparent; border-radius:0;}.top-nav a.active{border-bottom-color:#8bbbd2;}.content-wrap,.guide-footer{margin-left:0; padding-left:22px; padding-right:22px;}}
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="site-header">
+  <div>
+    <span class="header-label">IELTS Speaking — Part 1</span>
+    <h1>Pattern-Based <span>Study Guide</span></h1>
+  </div>
+  <div class="header-meta">
+    <strong>Introduction &amp; Interview</strong><br>
+    Sections 1–10 &nbsp;|&nbsp; Self-Study Edition<br>
+    Confidence · Clarity · Naturalness
+  </div>
+</header>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav class="top-nav">
+  <a href="#s1">1 · What Is Part 1</a>
+  <a href="#s2">2 · Core Patterns</a>
+  <a href="#s3">3 · Answer Length</a>
+  <a href="#s4">4 · Topics &amp; Answers</a>
+  <a href="#s5">5 · Sound Natural</a>
+  <a href="#s6">6 · Extend Answers</a>
+  <a href="#s7">7 · Language Bank</a>
+  <a href="#s8">8 · Common Problems</a>
+  <a href="#s9">9 · Rapid Drills</a>
+  <a href="#s10">10 · Mock Test</a>
+</nav>
+
+<div class="content-wrap">
+
+<!-- ══════════════════════════════════════════
+     SECTION 1: WHAT IS PART 1
+════════════════════════════════════════════ -->
+<section class="section-block" id="s1">
+  <span class="section-tag">Section 1</span>
+  <h2>What Is IELTS Speaking Part 1?</h2>
+  <p class="section-intro">Part 1 is a short, friendly conversation. The examiner asks simple questions about your life and familiar topics. There are no tricks — just natural talking.</p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>⏱ How Long?</h3>
+      <p>4–5 minutes total. You will answer questions about 3 different familiar topics. Each topic has around 3–4 questions.</p>
+    </div>
+    <div class="info-card sage">
+      <h3>📋 What Topics?</h3>
+      <ul>
+        <li>Personal life (name, job, study)</li>
+        <li>Hobbies &amp; free time</li>
+        <li>Food, travel, friends</li>
+        <li>Daily routines</li>
+        <li>Technology &amp; shopping</li>
+      </ul>
+    </div>
+    <div class="info-card peach">
+      <h3>🎯 What Is Tested?</h3>
+      <ul>
+        <li>Ability to speak naturally</li>
+        <li>Speed &amp; confidence</li>
+        <li>Vocabulary range</li>
+        <li>Clarity &amp; fluency</li>
+      </ul>
+    </div>
+    <div class="info-card mauve">
+      <h3>✅ The Golden Rule</h3>
+      <p>Answer quickly, then <em>add one or two more sentences</em>. Don't try to give a long speech — this is a conversation, not an essay.</p>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>Think of it this way:</strong> Imagine a friendly stranger on a plane asks, "Do you like cooking?" You wouldn't say just "Yes" — but you also wouldn't give a five-minute speech. A natural answer is 2–3 sentences. That's the target.
+  </div>
+
+  <div class="divider"></div>
+
+  <h3 style="font-family:'Lora',serif; font-size:17px; margin-bottom:14px;">The Core Skill: Quick Response + Slight Expansion</h3>
+  <div class="step-flow">
+    <div class="step-pill">Hear the question</div>
+    <span class="step-arrow">→</span>
+    <div class="step-pill" style="background:var(--sage); color:var(--sage-mid);">Answer directly (1 sentence)</div>
+    <span class="step-arrow">→</span>
+    <div class="step-pill" style="background:var(--peach); color:var(--peach-mid);">Add a reason or detail (1–2 sentences)</div>
+    <span class="step-arrow">→</span>
+    <div class="step-pill" style="background:var(--mauve); color:var(--mauve-mid);">Stop. Move on.</div>
+  </div>
+  <div class="rule-box">
+    <strong>Key Principle:</strong> Part 1 rewards speed and naturalness. A quick, clear answer sounds far more fluent than a slow, over-prepared one.
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 2: CORE PATTERNS
+════════════════════════════════════════════ -->
+<section class="section-block" id="s2">
+  <span class="section-tag">Section 2</span>
+  <h2>Core Part 1 Speaking Patterns</h2>
+  <p class="section-intro">These 10 patterns cover almost every Part 1 question you'll face. Learn the formulas, not long answers. Each pattern gives you a framework to build a natural response instantly.</p>
+
+  <div class="pattern-grid">
+
+    <!-- P1 -->
+    <div class="pattern-card">
+      <div class="pattern-header">
+        <div class="pattern-num">01</div>
+        <div class="pattern-meta">
+          <div class="pattern-name">Direct Answer → Reason</div>
+          <div class="pattern-when">Use for: most straightforward questions ("Do you...?", "What do you...?")</div>
+        </div>
+      </div>
+      <div class="pattern-body">
+        <div class="formula-box">[ Direct answer ] + [ because / since ] + [ reason ]</div>
+        <ul class="examples-list">
+          <li>I enjoy cooking because it helps me relax after a long day.</li>
+          <li>I don't really watch much TV — I just find it a bit passive.</li>
+          <li>I prefer mornings since I feel more focused and energetic then.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- P2 -->
+    <div class="pattern-card">
+      <div class="pattern-header sage">
+        <div class="pattern-num">02</div>
+        <div class="pattern-meta">
+          <div class="pattern-name">Direct Answer → Reason → Example</div>
+          <div class="pattern-when">Use for: questions asking what or which (adds a personal touch)</div>
+        </div>
+      </div>
+      <div class="pattern-body">
+        <div class="formula-box sage">[ Answer ] + [ reason ] + [ for example / like ]</div>
+        <ul class="examples-list">
+          <li>I love Italian food because the flavours are really rich — like pasta with creamy sauces.</li>
+          <li>I read a lot in my free time since it expands my vocabulary. For example, I read about an hour before bed every night.</li>
+          <li>I'm into photography because I enjoy capturing small moments, like street scenes or sunsets.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- P3 -->
+    <div class="pattern-card">
+      <div class="pattern-header peach">
+        <div class="pattern-num">03</div>
+        <div class="pattern-meta">
+          <div class="pattern-name">Preference → Why</div>
+          <div class="pattern-when">Use for: "Do you prefer...?", "Which do you like more?"</div>
+        </div>
+      </div>
+      <div class="pattern-body">
+        <div class="formula-box peach">[ I prefer X to Y ] + [ because / I find that ] + [ reason ]</div>
+        <ul class="examples-list">
+          <li>I prefer cities to the countryside because there's always something to do.</li>
+          <li>I'd rather cook at home than eat out — I find it more relaxing and much cheaper.</li>
+          <li>I prefer texting to calling since I can reply whenever I have time.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- P4 -->
+    <div class="pattern-card">
+      <div class="pattern-header mauve">
+        <div class="pattern-num">04</div>
+        <div class="pattern-meta">
+          <div class="pattern-name">Frequency → Explanation</div>
+          <div class="pattern-when">Use for: "How often...?", "Do you usually...?"</div>
+        </div>
+      </div>
+      <div class="pattern-body">
+        <div class="formula-box mauve">[ Frequency phrase ] + [ short explanation or context ]</div>
+        <ul class="examples-list">
+          <li>I go to the gym about three times a week — usually after work when I need to clear my head.</li>
+          <li>I barely eat out anymore. Since I started cooking, I find it more satisfying to make my own meals.</li>
+          <li>I check social media quite often throughout the day, mostly just to stay in touch with friends.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- P5 -->
+    <div class="pattern-card">
+      <div class="pattern-header lav">
+        <div class="pattern-num">05</div>
+        <div class="pattern-meta">
+          <div class="pattern-name">Past → Present (Change Over Time)</div>
+          <div class="pattern-when">Use for: "Did you use to...?", "Has this changed?" or contrasting past and now</div>
+        </div>
+      </div>
+      <div class="pattern-body">
+        <div class="formula-box lav">[ I used to / When I was younger ] + [ but now I ] + [ change / reason ]</div>
+        <ul class="examples-list">
+          <li>I used to watch a lot of TV growing up, but now I mainly use streaming services.</li>
+          <li>When I was a student, I cycled everywhere — but these days I usually take the metro.</li>
+          <li>I didn't really enjoy reading as a kid, but now I actually read quite a bit.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- P6 -->
+    <div class="pattern-card">
+      <div class="pattern-header yellow">
+        <div class="pattern-num">06</div>
+        <div class="pattern-meta">
+          <div class="pattern-name">Yes / No → Add Detail</div>
+          <div class="pattern-when">Use for: any yes/no question — always follow with a reason or context</div>
+        </div>
+      </div>
+      <div class="pattern-body">
+        <div class="formula-box yellow">[ Yes/No ] + [ actually ] + [ detail or context ]</div>
+        <ul class="examples-list">
+          <li>Yes, I do. I actually love trying new restaurants — especially anything Asian.</li>
+          <li>Not really, to be honest. I've never been a morning person — I do my best work late at night.</li>
+          <li>Yeah, I do. I picked it up during the pandemic and just stuck with it.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- P7 -->
+    <div class="pattern-card">
+      <div class="pattern-header">
+        <div class="pattern-num">07</div>
+        <div class="pattern-meta">
+          <div class="pattern-name">Opinion → Simple Justification</div>
+          <div class="pattern-when">Use for: "What do you think about...?", "Do you think X is important?"</div>
+        </div>
+      </div>
+      <div class="pattern-body">
+        <div class="formula-box">[ I think / In my opinion ] + [ opinion ] + [ because / and I feel that ]</div>
+        <ul class="examples-list">
+          <li>I think exercise is really important because it affects both your physical and mental health.</li>
+          <li>Honestly, I feel that technology has made life a lot more convenient, even if it can be distracting.</li>
+          <li>In my opinion, learning a language is one of the best things you can do — it opens so many doors.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- P8 -->
+    <div class="pattern-card">
+      <div class="pattern-header sage">
+        <div class="pattern-num">08</div>
+        <div class="pattern-meta">
+          <div class="pattern-name">Situation → Feeling</div>
+          <div class="pattern-when">Use for: "How do you feel about...?", "Do you enjoy...?"</div>
+        </div>
+      </div>
+      <div class="pattern-body">
+        <div class="formula-box sage">[ Describe situation ] + [ and I find it / I feel ] + [ emotion/reaction ]</div>
+        <ul class="examples-list">
+          <li>When I'm on a long flight, I usually read or watch films and I find it quite relaxing, actually.</li>
+          <li>I love busy markets — there's so much energy and I find the whole atmosphere really exciting.</li>
+          <li>Working from home suits me well. I feel a lot more productive without all the office distractions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- P9 -->
+    <div class="pattern-card">
+      <div class="pattern-header peach">
+        <div class="pattern-num">09</div>
+        <div class="pattern-meta">
+          <div class="pattern-name">Habit → Reason</div>
+          <div class="pattern-when">Use for: "What do you usually do...?", "How do you spend your...?"</div>
+        </div>
+      </div>
+      <div class="pattern-body">
+        <div class="formula-box peach">[ I usually / tend to ] + [ habit ] + [ because / it helps me ]</div>
+        <ul class="examples-list">
+          <li>I usually make a to-do list each morning because it helps me stay organised during the day.</li>
+          <li>I tend to cook simple meals on weekdays since I don't have much time, but I'll try new recipes at weekends.</li>
+          <li>I usually call my parents on Sunday evenings — it's just become a nice routine.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- P10 -->
+    <div class="pattern-card">
+      <div class="pattern-header mauve">
+        <div class="pattern-num">10</div>
+        <div class="pattern-meta">
+          <div class="pattern-name">Conditional (If / When) → Result</div>
+          <div class="pattern-when">Use for: hypothetical questions or describing future/general conditions</div>
+        </div>
+      </div>
+      <div class="pattern-body">
+        <div class="formula-box mauve">[ If / When ] + [ condition ] + [ then I / I usually ]</div>
+        <ul class="examples-list">
+          <li>If I have free time at the weekend, I'll usually go for a long walk or meet some friends.</li>
+          <li>When I feel stressed, I tend to make a cup of tea and just switch off for a bit.</li>
+          <li>If I could live anywhere, I'd probably choose somewhere near the sea — I find it really calming.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div><!-- end pattern-grid -->
+
+  <div class="tip-box" style="margin-top:20px;">
+    <strong>Practice tip:</strong> Don't try to memorise all 10 at once. Start with Patterns 1, 3, and 6 — they cover the majority of common Part 1 questions. Add more as you feel comfortable.
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 3: ANSWER LENGTH
+════════════════════════════════════════════ -->
+<section class="section-block" id="s3">
+  <span class="section-tag">Section 3</span>
+  <h2>How Long Should Answers Be?</h2>
+  <p class="section-intro">In Part 1, the ideal answer is 2–3 sentences. Not one. Not ten. This section explains why — and shows you the difference in practice.</p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>❌ 1 Sentence — Too Short</h3>
+      <p>You sound like you have nothing to say. The examiner will simply ask the next question faster. You lose the chance to show your vocabulary.</p>
+    </div>
+    <div class="info-card sage">
+      <h3>✅ 2–3 Sentences — Just Right</h3>
+      <p>You give a direct answer and support it briefly. It sounds natural, like a real conversation. This is the sweet spot for fluency.</p>
+    </div>
+    <div class="info-card peach">
+      <h3>⚠️ 5+ Sentences — Too Long</h3>
+      <p>It sounds rehearsed or like you're giving a presentation. The examiner may interrupt. It also slows down the pace of the conversation.</p>
+    </div>
+  </div>
+
+  <div class="rule-box">
+    <strong>The 2–3 Sentence Rule:</strong> Answer the question → Give one supporting idea → Stop. You don't need to fill every pause.
+  </div>
+
+  <h3 style="font-family:'Lora',serif;font-size:17px;margin:24px 0 14px;">Before &amp; After Examples</h3>
+
+  <div class="compare-block">
+    <div class="compare-card bad">
+      <div class="compare-label">❌ Too Short</div>
+      <p>"Yes, I like music."</p>
+      <p class="why">Only one word of substance. The examiner gets nothing to work with.</p>
+    </div>
+    <div class="compare-card good">
+      <div class="compare-label">✅ Just Right</div>
+      <p>"Yes, I really love music — especially jazz and R&amp;B. I usually listen on my commute to help me unwind."</p>
+      <p class="why">Direct answer + reason + context. Natural and complete.</p>
+    </div>
+  </div>
+
+  <div class="compare-block">
+    <div class="compare-card bad">
+      <div class="compare-label">❌ Too Short</div>
+      <p>"I live in Seoul."</p>
+      <p class="why">Just a bare fact. No expansion at all.</p>
+    </div>
+    <div class="compare-card good">
+      <div class="compare-label">✅ Just Right</div>
+      <p>"I live in Seoul, which is a really vibrant city. I've been there for about five years now and I've grown quite fond of it."</p>
+      <p class="why">Same basic answer — but with personal detail and natural flow.</p>
+    </div>
+  </div>
+
+  <div class="compare-block">
+    <div class="compare-card bad">
+      <div class="compare-label">⚠️ Too Long</div>
+      <p>"Well, I really enjoy cooking and I think it's a very important skill. I started cooking when I was about twelve years old and my mother taught me. Now I cook every day and I make many different kinds of food from different countries. I also watch a lot of cooking shows and I have about ten cookbooks. Last month I tried making sushi for the first time and it was quite good..."</p>
+      <p class="why">Over-extended. Sounds rehearsed. The examiner needs to move on.</p>
+    </div>
+    <div class="compare-card good">
+      <div class="compare-label">✅ Just Right</div>
+      <p>"I really enjoy cooking — I find it a great way to switch off after work. My mother taught me when I was young, so it's kind of a comfort activity for me."</p>
+      <p class="why">Same ideas — but tight, natural, and easy to follow.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 4: TOPICS & PATTERNED ANSWERS
+════════════════════════════════════════════ -->
+<section class="section-block" id="s4">
+  <span class="section-tag">Section 4</span>
+  <h2>Common Topics &amp; Patterned Model Answers</h2>
+  <p class="section-intro">Each topic includes 5–8 sample questions with model answers. Notice how each answer follows one of the 10 core patterns — they are labelled for you.</p>
+
+  <!-- HOMETOWN -->
+  <div class="topic-block">
+    <div class="topic-header blue">
+      <div class="topic-title">🏙 Hometown</div>
+    </div>
+    <div class="topic-body">
+      <div class="qa-row">
+        <div class="qa-q">Where are you from?</div>
+        <div class="qa-a">I'm from Busan, which is a coastal city in South Korea. It's quite different from Seoul — a bit more laid-back and much closer to the sea. <span class="pattern-tag">P1 · Answer → Reason</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Do you like your hometown?</div>
+        <div class="qa-a">Yeah, I do. I actually have a lot of affection for it — especially the seafood and the beach culture there. <span class="pattern-tag yellow">P6 · Yes/No → Detail</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">What do you like most about it?</div>
+        <div class="qa-a">I think the thing I love most is how friendly people are. There's a real community feel that you don't always get in bigger cities. <span class="pattern-tag lav">P7 · Opinion → Justification</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Has your hometown changed much?</div>
+        <div class="qa-a">It really has. When I was growing up, it was much quieter — but now there are a lot more cafés, restaurants, and tourists. It feels more international. <span class="pattern-tag mauve">P5 · Past → Present</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Do you prefer living in a city or in a rural area?</div>
+        <div class="qa-a">I prefer cities because there's more to do and better transport. That said, I do sometimes miss the peace and quiet of the countryside. <span class="pattern-tag peach">P3 · Preference → Why</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORK / STUDY -->
+  <div class="topic-block">
+    <div class="topic-header sage">
+      <div class="topic-title">📚 Work &amp; Study</div>
+    </div>
+    <div class="topic-body">
+      <div class="qa-row">
+        <div class="qa-q">Do you work or study?</div>
+        <div class="qa-a">I'm currently studying at university — I'm doing a degree in Business Administration. It's pretty demanding but I find it really rewarding. <span class="pattern-tag">P1 · Answer → Reason</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Why did you choose that subject?</div>
+        <div class="qa-a">I chose it because I've always been interested in how companies work. I particularly enjoy learning about marketing strategies — it feels very practical and relevant. <span class="pattern-tag sage">P2 · Answer → Reason → Example</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Do you enjoy your studies?</div>
+        <div class="qa-a">Yes, for the most part. I find the group projects a bit stressful at times, but overall I really enjoy what I'm learning. <span class="pattern-tag yellow">P6 · Yes/No → Detail</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">What do you find most challenging?</div>
+        <div class="qa-a">Honestly, managing my time is the hardest part — especially around exam season when everything seems to pile up at once. <span class="pattern-tag lav">P7 · Opinion → Justification</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">What do you hope to do after you finish?</div>
+        <div class="qa-a">If everything goes well, I'd like to work in marketing, ideally for a company with an international focus. <span class="pattern-tag mauve">P10 · Conditional → Result</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOBBIES -->
+  <div class="topic-block">
+    <div class="topic-header peach">
+      <div class="topic-title">🎨 Hobbies &amp; Free Time</div>
+    </div>
+    <div class="topic-body">
+      <div class="qa-row">
+        <div class="qa-q">What do you like to do in your free time?</div>
+        <div class="qa-a">I usually go hiking or do some sketching when I have time. I find both activities really calming after a busy week. <span class="pattern-tag peach">P9 · Habit → Reason</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Did you have the same hobbies when you were younger?</div>
+        <div class="qa-a">Not really. I used to play a lot of video games as a kid, but now I prefer being outdoors. I think I just needed more fresh air! <span class="pattern-tag mauve">P5 · Past → Present</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Do you prefer indoor or outdoor activities?</div>
+        <div class="qa-a">I prefer outdoor activities — I find that being in nature really clears my head. But on rainy days, I'm happy to stay in and read or draw. <span class="pattern-tag peach">P3 · Preference → Why</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">How often do you do these activities?</div>
+        <div class="qa-a">I go hiking about twice a month, usually on weekends. It depends on the weather and how busy work is, but I try to make time for it. <span class="pattern-tag mauve">P4 · Frequency → Explanation</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Would you try a new hobby if you had more time?</div>
+        <div class="qa-a">If I had more time, I'd probably take up photography. I've always loved capturing moments but never really committed to learning it properly. <span class="pattern-tag mauve">P10 · Conditional → Result</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOD -->
+  <div class="topic-block">
+    <div class="topic-header lav">
+      <div class="topic-title">🍜 Food</div>
+    </div>
+    <div class="topic-body">
+      <div class="qa-row">
+        <div class="qa-q">What kind of food do you like?</div>
+        <div class="qa-a">I love Asian food — especially Japanese and Thai cuisine. The balance of flavours is really something I enjoy. <span class="pattern-tag">P1 · Answer → Reason</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Do you prefer eating at home or eating out?</div>
+        <div class="qa-a">I prefer eating at home since I can control what goes into the food. But I do love trying new restaurants on weekends as a treat. <span class="pattern-tag peach">P3 · Preference → Why</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Is there any food you don't like?</div>
+        <div class="qa-a">Yeah, I'm not really into very spicy food — I can manage a little heat, but anything extremely spicy just ruins the meal for me. <span class="pattern-tag yellow">P6 · Yes/No → Detail</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Do you know how to cook?</div>
+        <div class="qa-a">I do, and I actually enjoy it quite a lot. I tend to cook simple things during the week, but at weekends I'll try something more ambitious. <span class="pattern-tag yellow">P6 · Yes/No → Detail</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Has the food culture in your country changed over the years?</div>
+        <div class="qa-a">Definitely. When I was younger, people mainly ate traditional food — but now there are so many international restaurants everywhere. People are much more adventurous. <span class="pattern-tag mauve">P5 · Past → Present</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TECHNOLOGY -->
+  <div class="topic-block">
+    <div class="topic-header yellow">
+      <div class="topic-title">📱 Technology</div>
+    </div>
+    <div class="topic-body">
+      <div class="qa-row">
+        <div class="qa-q">How often do you use your phone?</div>
+        <div class="qa-a">Honestly, quite a lot — probably more than I should. I use it constantly for messages, maps, and checking the news. <span class="pattern-tag mauve">P4 · Frequency → Explanation</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">What do you mainly use the internet for?</div>
+        <div class="qa-a">I mainly use it for streaming music and podcasts, but also for work — I do a lot of research and communication online. <span class="pattern-tag">P1 · Answer → Reason</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Do you think technology has improved people's lives?</div>
+        <div class="qa-a">I think it has improved life in many ways — especially in terms of communication and access to information. But I do think people rely on it a bit too much sometimes. <span class="pattern-tag lav">P7 · Opinion → Justification</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">How has your use of technology changed since you were a child?</div>
+        <div class="qa-a">I used to just use a computer for playing games when I was small, but now it's central to almost everything I do — work, socialising, even fitness. <span class="pattern-tag mauve">P5 · Past → Present</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Could you live without your smartphone?</div>
+        <div class="qa-a">Probably not very easily, if I'm honest. If I lost my phone, I'd feel completely disconnected — at least for the first few days! <span class="pattern-tag mauve">P10 · Conditional → Result</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRAVEL -->
+  <div class="topic-block">
+    <div class="topic-header mint">
+      <div class="topic-title">✈️ Travel</div>
+    </div>
+    <div class="topic-body">
+      <div class="qa-row">
+        <div class="qa-q">Do you enjoy travelling?</div>
+        <div class="qa-a">Yes, very much. Travelling is one of my favourite things — I love experiencing different cultures and trying local food. <span class="pattern-tag yellow">P6 · Yes/No → Detail</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Where have you travelled to?</div>
+        <div class="qa-a">I've been to a few places in Southeast Asia — Vietnam, Thailand, and Indonesia. I'd love to visit Europe next, especially Italy. <span class="pattern-tag">P1 · Answer → Reason</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Do you prefer travelling alone or with others?</div>
+        <div class="qa-a">I prefer travelling with close friends because it's more fun to share experiences. Though solo travel can be really empowering too. <span class="pattern-tag peach">P3 · Preference → Why</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">How do you feel when you visit a new place?</div>
+        <div class="qa-a">I find it a little overwhelming at first — there's so much to take in. But after a day or two, I completely fall in love with the place. <span class="pattern-tag sage">P8 · Situation → Feeling</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Where would you most like to visit in the future?</div>
+        <div class="qa-a">If I could go anywhere, I'd choose Japan. I'm really drawn to the mix of ancient culture and ultra-modern cities — it seems like a fascinating contrast. <span class="pattern-tag mauve">P10 · Conditional → Result</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FRIENDS -->
+  <div class="topic-block">
+    <div class="topic-header rose">
+      <div class="topic-title">👥 Friends</div>
+    </div>
+    <div class="topic-body">
+      <div class="qa-row">
+        <div class="qa-q">Do you have many friends?</div>
+        <div class="qa-a">I wouldn't say a huge number, but I have a close group of maybe five or six people I really trust and enjoy spending time with. <span class="pattern-tag yellow">P6 · Yes/No → Detail</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">How do you usually keep in touch with friends?</div>
+        <div class="qa-a">I usually message them on WhatsApp throughout the week and then try to meet up in person at least once a month. <span class="pattern-tag peach">P9 · Habit → Reason</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Do you prefer having a few close friends or many acquaintances?</div>
+        <div class="qa-a">Definitely a few close friends. I value depth over quantity — I'd rather have people I can really talk to than a large but shallow social circle. <span class="pattern-tag peach">P3 · Preference → Why</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">What qualities do you look for in a friend?</div>
+        <div class="qa-a">I think honesty and humour are the most important things. A good friend is someone you can laugh with but also be completely open with. <span class="pattern-tag lav">P7 · Opinion → Justification</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY ROUTINE -->
+  <div class="topic-block">
+    <div class="topic-header mauve" style="background:var(--mauve);">
+      <div class="topic-title">☀️ Daily Routine</div>
+    </div>
+    <div class="topic-body">
+      <div class="qa-row">
+        <div class="qa-q">Can you describe your typical day?</div>
+        <div class="qa-a">I usually wake up around seven, have a quick breakfast, and then head to university. In the evenings, I cook, study a bit, and try to read before bed. <span class="pattern-tag peach">P9 · Habit → Reason</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Are you a morning person or an evening person?</div>
+        <div class="qa-a">Definitely an evening person. I find I think more clearly at night — most of my best work gets done after nine o'clock. <span class="pattern-tag">P1 · Answer → Reason</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">Has your daily routine changed recently?</div>
+        <div class="qa-a">It has, actually. I started exercising in the mornings a couple of months ago, which has made a big difference. I feel a lot more energetic during the day now. <span class="pattern-tag mauve">P5 · Past → Present</span></div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-q">What part of your day do you enjoy most?</div>
+        <div class="qa-a">I really enjoy the evenings when everything is quiet and I can just read or listen to music without any pressure. I find that time genuinely restorative. <span class="pattern-tag sage">P8 · Situation → Feeling</span></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 5: SOUND NATURAL
+════════════════════════════════════════════ -->
+<section class="section-block" id="s5">
+  <span class="section-tag">Section 5</span>
+  <h2>How to Sound Natural</h2>
+  <p class="section-intro">One of the biggest differences between a robotic answer and a natural one isn't vocabulary — it's the small conversational touches that make speech feel real.</p>
+
+  <h3 style="font-family:'Lora',serif;font-size:17px;margin-bottom:14px;">Natural Filler &amp; Opener Words</h3>
+  <p style="font-size:13.5px;color:var(--text-mid);margin-bottom:16px;">These words give you a tiny moment to think while keeping the conversation flowing. Use them sparingly — one per answer is enough.</p>
+
+  <div class="natural-grid">
+    <div class="filler-card">
+      <div class="filler-word">Well,</div>
+      <p>"Well, I've always been interested in cooking since I was young."</p>
+    </div>
+    <div class="filler-card">
+      <div class="filler-word">Actually,</div>
+      <p>"Actually, I didn't use to enjoy reading — but now I love it."</p>
+    </div>
+    <div class="filler-card">
+      <div class="filler-word">To be honest,</div>
+      <p>"To be honest, I'm not sure — but I think I prefer cities."</p>
+    </div>
+    <div class="filler-card">
+      <div class="filler-word">I'd say...</div>
+      <p>"I'd say hiking is probably my favourite thing to do outdoors."</p>
+    </div>
+    <div class="filler-card">
+      <div class="filler-word">Honestly,</div>
+      <p>"Honestly, I use my phone way more than I probably should."</p>
+    </div>
+    <div class="filler-card">
+      <div class="filler-word">You know,</div>
+      <p>"You know, it's one of those things that's hard to explain."</p>
+    </div>
+    <div class="filler-card">
+      <div class="filler-word">I suppose...</div>
+      <p>"I suppose the thing I enjoy most is the freedom of it."</p>
+    </div>
+    <div class="filler-card">
+      <div class="filler-word">I mean,</div>
+      <p>"I mean, it's not my favourite thing, but I don't mind it."</p>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>Rule of thumb:</strong> Use one filler per answer. Using too many ("Well, you know, I mean, actually...") sounds hesitant rather than fluent.
+  </div>
+
+  <h3 style="font-family:'Lora',serif;font-size:17px;margin:24px 0 14px;">Robotic vs. Natural: Side-by-Side</h3>
+
+  <div class="compare-block">
+    <div class="compare-card bad">
+      <div class="compare-label">❌ Robotic</div>
+      <p>"I like music. Music is very important to me. I listen to music every day. I like pop music and jazz music."</p>
+      <p class="why">Repetitive, choppy sentences. No fillers, no contractions. Sounds like it was written and memorised.</p>
+    </div>
+    <div class="compare-card good">
+      <div class="compare-label">✅ Natural</div>
+      <p>"Well, I'm a big music fan — I'd say I listen to something almost every day. I'm into jazz and R&amp;B mainly, but I'll listen to pretty much anything honestly."</p>
+      <p class="why">Contractions, a natural opener, informal vocabulary. Flows like real speech.</p>
+    </div>
+  </div>
+
+  <div class="compare-block">
+    <div class="compare-card bad">
+      <div class="compare-label">❌ Robotic</div>
+      <p>"In my opinion, travelling is very important because it helps people to learn about different cultures and expand their horizons."</p>
+      <p class="why">Sounds like a written essay. Too formal for a spoken conversation.</p>
+    </div>
+    <div class="compare-card good">
+      <div class="compare-label">✅ Natural</div>
+      <p>"I think travel is really valuable — you just see the world so differently when you're actually living in another culture, even for a short time."</p>
+      <p class="why">Casual "I think", contractions, natural phrasing. Sounds like a real person talking.</p>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Lora',serif;font-size:17px;margin:24px 0 14px;">Quick Naturalness Checklist</h3>
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>Use Contractions</h3>
+      <p>Say <em>I'm, it's, don't, can't, I'd</em> instead of <em>I am, it is, do not</em>. Contractions are essential in spoken English.</p>
+    </div>
+    <div class="info-card sage">
+      <h3>Add Personal Details</h3>
+      <p>Small specific details — "my cousin's restaurant," "around 7pm," "last summer" — make answers feel genuine and unmemorised.</p>
+    </div>
+    <div class="info-card peach">
+      <h3>Vary Your Sentence Length</h3>
+      <p>Mix short and longer sentences. Short ones add punch. Longer ones add depth. Avoid ten sentences all the same length.</p>
+    </div>
+    <div class="info-card mauve">
+      <h3>Hedge When Appropriate</h3>
+      <p>Phrases like "I think," "probably," "I suppose" sound natural. Native speakers hedge constantly — it's not uncertainty, it's style.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 6: EXTENDING ANSWERS
+════════════════════════════════════════════ -->
+<section class="section-block" id="s6">
+  <span class="section-tag">Section 6</span>
+  <h2>Extending Answers (Without Overdoing It)</h2>
+  <p class="section-intro">Extending an answer doesn't mean adding more sentences randomly. It means choosing one technique to add one more layer of meaning — then stopping.</p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>+ Add a Reason</h3>
+      <p>The most natural extension. Ask yourself: <em>Why?</em> Then say it in one sentence.</p>
+    </div>
+    <div class="info-card sage">
+      <h3>+ Add a Quick Example</h3>
+      <p>Use "for example," "like," or "such as" to make your answer feel concrete and real.</p>
+    </div>
+    <div class="info-card peach">
+      <h3>+ Add a Feeling</h3>
+      <p>Tell the examiner how something makes you feel: "I find it really relaxing," "It feels quite rewarding."</p>
+    </div>
+    <div class="info-card mauve">
+      <h3>+ Add a Frequency</h3>
+      <p>Tell how often: "I do this about twice a week," "I usually do it in the evenings."</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3 style="font-family:'Lora',serif;font-size:17px;margin-bottom:16px;">Extension in Practice</h3>
+
+  <div style="margin-bottom:20px;">
+    <div style="font-size:13px;font-weight:700;color:var(--text-light);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">Q: Do you enjoy cooking?</div>
+
+    <div style="display:grid;gap:10px;">
+      <div style="background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:14px 18px;font-size:13.5px;color:var(--text-mid);">
+        <span style="font-size:10px;font-weight:700;letter-spacing:1px;color:#B85050;text-transform:uppercase;display:block;margin-bottom:4px;">Basic (too thin)</span>
+        <em>"Yes, I enjoy cooking."</em>
+      </div>
+      <div style="background:var(--sage);border:1px solid var(--border);border-radius:10px;padding:14px 18px;font-size:13.5px;color:var(--text-mid);">
+        <span style="font-size:10px;font-weight:700;letter-spacing:1px;color:var(--sage-mid);text-transform:uppercase;display:block;margin-bottom:4px;">+ Reason</span>
+        <em>"Yes, I enjoy cooking because I find it relaxing after work."</em>
+      </div>
+      <div style="background:var(--peach);border:1px solid var(--border);border-radius:10px;padding:14px 18px;font-size:13.5px;color:var(--text-mid);">
+        <span style="font-size:10px;font-weight:700;letter-spacing:1px;color:var(--peach-mid);text-transform:uppercase;display:block;margin-bottom:4px;">+ Reason + Example</span>
+        <em>"Yes, I enjoy cooking because I find it relaxing. I especially like making Asian food — I've been trying different Thai dishes lately."</em>
+      </div>
+      <div style="background:var(--mauve);border:1px solid var(--border);border-radius:10px;padding:14px 18px;font-size:13.5px;color:var(--text-mid);">
+        <span style="font-size:10px;font-weight:700;letter-spacing:1px;color:var(--mauve-mid);text-transform:uppercase;display:block;margin-bottom:4px;">+ Reason + Feeling + Frequency</span>
+        <em>"Yes, I really enjoy cooking. I tend to cook every evening during the week — I find it a great way to decompress. I usually go for simple recipes, but I'll try something more ambitious at weekends."</em>
+        <span style="font-size:11px;color:var(--text-light);display:block;margin-top:6px;">✅ This is the maximum. Stop here.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule-box">
+    <strong>Golden Extension Rule:</strong> Add ONE or TWO extensions per answer. Each extension should be one sentence. When you have a reason and an example, you're done.
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 7: LANGUAGE BANK
+════════════════════════════════════════════ -->
+<section class="section-block" id="s7">
+  <span class="section-tag">Section 7</span>
+  <h2>High-Utility Language Bank</h2>
+  <p class="section-intro">These expressions are organised by function. Learn a few from each category so you always have natural options when speaking.</p>
+
+  <div class="lang-section">
+    <h3>A. Giving Opinions</h3>
+    <table class="lang-table">
+      <tr><th>Expression</th><th>Example Sentence</th></tr>
+      <tr><td>I think / I feel that...</td><td>I think working from home is generally more productive.</td></tr>
+      <tr><td>In my opinion...</td><td>In my opinion, cooking is a skill everyone should learn.</td></tr>
+      <tr><td>As far as I'm concerned...</td><td>As far as I'm concerned, reading is the best way to improve your mind.</td></tr>
+      <tr><td>I believe (that)...</td><td>I believe that regular exercise is essential for mental health.</td></tr>
+      <tr><td>Honestly, I think...</td><td>Honestly, I think most people spend too much time online.</td></tr>
+      <tr><td>I'd say (that)...</td><td>I'd say travelling is one of the best forms of education.</td></tr>
+      <tr><td>To me, (it seems like)...</td><td>To me, city life is more exciting, even if it's more stressful.</td></tr>
+      <tr><td>Personally, I think...</td><td>Personally, I think quality is more important than quantity.</td></tr>
+    </table>
+  </div>
+
+  <div class="lang-section">
+    <h3>B. Talking About Likes &amp; Dislikes</h3>
+    <table class="lang-table sage-head">
+      <tr><th>Expression</th><th>Example Sentence</th></tr>
+      <tr><td>I'm really into...</td><td>I'm really into jazz — I listen to it while I'm studying.</td></tr>
+      <tr><td>I'm a big fan of...</td><td>I'm a big fan of spicy food — the hotter the better, honestly.</td></tr>
+      <tr><td>I absolutely love...</td><td>I absolutely love hiking — it clears my head completely.</td></tr>
+      <tr><td>I'm quite fond of...</td><td>I'm quite fond of old black-and-white films.</td></tr>
+      <tr><td>I'm not really into...</td><td>I'm not really into reality TV — I find it a bit mindless.</td></tr>
+      <tr><td>I can't stand...</td><td>I can't stand commuting in rush hour — it's exhausting.</td></tr>
+      <tr><td>I don't mind...</td><td>I don't mind cooking, but I'd rather someone else did the washing up!</td></tr>
+      <tr><td>I've grown to like...</td><td>I've grown to like classical music — it helps me concentrate.</td></tr>
+    </table>
+  </div>
+
+  <div class="lang-section">
+    <h3>C. Talking About Frequency</h3>
+    <table class="lang-table peach-head">
+      <tr><th>Expression</th><th>Example Sentence</th></tr>
+      <tr><td>I do it every day / daily</td><td>I check my emails every day, usually first thing in the morning.</td></tr>
+      <tr><td>About twice / three times a week</td><td>I go to the gym about three times a week after work.</td></tr>
+      <tr><td>Once in a while</td><td>I eat out once in a while — maybe once or twice a month.</td></tr>
+      <tr><td>I rarely / hardly ever...</td><td>I rarely watch live TV anymore — I use streaming services instead.</td></tr>
+      <tr><td>I tend to...</td><td>I tend to read before bed most evenings.</td></tr>
+      <tr><td>More often than not...</td><td>More often than not, I make my own lunch to save money.</td></tr>
+      <tr><td>On and off</td><td>I exercise on and off — I go through phases of being really committed.</td></tr>
+      <tr><td>Whenever I get the chance</td><td>Whenever I get the chance, I love trying new restaurants.</td></tr>
+    </table>
+  </div>
+
+  <div class="lang-section">
+    <h3>D. Giving Reasons</h3>
+    <table class="lang-table mauve-head">
+      <tr><th>Expression</th><th>Example Sentence</th></tr>
+      <tr><td>...because / since...</td><td>I prefer the city because there's always something to do.</td></tr>
+      <tr><td>The main reason is (that)...</td><td>The main reason is that it's much more convenient.</td></tr>
+      <tr><td>I find it... because...</td><td>I find it relaxing because there's no pressure involved.</td></tr>
+      <tr><td>It's mainly because...</td><td>It's mainly because I grew up surrounded by it.</td></tr>
+      <tr><td>I suppose it's because...</td><td>I suppose it's because I never really learned how as a child.</td></tr>
+      <tr><td>Part of the reason is...</td><td>Part of the reason is that I've always been a curious person.</td></tr>
+      <tr><td>It helps me (to)...</td><td>It helps me switch off and forget about work.</td></tr>
+    </table>
+  </div>
+
+  <div class="lang-section">
+    <h3>E. Expressing Preferences</h3>
+    <table class="lang-table lav-head">
+      <tr><th>Expression</th><th>Example Sentence</th></tr>
+      <tr><td>I prefer X to Y</td><td>I prefer tea to coffee — I find coffee makes me anxious.</td></tr>
+      <tr><td>I'd rather... than...</td><td>I'd rather stay in than go out on a cold evening.</td></tr>
+      <tr><td>I tend to lean towards...</td><td>I tend to lean towards simpler, quieter activities.</td></tr>
+      <tr><td>Given the choice, I'd...</td><td>Given the choice, I'd always pick the countryside over the city.</td></tr>
+      <tr><td>I find X more... than Y</td><td>I find cooking at home more rewarding than eating out.</td></tr>
+      <tr><td>For me, X beats Y any day</td><td>For me, a quiet evening at home beats a crowded party any day.</td></tr>
+      <tr><td>I'm more of a X person</td><td>I'm more of a morning person — I love the quiet before everyone wakes up.</td></tr>
+    </table>
+  </div>
+
+  <div class="lang-section">
+    <h3>F. Expressing Feelings &amp; Reactions</h3>
+    <table class="lang-table yellow-head">
+      <tr><th>Expression</th><th>Example Sentence</th></tr>
+      <tr><td>I find it really...</td><td>I find it really rewarding when I help someone understand something.</td></tr>
+      <tr><td>It makes me feel...</td><td>Being in nature makes me feel completely at ease.</td></tr>
+      <tr><td>I feel quite/really...</td><td>I feel quite energised after a good workout.</td></tr>
+      <tr><td>There's something about... that...</td><td>There's something about old bookshops that I find really comforting.</td></tr>
+      <tr><td>I get a real sense of...</td><td>I get a real sense of achievement when I finish a difficult project.</td></tr>
+      <tr><td>It gives me a chance to...</td><td>It gives me a chance to completely switch off from work.</td></tr>
+      <tr><td>I feel (a bit) overwhelmed when...</td><td>I feel a bit overwhelmed when I have too many things on at once.</td></tr>
+      <tr><td>It always cheers me up</td><td>Listening to music always cheers me up when I'm tired.</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 8: COMMON PROBLEMS
+════════════════════════════════════════════ -->
+<section class="section-block" id="s8">
+  <span class="section-tag">Section 8</span>
+  <h2>Common Problems &amp; Quick Fixes</h2>
+  <p class="section-intro">Most Part 1 problems fall into one of five categories. Read through each one and recognise which ones apply to you.</p>
+
+  <div class="problem-card">
+    <div class="problem-header">
+      <div class="problem-title">❌ Problem 1: Answer Too Short</div>
+    </div>
+    <div class="problem-body">
+      <div class="prob-col">
+        <div class="prob-col-title">Cause</div>
+        <p>Thinking that a direct answer is enough, or fear of making mistakes if you say more.</p>
+      </div>
+      <div class="prob-col">
+        <div class="prob-col-title">Quick Fix</div>
+        <p>After your answer, automatically add "because..." — even one short reason transforms a thin answer.</p>
+      </div>
+      <div class="prob-col">
+        <div class="prob-col-title">Before → After</div>
+        <p><em>Before:</em> "I like swimming."<br><em>After:</em> "I really enjoy swimming — I find it great for clearing my head after work."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="problem-card peach">
+    <div class="problem-header">
+      <div class="problem-title">🔁 Problem 2: Repetition</div>
+    </div>
+    <div class="problem-body">
+      <div class="prob-col">
+        <div class="prob-col-title">Cause</div>
+        <p>Using the same word or structure repeatedly because it feels safe: "I like... I like... I like..."</p>
+      </div>
+      <div class="prob-col">
+        <div class="prob-col-title">Quick Fix</div>
+        <p>After the first "I like," switch to "I'm into," "I enjoy," "I'm a fan of," or "I find it really..."</p>
+      </div>
+      <div class="prob-col">
+        <div class="prob-col-title">Before → After</div>
+        <p><em>Before:</em> "I like music. I like jazz. I like listening to music every day."<br><em>After:</em> "I'm a big music fan — especially jazz. I listen to it pretty much every day."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="problem-card sage">
+    <div class="problem-header">
+      <div class="problem-title">🤖 Problem 3: Memorised-Sounding Answers</div>
+    </div>
+    <div class="problem-body">
+      <div class="prob-col">
+        <div class="prob-col-title">Cause</div>
+        <p>Learning full answers word-for-word. The answer comes out too fast, too perfect, and sounds rehearsed.</p>
+      </div>
+      <div class="prob-col">
+        <div class="prob-col-title">Quick Fix</div>
+        <p>Learn patterns, not scripts. Add a small unique detail each time — something true and specific to you.</p>
+      </div>
+      <div class="prob-col">
+        <div class="prob-col-title">Before → After</div>
+        <p><em>Scripted:</em> "I believe that travelling is a valuable experience that broadens one's horizons and perspective."<br><em>Natural:</em> "Honestly, I love travelling. I just feel like you see the world completely differently when you go somewhere new."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="problem-card mauve">
+    <div class="problem-header">
+      <div class="problem-title">😶 Problem 4: Hesitation &amp; Slow Start</div>
+    </div>
+    <div class="problem-body">
+      <div class="prob-col">
+        <div class="prob-col-title">Cause</div>
+        <p>Trying to think of the "perfect" answer before speaking. Overthinking vocabulary or grammar choices.</p>
+      </div>
+      <div class="prob-col">
+        <div class="prob-col-title">Quick Fix</div>
+        <p>Start with a filler: "Well," "I'd say," "To be honest" — this buys you 1–2 seconds to think naturally.</p>
+      </div>
+      <div class="prob-col">
+        <div class="prob-col-title">Before → After</div>
+        <p><em>Hesitant:</em> "Uh... um... I think... well... I like... cooking?"<br><em>Natural:</em> "Well, to be honest, cooking is something I really enjoy — especially at weekends."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="problem-card lav">
+    <div class="problem-header">
+      <div class="problem-title">🧩 Problem 5: Grammar Overthinking</div>
+    </div>
+    <div class="problem-body">
+      <div class="prob-col">
+        <div class="prob-col-title">Cause</div>
+        <p>Pausing mid-sentence to check grammar, leading to choppy, unnatural delivery.</p>
+      </div>
+      <div class="prob-col">
+        <div class="prob-col-title">Quick Fix</div>
+        <p>Use patterns you've already practised — they reduce the grammar load. Small errors don't stop fluency.</p>
+      </div>
+      <div class="prob-col">
+        <div class="prob-col-title">Before → After</div>
+        <p><em>Overthought:</em> "I... enjoy... to cook... no... cooking... I enjoy cooking... yes."<br><em>Fluid:</em> "I enjoy cooking — I find it a really satisfying way to end the day."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 9: RAPID DRILLS
+════════════════════════════════════════════ -->
+<section class="section-block" id="s9">
+  <span class="section-tag">Section 9</span>
+  <h2>Rapid-Fire Practice Drills</h2>
+  <p class="section-intro">Read each question, pause for 5–10 seconds, and then say your answer aloud before reading the model response. Focus on speed and naturalness — not perfection.</p>
+
+  <div class="tip-box">
+    <strong>How to use this section:</strong> Cover the answer with your hand or a piece of paper. Read the question. Speak immediately. Then compare your answer with the model. Practise until your response takes less than 5 seconds to start.
+  </div>
+
+  <div class="drill-grid">
+    <div class="drill-card">
+      <div class="drill-num">01</div>
+      <div class="drill-q">Do you enjoy reading?</div>
+      <div class="drill-a">Yeah, I actually love it — I try to read before bed every night. It helps me wind down. <span class="pt">P1</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">02</div>
+      <div class="drill-q">What's your favourite type of food?</div>
+      <div class="drill-a">I'd say Japanese food — I love how fresh and light it is. Sushi especially. <span class="pt">P1</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">03</div>
+      <div class="drill-q">How do you usually get to work or school?</div>
+      <div class="drill-a">I usually take the subway — it's the quickest way, even if it can get quite crowded. <span class="pt">P9</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">04</div>
+      <div class="drill-q">Do you prefer hot or cold weather?</div>
+      <div class="drill-a">Definitely warm weather. I feel much more energetic when the sun's out. <span class="pt">P3</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">05</div>
+      <div class="drill-q">How often do you exercise?</div>
+      <div class="drill-a">About three times a week — I go for a run in the mornings. I find it's the best way to start the day. <span class="pt">P4</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">06</div>
+      <div class="drill-q">Did you enjoy school when you were growing up?</div>
+      <div class="drill-a">I did, for the most part. I loved art and English, though I really struggled with maths, to be honest. <span class="pt">P6</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">07</div>
+      <div class="drill-q">Do you like spending time at home?</div>
+      <div class="drill-a">Yeah, I really do. I'm quite a homebody — I love cooking and just relaxing with a good film. <span class="pt">P6</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">08</div>
+      <div class="drill-q">Is social media important to you?</div>
+      <div class="drill-a">I think it's useful for keeping in touch with people, but I try not to rely on it too much personally. <span class="pt">P7</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">09</div>
+      <div class="drill-q">Would you like to learn any new skills?</div>
+      <div class="drill-a">If I had the time, I'd love to learn Spanish — I've always been fascinated by Latin culture. <span class="pt">P10</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">10</div>
+      <div class="drill-q">Do you like where you live now?</div>
+      <div class="drill-a">I do. It's a convenient area — everything I need is within walking distance, which I really appreciate. <span class="pt">P6</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">11</div>
+      <div class="drill-q">How do you like to relax after a long day?</div>
+      <div class="drill-a">I usually make dinner, listen to some music, and just completely switch off. Cooking is weirdly therapeutic for me. <span class="pt">P9</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">12</div>
+      <div class="drill-q">Has your taste in music changed over the years?</div>
+      <div class="drill-a">It really has. I was into pop when I was a teenager, but now I listen to a lot more jazz and acoustic stuff. <span class="pt">P5</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">13</div>
+      <div class="drill-q">Do you think it's important to stay healthy?</div>
+      <div class="drill-a">Absolutely — I think your physical health affects everything else, including your mood and your focus. <span class="pt">P7</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">14</div>
+      <div class="drill-q">How do you feel about mornings?</div>
+      <div class="drill-a">Honestly, I struggle with them. I'm very much a night owl — I feel most productive after about 9pm. <span class="pt">P8</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">15</div>
+      <div class="drill-q">Do you prefer shopping online or in stores?</div>
+      <div class="drill-a">I prefer online — it's just so much more convenient. Though for clothes, I'd rather try things on first. <span class="pt">P3</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">16</div>
+      <div class="drill-q">What kind of TV shows do you enjoy?</div>
+      <div class="drill-a">I'm really into documentary series — especially about nature or history. I find them much more interesting than dramas. <span class="pt">P2</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">17</div>
+      <div class="drill-q">Do you enjoy being busy?</div>
+      <div class="drill-a">To a degree. I like feeling productive, but if every day is packed, I start feeling burnt out pretty quickly. <span class="pt">P6</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">18</div>
+      <div class="drill-q">How often do you meet up with friends?</div>
+      <div class="drill-a">We try to meet at least every couple of weeks — usually for dinner or just a walk. It's important to stay connected. <span class="pt">P4</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">19</div>
+      <div class="drill-q">What did you enjoy doing as a child that you still enjoy now?</div>
+      <div class="drill-a">Drawing — I loved it as a kid and I still sketch now. It's always been a way for me to express ideas. <span class="pt">P5</span></div>
+    </div>
+    <div class="drill-card">
+      <div class="drill-num">20</div>
+      <div class="drill-q">Would you enjoy living in another country?</div>
+      <div class="drill-a">I think I would, actually. If I had the chance, I'd love to spend a year or two in Europe — just to experience a totally different lifestyle. <span class="pt">P10</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 10: MOCK TEST
+════════════════════════════════════════════ -->
+<section class="section-block" id="s10">
+  <span class="section-tag">Section 10</span>
+  <h2>Mini Part 1 Mock Test</h2>
+  <p class="section-intro">Three topic sets, just like a real test. Try to answer each question naturally before reading the model answer. Time yourself — aim for 5–10 seconds to begin each answer.</p>
+
+  <div class="tip-box" style="margin-bottom:24px;">
+    <strong>Instructions:</strong> Read the question aloud, pause, then answer. Cover the model answer first. After answering, compare your response. Note which patterns you used naturally — and which ones you still need to practise.
+  </div>
+
+  <!-- SET 1 -->
+  <div class="mock-set">
+    <div class="mock-set-header blue">
+      <div class="mock-set-title">Topic Set 1: Your Home &amp; Neighbourhood</div>
+      <div class="mock-set-sub">Questions 1–5 &nbsp;|&nbsp; Estimated time: 3–4 minutes</div>
+    </div>
+    <div class="mock-set-body">
+      <div class="mock-qa">
+        <div class="mock-q">Q1: Can you describe where you live?</div>
+        <div class="mock-a">I live in a fairly central part of the city — it's a busy area with lots of cafés and small shops, which I really enjoy. It's quite lively, even at night.</div>
+        <div><span class="mock-label">P1 · Answer → Reason</span></div>
+      </div>
+      <div class="mock-qa">
+        <div class="mock-q">Q2: Do you like your neighbourhood?</div>
+        <div class="mock-a">Yes, I do. I've grown really fond of it over the years. The community feels quite tight-knit, and I know most of my neighbours by name, which is nice.</div>
+        <div><span class="mock-label yellow">P6 · Yes/No → Detail</span></div>
+      </div>
+      <div class="mock-qa">
+        <div class="mock-q">Q3: What do you like most about your home?</div>
+        <div class="mock-a">I think it's the natural light — we have big windows in the living room and it makes the whole place feel really open and warm. It's probably my favourite thing about it.</div>
+        <div><span class="mock-label lav">P7 · Opinion → Justification</span></div>
+      </div>
+      <div class="mock-qa">
+        <div class="mock-q">Q4: Has your neighbourhood changed since you moved in?</div>
+        <div class="mock-a">A lot, actually. When I first moved here, it was quite quiet and a bit run-down. But now there are new restaurants and coffee shops everywhere — it's become quite trendy.</div>
+        <div><span class="mock-label mauve">P5 · Past → Present</span></div>
+      </div>
+      <div class="mock-qa">
+        <div class="mock-q">Q5: Would you prefer to live somewhere else if you could?</div>
+        <div class="mock-a">If I could choose anywhere, I'd probably pick somewhere near the sea. I find coastal environments incredibly calming — I think it would suit my personality well.</div>
+        <div><span class="mock-label mauve">P10 · Conditional → Result</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SET 2 -->
+  <div class="mock-set">
+    <div class="mock-set-header sage">
+      <div class="mock-set-title">Topic Set 2: Free Time &amp; Entertainment</div>
+      <div class="mock-set-sub">Questions 1–5 &nbsp;|&nbsp; Estimated time: 3–4 minutes</div>
+    </div>
+    <div class="mock-set-body">
+      <div class="mock-qa">
+        <div class="mock-q">Q1: What do you do in your free time?</div>
+        <div class="mock-a">I usually spend my evenings reading or sketching — I find both activities really relaxing. At weekends I like to go for long walks if the weather's good.</div>
+        <div><span class="mock-label sage">P9 · Habit → Reason</span></div>
+      </div>
+      <div class="mock-qa">
+        <div class="mock-q">Q2: Do you watch a lot of TV or films?</div>
+        <div class="mock-a">Not massively, to be honest. I'll watch a good documentary or film now and then, but I've never been someone who can sit in front of the TV for hours.</div>
+        <div><span class="mock-label yellow">P6 · Yes/No → Detail</span></div>
+      </div>
+      <div class="mock-qa">
+        <div class="mock-q">Q3: How do you usually spend your weekends?</div>
+        <div class="mock-a">Well, I try to make weekends feel different from weekdays. I'll often meet a friend for coffee in the morning and then do something creative in the afternoon — painting or cooking something new.</div>
+        <div><span class="mock-label peach">P9 · Habit → Reason</span></div>
+      </div>
+      <div class="mock-qa">
+        <div class="mock-q">Q4: Is there a hobby you'd like to take up in the future?</div>
+        <div class="mock-a">If I ever find the time, I'd really like to get into pottery. There's something about working with your hands like that that I find really appealing.</div>
+        <div><span class="mock-label mauve">P10 · Conditional → Result</span></div>
+      </div>
+      <div class="mock-qa">
+        <div class="mock-q">Q5: Do you think people today have enough leisure time?</div>
+        <div class="mock-a">Honestly, I don't think so. Most people I know feel quite overworked, and weekends often end up being spent catching up on chores rather than genuinely relaxing.</div>
+        <div><span class="mock-label lav">P7 · Opinion → Justification</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SET 3 -->
+  <div class="mock-set">
+    <div class="mock-set-header peach">
+      <div class="mock-set-title">Topic Set 3: Transport &amp; Travel</div>
+      <div class="mock-set-sub">Questions 1–5 &nbsp;|&nbsp; Estimated time: 3–4 minutes</div>
+    </div>
+    <div class="mock-set-body">
+      <div class="mock-qa">
+        <div class="mock-q">Q1: How do you usually travel around your city?</div>
+        <div class="mock-a">I mostly use the metro — it's fast and reliable, even during rush hour. I'll occasionally take a taxi late at night if I'm heading somewhere less central.</div>
+        <div><span class="mock-label peach">P4 · Frequency → Explanation</span></div>
+      </div>
+      <div class="mock-qa">
+        <div class="mock-q">Q2: Do you enjoy long journeys?</div>
+        <div class="mock-a">Actually, I quite like them. I see a long journey as time to read, listen to podcasts, or just think — I find it quite peaceful when I don't have to be anywhere immediately.</div>
+        <div><span class="mock-label yellow">P6 · Yes/No → Detail</span></div>
+      </div>
+      <div class="mock-qa">
+        <div class="mock-q">Q3: Do you prefer travelling by train or plane?</div>
+        <div class="mock-a">I prefer trains — you get to see the landscape as you go, and there's much less of the stress involved with airports and security. It just feels more relaxed.</div>
+        <div><span class="mock-label peach">P3 · Preference → Why</span></div>
+      </div>
+      <div class="mock-qa">
+        <div class="mock-q">Q4: How do you feel about driving in a new city?</div>
+        <div class="mock-a">I find it a bit stressful, to be honest. Every city has its own traffic rules and rhythms, and it takes a few days to feel comfortable. I usually prefer public transport when I'm somewhere new.</div>
+        <div><span class="mock-label sage">P8 · Situation → Feeling</span></div>
+      </div>
+      <div class="mock-qa">
+        <div class="mock-q">Q5: Has the way you travel changed compared to when you were younger?</div>
+        <div class="mock-a">Definitely. I used to travel everywhere by bus when I was a student, but now I take the metro or drive. And I've started flying more frequently for work, which I never used to do.</div>
+        <div><span class="mock-label mauve">P5 · Past → Present</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule-box" style="margin-top:24px;">
+    <strong>After the Mock Test — Self-Evaluation:</strong> Ask yourself: Did I start each answer within 5 seconds? Did I use at least 2 sentences per answer? Did I use any natural fillers (Well, Actually, Honestly)? If yes to all three — you're ready to test.
+  </div>
+</section>
+
+</div><!-- end content-wrap -->
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="guide-footer">
+  <p>IELTS Speaking Part 1 — Pattern-Based Study Guide &nbsp;|&nbsp; <strong>10 Sections · Self-Study Edition</strong></p>
+  <p>Focus on <strong>patterns, not scripts</strong> · Speak naturally · Start fast · Extend briefly</p>
+</footer>
+
+<script>
+  // Active nav highlighting on scroll
+  const sections = document.querySelectorAll('.section-block');
+  const navLinks = document.querySelectorAll('.top-nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 90) current = sec.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

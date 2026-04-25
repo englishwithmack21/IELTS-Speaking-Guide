@@ -1,0 +1,3132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Speaking Part 2 — Complete Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Nunito:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f9f7f4;
+    --sidebar-bg: #2c2a28;
+    --sidebar-width: 260px;
+    --text: #2c2a28;
+    --text-light: #6b6560;
+    --white: #ffffff;
+
+    /* Pastel palette per category */
+    --mint:      #d4ede8;
+    --mint-dark: #2a7a6a;
+    --mint-mid:  #b3d9d2;
+
+    --lavender:      #e2daf5;
+    --lavender-dark: #6a4ea8;
+    --lavender-mid:  #ccc0ef;
+
+    --peach:      #fde8d8;
+    --peach-dark: #c05e2a;
+    --peach-mid:  #f8ccaa;
+
+    --sky:      #d6eaf5;
+    --sky-dark: #2870a8;
+    --sky-mid:  #b0d5ee;
+
+    --blush:      #fadadd;
+    --blush-dark: #b03050;
+    --blush-mid:  #f5b8c0;
+
+    --lemon:      #f5f0cc;
+    --lemon-dark: #8a7510;
+    --lemon-mid:  #ede8a8;
+
+    --sage:       #ddeedd;
+    --sage-dark:  #2a6a2a;
+    --sage-mid:   #b8dcb8;
+
+    --lilac:      #ede0f5;
+    --lilac-dark: #7040a0;
+    --lilac-mid:  #d8c0ee;
+
+    --coral:      #fde0d0;
+    --coral-dark: #a84030;
+    --coral-mid:  #f8c0a0;
+
+    --steel:      #dde4ee;
+    --steel-dark: #2850a0;
+    --steel-mid:  #bac8e0;
+
+    --rose:       #f5e0e8;
+    --rose-dark:  #a83060;
+    --rose-mid:   #eec0d0;
+
+    --border-radius: 12px;
+    --card-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    min-height: 100vh;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ── SIDEBAR ── */
+  #sidebar {
+    width: var(--sidebar-width);
+    background: var(--sidebar-bg);
+    color: #e8e4df;
+    position: fixed;
+    top: 0; left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 100;
+    scrollbar-width: thin;
+    scrollbar-color: #555 #2c2a28;
+  }
+  #sidebar::-webkit-scrollbar { width: 5px; }
+  #sidebar::-webkit-scrollbar-thumb { background: #555; border-radius: 4px; }
+
+  .sidebar-logo {
+    padding: 24px 20px 16px;
+    border-bottom: 1px solid #444;
+  }
+  .sidebar-logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #f0ece6;
+    line-height: 1.3;
+  }
+  .sidebar-logo p {
+    font-size: 0.72rem;
+    color: #aaa;
+    margin-top: 4px;
+    font-family: 'Nunito Sans', sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .nav-group { padding: 10px 0 4px; }
+  .nav-group-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #888;
+    padding: 8px 20px 4px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+  }
+  .nav-group a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 20px;
+    font-size: 0.82rem;
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.15s;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+  }
+  .nav-group a:hover, .nav-group a.active {
+    color: #fff;
+    background: rgba(255,255,255,0.06);
+    border-left-color: #e8c87a;
+  }
+  .nav-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── MAIN CONTENT ── */
+  #main {
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #2c2a28 0%, #4a4440 60%, #5a5048 100%);
+    color: #f0ece6;
+    padding: 60px 60px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 40%;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(232,200,122,0.08);
+  }
+  .hero-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #e8c87a;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    color: #f9f7f4;
+  }
+  .hero p {
+    font-size: 1rem;
+    color: #c0b8b0;
+    max-width: 540px;
+    line-height: 1.7;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  .hero-pills {
+    display: flex;
+    gap: 10px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  .hero-pill {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 0.75rem;
+    color: #e0d8d0;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    padding: 52px 60px;
+    border-bottom: 1px solid #ede8e2;
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .section-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .section-header-text {}
+  .section-label {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text);
+  }
+
+  /* ── CARDS ── */
+  .card-grid {
+    display: grid;
+    gap: 16px;
+  }
+  .card-grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .card-grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .card-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+  .card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 22px 24px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .card-accent {
+    border-top: 4px solid;
+  }
+
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .card-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .card p, .card li {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.65;
+  }
+  .card ul { padding-left: 18px; }
+  .card li { margin-bottom: 4px; }
+
+  /* ── STRUCTURE CARDS ── */
+  .structure-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .structure-header {
+    padding: 18px 22px 14px;
+  }
+  .structure-header .tag {
+    font-size: 0.68rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .structure-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .structure-header .best-for {
+    font-size: 0.8rem;
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--text-light);
+  }
+  .structure-steps {
+    padding: 0 22px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .step-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .step-num {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.68rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .step-content { flex: 1; }
+  .step-content strong {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    display: block;
+  }
+  .step-content span {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  .structure-example {
+    padding: 14px 22px;
+    border-top: 1px solid rgba(0,0,0,0.07);
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--text-light);
+    line-height: 1.6;
+    background: rgba(0,0,0,0.015);
+  }
+  .structure-example strong {
+    font-style: normal;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: 'Nunito', sans-serif;
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+
+  /* ── MODEL ANSWERS ── */
+  .answer-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+  }
+  .answer-header {
+    padding: 18px 24px 14px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .answer-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .answer-cue {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.5;
+  }
+  .answer-tag {
+    font-size: 0.68rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .answer-body {
+    padding: 0 24px 22px;
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: var(--text);
+    font-family: 'Nunito Sans', sans-serif;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding-top: 16px;
+  }
+
+  /* ── TOPIC MATRIX CARDS ── */
+  .topic-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 22px 24px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .topic-card-top {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 14px;
+  }
+  .topic-num {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  .topic-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .topic-section-label {
+    font-size: 0.68rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-light);
+    margin: 10px 0 4px;
+  }
+  .topic-card ul { padding-left: 16px; }
+  .topic-card li {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    line-height: 1.55;
+    margin-bottom: 2px;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  .mistake-li { color: #b04040 !important; }
+  .structure-pill {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    padding: 2px 9px;
+    border-radius: 10px;
+    margin: 2px 3px 2px 0;
+    background: rgba(0,0,0,0.06);
+    color: var(--text);
+  }
+
+  /* ── VOCAB / TIPS ── */
+  .vocab-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .vocab-chip {
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 20px;
+    padding: 7px 16px;
+    font-size: 0.85rem;
+    font-family: 'Nunito Sans', sans-serif;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    color: var(--text);
+  }
+  .vocab-chip em { font-style: italic; color: var(--text-light); }
+
+  /* ── FORMULA BOX ── */
+  .formula-box {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 24px 28px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .formula-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .formula-row:last-child { border-bottom: none; }
+  .formula-letter {
+    width: 34px; height: 34px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .formula-text { flex: 1; }
+  .formula-text strong {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: block;
+  }
+  .formula-text span {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  /* ── CHECKLIST ── */
+  .checklist-section {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0,0,0,0.06);
+    margin-bottom: 16px;
+  }
+  .checklist-header {
+    padding: 14px 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .checklist-body {
+    padding: 4px 20px 16px;
+  }
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    font-size: 0.84rem;
+    color: var(--text);
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  .check-item:last-child { border-bottom: none; }
+  .check-box {
+    width: 16px; height: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── WORKSHEET ── */
+  .worksheet-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+  }
+  .worksheet-header {
+    padding: 18px 24px 14px;
+  }
+  .worksheet-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .worksheet-body { padding: 0 24px 22px; }
+  .ws-section-label {
+    font-size: 0.7rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin: 16px 0 6px;
+  }
+  .ws-input-line {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    padding: 6px 2px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.85rem;
+    background: transparent;
+    color: var(--text);
+    outline: none;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .ws-input-line:focus { border-bottom-color: #888; }
+  .ws-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .ws-checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--text-light);
+  }
+  .ws-checkbox-item input { cursor: pointer; }
+  .ws-task-box {
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-style: italic;
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+
+  /* ── CALLOUT ── */
+  .callout {
+    border-radius: var(--border-radius);
+    padding: 18px 22px;
+    margin: 20px 0;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    border: 1px solid rgba(0,0,0,0.07);
+  }
+  .callout-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
+  .callout-content {}
+  .callout-title {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    margin-bottom: 4px;
+  }
+  .callout-body {
+    font-size: 0.84rem;
+    color: var(--text-light);
+    line-height: 1.65;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  .callout-body li { margin-bottom: 3px; }
+  .callout-body ul { padding-left: 16px; }
+
+  /* ── LAYERING ── */
+  .layer-chain {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    flex-wrap: wrap;
+    margin: 16px 0;
+  }
+  .layer-item {
+    flex: 1;
+    min-width: 120px;
+    padding: 14px 16px;
+    position: relative;
+    text-align: center;
+  }
+  .layer-item:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #999;
+    z-index: 1;
+  }
+  .layer-item strong {
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .layer-item span {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.4;
+    display: block;
+  }
+
+  /* ── DIVIDER ── */
+  .sub-divider {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.07);
+    margin: 28px 0;
+  }
+
+  /* ── SAFE STORY GRID ── */
+  .safe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .safe-item {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 16px 18px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0,0,0,0.06);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .safe-check { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+  .safe-text {
+    font-size: 0.83rem;
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  /* ── QUOTE BOX ── */
+  .quote-box {
+    border-left: 4px solid;
+    padding: 12px 18px;
+    margin: 10px 0;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.87rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  /* ── DELIVERY TIPS ── */
+  .delivery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .delivery-item {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0,0,0,0.06);
+    text-align: center;
+  }
+  .delivery-icon { font-size: 1.4rem; margin-bottom: 6px; }
+  .delivery-item strong {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .delivery-item span {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  /* ── NEWSPAPER SBAR ── */
+  .sbar-full {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .sbar-row {
+    display: flex;
+    align-items: stretch;
+  }
+  .sbar-label {
+    width: 80px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-right: 1px solid rgba(0,0,0,0.08);
+  }
+  .sbar-content {
+    flex: 1;
+    padding: 16px 20px;
+    background: var(--white);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  .sbar-content h4 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+  .sbar-content p {
+    font-size: 0.84rem;
+    color: var(--text-light);
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.6;
+    margin-bottom: 4px;
+  }
+  .sbar-content em {
+    font-style: italic;
+    font-size: 0.82rem;
+    color: var(--text);
+  }
+  .sbar-row:last-child .sbar-content { border-bottom: none; }
+
+  /* ── INTRO / TIPS DIALOG ── */
+  .tip-box {
+    border-radius: var(--border-radius);
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(0,0,0,0.07);
+  }
+  .tip-box h4 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.88rem;
+    margin-bottom: 8px;
+  }
+  .tip-box p {
+    font-size: 0.85rem;
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--text);
+    line-height: 1.65;
+    font-style: italic;
+  }
+
+  /* ── DRILL BOXES ── */
+  .drill-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0,0,0,0.06);
+    margin-bottom: 16px;
+  }
+  .drill-header {
+    padding: 14px 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .drill-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .drill-title {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+  }
+  .drill-time {
+    margin-left: auto;
+    font-size: 0.72rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.06);
+  }
+  .drill-body {
+    padding: 4px 20px 18px;
+    font-size: 0.85rem;
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--text-light);
+    line-height: 1.65;
+  }
+  .drill-body ul { padding-left: 16px; }
+  .drill-body li { margin-bottom: 4px; }
+  .drill-body strong { color: var(--text); font-family: 'Nunito', sans-serif; font-weight: 700; }
+
+  /* ── 3 HIDDEN REQUIREMENTS ── */
+  .req-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .req-item {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 22px 20px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0,0,0,0.06);
+    text-align: center;
+  }
+  .req-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .req-item h4 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.88rem;
+    margin-bottom: 6px;
+  }
+  .req-item p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.5;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    #sidebar { display: none; }
+    #main { margin-left: 0; }
+    .section { padding: 36px 24px; }
+    .hero { padding: 40px 24px; }
+    .card-grid-2, .card-grid-3, .card-grid-4 { grid-template-columns: 1fr; }
+    .safe-grid, .delivery-grid, .req-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2rem; }
+    .layer-chain { flex-direction: column; }
+    .layer-item::after { display: none; }
+  }
+
+  /* Scrollbar for main */
+  #main::-webkit-scrollbar { width: 6px; }
+  #main::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════ SIDEBAR ═══════════════════════════════ -->
+<nav id="sidebar">
+  <div class="sidebar-logo">
+    <h1>IELTS Speaking<br>Part 2 Guide</h1>
+    <p>Complete Study Reference</p>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Foundations</div>
+    <a href="#why"><span class="nav-dot" style="background:#d4ede8"></span>Why Structure Matters</a>
+    <a href="#structures"><span class="nav-dot" style="background:#e2daf5"></span>The 4 Story Structures</a>
+    <a href="#formula"><span class="nav-dot" style="background:#fde8d8"></span>Part 2 Answer Formula</a>
+    <a href="#layering"><span class="nav-dot" style="background:#d6eaf5"></span>Layering Technique</a>
+    <a href="#vocab"><span class="nav-dot" style="background:#fadadd"></span>Narrative Vocabulary</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Topic Categories</div>
+    <a href="#people"><span class="nav-dot" style="background:#d4ede8"></span>1. People</a>
+    <a href="#places"><span class="nav-dot" style="background:#e2daf5"></span>2. Places</a>
+    <a href="#objects"><span class="nav-dot" style="background:#fde8d8"></span>3. Objects / Items</a>
+    <a href="#events"><span class="nav-dot" style="background:#d6eaf5"></span>4. Events</a>
+    <a href="#activities"><span class="nav-dot" style="background:#fadadd"></span>5. Activities / Hobbies</a>
+    <a href="#experiences"><span class="nav-dot" style="background:#f5f0cc"></span>6. Experiences</a>
+    <a href="#achievements"><span class="nav-dot" style="background:#ddeedd"></span>7. Achievements</a>
+    <a href="#changes"><span class="nav-dot" style="background:#ede0f5"></span>8. Changes</a>
+    <a href="#problems"><span class="nav-dot" style="background:#fde0d0"></span>9. Problems / Mistakes</a>
+    <a href="#media"><span class="nav-dot" style="background:#dde4ee"></span>10. Media</a>
+    <a href="#lifestyle"><span class="nav-dot" style="background:#f5e0e8"></span>11. Lifestyle</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Techniques</div>
+    <a href="#newspaper"><span class="nav-dot" style="background:#f5f0cc"></span>Newspaper + SBAR Method</a>
+    <a href="#planning"><span class="nav-dot" style="background:#dde4ee"></span>Plan in 1 Minute</a>
+    <a href="#hidden"><span class="nav-dot" style="background:#ddeedd"></span>3 Hidden Requirements</a>
+    <a href="#delivery"><span class="nav-dot" style="background:#fadadd"></span>Delivery & Pronunciation</a>
+    <a href="#difficult"><span class="nav-dot" style="background:#ede0f5"></span>Handling Difficult Topics</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Practice</div>
+    <a href="#model"><span class="nav-dot" style="background:#fde8d8"></span>Model Answers</a>
+    <a href="#drills"><span class="nav-dot" style="background:#d6eaf5"></span>Practice Drills</a>
+    <a href="#worksheets"><span class="nav-dot" style="background:#e2daf5"></span>Worksheets</a>
+    <a href="#checklist"><span class="nav-dot" style="background:#d4ede8"></span>Self-Evaluation Checklist</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════ MAIN ═══════════════════════════════ -->
+<main id="main">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-label">IELTS Preparation · Speaking Part 2</div>
+    <h1>Master Your<br>2-Minute Answer</h1>
+    <p>A complete structured reference for building fluent, organised, and natural Part 2 responses — from story structure and vocabulary to model answers and self-study drills.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">4 Story Structures</span>
+      <span class="hero-pill">11 Topic Categories</span>
+      <span class="hero-pill">20 Model Answers</span>
+      <span class="hero-pill">SBAR Method</span>
+      <span class="hero-pill">Practice Drills</span>
+      <span class="hero-pill">Worksheets</span>
+    </div>
+  </div>
+
+  <!-- ─────────────── SECTION 1: WHY ─────────────── -->
+  <section class="section" id="why">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--mint);">📖</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--mint-dark);">Chapter 1</div>
+        <h2 class="section-title">Why Story Structure Matters</h2>
+      </div>
+    </div>
+
+    <div class="card-grid card-grid-3" style="margin-bottom:20px">
+      <div class="card card-accent" style="border-color:var(--mint-dark)">
+        <div class="card-badge" style="background:var(--mint); color:var(--mint-dark)">Fluency</div>
+        <h3>Stay Fluent</h3>
+        <p>A clear structure removes hesitation. When you know what comes next, your speech flows naturally without long pauses or fillers.</p>
+      </div>
+      <div class="card card-accent" style="border-color:var(--lavender-dark)">
+        <div class="card-badge" style="background:var(--lavender); color:var(--lavender-dark)">Organisation</div>
+        <h3>Stay Organised</h3>
+        <p>Structure keeps your ideas logical and easy to follow. The examiner can track your response from beginning to end without confusion.</p>
+      </div>
+      <div class="card card-accent" style="border-color:var(--peach-dark)">
+        <div class="card-badge" style="background:var(--peach); color:var(--peach-dark)">Time</div>
+        <h3>Fill 2 Minutes</h3>
+        <p>A formula gives you layers to expand on — situation, details, feelings, reflection — so you consistently reach the full time without rambling.</p>
+      </div>
+      <div class="card card-accent" style="border-color:var(--sky-dark)">
+        <div class="card-badge" style="background:var(--sky); color:var(--sky-dark)">Naturalness</div>
+        <h3>Sound Natural</h3>
+        <p>Good structure prevents you from memorising scripts. You follow a framework and speak spontaneously within it — exactly what examiners reward.</p>
+      </div>
+      <div class="card card-accent" style="border-color:var(--blush-dark)">
+        <div class="card-badge" style="background:var(--blush); color:var(--blush-dark)">Vocabulary</div>
+        <h3>Show Range</h3>
+        <p>When you're not thinking about what to say next, you can focus on how to say it — choosing richer vocabulary and more varied grammar.</p>
+      </div>
+      <div class="card card-accent" style="border-color:var(--lemon-dark)">
+        <div class="card-badge" style="background:var(--lemon); color:var(--lemon-dark)">Confidence</div>
+        <h3>Speak Confidently</h3>
+        <p>Knowing your structure means you walk into Part 2 with a plan. That confidence comes through in your tone and delivery.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── SECTION 2: 4 STRUCTURES ─────────────── -->
+  <section class="section" id="structures">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--lavender);">🧱</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--lavender-dark);">Chapter 2</div>
+        <h2 class="section-title">The 4 Story Structures</h2>
+      </div>
+    </div>
+
+    <p style="color:var(--text-light); margin-bottom:24px; font-family:'Nunito Sans',sans-serif; max-width:620px;">
+      Choose <strong>one</strong> structure per answer depending on the question type. Each structure is designed to match a specific kind of topic so your story feels natural, not forced.
+    </p>
+
+    <div class="card-grid card-grid-2">
+
+      <!-- SPES -->
+      <div class="structure-card">
+        <div class="structure-header" style="background:var(--mint)">
+          <span class="tag" style="color:var(--mint-dark)">Structure 1</span>
+          <h3>SPES</h3>
+          <p class="best-for"><strong>S</strong>ituation · <strong>P</strong>roblem · <strong>E</strong>ffect · <strong>S</strong>olution</p>
+          <p class="best-for" style="margin-top:6px">Best for: <em>challenges, achievements, difficult situations</em></p>
+        </div>
+        <div class="structure-steps">
+          <div class="step-row">
+            <div class="step-num" style="background:var(--mint); color:var(--mint-dark)">S</div>
+            <div class="step-content">
+              <strong>Situation</strong>
+              <span>Provide background context — when, where, who, what</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num" style="background:var(--mint); color:var(--mint-dark)">P</div>
+            <div class="step-content">
+              <strong>Problem</strong>
+              <span>Describe what went wrong or the central challenge</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num" style="background:var(--mint); color:var(--mint-dark)">E</div>
+            <div class="step-content">
+              <strong>Effect</strong>
+              <span>What happened as a result + how you felt</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num" style="background:var(--mint); color:var(--mint-dark)">S</div>
+            <div class="step-content">
+              <strong>Solution</strong>
+              <span>How you solved it or what you learned from it</span>
+            </div>
+          </div>
+        </div>
+        <div class="structure-example">
+          <strong>Mini Example</strong>
+          "I once helped my cousin finish a school project. The problem was she lost her data. It made her extremely stressed, so I helped her reorganise everything. Luckily, we finished on time."
+        </div>
+      </div>
+
+      <!-- 5W -->
+      <div class="structure-card">
+        <div class="structure-header" style="background:var(--lavender)">
+          <span class="tag" style="color:var(--lavender-dark)">Structure 2</span>
+          <h3>5W + Feeling + Future</h3>
+          <p class="best-for"><strong>Who · What · Where · When · Why · Feeling · Future</strong></p>
+          <p class="best-for" style="margin-top:6px">Best for: <em>simple experiences, daily activities, people, items</em></p>
+        </div>
+        <div class="structure-steps">
+          <div class="step-row">
+            <div class="step-num" style="background:var(--lavender); color:var(--lavender-dark)">5W</div>
+            <div class="step-content">
+              <strong>Who / What / Where / When / Why</strong>
+              <span>Establish all the basic facts of the experience</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num" style="background:var(--lavender); color:var(--lavender-dark)">F</div>
+            <div class="step-content">
+              <strong>Feeling</strong>
+              <span>How did you feel? Be specific — not just "happy" or "good"</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num" style="background:var(--lavender); color:var(--lavender-dark)">F</div>
+            <div class="step-content">
+              <strong>Future</strong>
+              <span>What does this mean for you going forward?</span>
+            </div>
+          </div>
+        </div>
+        <div class="structure-example">
+          <strong>Mini Example</strong>
+          "Last month I met a friendly Japanese tourist at the airport. We talked about food, and it made me feel relaxed. In the future, I'd like to talk to more travellers."
+        </div>
+      </div>
+
+      <!-- PDR -->
+      <div class="structure-card">
+        <div class="structure-header" style="background:var(--peach)">
+          <span class="tag" style="color:var(--peach-dark)">Structure 3</span>
+          <h3>PDR</h3>
+          <p class="best-for"><strong>P</strong>ast · <strong>D</strong>etails · <strong>R</strong>eflection</p>
+          <p class="best-for" style="margin-top:6px">Best for: <em>childhood memories, travel, celebrations, people</em></p>
+        </div>
+        <div class="structure-steps">
+          <div class="step-row">
+            <div class="step-num" style="background:var(--peach); color:var(--peach-dark)">P</div>
+            <div class="step-content">
+              <strong>Past Summary</strong>
+              <span>A brief overview of the memory or experience</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num" style="background:var(--peach); color:var(--peach-dark)">D</div>
+            <div class="step-content">
+              <strong>2–3 Details</strong>
+              <span>Vivid, specific details that bring the memory to life</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num" style="background:var(--peach); color:var(--peach-dark)">R</div>
+            <div class="step-content">
+              <strong>Reflection</strong>
+              <span>Why is it memorable? What did it mean to you?</span>
+            </div>
+          </div>
+        </div>
+        <div class="structure-example">
+          <strong>Mini Example</strong>
+          "When I was a child, I often visited my grandparents' village. I remember the smell of fresh bread and playing outside with my cousins. Looking back, that place shaped my personality."
+        </div>
+      </div>
+
+      <!-- ZOOM -->
+      <div class="structure-card">
+        <div class="structure-header" style="background:var(--sky)">
+          <span class="tag" style="color:var(--sky-dark)">Structure 4</span>
+          <h3>Zoom In – Zoom Out</h3>
+          <p class="best-for"><strong>Overview → Vivid Details → Final Thought</strong></p>
+          <p class="best-for" style="margin-top:6px">Best for: <em>long descriptions, scenery, journeys, events</em></p>
+        </div>
+        <div class="structure-steps">
+          <div class="step-row">
+            <div class="step-num" style="background:var(--sky); color:var(--sky-dark)">↗</div>
+            <div class="step-content">
+              <strong>Zoom Out — Short Overview</strong>
+              <span>Set the scene broadly: who, what, where</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num" style="background:var(--sky); color:var(--sky-dark)">🔍</div>
+            <div class="step-content">
+              <strong>Zoom In — 2–3 Vivid Details</strong>
+              <span>Describe specific sights, sounds, moments, or feelings</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num" style="background:var(--sky); color:var(--sky-dark)">↗</div>
+            <div class="step-content">
+              <strong>Zoom Out — Final Thought</strong>
+              <span>A reflective closing statement on why it matters</span>
+            </div>
+          </div>
+        </div>
+        <div class="structure-example">
+          <strong>Mini Example</strong>
+          "One unforgettable trip was a train ride to the mountains. I saw fields, villages, and misty hills. Thinking about it now, the journey itself was the highlight."
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── SECTION 3: FORMULA ─────────────── -->
+  <section class="section" id="formula">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--peach);">⚗️</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--peach-dark);">Chapter 3</div>
+        <h2 class="section-title">Part 2 Answer Formula</h2>
+      </div>
+    </div>
+
+    <p style="color:var(--text-light); margin-bottom:24px; font-family:'Nunito Sans',sans-serif; max-width:560px;">
+      Every Part 2 answer — regardless of topic — follows the same five-part structure. Use this as your master template.
+    </p>
+
+    <div class="formula-box" style="max-width:640px">
+      <div class="formula-row">
+        <div class="formula-letter" style="background:var(--peach); color:var(--peach-dark)">1</div>
+        <div class="formula-text">
+          <strong>Opening — Paraphrase the Topic</strong>
+          <span>Restate the cue card prompt in your own words. Don't read it directly. This signals you've understood the task.</span>
+        </div>
+      </div>
+      <div class="formula-row">
+        <div class="formula-letter" style="background:var(--lavender); color:var(--lavender-dark)">2</div>
+        <div class="formula-text">
+          <strong>Background — When, Where, Who</strong>
+          <span>Establish the context quickly in 2–3 sentences. This is your "newspaper summary."</span>
+        </div>
+      </div>
+      <div class="formula-row">
+        <div class="formula-letter" style="background:var(--mint); color:var(--mint-dark)">3</div>
+        <div class="formula-text">
+          <strong>Main Story — Use 1 of the 4 Structures</strong>
+          <span>This is the heart of your answer. Choose SPES, 5W+F+F, PDR, or Zoom In–Out based on the topic type.</span>
+        </div>
+      </div>
+      <div class="formula-row">
+        <div class="formula-letter" style="background:var(--sky); color:var(--sky-dark)">4</div>
+        <div class="formula-text">
+          <strong>Extra Detail — A Mini-Problem or Vivid Moment</strong>
+          <span>Add one small challenge or sensory detail. This separates good answers from great ones.</span>
+        </div>
+      </div>
+      <div class="formula-row">
+        <div class="formula-letter" style="background:var(--blush); color:var(--blush-dark)">5</div>
+        <div class="formula-text">
+          <strong>Reflection — What You Learned / Why It Matters</strong>
+          <span>End with a "Golden Ending" line. This is what examiners specifically listen for.</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="sub-divider">
+
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.1rem; margin-bottom:16px;">✨ Golden Endings</h3>
+    <p style="color:var(--text-light); font-size:0.88rem; margin-bottom:14px; font-family:'Nunito Sans',sans-serif;">Use one of these lines to close every answer naturally:</p>
+    <div class="vocab-grid">
+      <span class="vocab-chip">"That's why it's memorable to me."</span>
+      <span class="vocab-chip">"It taught me a simple lesson."</span>
+      <span class="vocab-chip">"It really changed my perspective."</span>
+      <span class="vocab-chip">"I still think about it sometimes."</span>
+    </div>
+  </section>
+
+  <!-- ─────────────── SECTION 4: LAYERING ─────────────── -->
+  <section class="section" id="layering">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--sky);">🔗</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--sky-dark);">Chapter 4</div>
+        <h2 class="section-title">The Layering Technique</h2>
+      </div>
+    </div>
+
+    <p style="color:var(--text-light); margin-bottom:20px; font-family:'Nunito Sans',sans-serif; max-width:560px;">
+      Use this technique to extend any short statement into a full, rich sentence chain. One statement can become five layers — each one adding depth and vocabulary range.
+    </p>
+
+    <div style="background:var(--white); border-radius:var(--border-radius); padding:22px 26px; box-shadow:var(--card-shadow); border:1px solid rgba(0,0,0,0.06); margin-bottom:20px">
+      <div class="layer-chain">
+        <div class="layer-item" style="background:var(--mint); border-radius:8px">
+          <strong style="color:var(--mint-dark)">Statement</strong>
+          <span>Make a simple claim</span>
+        </div>
+        <div class="layer-item" style="background:var(--lavender); border-radius:8px">
+          <strong style="color:var(--lavender-dark)">Reason</strong>
+          <span>Explain why</span>
+        </div>
+        <div class="layer-item" style="background:var(--peach); border-radius:8px">
+          <strong style="color:var(--peach-dark)">Example</strong>
+          <span>Give a specific case</span>
+        </div>
+        <div class="layer-item" style="background:var(--sky); border-radius:8px">
+          <strong style="color:var(--sky-dark)">Feeling</strong>
+          <span>Add emotion</span>
+        </div>
+        <div class="layer-item" style="background:var(--blush); border-radius:8px">
+          <strong style="color:var(--blush-dark)">Reflection</strong>
+          <span>Step back &amp; reflect</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout" style="background:var(--lemon)">
+      <div class="callout-icon">💡</div>
+      <div class="callout-content">
+        <div class="callout-title">Full Example</div>
+        <div class="callout-body">
+          "It was <strong>tiring</strong> [Statement] → because the bus broke down [Reason] → we waited an hour in the heat [Example] → I felt quite annoyed [Feeling] → but I learned to be patient in unexpected situations [Reflection]."
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── SECTION 5: VOCABULARY ─────────────── -->
+  <section class="section" id="vocab">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--blush);">📝</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--blush-dark);">Chapter 5</div>
+        <h2 class="section-title">Narrative Vocabulary</h2>
+      </div>
+    </div>
+
+    <p style="color:var(--text-light); margin-bottom:20px; font-family:'Nunito Sans',sans-serif; max-width:560px;">
+      These words and phrases signal story progression to the examiner. Using 2–3 per answer demonstrates natural, connected speech.
+    </p>
+
+    <div class="vocab-grid">
+      <span class="vocab-chip">At first…</span>
+      <span class="vocab-chip">Eventually…</span>
+      <span class="vocab-chip">A bit later…</span>
+      <span class="vocab-chip">Suddenly…</span>
+      <span class="vocab-chip">To my surprise…</span>
+      <span class="vocab-chip">Looking back…</span>
+      <span class="vocab-chip">What impressed me was…</span>
+      <span class="vocab-chip">One unforgettable moment was…</span>
+      <span class="vocab-chip">I realised that…</span>
+      <span class="vocab-chip">What stood out was…</span>
+      <span class="vocab-chip">Fortunately…</span>
+      <span class="vocab-chip">Despite this…</span>
+      <span class="vocab-chip">As a result…</span>
+      <span class="vocab-chip">In hindsight…</span>
+      <span class="vocab-chip">Without a doubt…</span>
+    </div>
+  </section>
+
+  <!-- ─────────────── SECTION 6: TOPIC MATRIX ─────────────── -->
+
+  <!-- PEOPLE -->
+  <section class="section" id="people">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--mint);">👤</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--mint-dark);">Topic Category 1</div>
+        <h2 class="section-title">People</h2>
+      </div>
+    </div>
+    <p style="color:var(--text-light); margin-bottom:20px; font-family:'Nunito Sans',sans-serif; font-style:italic; font-size:0.9rem;">Describe a person you admire / a family member / a friend / a teacher / someone you recently met…</p>
+
+    <div class="card-grid card-grid-2">
+      <div class="topic-card">
+        <div class="topic-section-label">Required Elements</div>
+        <ul>
+          <li>✔ Identity: who they are / your relationship</li>
+          <li>✔ Appearance or personality (at least 2 traits)</li>
+          <li>✔ Actions / behaviours that show their character</li>
+          <li>✔ Why they are memorable</li>
+          <li>✔ Effect on you (lesson, impact, emotion)</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Best Structures</div>
+        <span class="structure-pill">5W + Feeling + Future</span>
+        <span class="structure-pill">PDR</span>
+        <span class="structure-pill">Zoom In – Zoom Out</span>
+      </div>
+      <div class="topic-card">
+        <div class="topic-section-label">Common Mistakes to Avoid</div>
+        <ul>
+          <li class="mistake-li">✗ Listing adjectives without proof or examples</li>
+          <li class="mistake-li">✗ Over-complimenting in a way that sounds unnatural</li>
+          <li class="mistake-li">✗ Sounding like a biography with no personal connection</li>
+          <li class="mistake-li">✗ Forgetting the impact on you — this is crucial</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Trait → Example Drill</div>
+        <ul>
+          <li>Responsible → <em>Give a real example of them being responsible</em></li>
+          <li>Patient → <em>Show, don't tell</em></li>
+          <li>Creative → <em>Describe a specific creative action they took</em></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLACES -->
+  <section class="section" id="places">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--lavender);">📍</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--lavender-dark);">Topic Category 2</div>
+        <h2 class="section-title">Places</h2>
+      </div>
+    </div>
+    <p style="color:var(--text-light); margin-bottom:20px; font-family:'Nunito Sans',sans-serif; font-style:italic; font-size:0.9rem;">Describe a café / park / building / place you visited / favourite area…</p>
+
+    <div class="card-grid card-grid-2">
+      <div class="topic-card">
+        <div class="topic-section-label">Required Elements</div>
+        <ul>
+          <li>✔ Location + purpose of visit</li>
+          <li>✔ Physical features (2–3 specific details)</li>
+          <li>✔ Atmosphere — quiet, lively, relaxing…</li>
+          <li>✔ Reason you visited</li>
+          <li>✔ Why it's meaningful or memorable to you</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Best Structures</div>
+        <span class="structure-pill">Zoom Out – Zoom In – Zoom Out</span>
+        <span class="structure-pill">5W + Sensory Detail</span>
+        <span class="structure-pill">PDR (for childhood places)</span>
+        <div class="topic-section-label" style="margin-top:14px">Sensory Detail Prompts</div>
+        <ul>
+          <li>Visual: <em>What did it look like?</em></li>
+          <li>Sound: <em>What did you hear?</em></li>
+          <li>Smell: <em>What did you smell?</em></li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-section-label">Common Mistakes to Avoid</div>
+        <ul>
+          <li class="mistake-li">✗ Only describing appearance — missing the emotion</li>
+          <li class="mistake-li">✗ Too many adjectives, not enough specific examples</li>
+          <li class="mistake-li">✗ No "why it matters to you" — always include personal connection</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Zoom In – Zoom Out Template</div>
+        <ul>
+          <li><strong>Overview:</strong> General scene, location, purpose</li>
+          <li><strong>Detail 1:</strong> One specific visual or sound</li>
+          <li><strong>Detail 2:</strong> A personal moment that happened there</li>
+          <li><strong>Final thought:</strong> Why it stays in your memory</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBJECTS -->
+  <section class="section" id="objects">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--peach);">🎁</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--peach-dark);">Topic Category 3</div>
+        <h2 class="section-title">Objects / Items</h2>
+      </div>
+    </div>
+    <p style="color:var(--text-light); margin-bottom:20px; font-family:'Nunito Sans',sans-serif; font-style:italic; font-size:0.9rem;">Describe a useful object / something you use often / a gift / an item you lost…</p>
+
+    <div class="card-grid card-grid-2">
+      <div class="topic-card">
+        <div class="topic-section-label">Required Elements</div>
+        <ul>
+          <li>✔ What the object is and what it's used for</li>
+          <li>✔ Where you got it / when you received it</li>
+          <li>✔ Why it is useful or meaningful to you</li>
+          <li>✔ How it helps your daily life specifically</li>
+          <li>✔ A specific example of how you've used it</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Best Structures</div>
+        <span class="structure-pill">5W + Feeling</span>
+        <span class="structure-pill">PDR</span>
+        <span class="structure-pill">SPES (if it solved a problem)</span>
+        <div class="topic-section-label" style="margin-top:14px">Categories</div>
+        <ul>
+          <li>Useful gadget · Gift · Daily item · Something lost · Sentimental item</li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-section-label">Common Mistakes to Avoid</div>
+        <ul>
+          <li class="mistake-li">✗ Describing the object like a product review — no feelings</li>
+          <li class="mistake-li">✗ No personal connection to the item</li>
+          <li class="mistake-li">✗ Ignoring usage examples — always show, not just tell</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Function & Use Drill</div>
+        <ul>
+          <li>"This object is used for…"</li>
+          <li>"I usually use it when…"</li>
+          <li>"It helps me because…"</li>
+          <li>"Without it, I would…"</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="section" id="events">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--sky);">🎉</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--sky-dark);">Topic Category 4</div>
+        <h2 class="section-title">Events</h2>
+      </div>
+    </div>
+    <p style="color:var(--text-light); margin-bottom:20px; font-family:'Nunito Sans',sans-serif; font-style:italic; font-size:0.9rem;">Describe a celebration / festival / special day / meeting / appointment / concert…</p>
+
+    <div class="card-grid card-grid-2">
+      <div class="topic-card">
+        <div class="topic-section-label">Required Elements</div>
+        <ul>
+          <li>✔ When and where the event took place</li>
+          <li>✔ Who was involved</li>
+          <li>✔ What happened — with a clear sequence</li>
+          <li>✔ A highlight or most memorable moment</li>
+          <li>✔ Why it is meaningful to you</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Best Structures</div>
+        <span class="structure-pill">SPES (if there's a challenge)</span>
+        <span class="structure-pill">Zoom In – Zoom Out</span>
+        <span class="structure-pill">PDR</span>
+        <div class="topic-section-label" style="margin-top:14px">Event Timeline Template</div>
+        <ul>
+          <li><strong>Before:</strong> Setting expectations</li>
+          <li><strong>Main moment:</strong> The highlight</li>
+          <li><strong>Unexpected:</strong> Something that surprised you</li>
+          <li><strong>Ending:</strong> How it concluded</li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-section-label">Common Mistakes to Avoid</div>
+        <ul>
+          <li class="mistake-li">✗ Listing activities without narrative flow or connection</li>
+          <li class="mistake-li">✗ No turning point or memorable moment</li>
+          <li class="mistake-li">✗ No conclusion or reflection at the end</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Event Types</div>
+        <ul>
+          <li>Festival · Ceremony · Meeting · Concert · Special day · Competition</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVITIES -->
+  <section class="section" id="activities">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--blush);">🎯</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--blush-dark);">Topic Category 5</div>
+        <h2 class="section-title">Activities / Hobbies</h2>
+      </div>
+    </div>
+    <p style="color:var(--text-light); margin-bottom:20px; font-family:'Nunito Sans',sans-serif; font-style:italic; font-size:0.9rem;">Describe a hobby / something you enjoy / an activity you do…</p>
+
+    <div class="card-grid card-grid-2">
+      <div class="topic-card">
+        <div class="topic-section-label">Required Elements</div>
+        <ul>
+          <li>✔ What the activity is</li>
+          <li>✔ How often you do it</li>
+          <li>✔ Why you started it</li>
+          <li>✔ What you gain from it</li>
+          <li>✔ A memorable moment while doing it</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Best Structures</div>
+        <span class="structure-pill">5W + Feeling + Future</span>
+        <span class="structure-pill">PDR</span>
+        <span class="structure-pill">Zoom Out – Zoom In</span>
+      </div>
+      <div class="topic-card">
+        <div class="topic-section-label">Common Mistakes to Avoid</div>
+        <ul>
+          <li class="mistake-li">✗ Only explaining "what" — not "why" you enjoy it</li>
+          <li class="mistake-li">✗ No emotional connection to the activity</li>
+          <li class="mistake-li">✗ No specific example from a real situation</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">5W Planning</div>
+        <ul>
+          <li><strong>What:</strong> Name of the activity</li>
+          <li><strong>When:</strong> How often / what time of day</li>
+          <li><strong>Why started:</strong> What prompted you</li>
+          <li><strong>How often:</strong> Frequency</li>
+          <li><strong>Why enjoyable:</strong> The core reason</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCES -->
+  <section class="section" id="experiences">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--lemon);">✨</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--lemon-dark);">Topic Category 6</div>
+        <h2 class="section-title">Experiences</h2>
+      </div>
+    </div>
+    <p style="color:var(--text-light); margin-bottom:20px; font-family:'Nunito Sans',sans-serif; font-style:italic; font-size:0.9rem;">Describe a memorable trip / something exciting / something that surprised you…</p>
+
+    <div class="card-grid card-grid-2">
+      <div class="topic-card">
+        <div class="topic-section-label">Required Elements</div>
+        <ul>
+          <li>✔ Background context</li>
+          <li>✔ The main event (clear and specific)</li>
+          <li>✔ A specific detail that stands out</li>
+          <li>✔ Your personal reaction</li>
+          <li>✔ Why it is unforgettable</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Best Structures</div>
+        <span class="structure-pill">SPES</span>
+        <span class="structure-pill">PDR</span>
+        <span class="structure-pill">Zoom In – Zoom Out</span>
+        <div class="topic-section-label" style="margin-top:14px">Experience Types</div>
+        <ul>
+          <li>Exciting · Surprising · Funny · Stressful · Unforgettable</li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-section-label">Common Mistakes to Avoid</div>
+        <ul>
+          <li class="mistake-li">✗ No feelings mentioned — feelings are essential</li>
+          <li class="mistake-li">✗ Too general ("It was fun") — be specific</li>
+          <li class="mistake-li">✗ No narrative detail — tell a story, not a summary</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Detail Expansion Drill</div>
+        <ul>
+          <li>"One moment I remember clearly is…"</li>
+          <li>"A detail that stands out is…"</li>
+          <li>"What I didn't expect was…"</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="section" id="achievements">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--sage);">🏆</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--sage-dark);">Topic Category 7</div>
+        <h2 class="section-title">Achievements / Difficult Tasks</h2>
+      </div>
+    </div>
+    <p style="color:var(--text-light); margin-bottom:20px; font-family:'Nunito Sans',sans-serif; font-style:italic; font-size:0.9rem;">Describe something you are proud of / a challenge you overcame / a difficult task…</p>
+
+    <div class="card-grid card-grid-2">
+      <div class="topic-card">
+        <div class="topic-section-label">Required Elements</div>
+        <ul>
+          <li>✔ Situation — the context</li>
+          <li>✔ Obstacles — VERY important, this is the heart of the answer</li>
+          <li>✔ What you did to overcome the challenge</li>
+          <li>✔ Outcome — what happened</li>
+          <li>✔ Lesson learned</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Best Structure</div>
+        <span class="structure-pill" style="background:var(--sage); color:var(--sage-dark)">⭐ SPES — Best for problem–solution stories</span>
+      </div>
+      <div class="topic-card">
+        <div class="topic-section-label">Common Mistakes to Avoid</div>
+        <ul>
+          <li class="mistake-li">✗ Not mentioning the difficulty clearly enough</li>
+          <li class="mistake-li">✗ Only explaining what happened — not your specific actions</li>
+          <li class="mistake-li">✗ Over-exaggerating the achievement</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Lesson Learned Starters</div>
+        <ul>
+          <li>"This experience taught me that…"</li>
+          <li>"I learned that I should…"</li>
+          <li>"It showed me that persistence…"</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHANGES -->
+  <section class="section" id="changes">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--lilac);">🔄</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--lilac-dark);">Topic Category 8</div>
+        <h2 class="section-title">Changes / Personal Growth</h2>
+      </div>
+    </div>
+    <p style="color:var(--text-light); margin-bottom:20px; font-family:'Nunito Sans',sans-serif; font-style:italic; font-size:0.9rem;">Describe a change in your life / a new habit / something that improved your life…</p>
+
+    <div class="card-grid card-grid-2">
+      <div class="topic-card">
+        <div class="topic-section-label">Required Elements</div>
+        <ul>
+          <li>✔ Before — what your life was like previously</li>
+          <li>✔ Cause of change — what triggered it</li>
+          <li>✔ What changed specifically</li>
+          <li>✔ Benefits — how it improved things</li>
+          <li>✔ Future impact — what it means going forward</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Best Structures</div>
+        <span class="structure-pill">PDR</span>
+        <span class="structure-pill">5W + Future</span>
+        <span class="structure-pill">SPES (if change solved a problem)</span>
+        <div class="topic-section-label" style="margin-top:14px">Change Types</div>
+        <ul>
+          <li>Habit · Lifestyle · Routine · Mindset · Skill</li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-section-label">Common Mistakes to Avoid</div>
+        <ul>
+          <li class="mistake-li">✗ Only talking about the "after" — always include the "before"</li>
+          <li class="mistake-li">✗ No cause given — explain what triggered the change</li>
+          <li class="mistake-li">✗ No contrast between before and after</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Before → After Template</div>
+        <ul>
+          <li><strong>Before:</strong> "Previously, I used to…"</li>
+          <li><strong>Trigger:</strong> "I decided to change when…"</li>
+          <li><strong>After:</strong> "Now I…"</li>
+          <li><strong>Benefit:</strong> "This has helped me…"</li>
+          <li><strong>Future:</strong> "This change will affect me because…"</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMS -->
+  <section class="section" id="problems">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--coral);">⚠️</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--coral-dark);">Topic Category 9</div>
+        <h2 class="section-title">Problems / Mistakes</h2>
+      </div>
+    </div>
+    <p style="color:var(--text-light); margin-bottom:20px; font-family:'Nunito Sans',sans-serif; font-style:italic; font-size:0.9rem;">Describe a mistake / a difficult decision / a time something went wrong…</p>
+
+    <div class="card-grid card-grid-2">
+      <div class="topic-card">
+        <div class="topic-section-label">Required Elements</div>
+        <ul>
+          <li>✔ Situation — the background</li>
+          <li>✔ Problem — clearly explained</li>
+          <li>✔ Your response — what you did about it</li>
+          <li>✔ Outcome — what happened as a result</li>
+          <li>✔ Reflection — what you learned</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Best Structure</div>
+        <span class="structure-pill" style="background:var(--coral); color:var(--coral-dark)">⭐ SPES — always use for problems</span>
+        <div class="topic-section-label" style="margin-top:14px">Safe Problem Types</div>
+        <ul>
+          <li>Minor mistake · Slight disappointment · Mild problem · Misunderstanding · Poor decision</li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-section-label">Common Mistakes to Avoid</div>
+        <ul>
+          <li class="mistake-li">✗ Making the problem too dramatic or traumatic</li>
+          <li class="mistake-li">✗ Too emotional — keep problems mild and IELTS-safe</li>
+          <li class="mistake-li">✗ No resolution — always end with a solution or lesson</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Safe Language Practice</div>
+        <ul>
+          <li>"I was devastated" → <em>"I felt quite disappointed"</em></li>
+          <li>"We had a huge fight" → <em>"We had a slight disagreement"</em></li>
+          <li>"It was traumatic" → <em>"It was a bit challenging at first"</em></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEDIA -->
+  <section class="section" id="media">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--steel);">🎬</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--steel-dark);">Topic Category 10</div>
+        <h2 class="section-title">Media — Books, Films, Songs, TV</h2>
+      </div>
+    </div>
+    <p style="color:var(--text-light); margin-bottom:20px; font-family:'Nunito Sans',sans-serif; font-style:italic; font-size:0.9rem;">Describe a book / movie / TV programme / advertisement you like…</p>
+
+    <div class="card-grid card-grid-2">
+      <div class="topic-card">
+        <div class="topic-section-label">Required Elements</div>
+        <ul>
+          <li>✔ Name + type of media</li>
+          <li>✔ What it is about — brief summary</li>
+          <li>✔ Why you like it</li>
+          <li>✔ A favourite moment or idea from it</li>
+          <li>✔ What you learned or how it affected you</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Best Structures</div>
+        <span class="structure-pill">5W + Feeling</span>
+        <span class="structure-pill">Zoom Out – Zoom In</span>
+        <div class="topic-section-label" style="margin-top:14px">3-Part Summary</div>
+        <ul>
+          <li><strong>Summary:</strong> 1–2 sentence overview of what it's about</li>
+          <li><strong>Favourite moment:</strong> A specific scene or idea</li>
+          <li><strong>Impact:</strong> How it affected you</li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-section-label">Common Mistakes to Avoid</div>
+        <ul>
+          <li class="mistake-li">✗ Telling the entire plot — summarise, don't retell</li>
+          <li class="mistake-li">✗ Too many spoilers</li>
+          <li class="mistake-li">✗ Forgetting your personal reaction to it</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Vocabulary Boost</div>
+        <ul>
+          <li>Meaningful → <em>significant, impactful, moving</em></li>
+          <li>Impressive → <em>remarkable, compelling, striking</em></li>
+          <li>Memorable → <em>unforgettable, vivid, lasting</em></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIFESTYLE -->
+  <section class="section" id="lifestyle">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--rose);">🍽️</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--rose-dark);">Topic Category 11</div>
+        <h2 class="section-title">Lifestyle — Food, Travel, Routines</h2>
+      </div>
+    </div>
+    <p style="color:var(--text-light); margin-bottom:20px; font-family:'Nunito Sans',sans-serif; font-style:italic; font-size:0.9rem;">Describe a trip you enjoyed / a routine you have / a restaurant…</p>
+
+    <div class="card-grid card-grid-2">
+      <div class="topic-card">
+        <div class="topic-section-label">Required Elements</div>
+        <ul>
+          <li>✔ Context — what, where, when</li>
+          <li>✔ What you do there or during the routine</li>
+          <li>✔ Why you enjoy it</li>
+          <li>✔ A linked story or incident</li>
+          <li>✔ Why it matters to you personally</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Best Structures</div>
+        <span class="structure-pill">5W + Feeling</span>
+        <span class="structure-pill">Zoom In – Zoom Out</span>
+        <span class="structure-pill">PDR</span>
+        <div class="topic-section-label" style="margin-top:14px">Topic Areas</div>
+        <ul>
+          <li>Daily routine · Trip · Restaurant · Study habit · Work habit</li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-section-label">Common Mistakes to Avoid</div>
+        <ul>
+          <li class="mistake-li">✗ Only describing habits with no story attached</li>
+          <li class="mistake-li">✗ No personal connection — always say why it matters</li>
+          <li class="mistake-li">✗ No reason for why it's meaningful in your life</li>
+        </ul>
+        <div class="topic-section-label" style="margin-top:14px">Linked Story Prompt</div>
+        <ul>
+          <li>"One time when I was there / doing this…"</li>
+          <li>"I remember once when…"</li>
+          <li>"A moment that stands out is…"</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── HIDDEN REQUIREMENTS ─────────────── -->
+  <section class="section" id="hidden">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--sage);">🔍</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--sage-dark);">Super Summary</div>
+        <h2 class="section-title">The 3 Hidden Requirements</h2>
+      </div>
+    </div>
+
+    <p style="color:var(--text-light); margin-bottom:22px; font-family:'Nunito Sans',sans-serif; max-width:560px;">
+      No matter what the topic type is, examiners always expect these three things. If any are missing, the score drops.
+    </p>
+
+    <div class="req-grid">
+      <div class="req-item">
+        <span class="req-num" style="color:var(--mint-dark)">1</span>
+        <h4>Clear Narrative Line</h4>
+        <p>Beginning → Middle → End. Your answer must feel like a complete story, not a list of facts.</p>
+      </div>
+      <div class="req-item">
+        <span class="req-num" style="color:var(--lavender-dark)">2</span>
+        <h4>Personal Response</h4>
+        <p>Feelings, opinions, and reactions. The examiner needs to hear <em>you</em>, not just what happened.</p>
+      </div>
+      <div class="req-item">
+        <span class="req-num" style="color:var(--peach-dark)">3</span>
+        <h4>Reflection</h4>
+        <p>Why is this important to you? Every answer must have a clear "so what" — your takeaway or lesson.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── NEWSPAPER + SBAR ─────────────── -->
+  <section class="section" id="newspaper">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--lemon);">📰</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--lemon-dark);">Advanced Technique</div>
+        <h2 class="section-title">The Newspaper Method + SBAR</h2>
+      </div>
+    </div>
+
+    <p style="color:var(--text-light); margin-bottom:26px; font-family:'Nunito Sans',sans-serif; max-width:580px;">
+      Combine the Newspaper Method (for your introduction) with the SBAR storytelling framework (for your main story). Together, they always give you a 1:45–2:00 minute answer.
+    </p>
+
+    <div class="callout" style="background:var(--lemon); margin-bottom:26px">
+      <div class="callout-icon">⭐</div>
+      <div class="callout-content">
+        <div class="callout-title">The Master Formula</div>
+        <div class="callout-body">Headline → Summary → Setup → Build-Up → Action (3 details) → Reflection</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.1rem; margin-bottom:14px; color:var(--lemon-dark)">Part 1 — The Newspaper Method (Introduction)</h3>
+
+    <div class="card-grid card-grid-3" style="margin-bottom:28px">
+      <div class="card">
+        <div class="card-badge" style="background:var(--lemon); color:var(--lemon-dark)">Step 1</div>
+        <h3>Headline</h3>
+        <p>One clear sentence showing exactly what you'll talk about.</p>
+        <div class="quote-box" style="border-color:var(--lemon-dark); background:var(--lemon); margin-top:10px">
+          "Today I'd like to describe a memorable trip I took last year."
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-badge" style="background:var(--lemon); color:var(--lemon-dark)">Step 2</div>
+        <h3>Summary</h3>
+        <p>One sentence covering the basics: when, where, who.</p>
+        <div class="quote-box" style="border-color:var(--lemon-dark); background:var(--lemon); margin-top:10px">
+          "It happened last summer when I travelled to a small town with a close friend."
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-badge" style="background:var(--lemon); color:var(--lemon-dark)">Step 3</div>
+        <h3>Main Story</h3>
+        <p>This is where SBAR takes over. The Newspaper intro takes only 5–10 seconds.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.1rem; margin-bottom:14px; color:var(--lemon-dark)">Part 2 — The SBAR Framework (Your Story)</h3>
+
+    <div class="sbar-full">
+      <div class="sbar-row">
+        <div class="sbar-label" style="background:var(--mint); color:var(--mint-dark)">S</div>
+        <div class="sbar-content">
+          <h4>Setup — Follow this exact order: When → Where → Who → What</h4>
+          <p>Establish all the context before anything else. This anchors the examiner in your story.</p>
+          <em>"It was around June last year, in the northern part of the country, and I was travelling with my friend. We had planned a short weekend trip."</em>
+        </div>
+      </div>
+      <div class="sbar-row">
+        <div class="sbar-label" style="background:var(--lavender); color:var(--lavender-dark)">B</div>
+        <div class="sbar-content">
+          <h4>Build-Up — The inciting incident: how the story began</h4>
+          <p>Tell the examiner what made the situation interesting or different. Choose one trigger: surprise, problem, change, weather, delay, or mistake.</p>
+          <em>"The trip became memorable when the scenery changed dramatically as the train left the city."</em>
+        </div>
+      </div>
+      <div class="sbar-row">
+        <div class="sbar-label" style="background:var(--peach); color:var(--peach-dark)">A</div>
+        <div class="sbar-content">
+          <h4>Action — Exactly 3 clear details, like camera shots in a film</h4>
+          <p>Each detail should be a small, vivid moment. Don't rush through them — they're the heart of your answer.</p>
+          <em>① "The fields and rivers looked beautiful from the window." ② "A local vendor came on board selling homemade snacks." ③ "My friend and I had a deep conversation about our goals."</em>
+        </div>
+      </div>
+      <div class="sbar-row">
+        <div class="sbar-label" style="background:var(--sky); color:var(--sky-dark)">R</div>
+        <div class="sbar-content">
+          <h4>Reflection — Why it was memorable or meaningful</h4>
+          <p>Examiners love this part because it completes the story with personal insight. This is what separates Band 6 from Band 7+.</p>
+          <em>"It was memorable because it helped me slow down and appreciate peaceful moments during travel."</em>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── PLANNING IN 1 MINUTE ─────────────── -->
+  <section class="section" id="planning">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--steel);">⏱️</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--steel-dark);">Strategy</div>
+        <h2 class="section-title">Plan Your Answer in 1 Minute</h2>
+      </div>
+    </div>
+
+    <p style="color:var(--text-light); margin-bottom:6px; font-family:'Nunito Sans',sans-serif; max-width:580px;">
+      Your goal is <strong>NOT</strong> to write sentences. Your goal is to write <strong>8–12 keywords</strong> that help you speak confidently for 2 minutes.
+    </p>
+
+    <div class="callout" style="background:var(--steel); margin:18px 0 24px">
+      <div class="callout-icon">💡</div>
+      <div class="callout-content">
+        <div class="callout-title">The Note-Taking Strategy</div>
+        <div class="callout-body">Write the skeleton, the triggers, and the memory anchors. The story comes naturally when you start speaking.</div>
+      </div>
+    </div>
+
+    <div class="card-grid card-grid-2">
+      <div class="card">
+        <div class="card-badge" style="background:var(--steel); color:var(--steel-dark)">Newspaper Notes</div>
+        <h3>Intro Keywords</h3>
+        <p style="margin-bottom:10px"><strong>Headline:</strong> 1 word — the topic (e.g., "Trip", "Gift", "Friend")</p>
+        <p><strong>Summary:</strong> 3 words — WHEN / WHERE / WHO<br><em>e.g., "last yr / beach / cousin"</em></p>
+      </div>
+      <div class="card">
+        <div class="card-badge" style="background:var(--steel); color:var(--steel-dark)">SBAR Notes</div>
+        <h3>Story Keywords</h3>
+        <ul>
+          <li><strong>S:</strong> 4 keywords — When / Where / Who / What</li>
+          <li><strong>B:</strong> 1 keyword — the trigger (e.g., "delay", "surprise")</li>
+          <li><strong>A:</strong> 3 keywords — three vivid details</li>
+          <li><strong>R:</strong> 1 keyword — your reflection (e.g., "lesson", "calm")</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="sub-divider">
+
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.05rem; margin-bottom:14px;">Example — Planning a "Trip" Answer</h3>
+    <div class="card-grid card-grid-2">
+      <div style="background:var(--white); border-radius:10px; padding:18px 20px; box-shadow:var(--card-shadow); border:1px solid rgba(0,0,0,0.06)">
+        <div style="font-size:0.72rem; font-family:'Nunito',sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-light); margin-bottom:10px">Your Notes (Keywords Only)</div>
+        <div style="font-family:'Nunito Sans',sans-serif; font-size:0.85rem; line-height:2; color:var(--text)">
+          <strong>Headline:</strong> Trip<br>
+          <strong>Summary:</strong> last summer / mountains / friend<br>
+          <strong>S:</strong> June / north / friend / weekend trip<br>
+          <strong>B:</strong> scenery change<br>
+          <strong>A:</strong> fields + river / vendor / deep chat<br>
+          <strong>R:</strong> slow down
+        </div>
+      </div>
+      <div style="background:var(--white); border-radius:10px; padding:18px 20px; box-shadow:var(--card-shadow); border:1px solid rgba(0,0,0,0.06)">
+        <div style="font-size:0.72rem; font-family:'Nunito',sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-light); margin-bottom:10px">Checklist</div>
+        <ul style="font-size:0.83rem; font-family:'Nunito Sans',sans-serif; padding-left:16px; line-height:1.9; color:var(--text-light)">
+          <li>☐ Clear headline written?</li>
+          <li>☐ When / Where / Who in 3 words?</li>
+          <li>☐ Setup follows When → Where → Who → What?</li>
+          <li>☐ One simple trigger for Build-Up?</li>
+          <li>☐ Exactly 3 action details?</li>
+          <li>☐ One reflection keyword?</li>
+          <li>☐ Total: 8–12 keywords only?</li>
+          <li>☐ Done in under 60 seconds?</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── DELIVERY ─────────────── -->
+  <section class="section" id="delivery">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--blush);">🎙️</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--blush-dark);">Performance</div>
+        <h2 class="section-title">Delivery Notes</h2>
+      </div>
+    </div>
+
+    <p style="color:var(--text-light); margin-bottom:22px; font-family:'Nunito Sans',sans-serif; max-width:560px;">Pronunciation and fluency are separate from content. A great story delivered poorly still costs marks. Follow these principles.</p>
+
+    <div class="delivery-grid">
+      <div class="delivery-item">
+        <div class="delivery-icon">⏸️</div>
+        <strong>Pause Naturally</strong>
+        <span>Pauses at transitions sound confident, not hesitant. Don't fill them with "um" or "uh."</span>
+      </div>
+      <div class="delivery-item">
+        <div class="delivery-icon">🎯</div>
+        <strong>Emphasise Key Words</strong>
+        <span>Stress the important words in each sentence to guide the examiner's attention.</span>
+      </div>
+      <div class="delivery-item">
+        <div class="delivery-icon">🐢</div>
+        <strong>Slow Down at Transitions</strong>
+        <span>When moving from one part to the next, slow your pace slightly to signal the shift.</span>
+      </div>
+      <div class="delivery-item">
+        <div class="delivery-icon">🚫</div>
+        <strong>Don't Memorise</strong>
+        <span>A memorised answer sounds robotic. Speak from keywords, not from a script.</span>
+      </div>
+      <div class="delivery-item">
+        <div class="delivery-icon">😌</div>
+        <strong>Sound Relaxed</strong>
+        <span>Confidence in tone is rewarded. Breathe before you start, then speak as if telling a friend.</span>
+      </div>
+      <div class="delivery-item">
+        <div class="delivery-icon">✅</div>
+        <strong>Sound Natural</strong>
+        <span>Aim for a conversational register — not overly formal, not too casual.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── DIFFICULT TOPICS ─────────────── -->
+  <section class="section" id="difficult">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--lilac);">🛡️</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--lilac-dark);">Safety</div>
+        <h2 class="section-title">Handling Difficult or Personal Topics</h2>
+      </div>
+    </div>
+
+    <p style="color:var(--text-light); margin-bottom:20px; font-family:'Nunito Sans',sans-serif; max-width:560px;">Sometimes a cue card feels too personal or asks about something you haven't experienced. These lines give you a graceful way to redirect.</p>
+
+    <div class="card-grid card-grid-3" style="margin-bottom:24px">
+      <div class="tip-box" style="background:var(--lilac)">
+        <h4 style="color:var(--lilac-dark)">Too Personal</h4>
+        <p>"I'd prefer not to talk about something too personal, so I'll describe a similar situation."</p>
+      </div>
+      <div class="tip-box" style="background:var(--lilac)">
+        <h4 style="color:var(--lilac-dark)">Haven't Experienced It</h4>
+        <p>"I haven't experienced this exactly, but I can imagine a scenario that relates to it."</p>
+      </div>
+      <div class="tip-box" style="background:var(--lilac)">
+        <h4 style="color:var(--lilac-dark)">Sensitive Topic</h4>
+        <p>"Let me talk about something mild that happened to me that relates to this."</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.05rem; margin-bottom:14px;">Believable, Safe Story Checklist</h3>
+    <div class="safe-grid">
+      <div class="safe-item"><span class="safe-check">✅</span><span class="safe-text">Keep the story small and relatable</span></div>
+      <div class="safe-item"><span class="safe-check">✅</span><span class="safe-text">Add 1–2 sensory details</span></div>
+      <div class="safe-item"><span class="safe-check">✅</span><span class="safe-text">Add a mild problem (optional)</span></div>
+      <div class="safe-item"><span class="safe-check">✅</span><span class="safe-text">Use a simple, clear timeline</span></div>
+      <div class="safe-item"><span class="safe-check">✅</span><span class="safe-text">Avoid sensitive, political, traumatic topics</span></div>
+      <div class="safe-item"><span class="safe-check">✅</span><span class="safe-text">Always end with reflection</span></div>
+    </div>
+  </section>
+
+  <!-- ─────────────── MODEL ANSWERS ─────────────── -->
+  <section class="section" id="model">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--peach);">📄</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--peach-dark);">Reference</div>
+        <h2 class="section-title">Model Answers</h2>
+      </div>
+    </div>
+    <p style="color:var(--text-light); margin-bottom:28px; font-family:'Nunito Sans',sans-serif; max-width:560px;">
+      20 full-length model answers across all topic categories. Study these to understand how structure, detail, and reflection work together.
+    </p>
+
+    <!-- PEOPLE -->
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.15rem; margin-bottom:16px; padding-bottom:8px; border-bottom:2px solid var(--mint);">👤 People</h3>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--mint)">
+        <div>
+          <h3>A Person Who Influenced You</h3>
+          <div class="answer-cue">Cue Card 1 — Describe a person who has influenced your life: who they are, how you know them, what they did, and why their influence matters.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--mint-mid); color:var(--mint-dark)">PDR</span>
+      </div>
+      <div class="answer-body">
+        I'd like to talk about my high-school English teacher, Ms. Santos, who had a significant influence on my attitude toward learning.<br><br>
+        In the past, I was actually quite shy and rarely volunteered to speak in class, especially in English. She noticed this and encouraged me slowly, in a very patient and gentle way.<br><br>
+        One detail I remember clearly is that she never corrected students harshly. Instead, she would repeat our sentences in a more natural way, so it felt like a friendly suggestion rather than a mistake. Another detail that stands out is how she used stories, music, and short films to make lessons feel like something to look forward to, rather than something to fear.<br><br>
+        Looking back, her influence matters to me because it helped me become more confident expressing myself. Without her support, I don't think I would have developed the courage to study languages seriously or pursue opportunities where communication plays a major role. Even today, I still apply the things she taught me about confidence, patience, and empathy.
+      </div>
+    </div>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--mint)">
+        <div>
+          <h3>A Person You Recently Met</h3>
+          <div class="answer-cue">Cue Card 2 — Describe someone you met recently and found interesting: who, where, what you talked about, and why they were interesting.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--mint-mid); color:var(--mint-dark)">5W + Future</span>
+      </div>
+      <div class="answer-body">
+        A few months ago, I met a Japanese software engineer named Kenta during a long layover at an airport lounge. We happened to sit at the same table, and since we both looked tired and bored, we started a casual conversation.<br><br>
+        We talked about travel, food, and eventually technology, which is his field. He explained, in a very simple way, how artificial intelligence is being used to make daily life more convenient in Japan, especially in customer service. What impressed me was that he didn't speak like a typical engineer — he used everyday examples, like convenience store checkout systems and home appliances, which made the topic surprisingly easy to understand.<br><br>
+        I felt comfortable talking to him because he was humble, friendly, and genuinely curious about my culture as well. In the future, I'd love to visit Japan and maybe even meet him again, because conversations like that remind me how much we can learn from strangers if we're open enough to talk.
+      </div>
+    </div>
+
+    <!-- PLACES -->
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.15rem; margin-bottom:16px; margin-top:28px; padding-bottom:8px; border-bottom:2px solid var(--lavender);">📍 Places</h3>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--lavender)">
+        <div>
+          <h3>A Quiet Place You Enjoy</h3>
+          <div class="answer-cue">Cue Card 3 — Describe a quiet place you enjoy visiting: where it is, how you found it, what you do there, and why you enjoy it.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--lavender-mid); color:var(--lavender-dark)">Zoom</span>
+      </div>
+      <div class="answer-body">
+        One quiet place I really enjoy visiting is a small riverside park about fifteen minutes from my home. It's not very well-known, so it never gets crowded. I discovered it accidentally while jogging in my neighbourhood during the pandemic.<br><br>
+        When you arrive, the first thing you notice is the sound of flowing water. There are a few wooden benches facing the river, and tall trees that create a natural canopy. I often sit there with a cup of coffee, read a book, or simply watch the water moving slowly. One small detail I love is how the sunlight reflects on the river in the late afternoon — it creates this warm, golden glow that feels incredibly peaceful.<br><br>
+        Whenever I spend time there, I feel refreshed and mentally lighter. Thinking about it now, I realise I enjoy this place because it gives me a chance to disconnect from noise, messages, and responsibilities. It acts like a mini-retreat right in the city, and that's why it has become one of my favourite spots.
+      </div>
+    </div>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--lavender)">
+        <div>
+          <h3>A Place That Left a Strong Impression</h3>
+          <div class="answer-cue">Cue Card 4 — Describe a place you visited that left a strong impression on you: where it was, when, what it looked like, and why it impressed you.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--lavender-mid); color:var(--lavender-dark)">Zoom</span>
+      </div>
+      <div class="answer-body">
+        A few years ago, I visited an old European-style library during a work trip, and it left a strong impression on me. From the outside, it looked like an ordinary historical building, but once you stepped inside, the atmosphere completely changed.<br><br>
+        The main hall had extremely high ceilings, tall wooden bookshelves, and stained-glass windows that filtered colourful light into the room. There were long wooden tables where people studied in complete silence. One detail that fascinated me was the smell of old books mixed with polished wood — it gave the whole place a sense of history and wisdom.<br><br>
+        The reason this place impressed me so much is that it felt like stepping into a different century. Everything — from the architecture to the quiet, respectful environment — encouraged deep thinking. It made me appreciate how knowledge is preserved over generations, and it reminded me of the value of slow, focused learning.
+      </div>
+    </div>
+
+    <!-- OBJECTS -->
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.15rem; margin-bottom:16px; margin-top:28px; padding-bottom:8px; border-bottom:2px solid var(--peach);">🎁 Objects</h3>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--peach)">
+        <div>
+          <h3>A Useful Object You Use Daily</h3>
+          <div class="answer-cue">Cue Card 5 — Describe a useful object you use every day: what it is, how long you've had it, what you use it for, and why it's useful.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--peach-mid); color:var(--peach-dark)">5W</span>
+      </div>
+      <div class="answer-body">
+        One object I use every single day is my wireless earbuds, which I bought about two years ago. I originally purchased them because I wanted something lightweight for commuting, but they ended up becoming one of the most helpful items I own.<br><br>
+        I use them for listening to music, taking calls, and watching short videos while waiting in line. They're extremely comfortable, and the sound quality blocks out most background noise. What I appreciate most is that they allow me to enjoy small pockets of learning throughout the day — things like listening to language podcasts or short lectures.<br><br>
+        I feel attached to them not because they are expensive, but because they help me stay productive and relaxed in stressful environments. Without them, commuting and long waiting times would feel much more tiring. So, for me, they're not just a gadget; they're a daily source of comfort and convenience.
+      </div>
+    </div>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--peach)">
+        <div>
+          <h3>A Gift You Received</h3>
+          <div class="answer-cue">Cue Card 6 — Describe a gift you received that was meaningful: what it was, who gave it, when, and why it was meaningful.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--peach-mid); color:var(--peach-dark)">PDR</span>
+      </div>
+      <div class="answer-body">
+        A meaningful gift I received was a handmade sketchbook from a close friend about three years ago. At the time, I was interested in drawing but wasn't confident enough to take it seriously.<br><br>
+        One detail that made the gift special was that she designed the cover herself using pressed flowers and watercolour illustrations. Another detail was the inscription on the first page — she wrote a simple message telling me to "create without fear," which felt incredibly supportive.<br><br>
+        Reflecting on it now, the sketchbook mattered because it encouraged me to start drawing more regularly. It showed that someone believed in my ability before I even believed in myself. Even though I've filled all the pages, I still keep it as a reminder that small acts of encouragement can have a lasting impact.
+      </div>
+    </div>
+
+    <!-- EVENTS -->
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.15rem; margin-bottom:16px; margin-top:28px; padding-bottom:8px; border-bottom:2px solid var(--sky);">🎉 Events</h3>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--sky)">
+        <div>
+          <h3>A Cultural Event You Enjoyed</h3>
+          <div class="answer-cue">Cue Card 7 — Describe a cultural event you attended: what, where, when, what happened, and why you enjoyed it.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--sky-mid); color:var(--sky-dark)">Zoom</span>
+      </div>
+      <div class="answer-body">
+        A cultural event I really enjoyed was a lantern festival I attended two years ago during a visit to a nearby province. It was held in an open field near a lake, and people from different communities participated.<br><br>
+        The moment that stood out most was the lantern-lighting ceremony. Hundreds of people lit their lanterns at the same time, and as they released them into the night sky, the whole area glowed with warm, floating lights. There were also traditional performances and food stalls, but the lanterns were definitely the highlight.<br><br>
+        I enjoyed the event because it created a sense of unity among complete strangers. Even though I didn't know most of the people there, the shared experience felt meaningful. The quiet beauty of seeing the lanterns drift upward made me appreciate the simplicity and power of collective traditions.
+      </div>
+    </div>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--sky)">
+        <div>
+          <h3>An Event That Didn't Go as Planned</h3>
+          <div class="answer-cue">Cue Card 8 — Describe an event you attended that didn't go as planned: what it was, what went wrong, how people reacted, and what you learned.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--sky-mid); color:var(--sky-dark)">SPES</span>
+      </div>
+      <div class="answer-body">
+        Last year, I attended a friend's outdoor birthday picnic, and although we were all excited, things didn't go exactly as planned. The situation seemed perfect at first — the weather was sunny, the grass was dry, and everyone brought food to share.<br><br>
+        However, about an hour into the picnic, dark clouds suddenly appeared. The problem was that none of us had checked the weather forecast. Within minutes, it started raining heavily. People scrambled to pack their things, but many items got soaked, and the cake was ruined.<br><br>
+        Even though it was chaotic, something unexpected happened: instead of getting upset, everyone just started laughing. We ended up moving to a nearby shelter, ordering takeout, and celebrating in a more relaxed way.<br><br>
+        The experience taught me that sometimes imperfect moments become the most memorable. It reminded me of the importance of flexibility and keeping a positive attitude when things don't go according to plan.
+      </div>
+    </div>
+
+    <!-- ACTIVITIES -->
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.15rem; margin-bottom:16px; margin-top:28px; padding-bottom:8px; border-bottom:2px solid var(--blush);">🎯 Activities</h3>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--blush)">
+        <div>
+          <h3>A Hobby You Enjoy</h3>
+          <div class="answer-cue">Cue Card 9 — Describe a hobby you enjoy doing: what it is, how often, why you enjoy it, and how it affects your life.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--blush-mid); color:var(--blush-dark)">5W</span>
+      </div>
+      <div class="answer-body">
+        A hobby I really enjoy is journalling, which I usually do three to four times a week. I started doing it during a stressful period because I needed a simple way to organise my thoughts.<br><br>
+        Most of the time, I write in the evening with a cup of tea. I jot down what happened during the day, how I felt, and what I'm grateful for. One thing I enjoy is that there are no rules — I can write freely without worrying about grammar or structure.<br><br>
+        This hobby affects my life in a positive way because it helps me process emotions and reduce stress. Whenever I look back at older entries, I can see how much I've grown over time. It reminds me that progress isn't always loud or dramatic — sometimes it happens quietly in the background.
+      </div>
+    </div>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--blush)">
+        <div>
+          <h3>An Activity You Learned Recently</h3>
+          <div class="answer-cue">Cue Card 10 — Describe an activity you learned recently and enjoyed: what it is, how you learned it, why, and why you enjoyed it.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--blush-mid); color:var(--blush-dark)">PDR</span>
+      </div>
+      <div class="answer-body">
+        Recently, I learned how to make homemade ramen, and it quickly became an activity I genuinely enjoy. In the past, I enjoyed trying different restaurants, but I had never attempted making it myself.<br><br>
+        One detail I liked was discovering how simple ingredients — like broth, noodles, and toppings — can create something comforting. Another detail that made the experience enjoyable was customising the bowl to my taste, such as adjusting the spice level or adding vegetables.<br><br>
+        Reflecting on it now, I realise I enjoyed the activity because it helped me slow down and appreciate the process of cooking. It's both relaxing and satisfying. Plus, it made me more confident in the kitchen, which is something I've always wanted to improve.
+      </div>
+    </div>
+
+    <!-- EXPERIENCES -->
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.15rem; margin-bottom:16px; margin-top:28px; padding-bottom:8px; border-bottom:2px solid var(--lemon);">✨ Experiences</h3>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--lemon)">
+        <div>
+          <h3>A Memorable Travel Experience</h3>
+          <div class="answer-cue">Cue Card 11 — Describe a memorable experience while travelling: where, who with, what happened, and why it was memorable.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--lemon-mid); color:var(--lemon-dark)">Zoom</span>
+      </div>
+      <div class="answer-body">
+        Last year, I took a long train trip to the countryside, and it turned out to be one of the most memorable travel experiences I've ever had. I was travelling with a close friend, and we wanted a break from the noise and pace of the city.<br><br>
+        The journey itself took almost six hours, but it didn't feel long at all. As the train left the urban area, the view gradually changed — from tall buildings to open fields, rivers, and small villages. I remember one moment clearly: a local vendor boarded the train to sell homemade snacks, and the warm smell of freshly cooked food filled the whole carriage. It made the trip feel very personal and authentic.<br><br>
+        During the journey, my friend and I talked about our goals and how we wanted to simplify our lives. Something about watching the landscape slowly passing by made the conversation feel deeper and more meaningful.<br><br>
+        This experience was memorable because it reminded me that travelling doesn't always have to be fast-paced or packed with activities. Sometimes, the journey itself is what stays with you the longest.
+      </div>
+    </div>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--lemon)">
+        <div>
+          <h3>A Time You Were Pleasantly Surprised</h3>
+          <div class="answer-cue">Cue Card 12 — Describe a time when you were pleasantly surprised: when, who was involved, what surprised you, and why.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--lemon-mid); color:var(--lemon-dark)">PDR</span>
+      </div>
+      <div class="answer-body">
+        A time when I was pleasantly surprised happened last year during a simple dinner with friends. I had absolutely no idea that they were planning anything special. I just thought we were meeting to catch up after a few busy weeks.<br><br>
+        When I arrived, everything seemed completely normal. But about halfway through the meal, the lights suddenly dimmed, and one of my friends came out carrying a small cake with candles. They had secretly arranged a celebration for me because I had recently achieved a personal milestone. What surprised me most was the fact that they remembered it even though I hadn't mentioned it in a long time.<br><br>
+        One detail I still remember is the handwritten letter they gave me, filled with encouraging messages. Another detail was how genuinely happy they looked while surprising me, which made the moment feel very sincere.<br><br>
+        I was pleasantly surprised because I wasn't expecting any kind of celebration, especially something so thoughtful. It made me realise how lucky I am to have friends who notice the little things in my life.
+      </div>
+    </div>
+
+    <!-- ACHIEVEMENTS -->
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.15rem; margin-bottom:16px; margin-top:28px; padding-bottom:8px; border-bottom:2px solid var(--sage);">🏆 Achievements</h3>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--sage)">
+        <div>
+          <h3>A Difficult Task You Completed</h3>
+          <div class="answer-cue">Cue Card 13 — Describe a difficult task you completed successfully: what it was, how you prepared, challenges you faced, and how you felt after.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--sage-mid); color:var(--sage-dark)">SPES</span>
+      </div>
+      <div class="answer-body">
+        A difficult task I completed successfully was organising a small online workshop for my team. The task involved planning the content, coordinating schedules, and managing all the technical aspects of the meeting.<br><br>
+        To prepare, I watched tutorials, tested different platforms, and practised my presentation several times. Despite the preparation, I still faced a few challenges. The biggest one was the technical setup — during one rehearsal, the slides wouldn't load properly, which made me quite nervous. I also struggled with time management at first because I wasn't used to leading a session on my own.<br><br>
+        Fortunately, the actual workshop went smoothly. Everyone attended, the system worked perfectly, and the discussions were productive.<br><br>
+        After completing the task, I felt a real sense of accomplishment. It boosted my confidence and showed me that I'm capable of managing responsibilities that initially seem overwhelming. It was a great reminder that preparation and patience can turn a difficult task into a successful one.
+      </div>
+    </div>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--sage)">
+        <div>
+          <h3>Something You Are Proud Of</h3>
+          <div class="answer-cue">Cue Card 14 — Describe something you did that you are proud of: what, when, why it was challenging, and why you're proud of it.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--sage-mid); color:var(--sage-dark)">SPES</span>
+      </div>
+      <div class="answer-body">
+        Something I'm particularly proud of is completing a charity run about a year ago. I joined the event because I wanted to support a local organisation, but I wasn't used to long-distance running.<br><br>
+        It was challenging mainly because of my lack of training. At the beginning, even running short distances made me tired, and I sometimes questioned whether I could finish the race. To overcome this, I followed a simple training plan and increased my distance little by little. I also asked friends for advice, which helped me stay motivated.<br><br>
+        On the day of the run, the weather was warm, but I managed to complete the entire course without stopping. Crossing the finish line felt incredibly rewarding.<br><br>
+        I'm proud of this achievement because it proved that persistence can compensate for lack of experience. It also helped me become more disciplined and health-conscious. Whenever I face a difficult task now, I remind myself of how far I came during that period.
+      </div>
+    </div>
+
+    <!-- CHANGES -->
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.15rem; margin-bottom:16px; margin-top:28px; padding-bottom:8px; border-bottom:2px solid var(--lilac);">🔄 Changes</h3>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--lilac)">
+        <div>
+          <h3>A Habit You Changed</h3>
+          <div class="answer-cue">Cue Card 15 — Describe a habit you have changed: what it was, how long you had it, why you changed it, and how it's affected your life.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--lilac-mid); color:var(--lilac-dark)">Before→After</span>
+      </div>
+      <div class="answer-body">
+        One habit I changed recently was sleeping very late at night. For several years, I would go to bed past midnight, sometimes even at two or three in the morning. It became a routine, especially when I was busy with work.<br><br>
+        I decided to change this habit because it started affecting my productivity and mood. I often felt tired during the day, and simple tasks took longer than they should have. I realised that if I didn't fix my sleeping schedule, it would eventually affect my health.<br><br>
+        So I introduced a more structured routine. I reduced screen time before bed, prepared for the next day earlier, and set a consistent bedtime. It felt strange at first, but after a few weeks, my body adjusted naturally.<br><br>
+        This change has had a huge positive impact. I feel more energetic in the morning, I think more clearly, and I'm able to focus better. It also made my daily life feel more balanced and less stressful.
+      </div>
+    </div>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--lilac)">
+        <div>
+          <h3>Something New You Started Doing</h3>
+          <div class="answer-cue">Cue Card 16 — Describe something new you started doing recently: what, how you became interested, how you felt the first time, and why you continued.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--lilac-mid); color:var(--lilac-dark)">PDR</span>
+      </div>
+      <div class="answer-body">
+        Something new I started doing recently is morning stretching. I became interested in it after noticing that I often had mild back pain from sitting for long hours.<br><br>
+        The first time I tried it, I followed a short video online. I remember feeling a bit stiff and unsure about whether I was doing the movements correctly. But after a few minutes, I felt surprisingly relaxed, and the discomfort in my back decreased.<br><br>
+        Because of that immediate improvement, I decided to continue. Over time, the routine became easier and more enjoyable. It doesn't take long — usually around ten minutes — but the effect lasts throughout the day. I move more comfortably and feel more energised.<br><br>
+        I chose to keep doing it because it's a simple habit with noticeable benefits. It also reminds me to take small steps toward better health.
+      </div>
+    </div>
+
+    <!-- PROBLEMS -->
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.15rem; margin-bottom:16px; margin-top:28px; padding-bottom:8px; border-bottom:2px solid var(--coral);">⚠️ Problems / Mistakes</h3>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--coral)">
+        <div>
+          <h3>A Small Mistake That Taught You a Lesson</h3>
+          <div class="answer-cue">Cue Card 17 — Describe a small mistake you made that taught you a lesson: what it was, when, how you dealt with it, and what you learned.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--coral-mid); color:var(--coral-dark)">SPES</span>
+      </div>
+      <div class="answer-body">
+        A small mistake I made recently was sending a file to the wrong group chat at work. It happened a few months ago when I was juggling several conversations at the same time.<br><br>
+        The problem was that the file wasn't meant for that group, and it caused a bit of confusion. People started asking why I had sent it, and I quickly realised what I had done.<br><br>
+        To deal with it, I apologised, clarified the situation, and sent the file to the correct group immediately. Fortunately, it wasn't confidential, so no harm was done.<br><br>
+        This experience taught me the importance of slowing down, especially when multitasking. Even small mistakes can waste time and complicate communication. Since then, I've made a habit of double-checking before hitting "send."
+      </div>
+    </div>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--coral)">
+        <div>
+          <h3>A Slightly Disappointing Experience</h3>
+          <div class="answer-cue">Cue Card 18 — Describe a time when you had a slightly disappointing experience: what it was, what you expected, what happened, and why it was disappointing.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--coral-mid); color:var(--coral-dark)">PDR</span>
+      </div>
+      <div class="answer-body">
+        A slightly disappointing experience I had was attending a workshop that I had high hopes for. I expected it to be very practical, with hands-on activities and real-life examples.<br><br>
+        However, when I arrived, the session turned out to be more theoretical than I expected. The speaker focused heavily on concepts, and the activities were shorter and simpler than I had hoped. Although the content wasn't bad, it didn't match the expectations I had formed from the advertisement.<br><br>
+        It was a bit disappointing because I had taken the time to prepare and rearrange my schedule. Still, after reflecting on it, I realised that I gained some useful ideas, even if the session wasn't exactly what I wanted. It was a reminder to manage expectations more carefully in the future.
+      </div>
+    </div>
+
+    <!-- MEDIA -->
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.15rem; margin-bottom:16px; margin-top:28px; padding-bottom:8px; border-bottom:2px solid var(--steel);">🎬 Media</h3>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--steel)">
+        <div>
+          <h3>A Film You Enjoyed</h3>
+          <div class="answer-cue">Cue Card 19 — Describe a film you enjoyed: what it was about, when you watched it, who with, and why you enjoyed it.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--steel-mid); color:var(--steel-dark)">Zoom</span>
+      </div>
+      <div class="answer-body">
+        A film I really enjoyed watching is "The Secret Life of Walter Mitty." I watched it a few years ago at home with a close friend.<br><br>
+        The story follows a man who lives a very routine life but escapes into vivid daydreams where he imagines exciting adventures. As the film progresses, he is forced into a real journey that takes him to several countries in search of a missing photograph.<br><br>
+        One scene I loved was when he skateboards down a long road in Iceland with beautiful mountains behind him. The visuals, music, and message all work together to create an inspiring atmosphere.<br><br>
+        I enjoyed the film because it reminded me that life can be more meaningful when we step outside our comfort zone. It was uplifting and gave me the motivation to try new things.
+      </div>
+    </div>
+
+    <div class="answer-card">
+      <div class="answer-header" style="background:var(--steel)">
+        <div>
+          <h3>A Book That Influenced You</h3>
+          <div class="answer-cue">Cue Card 20 — Describe a book that had a significant impact on you: what it is, when you read it, what it's about, and how it influenced you.</div>
+        </div>
+        <span class="answer-tag" style="background:var(--steel-mid); color:var(--steel-dark)">5W + Reflection</span>
+      </div>
+      <div class="answer-body">
+        A book that had a significant impact on me is "The Alchemist" by Paulo Coelho. I read it for the first time when I was in my late teens, and I immediately felt connected to its message.<br><br>
+        The book tells the story of a young shepherd who follows his dream and travels across different countries, meeting people who each teach him something important about courage and destiny.<br><br>
+        What influenced me most was the idea that everyone has a "personal legend" — a unique purpose or path they are meant to pursue. It made me think about my own goals and encouraged me to take steps toward them, even if they seemed small.<br><br>
+        The book influenced the way I make decisions. It gave me the courage to take opportunities instead of waiting for the perfect moment. Even now, I go back to certain ideas from the book whenever I need motivation.
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── DRILLS ─────────────── -->
+  <section class="section" id="drills">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--sky);">💪</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--sky-dark);">Self-Study</div>
+        <h2 class="section-title">Practice Drills</h2>
+      </div>
+    </div>
+
+    <p style="color:var(--text-light); margin-bottom:22px; font-family:'Nunito Sans',sans-serif; max-width:560px;">
+      Repeat these drills daily until the techniques become automatic. Start with writing, then move to speaking, then recording.
+    </p>
+
+    <div class="drill-card">
+      <div class="drill-header" style="background:var(--mint)">
+        <span class="drill-num" style="color:var(--mint-dark)">1</span>
+        <span class="drill-title" style="color:var(--mint-dark)">SBAR Mini-Stories</span>
+        <span class="drill-time" style="color:var(--mint-dark)">5 minutes</span>
+      </div>
+      <div class="drill-body">
+        Choose one prompt and write a 4-sentence SBAR story. Do all 5 for a full session.<br><br>
+        <strong>Prompts:</strong>
+        <ul>
+          <li>A time you arrived late</li>
+          <li>A surprising message you received</li>
+          <li>A time you bought something useful</li>
+          <li>A conversation you enjoyed</li>
+          <li>A simple mistake you made</li>
+        </ul>
+        <br>
+        <strong>Example (for "bought something useful"):</strong> S: Last month, at a mall, I bought a small planner. B: I chose it because my schedule was getting disorganised. A: It had a clean layout, a habit tracker, and monthly goals pages. R: It helped me stay organised — a great purchase.
+      </div>
+    </div>
+
+    <div class="drill-card">
+      <div class="drill-header" style="background:var(--lavender)">
+        <span class="drill-num" style="color:var(--lavender-dark)">2</span>
+        <span class="drill-title" style="color:var(--lavender-dark)">Newspaper Headlines</span>
+        <span class="drill-time" style="color:var(--lavender-dark)">3 minutes</span>
+      </div>
+      <div class="drill-body">
+        Write only the headline sentence for each of these topics:<br><br>
+        <ul>
+          <li>A person who helped you</li>
+          <li>A happy childhood memory</li>
+          <li>A place you enjoy visiting</li>
+          <li>A book or film you liked</li>
+          <li>A difficult task you completed</li>
+        </ul>
+        <br>
+        <strong>Example:</strong> "Today I'd like to describe a place I love visiting in my free time."
+      </div>
+    </div>
+
+    <div class="drill-card">
+      <div class="drill-header" style="background:var(--peach)">
+        <span class="drill-num" style="color:var(--peach-dark)">3</span>
+        <span class="drill-title" style="color:var(--peach-dark)">Newspaper Summaries</span>
+        <span class="drill-time" style="color:var(--peach-dark)">5 minutes</span>
+      </div>
+      <div class="drill-body">
+        Take the 5 headlines from Drill 2. Add one sentence summary (when / where / who) to each.<br><br>
+        <strong>Example:</strong> "It happened two years ago when I visited a quiet beach with my cousin."
+      </div>
+    </div>
+
+    <div class="drill-card">
+      <div class="drill-header" style="background:var(--sky)">
+        <span class="drill-num" style="color:var(--sky-dark)">4</span>
+        <span class="drill-title" style="color:var(--sky-dark)">3-Detail Challenge</span>
+        <span class="drill-time" style="color:var(--sky-dark)">5 minutes</span>
+      </div>
+      <div class="drill-body">
+        Choose any topic. Write exactly 3 action details — like camera shots. Keep them vivid and specific.<br><br>
+        <strong>Example Topic — A Trip:</strong>
+        <ul>
+          <li>The bus passed through green rice fields.</li>
+          <li>I tried a snack I'd never eaten before.</li>
+          <li>A child sitting next to me shared a story about her hometown.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="drill-card">
+      <div class="drill-header" style="background:var(--blush)">
+        <span class="drill-num" style="color:var(--blush-dark)">5</span>
+        <span class="drill-title" style="color:var(--blush-dark)">Reflection Builder</span>
+        <span class="drill-time" style="color:var(--blush-dark)">3 minutes</span>
+      </div>
+      <div class="drill-body">
+        Complete each sentence with a natural, personal reflection:<br><br>
+        <ul>
+          <li>"It was memorable because…"</li>
+          <li>"I learned that…"</li>
+          <li>"It changed me by…"</li>
+          <li>"It made me realise…"</li>
+          <li>"This experience mattered because…"</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="sub-divider">
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.1rem; margin-bottom:14px;">Full 2-Minute Practice Tasks</h3>
+    <p style="color:var(--text-light); margin-bottom:14px; font-family:'Nunito Sans',sans-serif; font-size:0.88rem;">For each cue card below, complete all 3 rounds.</p>
+
+    <div class="callout" style="background:var(--mint); margin-bottom:16px">
+      <div class="callout-icon">🔁</div>
+      <div class="callout-content">
+        <div class="callout-title">3-Round System</div>
+        <div class="callout-body"><strong>Round A:</strong> Write your full answer · <strong>Round B:</strong> Speak your answer without reading · <strong>Round C:</strong> Record and listen back</div>
+      </div>
+    </div>
+
+    <div class="vocab-grid">
+      <span class="vocab-chip">Describe a time when you were pleasantly surprised.</span>
+      <span class="vocab-chip">Describe a place you enjoy visiting.</span>
+      <span class="vocab-chip">Describe an object that is important to you.</span>
+      <span class="vocab-chip">Describe a skill you recently learned.</span>
+      <span class="vocab-chip">Describe a person who has helped you.</span>
+    </div>
+
+    <div class="callout" style="background:var(--lemon); margin-top:22px">
+      <div class="callout-icon">🎯</div>
+      <div class="callout-content">
+        <div class="callout-title">Final Tip: How to Adjust Your Answer</div>
+        <div class="callout-body">
+          <ul>
+            <li>Too <strong>short</strong> → add 1 more action detail</li>
+            <li>Too <strong>long</strong> → shorten the action details</li>
+            <li>Too <strong>robotic</strong> → add emotion or a personal thought</li>
+            <li>Too <strong>dramatic</strong> → make the problem milder</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── WORKSHEETS ─────────────── -->
+  <section class="section" id="worksheets">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--lavender);">📋</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--lavender-dark);">Practice</div>
+        <h2 class="section-title">Worksheets</h2>
+      </div>
+    </div>
+    <p style="color:var(--text-light); margin-bottom:26px; font-family:'Nunito Sans',sans-serif; max-width:560px;">Fill in each worksheet before your practice session. All fields are editable.</p>
+
+    <!-- Worksheets in a 2-column grid -->
+    <div class="card-grid card-grid-2">
+
+      <!-- WS 1: PEOPLE -->
+      <div class="worksheet-card">
+        <div class="worksheet-header" style="background:var(--mint)">
+          <h3 style="color:var(--mint-dark)">1. People Worksheet</h3>
+          <div class="answer-cue">Planning template for person-based cue cards</div>
+        </div>
+        <div class="worksheet-body">
+          <div class="ws-section-label">A. Choose a Prompt</div>
+          <div class="ws-checkboxes">
+            <label class="ws-checkbox-item"><input type="checkbox"> Someone you admire</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Someone who influenced you</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Someone you recently met</label>
+          </div>
+          <div class="ws-section-label">B. Trait → Example Drill</div>
+          <input class="ws-input-line" placeholder="Responsible → (give a real example)">
+          <input class="ws-input-line" placeholder="Patient → (show, don't tell)">
+          <input class="ws-input-line" placeholder="Creative → (describe a specific action)">
+          <div class="ws-section-label">C. PDR Plan</div>
+          <input class="ws-input-line" placeholder="Past connection / how you know them">
+          <input class="ws-input-line" placeholder="Detail 1">
+          <input class="ws-input-line" placeholder="Detail 2">
+          <input class="ws-input-line" placeholder="Reflection / impact on you">
+          <div class="ws-task-box" style="background:var(--mint)">
+            🎙️ <strong>Mini-Speaking Task:</strong> Describe a person who taught you something important.
+          </div>
+        </div>
+      </div>
+
+      <!-- WS 2: PLACES -->
+      <div class="worksheet-card">
+        <div class="worksheet-header" style="background:var(--lavender)">
+          <h3 style="color:var(--lavender-dark)">2. Places Worksheet</h3>
+          <div class="answer-cue">Planning template for place-based cue cards</div>
+        </div>
+        <div class="worksheet-body">
+          <div class="ws-section-label">A. Choose a Place</div>
+          <div class="ws-checkboxes">
+            <label class="ws-checkbox-item"><input type="checkbox"> Café</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Park</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Library</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Natural spot</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Shopping area</label>
+          </div>
+          <div class="ws-section-label">B. Sensory Vocabulary</div>
+          <input class="ws-input-line" placeholder="Visual: what did it look like?">
+          <input class="ws-input-line" placeholder="Sound: what did you hear?">
+          <input class="ws-input-line" placeholder="Smell: what did you smell?">
+          <div class="ws-section-label">C. Zoom Out – Zoom In – Zoom Out</div>
+          <input class="ws-input-line" placeholder="Overview (general scene)">
+          <input class="ws-input-line" placeholder="Detail 1">
+          <input class="ws-input-line" placeholder="Detail 2">
+          <input class="ws-input-line" placeholder="Final thought / why it matters">
+          <div class="ws-task-box" style="background:var(--lavender)">
+            🎙️ <strong>Mini-Speaking Task:</strong> Describe a relaxing place you enjoy spending time in.
+          </div>
+        </div>
+      </div>
+
+      <!-- WS 3: OBJECTS -->
+      <div class="worksheet-card">
+        <div class="worksheet-header" style="background:var(--peach)">
+          <h3 style="color:var(--peach-dark)">3. Objects / Items Worksheet</h3>
+          <div class="answer-cue">Planning template for object-based cue cards</div>
+        </div>
+        <div class="worksheet-body">
+          <div class="ws-section-label">A. Choose an Object</div>
+          <div class="ws-checkboxes">
+            <label class="ws-checkbox-item"><input type="checkbox"> Useful gadget</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Gift</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Daily item</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Something lost</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Sentimental item</label>
+          </div>
+          <div class="ws-section-label">B. Function & Use Drill</div>
+          <input class="ws-input-line" placeholder="This object is used for…">
+          <input class="ws-input-line" placeholder="I usually use it when…">
+          <input class="ws-input-line" placeholder="It helps me because…">
+          <div class="ws-section-label">C. 5W + Feeling</div>
+          <input class="ws-input-line" placeholder="What: (name of object)">
+          <input class="ws-input-line" placeholder="Where you got it">
+          <input class="ws-input-line" placeholder="Why it's important">
+          <input class="ws-input-line" placeholder="How it makes you feel">
+          <div class="ws-task-box" style="background:var(--peach)">
+            🎙️ <strong>Mini-Speaking Task:</strong> Describe an object that makes your life easier.
+          </div>
+        </div>
+      </div>
+
+      <!-- WS 4: EVENTS -->
+      <div class="worksheet-card">
+        <div class="worksheet-header" style="background:var(--sky)">
+          <h3 style="color:var(--sky-dark)">4. Events Worksheet</h3>
+          <div class="answer-cue">Planning template for event-based cue cards</div>
+        </div>
+        <div class="worksheet-body">
+          <div class="ws-section-label">A. Event Type</div>
+          <div class="ws-checkboxes">
+            <label class="ws-checkbox-item"><input type="checkbox"> Festival</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Ceremony</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Concert</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Meeting</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Special day</label>
+          </div>
+          <div class="ws-section-label">B. Event Timeline</div>
+          <input class="ws-input-line" placeholder="Before the event:">
+          <input class="ws-input-line" placeholder="Main moment:">
+          <input class="ws-input-line" placeholder="Something unexpected:">
+          <input class="ws-input-line" placeholder="Ending / how it concluded:">
+          <div class="ws-section-label">C. SPES Structure</div>
+          <input class="ws-input-line" placeholder="Situation:">
+          <input class="ws-input-line" placeholder="Problem (optional):">
+          <input class="ws-input-line" placeholder="Effect / how it felt:">
+          <input class="ws-input-line" placeholder="Solution / outcome:">
+          <div class="ws-task-box" style="background:var(--sky)">
+            🎙️ <strong>Mini-Speaking Task:</strong> Describe a memorable event you attended.
+          </div>
+        </div>
+      </div>
+
+      <!-- WS 5: ACTIVITIES -->
+      <div class="worksheet-card">
+        <div class="worksheet-header" style="background:var(--blush)">
+          <h3 style="color:var(--blush-dark)">5. Activities / Hobbies Worksheet</h3>
+          <div class="answer-cue">Planning template for activity-based cue cards</div>
+        </div>
+        <div class="worksheet-body">
+          <div class="ws-section-label">A. Hobby Selection</div>
+          <div class="ws-checkboxes">
+            <label class="ws-checkbox-item"><input type="checkbox"> Sports</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Music</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Reading</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Cooking</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Online activities</label>
+          </div>
+          <div class="ws-section-label">B. 5W Planning</div>
+          <input class="ws-input-line" placeholder="What: (name of activity)">
+          <input class="ws-input-line" placeholder="When: (how often / what time)">
+          <input class="ws-input-line" placeholder="Why you started:">
+          <input class="ws-input-line" placeholder="How often:">
+          <input class="ws-input-line" placeholder="Why enjoyable:">
+          <div class="ws-section-label">C. Add a Memorable Moment</div>
+          <input class="ws-input-line" placeholder="A specific incident or moment that stands out:">
+          <div class="ws-task-box" style="background:var(--blush)">
+            🎙️ <strong>Mini-Speaking Task:</strong> Describe an activity you enjoy doing in your free time.
+          </div>
+        </div>
+      </div>
+
+      <!-- WS 6: EXPERIENCES -->
+      <div class="worksheet-card">
+        <div class="worksheet-header" style="background:var(--lemon)">
+          <h3 style="color:var(--lemon-dark)">6. Experiences Worksheet</h3>
+          <div class="answer-cue">Planning template for experience-based cue cards</div>
+        </div>
+        <div class="worksheet-body">
+          <div class="ws-section-label">A. Type of Experience</div>
+          <div class="ws-checkboxes">
+            <label class="ws-checkbox-item"><input type="checkbox"> Exciting</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Surprising</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Funny</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Stressful</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Unforgettable</label>
+          </div>
+          <div class="ws-section-label">B. Detail Expansion Drill</div>
+          <input class="ws-input-line" placeholder="One moment I remember clearly is…">
+          <input class="ws-input-line" placeholder="A detail that stands out is…">
+          <div class="ws-section-label">C. PDR Plan</div>
+          <input class="ws-input-line" placeholder="Past summary:">
+          <input class="ws-input-line" placeholder="Detail 1:">
+          <input class="ws-input-line" placeholder="Detail 2:">
+          <input class="ws-input-line" placeholder="Reflection:">
+          <div class="ws-task-box" style="background:var(--lemon)">
+            🎙️ <strong>Mini-Speaking Task:</strong> Describe an unforgettable experience you had.
+          </div>
+        </div>
+      </div>
+
+      <!-- WS 7: ACHIEVEMENTS -->
+      <div class="worksheet-card">
+        <div class="worksheet-header" style="background:var(--sage)">
+          <h3 style="color:var(--sage-dark)">7. Achievements Worksheet</h3>
+          <div class="answer-cue">Planning template for achievement-based cue cards</div>
+        </div>
+        <div class="worksheet-body">
+          <div class="ws-section-label">A. Task Type</div>
+          <div class="ws-checkboxes">
+            <label class="ws-checkbox-item"><input type="checkbox"> Academic</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Physical</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Creative</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Workplace</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Social</label>
+          </div>
+          <div class="ws-section-label">B. SPES Plan</div>
+          <input class="ws-input-line" placeholder="Situation: (context)">
+          <input class="ws-input-line" placeholder="Problem: (the obstacle)">
+          <input class="ws-input-line" placeholder="Effect: (how it impacted you)">
+          <input class="ws-input-line" placeholder="Solution: (what you did)">
+          <div class="ws-section-label">C. Lesson Learned</div>
+          <input class="ws-input-line" placeholder="This experience taught me that…">
+          <input class="ws-input-line" placeholder="I learned that I should…">
+          <div class="ws-task-box" style="background:var(--sage)">
+            🎙️ <strong>Mini-Speaking Task:</strong> Describe a difficult task that you successfully completed.
+          </div>
+        </div>
+      </div>
+
+      <!-- WS 8: CHANGES -->
+      <div class="worksheet-card">
+        <div class="worksheet-header" style="background:var(--lilac)">
+          <h3 style="color:var(--lilac-dark)">8. Changes Worksheet</h3>
+          <div class="answer-cue">Planning template for change-based cue cards</div>
+        </div>
+        <div class="worksheet-body">
+          <div class="ws-section-label">A. Change Type</div>
+          <div class="ws-checkboxes">
+            <label class="ws-checkbox-item"><input type="checkbox"> Habit</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Lifestyle</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Routine</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Mindset</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Skill</label>
+          </div>
+          <div class="ws-section-label">B. Before → After</div>
+          <input class="ws-input-line" placeholder="Before: what was it like?">
+          <input class="ws-input-line" placeholder="After: what changed?">
+          <div class="ws-section-label">C. Cause & Benefit</div>
+          <input class="ws-input-line" placeholder="Cause: what triggered the change?">
+          <input class="ws-input-line" placeholder="Benefit: how did it help?">
+          <div class="ws-section-label">D. Future Impact</div>
+          <input class="ws-input-line" placeholder="This change will affect my future because…">
+          <div class="ws-task-box" style="background:var(--lilac)">
+            🎙️ <strong>Mini-Speaking Task:</strong> Describe a change you made that improved your life.
+          </div>
+        </div>
+      </div>
+
+      <!-- WS 9: PROBLEMS -->
+      <div class="worksheet-card">
+        <div class="worksheet-header" style="background:var(--coral)">
+          <h3 style="color:var(--coral-dark)">9. Problems / Mistakes Worksheet</h3>
+          <div class="answer-cue">Planning template for problem-based cue cards</div>
+        </div>
+        <div class="worksheet-body">
+          <div class="ws-section-label">A. Choose One (keep it mild)</div>
+          <div class="ws-checkboxes">
+            <label class="ws-checkbox-item"><input type="checkbox"> Minor mistake</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Slight disappointment</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Mild problem</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Misunderstanding</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Poor decision</label>
+          </div>
+          <div class="ws-section-label">B. SPES Plan</div>
+          <input class="ws-input-line" placeholder="Situation:">
+          <input class="ws-input-line" placeholder="Problem:">
+          <input class="ws-input-line" placeholder="Effect:">
+          <input class="ws-input-line" placeholder="Solution:">
+          <div class="ws-section-label">C. Safe Language Practice</div>
+          <input class="ws-input-line" placeholder=""I was devastated" → (rewrite more gently)">
+          <input class="ws-input-line" placeholder=""We had a huge fight" → (rewrite more gently)">
+          <div class="ws-task-box" style="background:var(--coral)">
+            🎙️ <strong>Mini-Speaking Task:</strong> Describe a small mistake you made and what you learned.
+          </div>
+        </div>
+      </div>
+
+      <!-- WS 10: MEDIA -->
+      <div class="worksheet-card">
+        <div class="worksheet-header" style="background:var(--steel)">
+          <h3 style="color:var(--steel-dark)">10. Media Worksheet</h3>
+          <div class="answer-cue">Planning template for book / film / TV cue cards</div>
+        </div>
+        <div class="worksheet-body">
+          <div class="ws-section-label">A. Media Choice</div>
+          <div class="ws-checkboxes">
+            <label class="ws-checkbox-item"><input type="checkbox"> Book</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Film</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Song</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> TV show</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Online content</label>
+          </div>
+          <div class="ws-section-label">B. 3-Part Summary Drill</div>
+          <input class="ws-input-line" placeholder="Summary (1–2 sentences, no spoilers):">
+          <input class="ws-input-line" placeholder="Favourite moment or idea:">
+          <input class="ws-input-line" placeholder="Impact on you:">
+          <div class="ws-section-label">C. Vocabulary Boost</div>
+          <input class="ws-input-line" placeholder="Synonym for "meaningful":">
+          <input class="ws-input-line" placeholder="Synonym for "impressive":">
+          <input class="ws-input-line" placeholder="Synonym for "memorable":">
+          <div class="ws-task-box" style="background:var(--steel)">
+            🎙️ <strong>Mini-Speaking Task:</strong> Describe a film or book you enjoyed recently.
+          </div>
+        </div>
+      </div>
+
+      <!-- WS 11: LIFESTYLE -->
+      <div class="worksheet-card">
+        <div class="worksheet-header" style="background:var(--rose)">
+          <h3 style="color:var(--rose-dark)">11. Lifestyle Worksheet</h3>
+          <div class="answer-cue">Planning template for food, travel, and routine cue cards</div>
+        </div>
+        <div class="worksheet-body">
+          <div class="ws-section-label">A. Topic Area</div>
+          <div class="ws-checkboxes">
+            <label class="ws-checkbox-item"><input type="checkbox"> Daily routine</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Trip</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Restaurant</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Study habit</label>
+            <label class="ws-checkbox-item"><input type="checkbox"> Work habit</label>
+          </div>
+          <div class="ws-section-label">B. 5W Planning</div>
+          <input class="ws-input-line" placeholder="What:">
+          <input class="ws-input-line" placeholder="Where:">
+          <input class="ws-input-line" placeholder="When:">
+          <input class="ws-input-line" placeholder="Why:">
+          <input class="ws-input-line" placeholder="With whom:">
+          <div class="ws-section-label">C. Linked Story</div>
+          <input class="ws-input-line" placeholder="A short story connected to this routine or place:">
+          <div class="ws-task-box" style="background:var(--rose)">
+            🎙️ <strong>Mini-Speaking Task:</strong> Describe a routine or activity that is important in your life.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─────────────── CHECKLIST ─────────────── -->
+  <section class="section" id="checklist">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--mint);">✅</div>
+      <div class="section-header-text">
+        <div class="section-label" style="color:var(--mint-dark);">Assessment</div>
+        <h2 class="section-title">Self-Evaluation Checklist</h2>
+      </div>
+    </div>
+
+    <p style="color:var(--text-light); margin-bottom:22px; font-family:'Nunito Sans',sans-serif; max-width:560px;">
+      Use this checklist after every practice session. Honest self-assessment is the fastest way to improve.
+    </p>
+
+    <div class="checklist-section">
+      <div class="checklist-header" style="background:var(--mint); color:var(--mint-dark)">
+        ⭐ Section A — Newspaper Method (Intro)
+      </div>
+      <div class="checklist-body">
+        <div class="check-item"><div class="check-box"></div> I gave a clear headline sentence.</div>
+        <div class="check-item"><div class="check-box"></div> I gave a 1-sentence summary (when, where, who).</div>
+        <div class="check-item"><div class="check-box"></div> My introduction was 5–10 seconds only — not too long.</div>
+      </div>
+    </div>
+
+    <div class="checklist-section">
+      <div class="checklist-header" style="background:var(--lavender); color:var(--lavender-dark)">
+        ⭐ Section B — SBAR Structure
+      </div>
+      <div class="checklist-body">
+        <div class="check-item"><div class="check-box"></div> SETUP: I followed "when → where → who → what."</div>
+        <div class="check-item"><div class="check-box"></div> BUILD-UP: I explained how the event started.</div>
+        <div class="check-item"><div class="check-box"></div> ACTION: I gave exactly three clear details.</div>
+        <div class="check-item"><div class="check-box"></div> REFLECTION: I explained why it was memorable or meaningful.</div>
+        <div class="check-item"><div class="check-box"></div> I avoided sensitive, traumatic, political, or overly dramatic content.</div>
+      </div>
+    </div>
+
+    <div class="checklist-section">
+      <div class="checklist-header" style="background:var(--sky); color:var(--sky-dark)">
+        ⭐ Section C — Time & Coherence
+      </div>
+      <div class="checklist-body">
+        <div class="check-item"><div class="check-box"></div> My answer lasted 1:45–2:00 minutes.</div>
+        <div class="check-item"><div class="check-box"></div> The story had a clear flow (no sudden jumps).</div>
+        <div class="check-item"><div class="check-box"></div> I did not pause for too long or freeze.</div>
+        <div class="check-item"><div class="check-box"></div> I did not speak too fast.</div>
+      </div>
+    </div>
+
+    <div class="checklist-section">
+      <div class="checklist-header" style="background:var(--peach); color:var(--peach-dark)">
+        ⭐ Section D — Language Use
+      </div>
+      <div class="checklist-body">
+        <div class="check-item"><div class="check-box"></div> I used past tenses correctly throughout.</div>
+        <div class="check-item"><div class="check-box"></div> My vocabulary was natural and not memorised.</div>
+        <div class="check-item"><div class="check-box"></div> I used 2–3 linking words (at first, afterwards, finally…).</div>
+        <div class="check-item"><div class="check-box"></div> I avoided overly complex or unnatural phrases.</div>
+      </div>
+    </div>
+
+    <div class="checklist-section">
+      <div class="checklist-header" style="background:var(--blush); color:var(--blush-dark)">
+        ⭐ Section E — Personal Reflection
+      </div>
+      <div class="checklist-body">
+        <div class="check-item"><div class="check-box"></div> I included my feelings at least once.</div>
+        <div class="check-item"><div class="check-box"></div> I included a personal lesson or message.</div>
+        <div class="check-item"><div class="check-box"></div> My story was believable, safe, and relatable.</div>
+      </div>
+    </div>
+
+    <div class="callout" style="background:var(--lemon); margin-top:20px">
+      <div class="callout-icon">🎖️</div>
+      <div class="callout-content">
+        <div class="callout-title">The Goal: A Calm, Natural Story</div>
+        <div class="callout-body">A good Part 2 answer feels like a calm, natural conversation — not a movie scene, not a memorised script, and not a biography. If you can check YES for most boxes above, your answer is examiner-ready.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // Active nav highlighting
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('#sidebar a[href^="#"]');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const active = document.querySelector(`#sidebar a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Smooth scrolling
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>

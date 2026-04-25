@@ -1,0 +1,3519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journeys & Experiences — Extending and Repairing Spoken Answers | IELTS Speaking</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* =============================================
+     CSS VARIABLES & RESET
+  ============================================= */
+  :root {
+    --clr-bg:          #faf8f5;
+    --clr-bg-alt:      #f3f0eb;
+    --clr-surface:     #ffffff;
+    --clr-border:      #e5dfd6;
+
+    --clr-sage:        #7aad8f;
+    --clr-sage-light:  #d4eadd;
+    --clr-sage-pale:   #eef6f1;
+    --clr-sage-deep:   #4e8a67;
+
+    --clr-peach:       #e8a98a;
+    --clr-peach-light: #fae4d6;
+    --clr-peach-pale:  #fdf2ec;
+
+    --clr-lavender:    #a9a0cc;
+    --clr-lav-light:   #e4e1f5;
+    --clr-lav-pale:    #f3f1fb;
+
+    --clr-sky:         #89b8d4;
+    --clr-sky-light:   #d5e9f4;
+    --clr-sky-pale:    #edf5fb;
+
+    --clr-gold:        #c9a84c;
+    --clr-gold-light:  #f5e6be;
+    --clr-gold-pale:   #fdf7e8;
+
+    --clr-rose:        #d4849a;
+    --clr-rose-light:  #f5d6df;
+    --clr-rose-pale:   #fdf0f3;
+
+    --clr-text:        #2c2c2c;
+    --clr-text-sub:    #5a5a5a;
+    --clr-text-mute:   #8a8a8a;
+
+    --font-serif:      'Lora', Georgia, serif;
+    --font-sans:       'DM Sans', system-ui, sans-serif;
+    --font-mono:       'DM Mono', monospace;
+
+    --radius-sm:       6px;
+    --radius-md:       10px;
+    --radius-lg:       16px;
+    --radius-xl:       24px;
+
+    --shadow-xs:       0 1px 3px rgba(0,0,0,0.06);
+    --shadow-sm:       0 2px 8px rgba(0,0,0,0.08);
+    --shadow-md:       0 4px 16px rgba(0,0,0,0.10);
+    --shadow-lg:       0 8px 32px rgba(0,0,0,0.12);
+
+    --sidebar-w:       270px;
+    --content-max:     860px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--clr-bg);
+    color: var(--clr-text);
+    line-height: 1.75;
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* =============================================
+     SIDEBAR NAVIGATION
+  ============================================= */
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: var(--sidebar-w);
+    height: 100vh;
+    background: var(--clr-surface);
+    border-right: 1px solid var(--clr-border);
+    overflow-y: auto;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+  }
+
+  .sidebar-header {
+    padding: 1.5rem 1.25rem 1rem;
+    border-bottom: 1px solid var(--clr-border);
+    background: var(--clr-sage-pale);
+  }
+
+  .sidebar-brand {
+    font-family: var(--font-serif);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--clr-sage-deep);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.25rem;
+  }
+
+  .sidebar-title {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--clr-text);
+    line-height: 1.35;
+  }
+
+  .sidebar-meta {
+    font-size: 0.72rem;
+    color: var(--clr-text-mute);
+    margin-top: 0.35rem;
+    font-style: italic;
+  }
+
+  .sidebar-nav {
+    padding: 1rem 0.75rem;
+    flex: 1;
+  }
+
+  .sidebar-section-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--clr-text-mute);
+    padding: 0.75rem 0.5rem 0.35rem;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.5rem 0.65rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    color: var(--clr-text-sub);
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.35;
+    transition: all 0.18s ease;
+    margin-bottom: 1px;
+  }
+
+  .nav-item:hover {
+    background: var(--clr-sage-pale);
+    color: var(--clr-sage-deep);
+  }
+
+  .nav-item.active {
+    background: var(--clr-sage-light);
+    color: var(--clr-sage-deep);
+    font-weight: 600;
+  }
+
+  .nav-num {
+    flex-shrink: 0;
+    width: 1.4rem;
+    height: 1.4rem;
+    background: var(--clr-bg-alt);
+    color: var(--clr-text-mute);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    margin-top: 0.05rem;
+  }
+
+  .nav-item.active .nav-num {
+    background: var(--clr-sage);
+    color: white;
+  }
+
+  /* =============================================
+     MAIN CONTENT
+  ============================================= */
+  .main {
+    margin-left: var(--sidebar-w);
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* Hero Banner */
+  .hero {
+    background: linear-gradient(135deg, var(--clr-sage-pale) 0%, var(--clr-lav-pale) 50%, var(--clr-sky-pale) 100%);
+    border-bottom: 1px solid var(--clr-border);
+    padding: 3.5rem 3rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(122,173,143,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 20%;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(169,160,204,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--clr-sage-deep);
+    background: var(--clr-sage-light);
+    padding: 0.3rem 0.75rem;
+    border-radius: 99px;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--clr-text);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--clr-text-sub);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .hero-tag {
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    border: 1px solid;
+  }
+
+  .hero-tag.teal   { color: var(--clr-sage-deep);  border-color: var(--clr-sage);    background: var(--clr-sage-pale); }
+  .hero-tag.lav    { color: #6b5fb5;               border-color: var(--clr-lavender); background: var(--clr-lav-pale); }
+  .hero-tag.sky    { color: #3a7fa0;               border-color: var(--clr-sky);      background: var(--clr-sky-pale); }
+
+  /* Content Area */
+  .content {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: 2.5rem 3rem 5rem;
+  }
+
+  /* Overview Table of Contents */
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin: 1.5rem 0 2.5rem;
+  }
+
+  .toc-card {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-md);
+    padding: 0.9rem 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .toc-card:hover {
+    box-shadow: var(--shadow-sm);
+    border-color: var(--clr-sage);
+    transform: translateY(-1px);
+  }
+
+  .toc-card-num {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--clr-text-mute);
+    margin-bottom: 0.3rem;
+  }
+
+  .toc-card-title {
+    font-family: var(--font-serif);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--clr-text);
+    line-height: 1.3;
+  }
+
+  /* Section Containers */
+  .unit-section {
+    margin-bottom: 4rem;
+    scroll-margin-top: 1.5rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--clr-border);
+  }
+
+  .section-badge {
+    flex-shrink: 0;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+
+  .badge-sage   { background: var(--clr-sage-light);  color: var(--clr-sage-deep); }
+  .badge-peach  { background: var(--clr-peach-light); color: #c2603a; }
+  .badge-lav    { background: var(--clr-lav-light);   color: #5c52a0; }
+  .badge-sky    { background: var(--clr-sky-light);   color: #2f7099; }
+  .badge-gold   { background: var(--clr-gold-light);  color: #8a6a1e; }
+  .badge-rose   { background: var(--clr-rose-light);  color: #a04060; }
+
+  .section-header-text {}
+
+  .section-part-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--clr-text-mute);
+    margin-bottom: 0.2rem;
+  }
+
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--clr-text);
+    line-height: 1.25;
+    margin-bottom: 0.2rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.85rem;
+    color: var(--clr-text-sub);
+    font-style: italic;
+  }
+
+  /* Purpose Box */
+  .purpose-box {
+    background: var(--clr-sky-pale);
+    border-left: 3px solid var(--clr-sky);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.75rem;
+    font-size: 0.9rem;
+    color: var(--clr-text-sub);
+    line-height: 1.7;
+  }
+
+  .purpose-box strong {
+    color: var(--clr-text);
+    font-weight: 600;
+  }
+
+  /* Activity Blocks */
+  .activity-block {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .activity-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1.25rem;
+    background: var(--clr-bg-alt);
+    border-bottom: 1px solid var(--clr-border);
+  }
+
+  .activity-number {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--clr-text-mute);
+  }
+
+  .activity-title {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--clr-text);
+  }
+
+  .activity-body {
+    padding: 1.25rem 1.25rem;
+  }
+
+  /* Questions List */
+  .questions-list {
+    list-style: none;
+    counter-reset: q-counter;
+  }
+
+  .questions-list li {
+    counter-increment: q-counter;
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--clr-bg-alt);
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .questions-list li:last-child { border-bottom: none; }
+
+  .questions-list li::before {
+    content: counter(q-counter);
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--clr-sage-light);
+    color: var(--clr-sage-deep);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+
+  /* Bullet Lists */
+  .bullet-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .bullet-list li {
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.35rem 0;
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .bullet-list li::before {
+    content: '·';
+    color: var(--clr-sage);
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    flex-shrink: 0;
+  }
+
+  /* Example Box */
+  .example-box {
+    background: var(--clr-gold-pale);
+    border: 1px solid var(--clr-gold-light);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+  }
+
+  .example-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--clr-gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .example-box p { font-size: 0.9rem; line-height: 1.65; color: var(--clr-text); }
+
+  /* Answer Comparison */
+  .answer-compare {
+    display: grid;
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+
+  .answer-card {
+    border-radius: var(--radius-md);
+    padding: 0.9rem 1.1rem;
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .answer-card.weak {
+    background: var(--clr-rose-pale);
+    border: 1px solid var(--clr-rose-light);
+  }
+
+  .answer-card.strong {
+    background: var(--clr-sage-pale);
+    border: 1px solid var(--clr-sage-light);
+  }
+
+  .answer-card.neutral {
+    background: var(--clr-bg-alt);
+    border: 1px solid var(--clr-border);
+  }
+
+  .answer-card-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
+  }
+
+  .answer-card.weak   .answer-card-label { color: var(--clr-rose); }
+  .answer-card.strong .answer-card-label { color: var(--clr-sage-deep); }
+  .answer-card.neutral .answer-card-label { color: var(--clr-text-mute); }
+
+  /* Strategy Framework */
+  .strategy-grid {
+    display: grid;
+    gap: 0.6rem;
+    margin: 1rem 0;
+  }
+
+  .strategy-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-md);
+    padding: 0.9rem 1.1rem;
+    box-shadow: var(--shadow-xs);
+    transition: box-shadow 0.18s ease;
+  }
+
+  .strategy-step:hover { box-shadow: var(--shadow-sm); }
+
+  .step-icon {
+    flex-shrink: 0;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .step-icon.layer-1 { background: #daeee3; color: #3a7a58; }
+  .step-icon.layer-2 { background: #dce3f5; color: #3a50a0; }
+  .step-icon.layer-3 { background: #fae8d2; color: #b05e2a; }
+  .step-icon.layer-4 { background: #f5dce5; color: #a03060; }
+  .step-icon.layer-5 { background: #e8e0f5; color: #5c48a0; }
+
+  .step-content {}
+  .step-title {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--clr-text);
+    margin-bottom: 0.15rem;
+  }
+  .step-desc {
+    font-size: 0.82rem;
+    color: var(--clr-text-sub);
+    line-height: 1.5;
+  }
+
+  /* Model Answer */
+  .model-answer {
+    background: linear-gradient(135deg, var(--clr-sage-pale), var(--clr-lav-pale));
+    border: 1px solid var(--clr-sage-light);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .model-answer-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--clr-sage-deep);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .model-answer-question {
+    font-family: var(--font-serif);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--clr-text-sub);
+    margin-bottom: 0.6rem;
+    font-style: italic;
+  }
+
+  .model-answer p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--clr-text);
+  }
+
+  /* Layer Annotation */
+  .annotated-answer {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin: 1rem 0;
+  }
+
+  .annotation-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    border-bottom: 1px solid var(--clr-bg-alt);
+    font-size: 0.88rem;
+  }
+
+  .annotation-row:last-child { border-bottom: none; }
+
+  .annotation-label {
+    padding: 0.75rem 0.9rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    display: flex;
+    align-items: flex-start;
+    border-right: 1px solid var(--clr-bg-alt);
+  }
+
+  .annotation-text {
+    padding: 0.75rem 1rem;
+    line-height: 1.6;
+    color: var(--clr-text);
+  }
+
+  .lbl-statement  { color: #3a7a58; background: #eef6f1; }
+  .lbl-reason     { color: #3a50a0; background: #edf0fa; }
+  .lbl-example    { color: #b05e2a; background: #fdf3ec; }
+  .lbl-feeling    { color: #a03060; background: #fdf0f4; }
+  .lbl-reflection { color: #5c48a0; background: #f3f0fb; }
+
+  /* Planning Table */
+  .planning-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    margin: 1rem 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .planning-table th {
+    background: var(--clr-sage);
+    color: white;
+    font-weight: 600;
+    padding: 0.7rem 1rem;
+    text-align: left;
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  .planning-table td {
+    background: var(--clr-surface);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--clr-border);
+    vertical-align: top;
+  }
+
+  .planning-table tr:last-child td { border-bottom: none; }
+
+  .planning-table td:first-child {
+    font-weight: 600;
+    color: var(--clr-sage-deep);
+    width: 130px;
+    font-size: 0.82rem;
+    background: var(--clr-sage-pale);
+  }
+
+  .write-space {
+    background: repeating-linear-gradient(
+      transparent, transparent 1.6rem,
+      var(--clr-bg-alt) 1.6rem, var(--clr-bg-alt) calc(1.6rem + 1px)
+    );
+    min-height: 3.5rem;
+    padding: 0.25rem 0;
+    font-size: 0.88rem;
+    color: var(--clr-text-mute);
+    font-style: italic;
+  }
+
+  /* Phrasal Verb / Vocabulary Table */
+  .vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    margin: 1rem 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .vocab-table thead th {
+    background: var(--clr-lav-light);
+    color: #5c52a0;
+    font-weight: 700;
+    padding: 0.7rem 1rem;
+    text-align: left;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .vocab-table tbody tr:nth-child(even) td { background: var(--clr-lav-pale); }
+  .vocab-table tbody tr:nth-child(odd)  td { background: var(--clr-surface); }
+
+  .vocab-table td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid #ede9f8;
+    line-height: 1.55;
+    vertical-align: top;
+  }
+
+  .vocab-table tr:last-child td { border-bottom: none; }
+
+  .vocab-table td:first-child {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    color: var(--clr-text);
+    font-style: italic;
+  }
+
+  /* Idiom / Expression Cards */
+  .expression-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+
+  .expression-card {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.1rem;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .expr-phrase {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--clr-peach);
+    margin-bottom: 0.3rem;
+  }
+
+  .expr-meaning {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--clr-text);
+    margin-bottom: 0.3rem;
+  }
+
+  .expr-example {
+    font-size: 0.8rem;
+    color: var(--clr-text-sub);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* Recovery / Repair Expression Cards */
+  .repair-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+
+  .repair-card {
+    background: var(--clr-peach-pale);
+    border: 1px solid var(--clr-peach-light);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1rem;
+  }
+
+  .repair-card .expr { font-family: var(--font-serif); font-style: italic; font-size: 0.88rem; font-weight: 600; color: #c2603a; }
+  .repair-card .type { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--clr-peach); margin-bottom: 0.3rem; }
+
+  /* Checklist */
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding: 0.4rem 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--clr-text-sub);
+    border-bottom: 1px solid var(--clr-bg-alt);
+  }
+
+  .checklist li:last-child { border-bottom: none; }
+
+  .checklist li::before {
+    content: '□';
+    font-size: 1rem;
+    color: var(--clr-sage);
+    flex-shrink: 0;
+    margin-top: -1px;
+  }
+
+  /* Reflection Box */
+  .reflection-box {
+    background: var(--clr-lav-pale);
+    border: 1px solid var(--clr-lav-light);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .reflection-box-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--clr-lavender);
+    margin-bottom: 0.6rem;
+  }
+
+  .reflection-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .reflection-box ul li {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    padding: 0.3rem 0;
+    color: var(--clr-text-sub);
+  }
+
+  .reflection-box ul li::before {
+    content: '→';
+    color: var(--clr-lavender);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  /* Tip / Note Callout */
+  .callout {
+    display: flex;
+    gap: 0.9rem;
+    padding: 0.9rem 1.1rem;
+    border-radius: var(--radius-md);
+    margin: 1rem 0;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .callout.tip  { background: var(--clr-gold-pale); border: 1px solid var(--clr-gold-light); color: var(--clr-text-sub); }
+  .callout.note { background: var(--clr-sky-pale);  border: 1px solid var(--clr-sky-light);  color: var(--clr-text-sub); }
+  .callout.warn { background: var(--clr-rose-pale); border: 1px solid var(--clr-rose-light); color: var(--clr-text-sub); }
+
+  .callout-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  /* Section divider */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(to right, var(--clr-sage-light), var(--clr-border), transparent);
+    margin: 2rem 0;
+  }
+
+  /* Sub-section headers */
+  .sub-section-title {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--clr-text);
+    margin: 1.5rem 0 0.75rem;
+    padding-left: 0.75rem;
+    border-left: 3px solid var(--clr-sage);
+  }
+
+  /* Question box */
+  .question-box {
+    background: var(--clr-bg-alt);
+    border-left: 3px solid var(--clr-lavender);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 0.6rem 1rem;
+    margin: 0.75rem 0 0.5rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--clr-text);
+  }
+
+  /* Improvement prompt */
+  .improve-prompt {
+    background: var(--clr-sky-pale);
+    border: 1px dashed var(--clr-sky);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1.1rem;
+    margin: 0.75rem 0;
+    font-size: 0.85rem;
+    color: var(--clr-text-sub);
+  }
+
+  .improve-prompt strong { color: #2f7099; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 0.35rem; }
+
+  /* Matching activity */
+  .match-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .match-col-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--clr-text-mute);
+    margin-bottom: 0.5rem;
+  }
+
+  .match-item {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+    padding: 0.55rem 0.85rem;
+    font-size: 0.87rem;
+    margin-bottom: 0.4rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  .match-item.alpha {
+    background: var(--clr-lav-pale);
+    border-color: var(--clr-lav-light);
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .match-item.alpha .alpha-letter {
+    font-weight: 700;
+    color: var(--clr-lavender);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  /* Error correction */
+  .error-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .error-original {
+    background: var(--clr-rose-pale);
+    border: 1px solid var(--clr-rose-light);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1rem;
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .error-corrected {
+    background: var(--clr-sage-pale);
+    border: 1px solid var(--clr-sage-light);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1rem;
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .error-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 0.3rem;
+    display: block;
+  }
+
+  .error-original .error-label { color: var(--clr-rose); }
+  .error-corrected .error-label { color: var(--clr-sage-deep); }
+
+  /* Vocab comparison table */
+  .unnatural-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    margin: 1rem 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .unnatural-table th {
+    padding: 0.65rem 1rem;
+    text-align: left;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+  }
+
+  .unnatural-table th:first-child  { background: var(--clr-rose-light);    color: #a04060; }
+  .unnatural-table th:last-child   { background: var(--clr-sage-light);    color: var(--clr-sage-deep); }
+
+  .unnatural-table td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid var(--clr-border);
+    line-height: 1.5;
+  }
+
+  .unnatural-table td:first-child { background: var(--clr-rose-pale); }
+  .unnatural-table td:last-child  { background: var(--clr-sage-pale); }
+
+  .unnatural-table tr:last-child td { border-bottom: none; }
+
+  /* Self-assessment */
+  .assessment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .assessment-cat {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.1rem;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .assessment-cat-title {
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--clr-text);
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--clr-bg-alt);
+  }
+
+  /* Sticky progress indicator */
+  .progress-bar-wrap {
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-w);
+    right: 0;
+    height: 3px;
+    background: var(--clr-bg-alt);
+    z-index: 200;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--clr-sage), var(--clr-lavender));
+    width: 0%;
+    transition: width 0.2s ease;
+  }
+
+  /* Headings inside activity body */
+  .activity-body h3 {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--clr-text);
+    margin: 1rem 0 0.5rem;
+  }
+
+  .activity-body p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--clr-text);
+    margin-bottom: 0.6rem;
+  }
+
+  /* =============================================
+     PRINT STYLES
+  ============================================= */
+  @media print {
+    .sidebar, .progress-bar-wrap { display: none; }
+    .main { margin-left: 0; }
+    .content { padding: 1rem 2rem; }
+    .hero { padding: 2rem; }
+    .activity-block { break-inside: avoid; page-break-inside: avoid; }
+    .strategy-step { break-inside: avoid; }
+    body { font-size: 11pt; }
+    .section-title { font-size: 1.3rem; }
+  }
+
+  /* =============================================
+     RESPONSIVE (collapse sidebar on small)
+  ============================================= */
+  @media (max-width: 900px) {
+    :root { --sidebar-w: 0px; }
+    .sidebar { display: none; }
+    .main { margin-left: 0; }
+    .content { padding: 1.5rem 1.25rem; }
+    .hero { padding: 2rem 1.5rem; }
+    .toc-grid { grid-template-columns: 1fr 1fr; }
+    .expression-grid,
+    .repair-grid,
+    .assessment-grid,
+    .match-grid { grid-template-columns: 1fr; }
+    .error-row { grid-template-columns: 1fr; }
+    .annotation-row { grid-template-columns: 90px 1fr; }
+  }
+
+  /* Utility */
+  .mt-1 { margin-top: 0.5rem; }
+  .mt-2 { margin-top: 1rem; }
+  .mb-1 { margin-bottom: 0.5rem; }
+  .text-sm { font-size: 0.85rem; color: var(--clr-text-sub); }
+  .text-mute { font-size: 0.82rem; color: var(--clr-text-mute); font-style: italic; }
+  strong { font-weight: 600; }
+/* === PASTEL MASTER SITE PATCH === */
+:root{--pastel-paper:#fbf8f3;--pastel-surface:#fffdf9;--pastel-line:#e8ded2;--pastel-ink:#2d2a27;--pastel-muted:#625a54;--pastel-sage:#dcefe5;--pastel-sky:#dcecf6;--pastel-lav:#e9e5f8;--pastel-peach:#fde5d5;--pastel-gold:#f7e8b9;--pastel-teal:#4f927f;--pastel-blue:#517f9b;--pastel-plum:#7b6ab4}body{background:var(--pastel-paper)!important;color:var(--pastel-ink)!important}#sidebar,.sidebar{background:var(--pastel-surface)!important;color:var(--pastel-ink)!important;border-right:1px solid var(--pastel-line)!important}.sidebar-brand,.sidebar-header,.sidebar-logo{background:linear-gradient(135deg,var(--pastel-lav),var(--pastel-sky) 70%,var(--pastel-sage))!important;border-bottom:1px solid var(--pastel-line)!important}.sidebar-brand h1,.sidebar-brand h2,.sidebar-title,.sidebar-logo h1{color:var(--pastel-ink)!important}.nav-link,.nav-item,#sidebar a,.nav-sub a{color:var(--pastel-muted)!important}.nav-link:hover,.nav-link.active,.nav-item:hover,.nav-item.active,#sidebar a:hover,#sidebar a.active{background:var(--pastel-sky)!important;color:var(--pastel-blue)!important;border-left-color:#8bbbd2!important}.hero,.page-header{background:linear-gradient(135deg,var(--pastel-lav),var(--pastel-sky) 58%,var(--pastel-sage))!important;color:var(--pastel-ink)!important;border-bottom:1px solid var(--pastel-line)!important}.hero h1,.hero h2,.page-header h1{color:var(--pastel-ink)!important}.hero p,.subtitle,.page-header .subtitle{color:var(--pastel-muted)!important}.card,.topic-block,.pattern-card,.problem-card,.drill-item,.example-block,.callout,.indicator-card,.mock-q,.mock-a,.lang-box{box-shadow:0 8px 24px rgba(64,48,36,.06)!important;}
+
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+
+<!-- ========================================================
+     SIDEBAR
+======================================================== -->
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-brand">IELTS Speaking</div>
+    <div class="sidebar-title">Extending &amp; Repairing Spoken Answers</div>
+    <div class="sidebar-meta">Journeys &amp; Experiences · 12 Parts</div>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="sidebar-section-label">Unit Contents</div>
+    <a href="#overview" class="nav-item active">
+      <span class="nav-num">◎</span> Overview &amp; Contents
+    </a>
+    <a href="#part1" class="nav-item">
+      <span class="nav-num">1</span> Warm-Up Discussion
+    </a>
+    <a href="#part2" class="nav-item">
+      <span class="nav-num">2</span> Model Answers &amp; Noticing
+    </a>
+    <a href="#part3" class="nav-item">
+      <span class="nav-num">3</span> The Layering Method
+    </a>
+    <a href="#part4" class="nav-item">
+      <span class="nav-num">4</span> The 4-Step Answer Engine
+    </a>
+    <a href="#part5" class="nav-item">
+      <span class="nav-num">5</span> Weak → Strong Transformation
+    </a>
+    <a href="#part6" class="nav-item">
+      <span class="nav-num">6</span> Natural Spoken Language
+    </a>
+    <a href="#part7" class="nav-item">
+      <span class="nav-num">7</span> Error Correction Clinic
+    </a>
+    <a href="#part8" class="nav-item">
+      <span class="nav-num">8</span> Expanding Short Answers
+    </a>
+    <a href="#part9" class="nav-item">
+      <span class="nav-num">9</span> Repair &amp; Recovery
+    </a>
+    <a href="#part10" class="nav-item">
+      <span class="nav-num">10</span> Handling Difficult Questions
+    </a>
+    <a href="#part11" class="nav-item">
+      <span class="nav-num">11</span> High-Pressure Challenge
+    </a>
+    <a href="#part12" class="nav-item">
+      <span class="nav-num">12</span> Self-Assessment
+    </a>
+  </nav>
+</aside>
+
+<!-- ========================================================
+     MAIN
+======================================================== -->
+<main class="main">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-label">IELTS Speaking · Skill Module</div>
+    <h1 class="hero-title">Journeys &amp; Experiences</h1>
+    <p class="hero-subtitle">Extending and Repairing Spoken Answers</p>
+    <div class="hero-tags">
+      <span class="hero-tag teal">Answer Extension</span>
+      <span class="hero-tag lav">Idea Development</span>
+      <span class="hero-tag sky">Speaking Fluency</span>
+      <span class="hero-tag teal">Repair Strategies</span>
+      <span class="hero-tag lav">Vocabulary in Use</span>
+    </div>
+  </header>
+
+  <div class="content">
+
+    <!-- ====== OVERVIEW ====== -->
+    <section class="unit-section" id="overview">
+      <div class="section-header">
+        <div class="section-badge badge-sage">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        </div>
+        <div class="section-header-text">
+          <div class="section-part-label">Unit Introduction</div>
+          <h2 class="section-title">About This Unit</h2>
+          <p class="section-subtitle">Skill focus, learning aims, and unit structure</p>
+        </div>
+      </div>
+
+      <div class="purpose-box">
+        <strong>Skill Focus:</strong> This unit develops your ability to produce longer, more natural spoken answers in IELTS Speaking tests and real conversations. You will practise extending ideas, organising responses with clear frameworks, using natural vocabulary, recovering from breakdowns, and handling complex questions with confidence.
+      </div>
+
+      <p class="text-sm" style="margin-bottom:1rem;">The unit follows a progressive structure — from activating ideas through discussion, to learning strategies, practising transformations, building fluency, and evaluating your own performance. Each part builds on the one before it.</p>
+
+      <div class="toc-grid">
+        <a href="#part1"  class="toc-card"><div class="toc-card-num">PART 01</div><div class="toc-card-title">Warm-Up Discussion</div></a>
+        <a href="#part2"  class="toc-card"><div class="toc-card-num">PART 02</div><div class="toc-card-title">Model Answers &amp; Noticing</div></a>
+        <a href="#part3"  class="toc-card"><div class="toc-card-num">PART 03</div><div class="toc-card-title">The Layering Method</div></a>
+        <a href="#part4"  class="toc-card"><div class="toc-card-num">PART 04</div><div class="toc-card-title">The 4-Step Answer Engine</div></a>
+        <a href="#part5"  class="toc-card"><div class="toc-card-num">PART 05</div><div class="toc-card-title">Weak → Strong Transformation</div></a>
+        <a href="#part6"  class="toc-card"><div class="toc-card-num">PART 06</div><div class="toc-card-title">Natural Spoken Language</div></a>
+        <a href="#part7"  class="toc-card"><div class="toc-card-num">PART 07</div><div class="toc-card-title">Error Correction Clinic</div></a>
+        <a href="#part8"  class="toc-card"><div class="toc-card-num">PART 08</div><div class="toc-card-title">Expanding Short Answers</div></a>
+        <a href="#part9"  class="toc-card"><div class="toc-card-num">PART 09</div><div class="toc-card-title">Repair &amp; Recovery Strategies</div></a>
+        <a href="#part10" class="toc-card"><div class="toc-card-num">PART 10</div><div class="toc-card-title">Handling Difficult Questions</div></a>
+        <a href="#part11" class="toc-card"><div class="toc-card-num">PART 11</div><div class="toc-card-title">High-Pressure Challenge</div></a>
+        <a href="#part12" class="toc-card"><div class="toc-card-num">PART 12</div><div class="toc-card-title">Self-Assessment &amp; Reflection</div></a>
+      </div>
+    </section>
+
+    <!-- ============================
+         PART 1: WARM-UP
+    ============================= -->
+    <section class="unit-section" id="part1">
+      <div class="section-header">
+        <div class="section-badge badge-sage">P1</div>
+        <div class="section-header-text">
+          <div class="section-part-label">Part One</div>
+          <h2 class="section-title">Warm-Up Discussion</h2>
+          <p class="section-subtitle">Activating Ideas and Experiences</p>
+        </div>
+      </div>
+
+      <div class="purpose-box">
+        <strong>Purpose:</strong> This section helps you activate your background knowledge about travel and tourism. It also allows you to begin speaking naturally before learning the strategies for extending answers.<br><br>
+        In IELTS Speaking, many questions are based on everyday topics such as travel, hobbies, and daily life. These questions are designed to encourage you to speak comfortably and express personal experiences. Before learning new speaking strategies, it is useful to explore the topic through discussion.
+      </div>
+
+      <!-- Activity 1 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 1</span>
+          <span class="activity-title">General Discussion Questions</span>
+        </div>
+        <div class="activity-body">
+          <p>Answer the following questions about travel. Try to speak naturally and explain your ideas.</p>
+          <ol class="questions-list">
+            <li>Do you enjoy travelling? Why or why not?</li>
+            <li>What kind of places do you usually like to visit when you travel?</li>
+            <li>Do you prefer travelling alone or with other people?</li>
+            <li>What is the most interesting place you have ever visited?</li>
+            <li>How often do you travel each year?</li>
+            <li>What is one country or city you would like to visit in the future?</li>
+            <li>Do you prefer visiting famous tourist attractions or less crowded places?</li>
+            <li>What do you usually do when you travel to a new place?</li>
+            <li>Do you think travelling is important for personal development?</li>
+            <li>What is one memorable experience you had while travelling?</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Activity 2 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 2</span>
+          <span class="activity-title">Follow-Up Questions</span>
+        </div>
+        <div class="activity-body">
+          <p>Choose <strong>three questions</strong> from Activity 1 and try to develop your answers further. Ask yourself the following questions to help you extend your response:</p>
+          <ul class="bullet-list mt-1">
+            <li>Why?</li>
+            <li>Can you give an example?</li>
+            <li>How did you feel about that experience?</li>
+            <li>What did you learn from it?</li>
+          </ul>
+          <div class="example-box mt-2">
+            <div class="example-label">Example</div>
+            <p><strong>Question:</strong> Do you enjoy travelling?</p>
+            <p><strong>Short answer:</strong> Yes, I do.</p>
+            <p style="margin-top:0.5rem;"><strong>Extended answer:</strong> Yes, I really enjoy travelling because it allows me to experience different cultures. For example, last year I visited a coastal town where I tried several local dishes and explored the old city centre. It was a very relaxing experience and it made me realise how enjoyable travelling can be.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 3 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 3</span>
+          <span class="activity-title">Comparing Answers</span>
+        </div>
+        <div class="activity-body">
+          <p>Read the two answers below. Decide which one sounds stronger and explain why.</p>
+          <div class="question-box">Do you enjoy travelling?</div>
+          <div class="answer-compare">
+            <div class="answer-card weak">
+              <div class="answer-card-label">Answer A</div>
+              Yes, I do.
+            </div>
+            <div class="answer-card strong">
+              <div class="answer-card-label">Answer B</div>
+              Yes, I enjoy travelling because it helps me relax and experience different cultures. For example, last summer I visited a small island where I spent most of my time exploring local markets and enjoying the scenery.
+            </div>
+          </div>
+          <div class="improve-prompt">
+            <strong>Discussion Questions</strong>
+            Which answer is more interesting? · Which answer gives more information? · Which answer would be easier for an examiner to evaluate?<br>Write one or two reasons for your answer.
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 4 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 4</span>
+          <span class="activity-title">Extending Your Answer</span>
+        </div>
+        <div class="activity-body">
+          <p>Choose <strong>three questions</strong> from Activity 1 and try to extend your answers. Use the following prompts to help you:</p>
+          <ul class="bullet-list mt-1">
+            <li>Answer the question clearly.</li>
+            <li>Explain your reason.</li>
+            <li>Give an example.</li>
+            <li>Describe how you felt about the experience.</li>
+          </ul>
+          <div class="example-box mt-2">
+            <div class="example-label">Example</div>
+            <p><strong>Question:</strong> What kind of places do you like visiting?</p>
+            <p style="margin-top:0.5rem;"><strong>Possible answer:</strong> I usually enjoy visiting historical cities because they allow me to learn about the culture and history of a place. For instance, when I travelled to Rome, I visited several ancient sites such as the Colosseum and the Roman Forum. Walking around those places made me feel as if I had travelled back in time.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 5 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 5</span>
+          <span class="activity-title">Mini Speaking Challenge</span>
+        </div>
+        <div class="activity-body">
+          <p>Choose <strong>one question</strong> from the list below and speak for about <strong>30 seconds</strong>.</p>
+          <ol class="questions-list">
+            <li>Describe a place you enjoyed visiting.</li>
+            <li>Describe a memorable travel experience.</li>
+            <li>Describe a place you would like to visit in the future.</li>
+            <li>Describe an interesting tourist attraction in your country.</li>
+            <li>Describe a place that surprised you when you visited it.</li>
+          </ol>
+          <p class="mt-1">Try to include the following ideas in your answer:</p>
+          <ul class="bullet-list mt-1">
+            <li>Where the place is</li>
+            <li>Why you went there</li>
+            <li>What you did there</li>
+            <li>How you felt about the experience</li>
+          </ul>
+          <div class="callout tip mt-2">
+            <span class="callout-icon">💡</span>
+            <div>If you are studying independently, <strong>record your answer</strong> and listen to it. Ask yourself: Did I explain my answer clearly? Did I give an example? Did I speak for at least 30 seconds?</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reflection-box">
+        <div class="reflection-box-label">Reflection</div>
+        <ul>
+          <li>Were your answers mostly short or detailed?</li>
+          <li>Did you give examples when explaining your ideas?</li>
+          <li>Which question was the easiest for you to answer?</li>
+          <li>Which question was the most difficult?</li>
+        </ul>
+        <p class="text-mute" style="margin-top:0.6rem;">In the next section, you will examine different types of answers and learn how to develop your responses more effectively.</p>
+      </div>
+    </section>
+
+    <!-- ============================
+         PART 2: MODEL ANSWERS
+    ============================= -->
+    <section class="unit-section" id="part2">
+      <div class="section-header">
+        <div class="section-badge badge-peach">P2</div>
+        <div class="section-header-text">
+          <div class="section-part-label">Part Two</div>
+          <h2 class="section-title">Model Answers and Noticing</h2>
+          <p class="section-subtitle">Understanding Strong and Weak Answers</p>
+        </div>
+      </div>
+
+      <div class="purpose-box">
+        <strong>Purpose:</strong> In speaking tests and real conversations, not all answers are equally effective. Some responses are too short, while others provide clear explanations and examples. In this section, you will analyse several answers to the same question. By comparing these answers, you will learn what makes a response more detailed, interesting, and communicative. Try to notice the differences in how the answers are developed.
+      </div>
+
+      <!-- Activity 1 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 1</span>
+          <span class="activity-title">Comparing Answer Quality</span>
+        </div>
+        <div class="activity-body">
+          <div class="question-box">Do you enjoy travelling?</div>
+          <div class="answer-compare">
+            <div class="answer-card weak">
+              <div class="answer-card-label">Answer A · Weakest</div>
+              Yes, I do.
+            </div>
+            <div class="answer-card neutral">
+              <div class="answer-card-label">Answer B · Developing</div>
+              Yes, I do because travelling is interesting and relaxing.
+            </div>
+            <div class="answer-card strong">
+              <div class="answer-card-label">Answer C · Strongest</div>
+              Yes, I really enjoy travelling because it allows me to experience different cultures and environments. For example, last year I visited Kyoto in Japan, where I explored traditional temples and tried local food. It was a fascinating experience and it made me appreciate how diverse different cultures can be.
+            </div>
+          </div>
+          <div class="improve-prompt">
+            <strong>Discussion Questions</strong>
+            Which answer is the shortest? · Which gives a reason? · Which includes an example? · Which sounds the most natural? · Which would give the examiner the most information? Write your answers.
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 2 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 2</span>
+          <span class="activity-title">Identifying Key Features of Strong Answers</span>
+        </div>
+        <div class="activity-body">
+          <p>Look again at <strong>Answer C</strong>. Underline and identify the following parts: the direct answer, the reason, the example, and the personal reaction or reflection.</p>
+          <div class="annotated-answer mt-2">
+            <div class="annotation-row">
+              <div class="annotation-label lbl-statement">Direct Answer</div>
+              <div class="annotation-text">Yes, I really enjoy travelling</div>
+            </div>
+            <div class="annotation-row">
+              <div class="annotation-label lbl-reason">Reason</div>
+              <div class="annotation-text">…because it allows me to experience different cultures and environments.</div>
+            </div>
+            <div class="annotation-row">
+              <div class="annotation-label lbl-example">Example</div>
+              <div class="annotation-text">Last year, I visited Kyoto in Japan, where I explored traditional temples and tried local food.</div>
+            </div>
+            <div class="annotation-row">
+              <div class="annotation-label lbl-reflection">Reflection</div>
+              <div class="annotation-text">It was a fascinating experience and it made me appreciate how diverse different cultures can be.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 3 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 3</span>
+          <span class="activity-title">Analysing a Different Question</span>
+        </div>
+        <div class="activity-body">
+          <div class="question-box">Do you prefer travelling alone or with other people?</div>
+          <div class="answer-compare">
+            <div class="answer-card weak">
+              <div class="answer-card-label">Answer A</div>
+              I prefer travelling with friends.
+            </div>
+            <div class="answer-card neutral">
+              <div class="answer-card-label">Answer B</div>
+              I prefer travelling with friends because it is more fun.
+            </div>
+            <div class="answer-card strong">
+              <div class="answer-card-label">Answer C</div>
+              I usually prefer travelling with friends because sharing experiences with other people makes the trip more enjoyable. For example, when I travelled to Thailand with two of my friends, we spent several days exploring local markets and trying street food together. Those shared experiences made the trip much more memorable.
+            </div>
+          </div>
+          <div class="improve-prompt">
+            <strong>Discussion Questions</strong>
+            Which answer provides the clearest explanation? · Which includes a real-life example? · Which sounds the most engaging? · Which would likely last longer in a speaking test? Write your observations.
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 4 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 4</span>
+          <span class="activity-title">Spot the Problem</span>
+        </div>
+        <div class="activity-body">
+          <p>Read the answers below. Each one has a problem. Identify what is missing.</p>
+          <div class="question-box">What do you usually do when you travel?</div>
+          <div class="answer-compare">
+            <div class="answer-card weak">
+              <div class="answer-card-label">Answer A — What's missing?</div>
+              I usually explore the city.
+            </div>
+            <div class="answer-card neutral">
+              <div class="answer-card-label">Answer B — What's missing?</div>
+              I usually explore the city because it is interesting.
+            </div>
+            <div class="answer-card neutral">
+              <div class="answer-card-label">Answer C — What's missing?</div>
+              When I travel, I usually explore the city because I enjoy learning about local culture.
+            </div>
+          </div>
+          <div class="improve-prompt">
+            <strong>Analysis Questions</strong>
+            Which answers are too short? · Which answers do not include examples? · Which answers do not describe personal experiences? Discuss how the answers could be improved.
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 5 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 5</span>
+          <span class="activity-title">Improving the Answers</span>
+        </div>
+        <div class="activity-body">
+          <p>Expand the answers below so they sound more detailed and natural.</p>
+          <div class="question-box">Do you enjoy visiting tourist attractions?</div>
+          <div class="answer-card neutral mb-1"><div class="answer-card-label">Short Answer</div>Yes, I do because they are interesting.</div>
+          <div class="improve-prompt">
+            <strong>Your Improved Answer</strong>
+            Try to include: a reason · an example · a personal experience.
+          </div>
+          <div style="margin-top:1rem;">
+            <div class="question-box">What kind of places do you like visiting?</div>
+            <div class="answer-card neutral mb-1"><div class="answer-card-label">Short Answer</div>I like historical places.</div>
+            <div class="improve-prompt">
+              <strong>Your Improved Answer</strong>
+              Try to explain: why you like them · an example of a place you visited · how the experience made you feel.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 6 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 6</span>
+          <span class="activity-title">Listening to Yourself</span>
+        </div>
+        <div class="activity-body">
+          <p>Choose <strong>one question</strong> below and answer it for about <strong>30–40 seconds</strong>. Record your answer if possible.</p>
+          <ol class="questions-list">
+            <li>Do you enjoy travelling to other countries?</li>
+            <li>What kind of tourist attractions do you like visiting?</li>
+            <li>What is the most interesting city you have visited?</li>
+            <li>Do you prefer relaxing holidays or active holidays?</li>
+            <li>What is the best trip you have taken?</li>
+          </ol>
+          <h3 style="margin-top:1rem;">Self-Evaluation Checklist</h3>
+          <ul class="checklist">
+            <li>Did I answer the question clearly?</li>
+            <li>Did I explain my reason?</li>
+            <li>Did I include an example?</li>
+            <li>Did I add any personal detail?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reflection-box">
+        <div class="reflection-box-label">Reflection</div>
+        <ul>
+          <li>Were your answers short or detailed?</li>
+          <li>Did you provide examples when explaining your ideas?</li>
+          <li>Which questions were easiest for you to answer?</li>
+          <li>What could you improve in your next response?</li>
+        </ul>
+        <p class="text-mute" style="margin-top:0.6rem;">In the next section, you will learn a strategy for building stronger answers step by step.</p>
+      </div>
+    </section>
+
+    <!-- ============================
+         PART 3: LAYERING METHOD
+    ============================= -->
+    <section class="unit-section" id="part3">
+      <div class="section-header">
+        <div class="section-badge badge-lav">P3</div>
+        <div class="section-header-text">
+          <div class="section-part-label">Part Three — Speaking Strategy</div>
+          <h2 class="section-title">The Layering Method</h2>
+          <p class="section-subtitle">Developing answers step by step</p>
+        </div>
+      </div>
+
+      <div class="purpose-box">
+        <strong>Purpose:</strong> In many speaking situations, learners give answers that are too short or repetitive. One of the most effective ways to improve speaking performance is to develop answers logically and clearly. The Layering Method helps you expand your answers step by step. Instead of repeating the same idea, you add new information that supports your opinion. This method is particularly useful in speaking tests because it helps you produce longer, clearer responses.
+      </div>
+
+      <h3 class="sub-section-title">The Layering Method — Framework</h3>
+      <div class="strategy-grid">
+        <div class="strategy-step">
+          <div class="step-icon layer-1">L1</div>
+          <div class="step-content">
+            <div class="step-title">Statement</div>
+            <div class="step-desc">Answer the question clearly and directly.</div>
+          </div>
+        </div>
+        <div class="strategy-step">
+          <div class="step-icon layer-2">L2</div>
+          <div class="step-content">
+            <div class="step-title">Reason</div>
+            <div class="step-desc">Explain why you think that or why you have that preference.</div>
+          </div>
+        </div>
+        <div class="strategy-step">
+          <div class="step-icon layer-3">L3</div>
+          <div class="step-content">
+            <div class="step-title">Example</div>
+            <div class="step-desc">Give a real experience or specific situation to support your idea.</div>
+          </div>
+        </div>
+        <div class="strategy-step">
+          <div class="step-icon layer-4">L4</div>
+          <div class="step-content">
+            <div class="step-title">Feeling</div>
+            <div class="step-desc">Describe your personal reaction or emotional response.</div>
+          </div>
+        </div>
+        <div class="strategy-step">
+          <div class="step-icon layer-5">L5</div>
+          <div class="step-content">
+            <div class="step-title">Reflection</div>
+            <div class="step-desc">Explain what the experience taught you or why it was meaningful.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="model-answer">
+        <div class="model-answer-label">▶ Full Example — Layered Answer</div>
+        <div class="model-answer-question">Question: Do you enjoy travelling?</div>
+        <div class="annotated-answer">
+          <div class="annotation-row">
+            <div class="annotation-label lbl-statement">Statement</div>
+            <div class="annotation-text">Yes, I really enjoy travelling.</div>
+          </div>
+          <div class="annotation-row">
+            <div class="annotation-label lbl-reason">Reason</div>
+            <div class="annotation-text">I like travelling because it allows me to experience different cultures.</div>
+          </div>
+          <div class="annotation-row">
+            <div class="annotation-label lbl-example">Example</div>
+            <div class="annotation-text">For example, last year I visited Kyoto in Japan and spent several days exploring traditional temples and trying local food.</div>
+          </div>
+          <div class="annotation-row">
+            <div class="annotation-label lbl-feeling">Feeling</div>
+            <div class="annotation-text">I found the experience incredibly exciting and memorable.</div>
+          </div>
+          <div class="annotation-row">
+            <div class="annotation-label lbl-reflection">Reflection</div>
+            <div class="annotation-text">Trips like that make me appreciate how diverse the world can be.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 1 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 1</span>
+          <span class="activity-title">Identifying the Layers</span>
+        </div>
+        <div class="activity-body">
+          <p>Read the answer below and label each part: statement, reason, example, feeling, and reflection.</p>
+          <div class="question-box">What kind of places do you enjoy visiting?</div>
+          <div class="answer-card strong" style="margin:0.75rem 0;">
+            <div class="answer-card-label">Answer to Analyse</div>
+            I usually enjoy visiting historical cities because they allow me to learn about the culture and traditions of a place. For instance, when I travelled to Rome, I visited several ancient landmarks such as the Colosseum and the Roman Forum. Walking around those sites made me feel as if I had travelled back in time, and it helped me understand the history of the city much better.
+          </div>
+          <div class="improve-prompt">
+            <strong>Tasks</strong>
+            Identify and write each layer: Statement · Reason · Example · Feeling · Reflection
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 2 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 2</span>
+          <span class="activity-title">Building Layered Answers</span>
+        </div>
+        <div class="activity-body">
+          <p>Complete the table to help you plan your answer. Then speak for about <strong>40 seconds</strong>.</p>
+          <div class="question-box">Do you prefer travelling alone or with other people?</div>
+          <table class="planning-table">
+            <thead><tr><th>Layer</th><th>Your Idea</th></tr></thead>
+            <tbody>
+              <tr><td>Statement</td><td><div class="write-space">Write your answer here…</div></td></tr>
+              <tr><td>Reason</td><td><div class="write-space">Write your answer here…</div></td></tr>
+              <tr><td>Example</td><td><div class="write-space">Write your answer here…</div></td></tr>
+              <tr><td>Feeling</td><td><div class="write-space">Write your answer here…</div></td></tr>
+              <tr><td>Reflection</td><td><div class="write-space">Write your answer here…</div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Activity 3 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 3</span>
+          <span class="activity-title">Developing Your Answer</span>
+        </div>
+        <div class="activity-body">
+          <p>Use the Layering Method to answer the following questions. Try to include: a clear statement · a reason · an example · a feeling or reaction · a reflection or conclusion.</p>
+          <ol class="questions-list">
+            <li>What kind of places do you enjoy visiting when you travel?</li>
+            <li>Do you prefer relaxing holidays or adventurous holidays?</li>
+            <li>What is the most interesting place you have visited?</li>
+            <li>Do you like visiting famous tourist attractions?</li>
+            <li>What do you usually do during a trip?</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Activity 4 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 4</span>
+          <span class="activity-title">Improving Weak Answers</span>
+        </div>
+        <div class="activity-body">
+          <p>Below are some weak answers. Use the Layering Method to improve them.</p>
+          <div class="question-box">Do you like travelling?</div>
+          <div class="answer-card weak mb-1"><div class="answer-card-label">Weak Answer</div>Yes, I like travelling because it is interesting.</div>
+          <div class="improve-prompt">
+            <strong>Your Improved Answer</strong>
+            Try to include: a specific reason · a real example · a personal reaction.
+          </div>
+          <div style="margin-top:1rem;">
+            <div class="question-box">What do you usually do during a trip?</div>
+            <div class="answer-card weak mb-1"><div class="answer-card-label">Weak Answer</div>I usually visit tourist attractions.</div>
+            <div class="improve-prompt">
+              <strong>Your Improved Answer</strong>
+              Explain: where you went · what you did · why you enjoyed the experience.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 5 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 5</span>
+          <span class="activity-title">Speaking Practice</span>
+        </div>
+        <div class="activity-body">
+          <p>Choose <strong>one question</strong> and speak for about <strong>45 seconds</strong>. Use the Layering Method to organise your answer.</p>
+          <ol class="questions-list">
+            <li>Describe a place you enjoyed visiting.</li>
+            <li>Describe a memorable travel experience.</li>
+            <li>Describe a place you would like to visit in the future.</li>
+            <li>Describe a tourist attraction in your country.</li>
+            <li>Describe a place that surprised you when you visited it.</li>
+          </ol>
+          <h3 style="margin-top:1rem;">Checklist</h3>
+          <ul class="checklist">
+            <li>Did I answer the question clearly?</li>
+            <li>Did I explain my reason?</li>
+            <li>Did I give an example?</li>
+            <li>Did I describe how I felt?</li>
+            <li>Did I add a final thought or reflection?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reflection-box">
+        <div class="reflection-box-label">Reflection</div>
+        <ul>
+          <li>Did the Layering Method help you speak longer?</li>
+          <li>Which layer was easiest for you to add?</li>
+          <li>Which layer was the most difficult?</li>
+          <li>How could you improve your answers next time?</li>
+        </ul>
+        <p class="text-mute" style="margin-top:0.6rem;">In the next section, you will learn another strategy that helps speakers structure answers clearly and confidently.</p>
+      </div>
+    </section>
+
+    <!-- ============================
+         PART 4: 4-STEP ENGINE
+    ============================= -->
+    <section class="unit-section" id="part4">
+      <div class="section-header">
+        <div class="section-badge badge-sky">P4</div>
+        <div class="section-header-text">
+          <div class="section-part-label">Part Four — Speaking Strategy</div>
+          <h2 class="section-title">The 4-Step Answer Engine</h2>
+          <p class="section-subtitle">Structuring Clear and Natural Responses</p>
+        </div>
+      </div>
+
+      <div class="purpose-box">
+        <strong>Purpose:</strong> While the Layering Method helps you extend your answers, many learners still struggle with organising their ideas quickly during conversation. When you are asked a question, it is useful to have a simple structure that helps you respond immediately. The 4-Step Answer Engine is a practical framework that helps speakers develop answers logically and naturally. Instead of giving short or repetitive responses, you can follow four simple steps to organise your ideas.
+      </div>
+
+      <h3 class="sub-section-title">The 4-Step Answer Engine — Framework</h3>
+      <div class="strategy-grid">
+        <div class="strategy-step">
+          <div class="step-icon layer-1">S1</div>
+          <div class="step-content">
+            <div class="step-title">Direct Answer</div>
+            <div class="step-desc">Give a clear and direct response to the question. Don't delay — answer first.</div>
+          </div>
+        </div>
+        <div class="strategy-step">
+          <div class="step-icon layer-2">S2</div>
+          <div class="step-content">
+            <div class="step-title">Reason</div>
+            <div class="step-desc">Explain why you think that or why you have that preference.</div>
+          </div>
+        </div>
+        <div class="strategy-step">
+          <div class="step-icon layer-3">S3</div>
+          <div class="step-content">
+            <div class="step-title">Example</div>
+            <div class="step-desc">Provide a real example or personal experience to support your idea.</div>
+          </div>
+        </div>
+        <div class="strategy-step">
+          <div class="step-icon layer-4">S4</div>
+          <div class="step-content">
+            <div class="step-title">Reflection</div>
+            <div class="step-desc">Add a final comment about your feelings, thoughts, or what you learned.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="model-answer">
+        <div class="model-answer-label">▶ Full Example — 4-Step Answer</div>
+        <div class="model-answer-question">Question: Do you enjoy travelling?</div>
+        <div class="annotated-answer">
+          <div class="annotation-row">
+            <div class="annotation-label lbl-statement">Direct Answer</div>
+            <div class="annotation-text">Yes, I really enjoy travelling.</div>
+          </div>
+          <div class="annotation-row">
+            <div class="annotation-label lbl-reason">Reason</div>
+            <div class="annotation-text">I enjoy it because it allows me to experience new cultures and environments.</div>
+          </div>
+          <div class="annotation-row">
+            <div class="annotation-label lbl-example">Example</div>
+            <div class="annotation-text">For instance, last year I visited Kyoto in Japan where I explored several traditional temples and tried different kinds of local food.</div>
+          </div>
+          <div class="annotation-row">
+            <div class="annotation-label lbl-reflection">Reflection</div>
+            <div class="annotation-text">Experiences like that make travelling very meaningful and memorable for me.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 1 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 1</span>
+          <span class="activity-title">Recognising the Structure</span>
+        </div>
+        <div class="activity-body">
+          <p>Read the answer below and identify the four steps.</p>
+          <div class="question-box">Do you prefer travelling alone or with other people?</div>
+          <div class="answer-card strong" style="margin:0.75rem 0;">
+            <div class="answer-card-label">Answer to Analyse</div>
+            I usually prefer travelling with friends because sharing experiences makes the trip more enjoyable. For example, when I travelled to Thailand with two of my friends, we spent several days exploring local markets and trying street food together. Those shared moments made the trip much more memorable.
+          </div>
+          <div class="improve-prompt">
+            <strong>Tasks</strong>
+            Identify and write each step: Direct Answer · Reason · Example · Reflection
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 2 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 2</span>
+          <span class="activity-title">Completing the Structure</span>
+        </div>
+        <div class="activity-body">
+          <div class="question-box">What kind of places do you like visiting?</div>
+          <table class="planning-table">
+            <thead><tr><th>Step</th><th>Your Idea</th></tr></thead>
+            <tbody>
+              <tr><td>Direct Answer</td><td><div class="write-space">Write your answer here…</div></td></tr>
+              <tr><td>Reason</td><td><div class="write-space">Write your answer here…</div></td></tr>
+              <tr><td>Example</td><td><div class="write-space">Write your answer here…</div></td></tr>
+              <tr><td>Reflection</td><td><div class="write-space">Write your answer here…</div></td></tr>
+            </tbody>
+          </table>
+          <p class="text-sm">After filling in the table, speak for about 40 seconds.</p>
+        </div>
+      </div>
+
+      <!-- Activity 3 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 3</span>
+          <span class="activity-title">Guided Speaking Practice</span>
+        </div>
+        <div class="activity-body">
+          <p>Use the 4-Step Answer Engine to answer the questions below. Organise your answers: Direct answer → Reason → Example → Reflection.</p>
+          <ol class="questions-list">
+            <li>Do you enjoy visiting tourist attractions?</li>
+            <li>What is your favourite place to travel?</li>
+            <li>Do you prefer travelling to cities or natural places?</li>
+            <li>What do you usually do when you travel to a new place?</li>
+            <li>What country would you like to visit in the future?</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Activity 4 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 4</span>
+          <span class="activity-title">Comparing Answers</span>
+        </div>
+        <div class="activity-body">
+          <div class="question-box">Do you enjoy visiting museums?</div>
+          <div class="answer-compare">
+            <div class="answer-card weak">
+              <div class="answer-card-label">Answer A</div>
+              Yes, I do.
+            </div>
+            <div class="answer-card strong">
+              <div class="answer-card-label">Answer B</div>
+              Yes, I enjoy visiting museums because they help me learn more about history and culture. For example, when I travelled to Paris, I visited the Louvre Museum and saw many famous artworks. It was a fascinating experience that made me appreciate art much more.
+            </div>
+          </div>
+          <div class="improve-prompt">
+            <strong>Discussion Questions</strong>
+            Which answer is more detailed? · Which would last longer? · Which gives the listener more information? · Which would help you achieve a higher speaking score?
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 5 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 5</span>
+          <span class="activity-title">Speaking Challenge</span>
+        </div>
+        <div class="activity-body">
+          <p>Choose one question and speak for about <strong>45 seconds</strong>. Before speaking, plan your answer using the table.</p>
+          <ol class="questions-list">
+            <li>Describe a place you would recommend to tourists.</li>
+            <li>Describe a city you would like to visit.</li>
+            <li>Describe a memorable holiday you had.</li>
+            <li>Describe a place where you like to relax.</li>
+            <li>Describe a tourist attraction in your country.</li>
+          </ol>
+          <table class="planning-table" style="margin-top:1rem;">
+            <thead><tr><th>Step</th><th>Key Idea</th></tr></thead>
+            <tbody>
+              <tr><td>Direct Answer</td><td><div class="write-space">Write your key idea…</div></td></tr>
+              <tr><td>Reason</td><td><div class="write-space">Write your key idea…</div></td></tr>
+              <tr><td>Example</td><td><div class="write-space">Write your key idea…</div></td></tr>
+              <tr><td>Reflection</td><td><div class="write-space">Write your key idea…</div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Activity 6 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 6</span>
+          <span class="activity-title">Self-Evaluation</span>
+        </div>
+        <div class="activity-body">
+          <p>After speaking, evaluate your answer.</p>
+          <ul class="checklist">
+            <li>Did I answer the question clearly?</li>
+            <li>Did I explain my reason?</li>
+            <li>Did I give a real example?</li>
+            <li>Did I add a final thought or reflection?</li>
+            <li>Did my answer sound natural?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reflection-box">
+        <div class="reflection-box-label">Reflection</div>
+        <ul>
+          <li>The 4-Step Answer Engine helps speakers organise ideas quickly.</li>
+          <li>When you practise this structure regularly, it becomes easier to produce longer and clearer responses.</li>
+          <li>In the next section, you will practise transforming short answers into more developed responses.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================
+         PART 5: WEAK → STRONG
+    ============================= -->
+    <section class="unit-section" id="part5">
+      <div class="section-header">
+        <div class="section-badge badge-gold">P5</div>
+        <div class="section-header-text">
+          <div class="section-part-label">Part Five</div>
+          <h2 class="section-title">Weak → Strong Answer Transformation</h2>
+          <p class="section-subtitle">Developing Detailed Responses</p>
+        </div>
+      </div>
+
+      <div class="purpose-box">
+        <strong>Purpose:</strong> Many learners give answers that are too short or repetitive. These answers often lack explanation, examples, and personal detail. In this section, you will practise transforming weak answers into stronger responses. The goal is to improve the clarity and depth of your speaking by adding meaningful information rather than repeating the same idea. Use the strategies you learned in the previous sections: <strong>The Layering Method</strong> and <strong>The 4-Step Answer Engine</strong>.
+      </div>
+
+      <div class="callout note">
+        <span class="callout-icon">📌</span>
+        <div>When improving answers, always try to add: a <strong>Direct answer</strong> · a <strong>Reason</strong> · an <strong>Example</strong> · a <strong>Reflection or personal comment</strong>.</div>
+      </div>
+
+      <!-- Activity 1 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 1</span>
+          <span class="activity-title">Identifying Weak Answers</span>
+        </div>
+        <div class="activity-body">
+          <div class="question-box">Do you enjoy travelling?</div>
+          <div class="answer-compare">
+            <div class="answer-card weak"><div class="answer-card-label">Answer A</div>Yes, I do.</div>
+            <div class="answer-card weak"><div class="answer-card-label">Answer B</div>Yes, because travelling is interesting.</div>
+            <div class="answer-card neutral"><div class="answer-card-label">Answer C</div>Yes, I enjoy travelling because I like seeing new places.</div>
+          </div>
+          <div class="improve-prompt">
+            <strong>Discussion Questions</strong>
+            Which answer is the shortest? · Which gives a reason but no example? · Which could be expanded with more detail? · What information is missing from these answers? Write your observations.
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 2 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 2</span>
+          <span class="activity-title">Improving Weak Answers</span>
+        </div>
+        <div class="activity-body">
+          <div class="question-box">Do you enjoy travelling?</div>
+          <div class="answer-card weak mb-1"><div class="answer-card-label">Weak Answer</div>Yes, I enjoy travelling because it is interesting.</div>
+          <div class="improve-prompt"><strong>Improved Answer</strong> Try to include: a specific reason · a personal example · a reflection or feeling.</div>
+
+          <div style="margin-top:1.25rem;">
+            <div class="question-box">What do you usually do when you travel?</div>
+            <div class="answer-card weak mb-1"><div class="answer-card-label">Weak Answer</div>I usually visit tourist attractions.</div>
+            <div class="improve-prompt"><strong>Improved Answer</strong> Explain: what kind of attractions you visit · where you visited them · why the experience was enjoyable.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 3 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 3</span>
+          <span class="activity-title">Developing Short Responses</span>
+        </div>
+        <div class="activity-body">
+          <div class="question-box">What kind of places do you like visiting?</div>
+          <div class="answer-card weak mb-1"><div class="answer-card-label">Short Answer</div>I like historical places.</div>
+          <div class="improve-prompt"><strong>Your Expanded Answer</strong> Explain: why you like historical places · an example of a place you visited · what made the experience memorable.</div>
+
+          <div style="margin-top:1.25rem;">
+            <div class="question-box">Do you prefer travelling alone or with other people?</div>
+            <div class="answer-card weak mb-1"><div class="answer-card-label">Short Answer</div>I prefer travelling with friends.</div>
+            <div class="improve-prompt"><strong>Your Expanded Answer</strong> Explain: why travelling with friends is enjoyable · a specific trip you took with friends · what made the experience memorable.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 4 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 4</span>
+          <span class="activity-title">Transforming Vague Answers</span>
+        </div>
+        <div class="activity-body">
+          <div class="question-box">What is your favourite place to travel?</div>
+          <div class="answer-card neutral mb-1"><div class="answer-card-label">Vague Answer</div>I like travelling to the beach because it is relaxing.</div>
+          <div class="improve-prompt"><strong>Your Improved Answer</strong> Add: a specific place · an activity · a personal reaction.</div>
+
+          <div style="margin-top:1.25rem;">
+            <div class="question-box">Do you enjoy visiting new cities?</div>
+            <div class="answer-card neutral mb-1"><div class="answer-card-label">Vague Answer</div>Yes, I do because cities are interesting.</div>
+            <div class="improve-prompt"><strong>Your Improved Answer</strong> Add: a reason · an example · a reflection.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 5: Model Improvements -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 5</span>
+          <span class="activity-title">Model Improvements</span>
+        </div>
+        <div class="activity-body">
+          <p>Read the improved answers below and compare them with the original weak answers.</p>
+
+          <div class="error-row">
+            <div class="error-original">
+              <span class="error-label">Weak Answer 1</span>
+              I like historical places.
+            </div>
+            <div class="error-corrected">
+              <span class="error-label">Improved Answer 1</span>
+              I really enjoy visiting historical places because they help me learn more about the culture and history of a country. For example, when I travelled to Rome, I visited the Colosseum and several ancient ruins. Seeing those landmarks made the trip incredibly memorable for me.
+            </div>
+          </div>
+
+          <div class="error-row">
+            <div class="error-original">
+              <span class="error-label">Weak Answer 2</span>
+              I prefer travelling with friends.
+            </div>
+            <div class="error-corrected">
+              <span class="error-label">Improved Answer 2</span>
+              I usually prefer travelling with friends because sharing experiences with other people makes the trip more enjoyable. For example, when I travelled to Thailand with two of my close friends, we spent several days exploring local markets and trying street food together. Those shared experiences made the trip much more memorable.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 6 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 6</span>
+          <span class="activity-title">Speaking Practice</span>
+        </div>
+        <div class="activity-body">
+          <p>Choose one question below and answer it for about <strong>45–60 seconds</strong>. Use the guide: Direct answer → Reason → Example → Reflection.</p>
+          <ol class="questions-list">
+            <li>What is the most interesting place you have visited?</li>
+            <li>Do you enjoy travelling to other countries?</li>
+            <li>What kind of tourist attractions do you enjoy visiting?</li>
+            <li>What is one memorable trip you have taken?</li>
+            <li>What country would you like to visit in the future?</li>
+          </ol>
+          <h3 style="margin-top:1rem;">Self-Evaluation</h3>
+          <ul class="checklist">
+            <li>Did I explain my answer clearly?</li>
+            <li>Did I include a real example?</li>
+            <li>Did I add personal detail?</li>
+            <li>Did I speak for at least 45 seconds?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reflection-box">
+        <div class="reflection-box-label">Reflection</div>
+        <ul>
+          <li>Transforming weak answers into stronger responses is an important skill in speaking.</li>
+          <li>By adding reasons, examples, and personal reflections, you can make your answers clearer and more engaging.</li>
+          <li>In the next section, you will learn natural expressions, idioms, and phrasal verbs that can make your speaking sound more fluent and conversational.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================
+         PART 6: NATURAL LANGUAGE
+    ============================= -->
+    <section class="unit-section" id="part6">
+      <div class="section-header">
+        <div class="section-badge badge-peach">P6</div>
+        <div class="section-header-text">
+          <div class="section-part-label">Part Six</div>
+          <h2 class="section-title">Natural Spoken Language</h2>
+          <p class="section-subtitle">Using Idioms and Phrasal Verbs in Conversation</p>
+        </div>
+      </div>
+
+      <div class="purpose-box">
+        <strong>Purpose:</strong> In natural conversation, speakers often use idiomatic expressions and phrasal verbs instead of overly formal vocabulary. These expressions make spoken language sound more natural and conversational. In speaking tests and everyday communication, using natural expressions appropriately can help your answers sound more fluent and engaging.
+      </div>
+
+      <!-- SECTION 1: Phrasal Verbs -->
+      <h3 class="sub-section-title">Section 1 — Common Travel Phrasal Verbs</h3>
+      <p class="text-sm" style="margin-bottom:0.75rem;">Phrasal verbs are combinations of verbs and particles (such as <em>up</em>, <em>out</em>, or <em>off</em>) that create new meanings. The following phrasal verbs are commonly used when talking about travel.</p>
+
+      <table class="vocab-table">
+        <thead>
+          <tr>
+            <th>Phrasal Verb</th>
+            <th>Meaning</th>
+            <th>Example Sentence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>set off</td>
+            <td>begin a journey</td>
+            <td>We <em>set off</em> early in the morning to avoid traffic.</td>
+          </tr>
+          <tr>
+            <td>check out</td>
+            <td>visit or examine a place</td>
+            <td>We <em>checked out</em> several museums during our trip.</td>
+          </tr>
+          <tr>
+            <td>get away</td>
+            <td>leave your usual environment to relax</td>
+            <td>I like to <em>get away</em> from the city during holidays.</td>
+          </tr>
+          <tr>
+            <td>head back</td>
+            <td>return to a place</td>
+            <td>After dinner, we <em>headed back</em> to our hotel.</td>
+          </tr>
+          <tr>
+            <td>look around</td>
+            <td>explore a place</td>
+            <td>We spent the afternoon <em>looking around</em> the old town.</td>
+          </tr>
+          <tr>
+            <td>run into</td>
+            <td>meet unexpectedly</td>
+            <td>I <em>ran into</em> an old friend while travelling in Seoul.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Activity 1 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 1</span>
+          <span class="activity-title">Choosing the Correct Phrasal Verb</span>
+        </div>
+        <div class="activity-body">
+          <p>Complete the sentences using the correct phrasal verb from the table above.</p>
+          <ol class="questions-list">
+            <li>We decided to __________ early in the morning so we could arrive before noon.</li>
+            <li>During our trip, we __________ several historical sites in the city.</li>
+            <li>After spending the whole day exploring the island, we finally __________ to the hotel.</li>
+            <li>I enjoy travelling because it allows me to __________ from my daily routine.</li>
+            <li>While I was travelling abroad, I unexpectedly __________ a former classmate.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Activity 2 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 2</span>
+          <span class="activity-title">Using Phrasal Verbs in Answers</span>
+        </div>
+        <div class="activity-body">
+          <p>Rewrite the sentences using phrasal verbs to make them sound more natural.</p>
+          <div class="example-box">
+            <div class="example-label">Example</div>
+            <p><strong>Original:</strong> We visited several tourist attractions.<br>
+            <strong>Improved:</strong> We <em>checked out</em> several tourist attractions.</p>
+          </div>
+          <ol class="questions-list mt-2">
+            <li>We began our journey very early in the morning.</li>
+            <li>I explored the old town for several hours.</li>
+            <li>After sightseeing, we returned to the hotel.</li>
+            <li>I like leaving the city during holidays to relax.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- SECTION 2: Idiomatic Expressions -->
+      <h3 class="sub-section-title">Section 2 — Idiomatic Expressions for Describing Travel</h3>
+      <p class="text-sm" style="margin-bottom:0.75rem;">Idiomatic expressions are phrases whose meanings cannot be understood from the individual words alone. These expressions are common in spoken English.</p>
+
+      <div class="expression-grid">
+        <div class="expression-card">
+          <div class="expr-phrase">hidden gem</div>
+          <div class="expr-meaning">A wonderful place that few people know about</div>
+          <div class="expr-example">"The village turned out to be a hidden gem."</div>
+        </div>
+        <div class="expression-card">
+          <div class="expr-phrase">off the beaten path</div>
+          <div class="expr-meaning">Away from common tourist routes</div>
+          <div class="expr-example">"We decided to visit a town that was off the beaten path."</div>
+        </div>
+        <div class="expression-card">
+          <div class="expr-phrase">a once-in-a-lifetime experience</div>
+          <div class="expr-meaning">A very rare and memorable event</div>
+          <div class="expr-example">"Seeing the northern lights was a once-in-a-lifetime experience."</div>
+        </div>
+        <div class="expression-card">
+          <div class="expr-phrase">soak up the atmosphere</div>
+          <div class="expr-meaning">Enjoy the feeling or environment of a place</div>
+          <div class="expr-example">"We spent the evening soaking up the atmosphere of the city."</div>
+        </div>
+        <div class="expression-card" style="grid-column: span 2;">
+          <div class="expr-phrase">tourist hotspot</div>
+          <div class="expr-meaning">A place that attracts many tourists</div>
+          <div class="expr-example">"Paris is a major tourist hotspot in Europe."</div>
+        </div>
+      </div>
+
+      <!-- Activity 3 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 3</span>
+          <span class="activity-title">Matching Expressions</span>
+        </div>
+        <div class="activity-body">
+          <p>Match the expressions on the left with their meanings on the right.</p>
+          <div class="match-grid">
+            <div>
+              <div class="match-col-label">Expressions</div>
+              <div class="match-item">hidden gem</div>
+              <div class="match-item">tourist hotspot</div>
+              <div class="match-item">off the beaten path</div>
+              <div class="match-item">soak up the atmosphere</div>
+              <div class="match-item">once-in-a-lifetime experience</div>
+            </div>
+            <div>
+              <div class="match-col-label">Meanings</div>
+              <div class="match-item alpha"><span class="alpha-letter">A</span> A place that attracts many tourists</div>
+              <div class="match-item alpha"><span class="alpha-letter">B</span> A place that is rarely visited by tourists</div>
+              <div class="match-item alpha"><span class="alpha-letter">C</span> A very special experience that may only happen once</div>
+              <div class="match-item alpha"><span class="alpha-letter">D</span> A wonderful place that few people know about</div>
+              <div class="match-item alpha"><span class="alpha-letter">E</span> Enjoying the environment or feeling of a place</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 4 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 4</span>
+          <span class="activity-title">Completing Sentences</span>
+        </div>
+        <div class="activity-body">
+          <p>Fill in the blanks using the idiomatic expressions from the table.</p>
+          <ol class="questions-list">
+            <li>The small island we visited turned out to be a __________ because it was beautiful but not very crowded.</li>
+            <li>We spent the evening walking around the old town and __________ of the city.</li>
+            <li>Visiting the Great Wall of China was truly a __________ for me.</li>
+            <li>Some travellers prefer visiting places that are __________ rather than popular tourist areas.</li>
+            <li>The Eiffel Tower is one of the most famous __________ in the world.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Activity 5 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 5</span>
+          <span class="activity-title">Using Idioms in Speaking</span>
+        </div>
+        <div class="activity-body">
+          <p>Answer the questions below using at least one phrasal verb or idiomatic expression.</p>
+          <ol class="questions-list">
+            <li>Describe a place that surprised you when you visited it.</li>
+            <li>Describe a popular tourist destination in your country.</li>
+            <li>Describe a place that is not very well known but worth visiting.</li>
+            <li>Describe a memorable travel experience you had.</li>
+            <li>Describe a city where tourists like to visit.</li>
+          </ol>
+          <div class="callout tip mt-2">
+            <span class="callout-icon">💡</span>
+            <div>Try to include expressions such as: <em>hidden gem · tourist hotspot · off the beaten path · soak up the atmosphere · check out · set off</em></div>
+          </div>
+
+          <div class="model-answer mt-2">
+            <div class="model-answer-label">▶ Model Answer</div>
+            <div class="model-answer-question">Question: Describe a memorable place you visited.</div>
+            <p>One place that really impressed me was a small coastal town that I visited last summer. At first, I did not expect much from the trip, but the town turned out to be a <strong>hidden gem</strong>. My friends and I spent most of the day walking around the harbour and <strong>soaking up the atmosphere</strong>. It was such a relaxing experience that I would definitely like to visit again.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reflection-box">
+        <div class="reflection-box-label">Reflection</div>
+        <ul>
+          <li>Did the phrasal verbs make your answers sound more natural?</li>
+          <li>Which idiomatic expression did you find the most useful?</li>
+          <li>How can you include these expressions in your future speaking answers?</li>
+        </ul>
+        <p class="text-mute" style="margin-top:0.6rem;">In the next section, you will practise identifying and correcting common errors in spoken answers.</p>
+      </div>
+    </section>
+
+    <!-- ============================
+         PART 7: ERROR CORRECTION
+    ============================= -->
+    <section class="unit-section" id="part7">
+      <div class="section-header">
+        <div class="section-badge badge-rose">P7</div>
+        <div class="section-header-text">
+          <div class="section-part-label">Part Seven</div>
+          <h2 class="section-title">Error Correction Clinic</h2>
+          <p class="section-subtitle">Improving Accuracy in Spoken Answers</p>
+        </div>
+      </div>
+
+      <div class="purpose-box">
+        <strong>Purpose:</strong> Even when learners have good ideas, mistakes in grammar, vocabulary, or sentence structure can make their answers unclear or unnatural. In this section, you will identify and correct common errors that learners make when speaking about travel and experiences. Improving accuracy helps your listener understand your ideas more clearly and allows you to communicate more effectively.
+      </div>
+
+      <!-- Activity 1 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 1</span>
+          <span class="activity-title">Identifying Common Errors</span>
+        </div>
+        <div class="activity-body">
+          <p>Read the sentences below. Each sentence contains a mistake. Identify the problem and rewrite the sentence correctly.</p>
+          <div class="error-row">
+            <div class="error-original"><span class="error-label">Original (contains error)</span>I very like travelling because I can relax my mind.</div>
+            <div class="error-corrected"><span class="error-label">Corrected sentence</span><div class="write-space">Write your corrected sentence here…</div></div>
+          </div>
+          <div class="error-row">
+            <div class="error-original"><span class="error-label">Original (contains error)</span>I went to Japan last year and I very enjoyed.</div>
+            <div class="error-corrected"><span class="error-label">Corrected sentence</span><div class="write-space">Write your corrected sentence here…</div></div>
+          </div>
+          <div class="error-row">
+            <div class="error-original"><span class="error-label">Original (contains error)</span>When I travel, I like visit many tourist attractions.</div>
+            <div class="error-corrected"><span class="error-label">Corrected sentence</span><div class="write-space">Write your corrected sentence here…</div></div>
+          </div>
+          <div class="error-row">
+            <div class="error-original"><span class="error-label">Original (contains error)</span>The place was very beautiful and I very impressed.</div>
+            <div class="error-corrected"><span class="error-label">Corrected sentence</span><div class="write-space">Write your corrected sentence here…</div></div>
+          </div>
+          <div class="error-row">
+            <div class="error-original"><span class="error-label">Original (contains error)</span>I prefer travel with friends because more fun.</div>
+            <div class="error-corrected"><span class="error-label">Corrected sentence</span><div class="write-space">Write your corrected sentence here…</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 2 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 2</span>
+          <span class="activity-title">Correcting Grammar and Sentence Structure</span>
+        </div>
+        <div class="activity-body">
+          <p>Improve the sentences below so they sound natural and grammatically correct.</p>
+          <div class="error-row">
+            <div class="error-original"><span class="error-label">Original</span>I like travel because it interesting.</div>
+            <div class="error-corrected"><span class="error-label">Corrected</span><div class="write-space">Write your corrected sentence here…</div></div>
+          </div>
+          <div class="error-row">
+            <div class="error-original"><span class="error-label">Original</span>Last year I travel to Korea and I visit many places.</div>
+            <div class="error-corrected"><span class="error-label">Corrected</span><div class="write-space">Write your corrected sentence here…</div></div>
+          </div>
+          <div class="error-row">
+            <div class="error-original"><span class="error-label">Original</span>I go many museums and take many pictures.</div>
+            <div class="error-corrected"><span class="error-label">Corrected</span><div class="write-space">Write your corrected sentence here…</div></div>
+          </div>
+          <div class="error-row">
+            <div class="error-original"><span class="error-label">Original</span>That trip make me very happy.</div>
+            <div class="error-corrected"><span class="error-label">Corrected</span><div class="write-space">Write your corrected sentence here…</div></div>
+          </div>
+          <div class="error-row">
+            <div class="error-original"><span class="error-label">Original</span>I like travelling because I can learn many culture.</div>
+            <div class="error-corrected"><span class="error-label">Corrected</span><div class="write-space">Write your corrected sentence here…</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 3 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 3</span>
+          <span class="activity-title">Improving Speaking Answers</span>
+        </div>
+        <div class="activity-body">
+          <p>The answers below contain errors and lack detail. Correct the errors and improve the answers so they sound clearer and more natural.</p>
+
+          <div class="question-box">Do you enjoy travelling?</div>
+          <div class="answer-card weak mb-1"><div class="answer-card-label">Student Answer</div>Yes, I very like travelling because I can see many new place.</div>
+          <div class="improve-prompt"><strong>Improved Answer</strong> Try to include: correct grammar · clearer vocabulary · additional detail.</div>
+
+          <div style="margin-top:1rem;">
+            <div class="question-box">What kind of places do you like visiting?</div>
+            <div class="answer-card weak mb-1"><div class="answer-card-label">Student Answer</div>I like historical place because interesting.</div>
+            <div class="improve-prompt"><strong>Improved Answer</strong> Explain: why you like these places · an example of a place you visited.</div>
+          </div>
+
+          <div style="margin-top:1rem;">
+            <div class="question-box">Do you prefer travelling alone or with friends?</div>
+            <div class="answer-card weak mb-1"><div class="answer-card-label">Student Answer</div>I prefer travel with friends because more funny.</div>
+            <div class="improve-prompt"><strong>Improved Answer</strong> Add: a reason · a real example.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 4 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 4</span>
+          <span class="activity-title">Common Vocabulary Improvements</span>
+        </div>
+        <div class="activity-body">
+          <p>Some expressions are grammatically correct but sound unnatural in spoken English. Replace the expressions below with more natural alternatives.</p>
+          <table class="unnatural-table">
+            <thead>
+              <tr>
+                <th>Unnatural Expression</th>
+                <th>More Natural Expression</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>very like</td><td>really like / enjoy</td></tr>
+              <tr><td>relax my mind</td><td>relax / clear my mind</td></tr>
+              <tr><td>many culture</td><td>many cultures</td></tr>
+              <tr><td>very funny</td><td>more enjoyable / more fun</td></tr>
+            </tbody>
+          </table>
+          <p class="mt-2" style="font-size:0.88rem;">Rewrite the sentences using more natural language.</p>
+          <ol class="questions-list mt-1">
+            <li>I very like travelling because it helps me relax my mind.</li>
+            <li>Travelling with friends is very funny.</li>
+            <li>I want to learn many culture when I travel.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Activity 5: Model Corrections -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 5</span>
+          <span class="activity-title">Model Corrections</span>
+        </div>
+        <div class="activity-body">
+          <p>Compare your answers with the improved versions below.</p>
+          <div class="error-row">
+            <div class="error-original"><span class="error-label">Original</span>I very like travelling because I can see many new place.</div>
+            <div class="error-corrected"><span class="error-label">Improved</span>I really enjoy travelling because it allows me to see many new places and experience different cultures.</div>
+          </div>
+          <div class="error-row">
+            <div class="error-original"><span class="error-label">Original</span>I prefer travel with friends because more fun.</div>
+            <div class="error-corrected"><span class="error-label">Improved</span>I usually prefer travelling with friends because it is more fun to share experiences with other people.</div>
+          </div>
+          <div class="error-row">
+            <div class="error-original"><span class="error-label">Original</span>I like historical place because interesting.</div>
+            <div class="error-corrected"><span class="error-label">Improved</span>I enjoy visiting historical places because they allow me to learn about the culture and history of a place.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Speaking Correction Practice -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">SPEAKING PRACTICE</span>
+          <span class="activity-title">Speaking Correction Practice</span>
+        </div>
+        <div class="activity-body">
+          <p>Choose one question below and answer it for about <strong>40–50 seconds</strong>.</p>
+          <ol class="questions-list">
+            <li>Do you enjoy travelling?</li>
+            <li>What kind of places do you like visiting?</li>
+            <li>What is the most interesting place you have visited?</li>
+            <li>What country would you like to visit in the future?</li>
+            <li>Do you prefer travelling alone or with friends?</li>
+          </ol>
+          <h3 style="margin-top:1rem;">After speaking, review your answer and check for the following:</h3>
+          <ul class="checklist">
+            <li>Did I use correct grammar?</li>
+            <li>Did I avoid unnatural expressions?</li>
+            <li>Did I explain my ideas clearly?</li>
+            <li>Did I include an example?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reflection-box">
+        <div class="reflection-box-label">Reflection</div>
+        <ul>
+          <li>Correcting errors is an important step in improving speaking ability.</li>
+          <li>By identifying common mistakes and replacing unnatural expressions with clearer language, you can communicate your ideas more effectively.</li>
+          <li>In the next section, you will practise expanding short answers into longer responses.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================
+         PART 8: EXPANDING ANSWERS
+    ============================= -->
+    <section class="unit-section" id="part8">
+      <div class="section-header">
+        <div class="section-badge badge-sage">P8</div>
+        <div class="section-header-text">
+          <div class="section-part-label">Part Eight</div>
+          <h2 class="section-title">Expanding Short Answers</h2>
+          <p class="section-subtitle">From 15 Seconds to 60 Seconds</p>
+        </div>
+      </div>
+
+      <div class="purpose-box">
+        <strong>Purpose:</strong> Many learners answer questions very quickly and stop speaking after only a few seconds. However, effective speaking requires you to develop your ideas clearly and provide enough detail for the listener. In this section, you will practise expanding short answers into longer responses — moving from a brief response (about 10–15 seconds) to a more developed answer (about 45–60 seconds). Use the strategies you learned earlier: <strong>The Layering Method</strong> and <strong>The 4-Step Answer Engine</strong>.
+      </div>
+
+      <h3 class="sub-section-title">Section 1 — Understanding Answer Length</h3>
+
+      <div class="question-box">Do you enjoy travelling?</div>
+      <div class="answer-compare">
+        <div class="answer-card weak">
+          <div class="answer-card-label">Short Answer — approx. 10–15 seconds</div>
+          Yes, I enjoy travelling because it allows me to relax and visit interesting places.
+        </div>
+        <div class="answer-card strong">
+          <div class="answer-card-label">Extended Answer — approx. 45–60 seconds</div>
+          Yes, I really enjoy travelling because it allows me to relax and experience different cultures. For example, last year I visited a small coastal town where I spent most of my time exploring local markets and walking along the beach. It was a very peaceful place, and the experience helped me forget about the stress of work for a while. Trips like that remind me how important it is to take breaks and explore new places.
+        </div>
+      </div>
+      <div class="improve-prompt mt-1">
+        <strong>Discussion Questions</strong>
+        Which answer gives more information? · Which sounds more natural in conversation? · Which would be easier for a listener to understand?
+      </div>
+
+      <!-- Activities 1–3 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 1</span>
+          <span class="activity-title">Expanding Your Answer</span>
+        </div>
+        <div class="activity-body">
+          <div class="question-box">Do you enjoy visiting tourist attractions?</div>
+          <div class="answer-card weak mb-1"><div class="answer-card-label">Short Answer</div>Yes, I enjoy visiting tourist attractions because they are interesting.</div>
+          <div class="improve-prompt"><strong>Your Extended Answer</strong> Try to include: a reason · an example · a personal experience · a reflection.</div>
+        </div>
+      </div>
+
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 2</span>
+          <span class="activity-title">Developing Short Responses (45–60 seconds)</span>
+        </div>
+        <div class="activity-body">
+          <div class="question-box">What kind of places do you like visiting?</div>
+          <div class="answer-card weak mb-1"><div class="answer-card-label">Short Answer</div>I like visiting historical places.</div>
+          <div class="improve-prompt"><strong>Extended Answer</strong> Explain: why you like historical places · an example · what made the experience memorable.</div>
+
+          <div style="margin-top:1rem;">
+            <div class="question-box">Do you prefer travelling alone or with other people?</div>
+            <div class="answer-card weak mb-1"><div class="answer-card-label">Short Answer</div>I prefer travelling with friends.</div>
+            <div class="improve-prompt"><strong>Extended Answer</strong> Explain: why travelling with friends is enjoyable · a real experience · how the trip made you feel.</div>
+          </div>
+
+          <div style="margin-top:1rem;">
+            <div class="question-box">What is the most interesting place you have visited?</div>
+            <div class="answer-card weak mb-1"><div class="answer-card-label">Short Answer</div>The most interesting place I visited was Kyoto.</div>
+            <div class="improve-prompt"><strong>Extended Answer</strong> Explain: why it was interesting · what you did there · what made the experience special.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 3 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 3</span>
+          <span class="activity-title">Planning Your Answer</span>
+        </div>
+        <div class="activity-body">
+          <div class="question-box">Describe a place you enjoyed visiting.</div>
+          <table class="planning-table">
+            <thead><tr><th>Step</th><th>Key Idea</th></tr></thead>
+            <tbody>
+              <tr><td>Direct Answer</td><td><div class="write-space">Write your key idea…</div></td></tr>
+              <tr><td>Reason</td><td><div class="write-space">Write your key idea…</div></td></tr>
+              <tr><td>Example</td><td><div class="write-space">Write your key idea…</div></td></tr>
+              <tr><td>Feeling / Reflection</td><td><div class="write-space">Write your key idea…</div></td></tr>
+            </tbody>
+          </table>
+          <p class="text-sm mt-1">After planning your ideas, speak for about one minute.</p>
+        </div>
+      </div>
+
+      <!-- Activity 4 + Model -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 4</span>
+          <span class="activity-title">Speaking Practice — 60 seconds</span>
+        </div>
+        <div class="activity-body">
+          <p>Choose one question below and speak for about <strong>60 seconds</strong>. Try to include: a clear answer · a reason · an example · personal details · a reflection.</p>
+          <ol class="questions-list">
+            <li>What is your favourite place to travel?</li>
+            <li>What country would you like to visit in the future?</li>
+            <li>What is one memorable trip you have taken?</li>
+            <li>What do you usually do when you travel?</li>
+            <li>What kind of tourist attractions do you enjoy visiting?</li>
+          </ol>
+          <div class="model-answer mt-2">
+            <div class="model-answer-label">▶ Model Answer</div>
+            <div class="model-answer-question">Question: What country would you like to visit in the future?</div>
+            <p>One country I would really like to visit in the future is Italy. I have always been interested in its history and culture, especially the architecture and traditional food. For example, I would love to visit cities like Rome and Florence because they have many famous historical landmarks and museums. I think travelling there would be an unforgettable experience, and it would allow me to learn more about European history.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reflection-box">
+        <div class="reflection-box-label">Reflection</div>
+        <ul>
+          <li>Expanding your answers helps you communicate your ideas more clearly and confidently.</li>
+          <li>When you practise developing your responses, it becomes easier to speak for longer periods without hesitation.</li>
+          <li>In the next section, you will learn strategies for recovering when you forget a word, lose your train of thought, or need more time to think.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================
+         PART 9: REPAIR & RECOVERY
+    ============================= -->
+    <section class="unit-section" id="part9">
+      <div class="section-header">
+        <div class="section-badge badge-peach">P9</div>
+        <div class="section-header-text">
+          <div class="section-part-label">Part Nine</div>
+          <h2 class="section-title">Repair and Recovery Strategies</h2>
+          <p class="section-subtitle">Maintaining Fluency During Communication Breakdowns</p>
+        </div>
+      </div>
+
+      <div class="purpose-box">
+        <strong>Purpose:</strong> During conversation, it is normal to forget a word, lose your train of thought, or need extra time to think. Skilled speakers do not stop speaking when this happens. Instead, they use <strong>repair and recovery strategies</strong> to continue the conversation smoothly. These strategies help speakers maintain fluency and communicate their ideas even when they experience difficulty.
+      </div>
+
+      <!-- Section 1: Buying Time -->
+      <h3 class="sub-section-title">Section 1 — Buying Thinking Time</h3>
+      <p class="text-sm" style="margin-bottom:0.75rem;">Sometimes you need a few seconds to organise your thoughts. Instead of remaining silent, you can use expressions that signal you are thinking.</p>
+
+      <div class="repair-grid">
+        <div class="repair-card"><div class="type">Thinking Time</div><div class="expr">That's an interesting question.</div></div>
+        <div class="repair-card"><div class="type">Thinking Time</div><div class="expr">Let me think about that for a moment.</div></div>
+        <div class="repair-card"><div class="type">Thinking Time</div><div class="expr">I haven't really thought about that before.</div></div>
+        <div class="repair-card"><div class="type">Thinking Time</div><div class="expr">That's a good question.</div></div>
+        <div class="repair-card" style="grid-column: span 2;"><div class="type">Thinking Time</div><div class="expr">Let me consider that for a second.</div></div>
+      </div>
+
+      <div class="example-box mt-1">
+        <div class="example-label">Example in Use</div>
+        <p><strong>Question:</strong> What country would you like to visit in the future?</p>
+        <p style="margin-top:0.4rem;"><strong>Response:</strong> <em>That's an interesting question. Let me think about that for a moment.</em> I think I would really like to visit Italy because I have always been interested in its history and architecture.</p>
+      </div>
+
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 1</span>
+          <span class="activity-title">Using Thinking Time Expressions</span>
+        </div>
+        <div class="activity-body">
+          <p>Rewrite the responses below by adding a thinking expression at the beginning.</p>
+          <div class="question-box">What kind of places do you enjoy visiting?</div>
+          <div class="answer-card neutral mb-1"><div class="answer-card-label">Original Response</div>I usually enjoy visiting historical cities because they allow me to learn about local culture.</div>
+          <div class="improve-prompt"><strong>Improved Response</strong> Add a thinking time expression at the beginning.</div>
+
+          <div style="margin-top:1rem;">
+            <div class="question-box">Do you prefer travelling alone or with other people?</div>
+            <div class="answer-card neutral mb-1"><div class="answer-card-label">Original Response</div>I prefer travelling with friends because it is more enjoyable.</div>
+            <div class="improve-prompt"><strong>Improved Response</strong> Add a thinking time expression at the beginning.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Self-Repair -->
+      <h3 class="sub-section-title">Section 2 — Self-Repair</h3>
+      <p class="text-sm" style="margin-bottom:0.75rem;">Sometimes you may realise that what you said was unclear or inaccurate. When this happens, you can correct yourself naturally.</p>
+
+      <div class="repair-grid">
+        <div class="repair-card"><div class="type">Self-Repair</div><div class="expr">Actually, what I mean is…</div></div>
+        <div class="repair-card"><div class="type">Self-Repair</div><div class="expr">Let me rephrase that.</div></div>
+        <div class="repair-card"><div class="type">Self-Repair</div><div class="expr">What I'm trying to say is…</div></div>
+        <div class="repair-card"><div class="type">Self-Repair</div><div class="expr">In other words…</div></div>
+      </div>
+
+      <div class="example-box mt-1">
+        <div class="example-label">Example in Use</div>
+        <p>I think travelling abroad is very interesting because you can experience different traditions. <em>Actually, what I mean is</em> that it helps you understand how people live in other cultures.</p>
+      </div>
+
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 2</span>
+          <span class="activity-title">Practising Self-Repair</span>
+        </div>
+        <div class="activity-body">
+          <p>Rewrite the sentences using self-repair expressions.</p>
+          <ol class="questions-list">
+            <li>Travelling helps you learn different culture. I mean, it helps you understand different cultures.</li>
+            <li>I like travelling because you can see many things. I mean, you can experience different environments and traditions.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Section 3: Rephrasing -->
+      <h3 class="sub-section-title">Section 3 — Rephrasing When You Forget a Word</h3>
+      <p class="text-sm" style="margin-bottom:0.75rem;">Sometimes you may forget a specific word during conversation. Instead of stopping, you can describe the idea using different words.</p>
+
+      <div class="example-box mt-1">
+        <div class="example-label">Example in Use</div>
+        <p>I visited a place where people sell many traditional items. I forgot the exact word, but it is like a local market where tourists can buy souvenirs.</p>
+      </div>
+
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 3</span>
+          <span class="activity-title">Paraphrasing Practice</span>
+        </div>
+        <div class="activity-body">
+          <p>Explain the following ideas without using the highlighted word. Describe the concept in your own words.</p>
+          <ol class="questions-list">
+            <li><strong>souvenir</strong> — Describe it in another way.</li>
+            <li><strong>museum</strong> — Describe it in another way.</li>
+            <li><strong>tourist attraction</strong> — Describe it in another way.</li>
+            <li><strong>traditional food</strong> — Describe it in another way.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Section 4: Restarting -->
+      <h3 class="sub-section-title">Section 4 — Restarting Your Answer</h3>
+      <p class="text-sm" style="margin-bottom:0.75rem;">Sometimes you may lose your train of thought while speaking. When this happens, you can restart your answer naturally.</p>
+
+      <div class="repair-grid">
+        <div class="repair-card"><div class="type">Restarting</div><div class="expr">Let me start again.</div></div>
+        <div class="repair-card"><div class="type">Restarting</div><div class="expr">What I meant to say was…</div></div>
+        <div class="repair-card" style="grid-column: span 2;"><div class="type">Restarting</div><div class="expr">Let me explain that more clearly.</div></div>
+      </div>
+
+      <div class="example-box mt-1">
+        <div class="example-label">Example in Use</div>
+        <p>I usually enjoy travelling to places that are very quiet and relaxing. <em>Let me explain that more clearly.</em> I mean places like small towns or countryside areas where there are fewer tourists.</p>
+      </div>
+
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 4</span>
+          <span class="activity-title">Improving the Responses</span>
+        </div>
+        <div class="activity-body">
+          <p>Add a recovery expression to the answers below.</p>
+          <ol class="questions-list">
+            <li>I like travelling to historical places because they are very interesting. <em>[Add a recovery phrase to continue or clarify.]</em></li>
+            <li>I usually travel with friends because the experience is more enjoyable. <em>[Add a recovery phrase to continue or clarify.]</em></li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Section 5: Model Answers -->
+      <h3 class="sub-section-title">Section 5 — Model Answers Using Repair Strategies</h3>
+
+      <div class="model-answer">
+        <div class="model-answer-label">▶ Model Answer 1 — Using a thinking time expression</div>
+        <div class="model-answer-question">Question: What kind of places do you like visiting?</div>
+        <p><em>That's a good question.</em> I think I usually enjoy visiting historical cities because they allow me to learn about the culture and history of a place. For example, when I travelled to Rome, I visited several ancient landmarks such as the Colosseum and the Roman Forum. Experiences like that make travelling very meaningful for me.</p>
+      </div>
+
+      <div class="model-answer" style="margin-top:0.75rem;">
+        <div class="model-answer-label">▶ Model Answer 2 — Using self-repair</div>
+        <div class="model-answer-question">Question: Do you prefer travelling alone or with friends?</div>
+        <p>I usually prefer travelling with friends because sharing experiences makes the trip more enjoyable. <em>Actually, what I mean is</em> that travelling with other people allows you to create shared memories. For instance, when I travelled to Thailand with my friends, we spent several days exploring local markets and trying street food together.</p>
+      </div>
+
+      <!-- Final Speaking Practice -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">SPEAKING PRACTICE</span>
+          <span class="activity-title">Extended Speaking with Repair Strategies</span>
+        </div>
+        <div class="activity-body">
+          <p>Choose one question below and answer it for about <strong>one minute</strong>. During your answer, try to use at least <strong>one repair strategy</strong>.</p>
+          <ol class="questions-list">
+            <li>What country would you like to visit in the future?</li>
+            <li>What is one memorable travel experience you have had?</li>
+            <li>Do you prefer travelling alone or with other people?</li>
+            <li>What kind of tourist attractions do you enjoy visiting?</li>
+            <li>What do you usually do when you travel?</li>
+          </ol>
+          <div class="callout tip mt-2">
+            <span class="callout-icon">💡</span>
+            <div>Try to use at least one of the following: <em>thinking time expressions · self-repair · rephrasing · restarting</em></div>
+          </div>
+          <h3 style="margin-top:1rem;">Self-Evaluation</h3>
+          <ul class="checklist">
+            <li>Did I continue speaking even when I hesitated?</li>
+            <li>Did I use expressions to buy thinking time?</li>
+            <li>Did I rephrase my ideas when necessary?</li>
+            <li>Did I finish my answer clearly?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reflection-box">
+        <div class="reflection-box-label">Reflection</div>
+        <ul>
+          <li>Repair strategies allow speakers to maintain fluency and confidence during conversation.</li>
+          <li>Even native speakers use these techniques when they need time to think or when they want to clarify their ideas.</li>
+          <li>In the next section, you will practise handling more difficult questions and maintaining fluency under pressure.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================
+         PART 10: DIFFICULT QUESTIONS
+    ============================= -->
+    <section class="unit-section" id="part10">
+      <div class="section-header">
+        <div class="section-badge badge-lav">P10</div>
+        <div class="section-header-text">
+          <div class="section-part-label">Part Ten</div>
+          <h2 class="section-title">Handling Difficult Questions</h2>
+          <p class="section-subtitle">Developing Ideas for More Abstract Topics</p>
+        </div>
+      </div>
+
+      <div class="purpose-box">
+        <strong>Purpose:</strong> As conversations become more advanced, speakers are often asked more complex or abstract questions. These questions may require you to express opinions, explain causes and effects, or discuss social issues. In speaking tests, these types of questions are common in the later part of the interview. They require you to develop ideas clearly and support your opinions with reasons and examples. This section practises: The Layering Method · The 4-Step Answer Engine · Repair and Recovery Strategies.
+      </div>
+
+      <!-- Section 1: Opinion Questions -->
+      <h3 class="sub-section-title">Section 1 — Understanding Opinion Questions</h3>
+      <p class="text-sm" style="margin-bottom:0.75rem;">Opinion questions ask you to express your thoughts about an issue. Use linking language such as <em>I think…, I believe…, In my opinion…, It seems to me that…</em> to signal that you are giving your view.</p>
+
+      <div class="model-answer">
+        <div class="model-answer-label">▶ Model Answer — Opinion Question</div>
+        <div class="model-answer-question">Question: Why do people enjoy travelling to other countries?</div>
+        <p>I think many people enjoy travelling abroad because it allows them to experience different cultures and lifestyles. For example, when people visit another country, they can try new types of food, explore historical sites, and meet people from different backgrounds. These experiences can broaden their perspective and help them understand the world better.</p>
+      </div>
+
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 1</span>
+          <span class="activity-title">Expressing Opinions</span>
+        </div>
+        <div class="activity-body">
+          <p>Answer the following questions. Try to include your opinion, a reason, and an example.</p>
+          <ol class="questions-list">
+            <li>Why do many people enjoy travelling abroad?</li>
+            <li>Why do tourists like visiting famous landmarks?</li>
+            <li>Why do some people prefer travelling to natural places instead of cities?</li>
+            <li>Why do many travellers enjoy exploring local culture?</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Section 2: Advantages and Disadvantages -->
+      <h3 class="sub-section-title">Section 2 — Discussing Advantages and Disadvantages</h3>
+      <p class="text-sm" style="margin-bottom:0.75rem;">Some questions require you to discuss both positive and negative aspects of a topic. Use signposting language such as <em>One advantage is… / However, … / On the other hand, …</em></p>
+
+      <div class="model-answer">
+        <div class="model-answer-label">▶ Model Answer — Advantages and Disadvantages</div>
+        <div class="model-answer-question">Question: What are the advantages of tourism?</div>
+        <p>Tourism can bring several benefits to a country. One major advantage is that it can support the local economy by creating jobs and increasing business opportunities. For instance, hotels, restaurants, and transportation services often benefit from tourism. However, tourism can also create problems if too many visitors come to the same place, which may lead to overcrowding and environmental damage.</p>
+      </div>
+
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 2</span>
+          <span class="activity-title">Advantages and Disadvantages</span>
+        </div>
+        <div class="activity-body">
+          <p>Answer the following questions. Try to include: one advantage or problem · an explanation · an example.</p>
+          <ol class="questions-list">
+            <li>What are the advantages of tourism for local communities?</li>
+            <li>What problems can tourism cause for cities or natural environments?</li>
+            <li>What are the benefits of travelling abroad?</li>
+            <li>What difficulties might travellers experience when visiting another country?</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Section 3: Social Issues -->
+      <h3 class="sub-section-title">Section 3 — Discussing Social Issues and Changes</h3>
+
+      <div class="model-answer">
+        <div class="model-answer-label">▶ Model Answer — Social Change</div>
+        <div class="model-answer-question">Question: How has tourism changed in recent years?</div>
+        <p>Tourism has changed significantly in recent years, especially because of advances in technology and transportation. For example, online booking platforms have made it much easier for people to plan trips and compare travel options. As a result, more people are able to travel internationally than in the past.</p>
+      </div>
+
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 3</span>
+          <span class="activity-title">Discussing Changes</span>
+        </div>
+        <div class="activity-body">
+          <p>Answer the following questions. Try to include: a clear idea · an explanation · an example.</p>
+          <ol class="questions-list">
+            <li>How has international travel changed in the last twenty years?</li>
+            <li>How has technology affected tourism?</li>
+            <li>How have travel habits changed in modern society?</li>
+            <li>How might tourism change in the future?</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Activity 4: Planning -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">ACTIVITY 4</span>
+          <span class="activity-title">Developing Your Answer</span>
+        </div>
+        <div class="activity-body">
+          <div class="question-box">Why do some people prefer travelling to natural places?</div>
+          <table class="planning-table">
+            <thead><tr><th>Step</th><th>Idea</th></tr></thead>
+            <tbody>
+              <tr><td>Direct Answer</td><td><div class="write-space">Write your idea…</div></td></tr>
+              <tr><td>Reason</td><td><div class="write-space">Write your idea…</div></td></tr>
+              <tr><td>Example</td><td><div class="write-space">Write your idea…</div></td></tr>
+              <tr><td>Reflection</td><td><div class="write-space">Write your idea…</div></td></tr>
+            </tbody>
+          </table>
+          <p class="text-sm mt-1">Speak for about one minute using your notes.</p>
+        </div>
+      </div>
+
+      <!-- Section 5: Model Answers -->
+      <div class="model-answer">
+        <div class="model-answer-label">▶ Model Answer — Famous Tourist Attractions</div>
+        <div class="model-answer-question">Question: Why do people like visiting famous tourist attractions?</div>
+        <p>Many people enjoy visiting famous tourist attractions because these places often have historical or cultural significance. For example, landmarks such as the Eiffel Tower or the Great Wall of China attract millions of visitors each year because they represent important parts of a country's history. Visiting these places can be a memorable experience and allows travellers to learn more about the culture of a destination.</p>
+      </div>
+
+      <div class="model-answer" style="margin-top:0.75rem;">
+        <div class="model-answer-label">▶ Model Answer — Tourism and Technology</div>
+        <div class="model-answer-question">Question: How has tourism changed in recent years?</div>
+        <p>Tourism has changed quite a lot in recent years, mainly because of technological developments. For instance, people can now easily book flights and accommodation online, which makes travel planning much more convenient. As a result, travelling has become more accessible for many people around the world.</p>
+      </div>
+
+      <!-- Speaking Practice -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">SPEAKING PRACTICE</span>
+          <span class="activity-title">Extended Speaking — Abstract Topics</span>
+        </div>
+        <div class="activity-body">
+          <p>Choose one question below and speak for about <strong>one minute</strong>.</p>
+          <ol class="questions-list">
+            <li>Why do people enjoy travelling abroad?</li>
+            <li>What are the advantages of tourism for a country?</li>
+            <li>What problems can tourism create?</li>
+            <li>How has tourism changed in recent years?</li>
+            <li>How might travel change in the future?</li>
+          </ol>
+          <div class="callout tip mt-2">
+            <span class="callout-icon">💡</span>
+            <div>While speaking, try to: extend your answers with examples · use natural expressions and vocabulary · use repair strategies if you need more time to think.</div>
+          </div>
+          <h3 style="margin-top:1rem;">Self-Evaluation</h3>
+          <ul class="checklist">
+            <li>Did I express my opinion clearly?</li>
+            <li>Did I explain my ideas with reasons and examples?</li>
+            <li>Did I speak for close to one minute?</li>
+            <li>Did I maintain fluency even when I needed time to think?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reflection-box">
+        <div class="reflection-box-label">Reflection</div>
+        <ul>
+          <li>Answering more complex questions requires clear reasoning and strong idea development.</li>
+          <li>By combining structured answers with examples and repair strategies, you can communicate effectively even when the topic becomes more challenging.</li>
+          <li>In the next section, you will practise speaking under pressure and maintaining fluency during fast-paced conversations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================
+         PART 11: HIGH-PRESSURE
+    ============================= -->
+    <section class="unit-section" id="part11">
+      <div class="section-header">
+        <div class="section-badge badge-gold">P11</div>
+        <div class="section-header-text">
+          <div class="section-part-label">Part Eleven</div>
+          <h2 class="section-title">High-Pressure Speaking Challenge</h2>
+          <p class="section-subtitle">Maintaining Fluency Under Pressure</p>
+        </div>
+      </div>
+
+      <div class="purpose-box">
+        <strong>Purpose:</strong> In real conversations and speaking tests, you may sometimes feel pressure to respond quickly. You may need to answer unexpected questions, develop your ideas rapidly, or continue speaking even when you are unsure of what to say next. This section focuses on speaking fluently under pressure. You will practise responding quickly while using the strategies you learned earlier: The Layering Method · The 4-Step Answer Engine · Repair and Recovery Strategies · Natural speaking expressions. The goal is to continue speaking confidently even when the question is difficult or unexpected.
+      </div>
+
+      <!-- Section 1 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">SECTION 1</span>
+          <span class="activity-title">Fast Response Practice</span>
+        </div>
+        <div class="activity-body">
+          <p>Answer each question <strong>immediately</strong>. Try to speak for at least <strong>30–45 seconds</strong>. Try to include: a clear answer · a reason · an example.</p>
+          <ol class="questions-list">
+            <li>What is your favourite place to travel?</li>
+            <li>What kind of tourist attractions do you enjoy visiting?</li>
+            <li>What country would you like to visit in the future?</li>
+            <li>Do you prefer travelling alone or with other people?</li>
+            <li>What do you usually do when you travel?</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">SECTION 2</span>
+          <span class="activity-title">Unexpected Questions</span>
+        </div>
+        <div class="activity-body">
+          <p>Sometimes questions may be unfamiliar or surprising. When this happens, it is important to stay calm and use thinking-time expressions. Answer the following questions. Try to include your opinion, a reason, and an example.</p>
+          <ol class="questions-list">
+            <li>Why do some people dislike travelling?</li>
+            <li>Should governments control the number of tourists visiting certain places?</li>
+            <li>Why do some people prefer domestic travel instead of international travel?</li>
+            <li>How can tourism affect local culture?</li>
+            <li>Do you think travelling is necessary for personal development?</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">SECTION 3</span>
+          <span class="activity-title">Extended Speaking Challenge</span>
+        </div>
+        <div class="activity-body">
+          <p>Speak for about <strong>one minute</strong> for each question. Include: where the place is · what you did there · why the experience was memorable.</p>
+          <ol class="questions-list">
+            <li>Describe a memorable trip you have taken.</li>
+            <li>Describe a place that surprised you when you visited it.</li>
+            <li>Describe a city you would recommend to tourists.</li>
+            <li>Describe a tourist attraction in your country.</li>
+            <li>Describe a place you would like to visit in the future.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">SECTION 4</span>
+          <span class="activity-title">Maintaining Fluency — Using Recovery Expressions</span>
+        </div>
+        <div class="activity-body">
+          <p>Sometimes you may hesitate while speaking. When this happens, use recovery expressions to continue speaking naturally. Practise answering the questions below while using at least <strong>one recovery expression</strong>.</p>
+          <div class="repair-grid mb-1">
+            <div class="repair-card"><div class="type">Thinking Time</div><div class="expr">Let me think about that for a moment.</div></div>
+            <div class="repair-card"><div class="type">Thinking Time</div><div class="expr">That's an interesting question.</div></div>
+            <div class="repair-card"><div class="type">Self-Repair</div><div class="expr">Actually, what I mean is…</div></div>
+            <div class="repair-card"><div class="type">Clarify</div><div class="expr">Let me explain that more clearly.</div></div>
+            <div class="repair-card" style="grid-column: span 2;"><div class="type">Rephrase</div><div class="expr">In other words…</div></div>
+          </div>
+          <ol class="questions-list mt-1">
+            <li>Why do people like travelling?</li>
+            <li>What makes a place attractive to tourists?</li>
+            <li>How can tourism affect the environment?</li>
+            <li>What are the benefits of travelling abroad?</li>
+            <li>Why do people visit historical landmarks?</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Section 5: Sample Extended Answer -->
+      <div class="model-answer">
+        <div class="model-answer-label">▶ Sample Extended Answer — 1 Minute</div>
+        <div class="model-answer-question">Question: Describe a memorable trip you have taken.</div>
+        <p>One memorable trip I took was when I visited Kyoto in Japan a few years ago. I travelled there with two of my close friends, and we spent several days exploring traditional temples and historical districts. One of the most memorable experiences was visiting a famous temple early in the morning when the area was quiet and peaceful. The atmosphere was incredibly relaxing, and it allowed us to appreciate the beauty of the place. That trip left a very strong impression on me, and it made me want to explore more historical cities in the future.</p>
+      </div>
+
+      <!-- Section 6: Reflection -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">SELF-EVALUATION</span>
+          <span class="activity-title">Fluency Reflection &amp; Checklist</span>
+        </div>
+        <div class="activity-body">
+          <p>After completing the speaking activities, reflect on your performance.</p>
+          <ul class="checklist">
+            <li>Were you able to speak continuously for at least 45 seconds?</li>
+            <li>Did you use examples when explaining your ideas?</li>
+            <li>Did you use recovery expressions when you needed time to think?</li>
+            <li>Did your answers sound natural and organised?</li>
+            <li>Did I answer the question clearly?</li>
+            <li>Did I develop my ideas with reasons and examples?</li>
+            <li>Did I maintain fluency while speaking?</li>
+            <li>Did I use natural expressions?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reflection-box">
+        <div class="reflection-box-label">Reflection</div>
+        <ul>
+          <li>Speaking under pressure is a skill that improves with practice.</li>
+          <li>By using structured responses and recovery strategies, you can continue speaking confidently even when questions are challenging.</li>
+          <li>In the final section, you will review the strategies you learned and evaluate your progress using a structured checklist.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================
+         PART 12: SELF-ASSESSMENT
+    ============================= -->
+    <section class="unit-section" id="part12">
+      <div class="section-header">
+        <div class="section-badge badge-lav">P12</div>
+        <div class="section-header-text">
+          <div class="section-part-label">Part Twelve</div>
+          <h2 class="section-title">Self-Assessment and Reflection</h2>
+          <p class="section-subtitle">Evaluating Your Speaking Development</p>
+        </div>
+      </div>
+
+      <div class="purpose-box">
+        <strong>Purpose:</strong> In order to improve speaking skills, it is important to regularly evaluate your performance. Self-assessment helps you identify your strengths and recognise areas that require further practice. In this section, you will review the strategies and techniques you practised throughout the unit.
+      </div>
+
+      <!-- Strategy Review -->
+      <h3 class="sub-section-title">Section 1 — Strategy Review</h3>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-bottom:1.5rem;">
+        <div class="activity-block" style="margin-bottom:0;">
+          <div class="activity-header"><span class="activity-number">STRATEGY A</span><span class="activity-title">The Layering Method</span></div>
+          <div class="activity-body">
+            <div class="strategy-grid">
+              <div class="strategy-step" style="padding:0.6rem 0.75rem;">
+                <div class="step-icon layer-1" style="width:1.8rem;height:1.8rem;font-size:0.65rem;">L1</div>
+                <div class="step-content"><div class="step-title" style="font-size:0.82rem;">Statement</div></div>
+              </div>
+              <div class="strategy-step" style="padding:0.6rem 0.75rem;">
+                <div class="step-icon layer-2" style="width:1.8rem;height:1.8rem;font-size:0.65rem;">L2</div>
+                <div class="step-content"><div class="step-title" style="font-size:0.82rem;">Reason</div></div>
+              </div>
+              <div class="strategy-step" style="padding:0.6rem 0.75rem;">
+                <div class="step-icon layer-3" style="width:1.8rem;height:1.8rem;font-size:0.65rem;">L3</div>
+                <div class="step-content"><div class="step-title" style="font-size:0.82rem;">Example</div></div>
+              </div>
+              <div class="strategy-step" style="padding:0.6rem 0.75rem;">
+                <div class="step-icon layer-4" style="width:1.8rem;height:1.8rem;font-size:0.65rem;">L4</div>
+                <div class="step-content"><div class="step-title" style="font-size:0.82rem;">Feeling</div></div>
+              </div>
+              <div class="strategy-step" style="padding:0.6rem 0.75rem;">
+                <div class="step-icon layer-5" style="width:1.8rem;height:1.8rem;font-size:0.65rem;">L5</div>
+                <div class="step-content"><div class="step-title" style="font-size:0.82rem;">Reflection</div></div>
+              </div>
+            </div>
+            <p class="text-mute">Develop answers step by step, adding new layers of information.</p>
+          </div>
+        </div>
+
+        <div class="activity-block" style="margin-bottom:0;">
+          <div class="activity-header"><span class="activity-number">STRATEGY B</span><span class="activity-title">The 4-Step Answer Engine</span></div>
+          <div class="activity-body">
+            <div class="strategy-grid">
+              <div class="strategy-step" style="padding:0.6rem 0.75rem;">
+                <div class="step-icon layer-1" style="width:1.8rem;height:1.8rem;font-size:0.65rem;">S1</div>
+                <div class="step-content"><div class="step-title" style="font-size:0.82rem;">Direct Answer</div></div>
+              </div>
+              <div class="strategy-step" style="padding:0.6rem 0.75rem;">
+                <div class="step-icon layer-2" style="width:1.8rem;height:1.8rem;font-size:0.65rem;">S2</div>
+                <div class="step-content"><div class="step-title" style="font-size:0.82rem;">Reason</div></div>
+              </div>
+              <div class="strategy-step" style="padding:0.6rem 0.75rem;">
+                <div class="step-icon layer-3" style="width:1.8rem;height:1.8rem;font-size:0.65rem;">S3</div>
+                <div class="step-content"><div class="step-title" style="font-size:0.82rem;">Example</div></div>
+              </div>
+              <div class="strategy-step" style="padding:0.6rem 0.75rem;">
+                <div class="step-icon layer-4" style="width:1.8rem;height:1.8rem;font-size:0.65rem;">S4</div>
+                <div class="step-content"><div class="step-title" style="font-size:0.82rem;">Reflection</div></div>
+              </div>
+            </div>
+            <p class="text-mute">Organise ideas quickly for any question.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="activity-block">
+        <div class="activity-header"><span class="activity-number">STRATEGY C</span><span class="activity-title">Repair and Recovery Strategies</span></div>
+        <div class="activity-body">
+          <div class="repair-grid">
+            <div class="repair-card"><div class="type">Buy Thinking Time</div><div class="expr">That's a good question. / Let me think about that…</div></div>
+            <div class="repair-card"><div class="type">Self-Repair</div><div class="expr">Actually, what I mean is… / Let me rephrase that.</div></div>
+            <div class="repair-card"><div class="type">Rephrase Forgotten Word</div><div class="expr">Describe the idea using different words.</div></div>
+            <div class="repair-card"><div class="type">Restart Your Answer</div><div class="expr">Let me explain that more clearly. / Let me start again.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Self-Evaluation Checklist -->
+      <h3 class="sub-section-title">Section 2 — Comprehensive Self-Evaluation Checklist</h3>
+      <p class="text-sm" style="margin-bottom:1rem;">Think about your recent speaking practice and answer each item: <strong>Yes</strong>, <strong>Sometimes</strong>, or <strong>No</strong>.</p>
+
+      <div class="assessment-grid">
+        <div class="assessment-cat">
+          <div class="assessment-cat-title">Idea Development</div>
+          <ul class="checklist">
+            <li>Did I give a clear answer to the question?</li>
+            <li>Did I explain my ideas with reasons?</li>
+            <li>Did I include examples when possible?</li>
+            <li>Did I add personal details to my answers?</li>
+          </ul>
+        </div>
+        <div class="assessment-cat">
+          <div class="assessment-cat-title">Fluency</div>
+          <ul class="checklist">
+            <li>Was I able to speak for about 45–60 seconds?</li>
+            <li>Did I maintain a natural speaking pace?</li>
+            <li>Did I avoid long pauses during my answers?</li>
+          </ul>
+        </div>
+        <div class="assessment-cat">
+          <div class="assessment-cat-title">Vocabulary</div>
+          <ul class="checklist">
+            <li>Did I use natural expressions such as phrasal verbs or idioms?</li>
+            <li>Did I use vocabulary related to travel and experiences?</li>
+            <li>Did my word choices sound natural?</li>
+          </ul>
+        </div>
+        <div class="assessment-cat">
+          <div class="assessment-cat-title">Accuracy</div>
+          <ul class="checklist">
+            <li>Did I avoid common grammar errors?</li>
+            <li>Did my sentences sound clear and natural?</li>
+            <li>Did I correct myself when I noticed a mistake?</li>
+          </ul>
+        </div>
+        <div class="assessment-cat" style="grid-column: span 2;">
+          <div class="assessment-cat-title">Communication Strategies</div>
+          <ul class="checklist">
+            <li>Did I use thinking-time expressions when needed?</li>
+            <li>Did I rephrase my ideas if I forgot a word?</li>
+            <li>Did I continue speaking even when I hesitated?</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Reflection Questions -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">SECTION 3</span>
+          <span class="activity-title">Reflecting on Your Progress</span>
+        </div>
+        <div class="activity-body">
+          <p>Answer the following questions in writing.</p>
+          <ol class="questions-list">
+            <li>Which strategy helped you extend your answers the most?</li>
+            <li>Which speaking activity did you find the most challenging?</li>
+            <li>Which activity helped you improve your speaking the most?</li>
+            <li>Which area of speaking would you like to improve further? <em>(idea development · vocabulary use · fluency · accuracy)</em></li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Final Speaking Practice -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">SECTION 4</span>
+          <span class="activity-title">Final Speaking Practice</span>
+        </div>
+        <div class="activity-body">
+          <p>Choose one of the questions below and speak for about <strong>one minute</strong>. Try to apply everything you learned in this unit. Include: a clear answer · a reason · an example · a reflection. If necessary, use recovery strategies to maintain fluency.</p>
+          <ol class="questions-list">
+            <li>What is one place you would recommend tourists visit in your country?</li>
+            <li>What is the most interesting place you have ever travelled to?</li>
+            <li>Why do people enjoy travelling to other countries?</li>
+            <li>How has tourism changed in recent years?</li>
+            <li>What country would you like to visit in the future?</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Personal Learning Plan -->
+      <div class="activity-block">
+        <div class="activity-header">
+          <span class="activity-number">SECTION 5</span>
+          <span class="activity-title">Personal Learning Plan</span>
+        </div>
+        <div class="activity-body">
+          <p>Based on your reflection, write one or two goals for your future speaking practice.</p>
+
+          <div class="example-box">
+            <div class="example-label">Example Goals</div>
+            <p>I will practise extending my answers using examples and personal experiences.<br>
+            I will try to include more natural expressions in my speaking.<br>
+            I will practise speaking for at least one minute without stopping.</p>
+          </div>
+
+          <div style="margin-top:1rem;">
+            <table class="planning-table">
+              <thead><tr><th>Goal</th><th>My Plan</th></tr></thead>
+              <tbody>
+                <tr><td>Goal 1</td><td><div class="write-space">Write your goal here…</div></td></tr>
+                <tr><td>Goal 2</td><td><div class="write-space">Write your goal here…</div></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conclusion -->
+      <div style="background: linear-gradient(135deg, var(--clr-sage-pale), var(--clr-lav-pale), var(--clr-sky-pale)); border-radius: var(--radius-xl); padding: 2rem 2rem 1.75rem; margin-top: 2rem; border: 1px solid var(--clr-sage-light);">
+        <h3 style="font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700; color: var(--clr-text); margin-bottom: 0.75rem;">Unit Conclusion</h3>
+        <p style="font-size:0.92rem; line-height:1.75; color:var(--clr-text-sub); margin-bottom:1rem;">Developing strong speaking skills requires regular practice, reflection, and the use of effective strategies. By learning how to extend your answers, organise your ideas, and maintain fluency during communication, you can become a more confident and effective speaker.</p>
+        <p style="font-size:0.92rem; line-height:1.75; color:var(--clr-text-sub);">Continue practising these techniques in everyday conversations and speaking activities to further improve your communication skills.</p>
+        <div style="margin-top:1.25rem; display:flex; flex-wrap:wrap; gap:0.6rem;">
+          <span class="hero-tag teal">The Layering Method</span>
+          <span class="hero-tag lav">The 4-Step Answer Engine</span>
+          <span class="hero-tag sky">Repair &amp; Recovery</span>
+          <span class="hero-tag teal">Natural Expressions</span>
+          <span class="hero-tag lav">Error Awareness</span>
+        </div>
+      </div>
+
+    </section>
+
+  </div><!-- /content -->
+</main>
+
+<script>
+  // Progress bar
+  window.addEventListener('scroll', () => {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = (window.scrollY / docHeight) * 100;
+    document.getElementById('progressBar').style.width = scrolled + '%';
+  });
+
+  // Active nav highlight
+  const sections = document.querySelectorAll('.unit-section');
+  const navItems = document.querySelectorAll('.nav-item');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navItems.forEach(n => n.classList.remove('active'));
+        const id = entry.target.id;
+        const match = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (match) match.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

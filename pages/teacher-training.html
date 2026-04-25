@@ -1,0 +1,2295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Speaking — Teacher Training Programme</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:       #fdf8f2;
+    --blush:       #f5e8df;
+    --sage:        #ddeee5;
+    --sky:         #dceef8;
+    --lavender:    #ece8f5;
+    --marigold:    #fdf0d5;
+    --coral:       #e8a598;
+    --teal:        #5b9e8f;
+    --navy:        #2e4a62;
+    --plum:        #5c4a72;
+    --text-main:   #2a2a2a;
+    --text-muted:  #6b6b6b;
+    --border:      #e0d8d0;
+    --sidebar-w:   300px;
+    --header-h:    64px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--cream);
+    color: var(--text-main);
+    line-height: 1.75;
+  }
+
+  /* ── TOP BAR ─────────────────────────────────────── */
+  #topbar {
+    position: fixed; top: 0; left: 0; right: 0;
+    height: var(--header-h);
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 1.5rem;
+    z-index: 200;
+    box-shadow: 0 2px 12px rgba(0,0,0,.18);
+  }
+  #topbar .brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #fff;
+    letter-spacing: .02em;
+    line-height: 1.25;
+  }
+  #topbar .brand span {
+    display: block;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: .72rem;
+    font-weight: 300;
+    color: #b8cfe2;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  #menu-toggle {
+    display: none;
+    background: none; border: none; cursor: pointer;
+    flex-direction: column; gap: 5px; padding: 6px;
+  }
+  #menu-toggle span {
+    display: block; width: 24px; height: 2px;
+    background: #fff; border-radius: 2px;
+    transition: .3s;
+  }
+
+  /* ── SIDEBAR ──────────────────────────────────────── */
+  #sidebar {
+    position: fixed;
+    top: var(--header-h); left: 0; bottom: 0;
+    width: var(--sidebar-w);
+    background: #fff;
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    z-index: 100;
+    padding-bottom: 2rem;
+  }
+  #sidebar::-webkit-scrollbar { width: 5px; }
+  #sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  .sidebar-header {
+    padding: 1.2rem 1.4rem .8rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0;
+    background: #fff;
+    z-index: 10;
+  }
+
+  .nav-item {
+    display: flex; align-items: flex-start; gap: .7rem;
+    padding: .65rem 1.4rem;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: background .18s, border-color .18s;
+    text-decoration: none;
+    color: var(--text-main);
+  }
+  .nav-item:hover { background: var(--cream); }
+  .nav-item.active {
+    border-left-color: var(--teal);
+    background: var(--sage);
+  }
+  .nav-num {
+    flex-shrink: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: .8rem;
+    color: var(--teal);
+    font-weight: 600;
+    min-width: 24px;
+    padding-top: .05rem;
+  }
+  .nav-label {
+    font-size: .82rem;
+    line-height: 1.35;
+    color: var(--text-main);
+  }
+
+  /* ── MAIN CONTENT ─────────────────────────────────── */
+  #main {
+    margin-left: var(--sidebar-w);
+    margin-top: var(--header-h);
+    padding: 3rem 3.5rem 5rem;
+    max-width: 900px;
+  }
+
+  /* ── HERO ────────────────────────────────────────── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #3d6483 100%);
+    border-radius: 16px;
+    padding: 3rem 3rem 2.5rem;
+    margin-bottom: 3.5rem;
+    color: #fff;
+  }
+  .hero-label {
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #b8cfe2;
+    margin-bottom: .6rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .hero p {
+    font-size: .95rem;
+    color: #cce0f0;
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .hero-pills {
+    display: flex; flex-wrap: wrap; gap: .5rem;
+  }
+  .hero-pill {
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 20px;
+    padding: .25rem .85rem;
+    font-size: .78rem;
+    color: #e2f0fa;
+  }
+
+  /* ── MODULE SECTION ───────────────────────────────── */
+  .module {
+    margin-bottom: 5rem;
+    scroll-margin-top: calc(var(--header-h) + 1.5rem);
+  }
+
+  .module-header {
+    border-radius: 12px;
+    padding: 1.8rem 2rem;
+    margin-bottom: 2rem;
+  }
+  .mh-blush   { background: var(--blush); }
+  .mh-sage    { background: var(--sage); }
+  .mh-sky     { background: var(--sky); }
+  .mh-lavender{ background: var(--lavender); }
+  .mh-marigold{ background: var(--marigold); }
+
+  .module-num {
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: .4rem;
+  }
+  .module h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: .9rem;
+  }
+  .module-tagline {
+    font-size: .92rem;
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.55;
+  }
+
+  /* ── SECTION HEADINGS ─────────────────────────────── */
+  .section-block { margin-bottom: 2.4rem; }
+
+  .section-label {
+    display: inline-flex; align-items: center; gap: .5rem;
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--plum);
+    margin-bottom: .8rem;
+  }
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 18px; height: 2px;
+    background: var(--coral);
+    border-radius: 2px;
+  }
+
+  .module h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.18rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: .6rem;
+    line-height: 1.3;
+  }
+  .module h4 {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 1.2rem 0 .4rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+
+  /* ── BODY TEXT ────────────────────────────────────── */
+  .module p { margin-bottom: .9rem; font-size: .95rem; }
+
+  /* ── BULLET LISTS ─────────────────────────────────── */
+  .module ul, .module ol {
+    padding-left: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  .module ul { list-style: none; padding-left: 0; }
+  .module ul li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: .35rem;
+    font-size: .93rem;
+  }
+  .module ul li::before {
+    content: '▸';
+    position: absolute; left: 0;
+    color: var(--teal);
+    font-size: .75rem;
+    top: .22rem;
+  }
+  .module ol li { margin-bottom: .35rem; font-size: .93rem; }
+
+  /* ── TABLES ───────────────────────────────────────── */
+  .tbl-wrap { overflow-x: auto; margin-bottom: 1.5rem; border-radius: 10px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+  thead tr { background: var(--navy); color: #fff; }
+  thead th {
+    padding: .75rem 1rem;
+    text-align: left;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: .8rem;
+    letter-spacing: .04em;
+  }
+  tbody tr { border-bottom: 1px solid var(--border); }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:nth-child(even) { background: var(--cream); }
+  tbody td { padding: .65rem 1rem; vertical-align: top; }
+  tbody td:first-child { font-weight: 600; color: var(--navy); }
+
+  /* ── CALLOUT BOXES ────────────────────────────────── */
+  .callout {
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1.4rem;
+    border-left: 4px solid;
+    font-size: .92rem;
+  }
+  .callout-info   { background: var(--sky);      border-color: #6aaed6; }
+  .callout-tip    { background: var(--sage);     border-color: var(--teal); }
+  .callout-warn   { background: var(--marigold); border-color: #d4a017; }
+  .callout-plum   { background: var(--lavender); border-color: var(--plum); }
+
+  .callout strong {
+    display: block;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: .4rem;
+    color: var(--navy);
+  }
+
+  /* ── OBJECTIVES ───────────────────────────────────── */
+  .objectives {
+    background: var(--lavender);
+    border-radius: 10px;
+    padding: 1.3rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .objectives strong {
+    display: block;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--plum);
+    margin-bottom: .7rem;
+  }
+  .objectives ol { padding-left: 1.2rem; }
+  .objectives ol li { font-size: .88rem; margin-bottom: .3rem; }
+
+  /* ── EXAMPLE BLOCKS ───────────────────────────────── */
+  .example {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.1rem 1.3rem;
+    margin-bottom: 1.2rem;
+    font-size: .9rem;
+  }
+  .example-label {
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: .5rem;
+  }
+
+  /* ── CUE CARD ─────────────────────────────────────── */
+  .cue-card {
+    background: var(--marigold);
+    border: 1.5px solid #e0c87e;
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1.4rem;
+    font-size: .92rem;
+  }
+  .cue-card .cc-label {
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #8a6c0a;
+    margin-bottom: .5rem;
+  }
+  .cue-card p { font-weight: 600; margin-bottom: .5rem; }
+  .cue-card ul li::before { color: #c4931a; }
+
+  /* ── FRAMEWORK BOX ────────────────────────────────── */
+  .framework {
+    display: flex; gap: 0;
+    border-radius: 10px; overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border);
+  }
+  .fw-step {
+    flex: 1;
+    padding: .9rem .7rem;
+    text-align: center;
+    font-size: .82rem;
+  }
+  .fw-step .fw-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: .2rem;
+  }
+  .fw-step .fw-word { font-weight: 600; display: block; margin-bottom: .2rem; }
+  .fw-step .fw-desc { font-size: .75rem; color: var(--text-muted); }
+  .fw-i { background: #dff0fb; }
+  .fw-i .fw-letter { color: #3a7bbf; }
+  .fw-d { background: var(--sage); }
+  .fw-d .fw-letter { color: var(--teal); }
+  .fw-e { background: var(--blush); }
+  .fw-e .fw-letter { color: #b05a50; }
+  .fw-a { background: var(--lavender); }
+  .fw-a .fw-letter { color: var(--plum); }
+
+  /* ── KNOWLEDGE CHECK ──────────────────────────────── */
+  .knowledge-check {
+    background: var(--sage);
+    border-radius: 10px;
+    padding: 1.3rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .knowledge-check strong {
+    display: block;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: .7rem;
+  }
+  .knowledge-check ol { padding-left: 1.2rem; }
+  .knowledge-check ol li { font-size: .88rem; margin-bottom: .35rem; }
+
+  /* ── DIVIDER ──────────────────────────────────────── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+
+  /* ── SUMMARY BOX ──────────────────────────────────── */
+  .summary {
+    background: var(--blush);
+    border-radius: 10px;
+    padding: 1.3rem 1.5rem;
+    margin-top: 2rem;
+    border-left: 4px solid var(--coral);
+  }
+  .summary strong {
+    display: block;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #a0504a;
+    margin-bottom: .6rem;
+  }
+  .summary p { font-size: .91rem; margin-bottom: .5rem; }
+
+  /* ── BACK TO TOP ──────────────────────────────────── */
+  #back-top {
+    position: fixed; bottom: 2rem; right: 2rem;
+    background: var(--navy); color: #fff;
+    border: none; border-radius: 50%;
+    width: 42px; height: 42px;
+    font-size: 1.1rem; cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,.22);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity .3s;
+    z-index: 300;
+  }
+  #back-top.visible { opacity: 1; }
+
+  /* ── RESPONSIVE ───────────────────────────────────── */
+  @media (max-width: 900px) {
+    #menu-toggle { display: flex; }
+    #sidebar {
+      transform: translateX(-100%);
+      transition: transform .3s;
+    }
+    #sidebar.open { transform: translateX(0); }
+    #main { margin-left: 0; padding: 2rem 1.4rem 4rem; }
+    .framework { flex-direction: column; }
+    .hero h1 { font-size: 1.6rem; }
+  }
+/* === PASTEL MASTER SITE PATCH === */
+:root{--navy:#5f7f98;--teal:#6fa58f;--plum:#7b6ab4;--cream:#fbf8f3;--border:#e8ded2;--text-main:#2d2a27;--text-muted:#625a54;--sky:#dcecf6;--sage:#dcefe5;--lavender:#e9e5f8;--marigold:#f7e8b9;--blush:#fde5d5}#topbar{background:linear-gradient(90deg,#e9e5f8,#dcecf6,#dcefe5)!important;box-shadow:0 2px 12px rgba(64,48,36,.08);border-bottom:1px solid var(--border)}#topbar .brand{color:#2d2a27!important}#topbar .brand span{color:#625a54!important}#sidebar{background:#fffdf9!important;color:#2d2a27!important;border-right:1px solid var(--border)!important}.sidebar-header{background:#fffdf9!important;color:#817870!important}.nav-item{color:#2d2a27!important;border-radius:0 12px 12px 0;margin-right:10px}.nav-item:hover,.nav-item.active{background:#dcecf6!important;border-left-color:#8bbbd2!important}.hero{background:linear-gradient(135deg,#e9e5f8,#dcecf6 60%,#dcefe5)!important;color:#2d2a27!important}.hero p,.hero-label,.hero-pill{color:#625a54!important}.hero-pill{background:rgba(255,255,255,.65)!important;border-color:#fff!important;}
+
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header id="topbar">
+  <div class="brand">
+    IELTS Speaking
+    <span>Teacher Training Programme &nbsp;·&nbsp; 20 Modules</span>
+  </div>
+  <button id="menu-toggle" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- SIDEBAR -->
+<nav id="sidebar">
+  <div class="sidebar-header">Module Navigation</div>
+  <a class="nav-item" href="#hero"><span class="nav-num">—</span><span class="nav-label">Programme Overview</span></a>
+  <a class="nav-item" href="#m1"><span class="nav-num">01</span><span class="nav-label">Architecture of the Speaking Test</span></a>
+  <a class="nav-item" href="#m2"><span class="nav-num">02</span><span class="nav-label">Speaking Band Descriptors</span></a>
+  <a class="nav-item" href="#m3"><span class="nav-num">03</span><span class="nav-label">Diagnosing Student Performance</span></a>
+  <a class="nav-item" href="#m4"><span class="nav-num">04</span><span class="nav-label">The Idea Generation Problem</span></a>
+  <a class="nav-item" href="#m5"><span class="nav-num">05</span><span class="nav-label">Using Input to Support Speaking</span></a>
+  <a class="nav-item" href="#m6"><span class="nav-num">06</span><span class="nav-label">Idea Development Frameworks</span></a>
+  <a class="nav-item" href="#m7"><span class="nav-num">07</span><span class="nav-label">Teaching Speaking Part 1</span></a>
+  <a class="nav-item" href="#m8"><span class="nav-num">08</span><span class="nav-label">Teaching Speaking Part 2</span></a>
+  <a class="nav-item" href="#m9"><span class="nav-num">09</span><span class="nav-label">Teaching Speaking Part 3</span></a>
+  <a class="nav-item" href="#m10"><span class="nav-num">10</span><span class="nav-label">Fluency Development</span></a>
+  <a class="nav-item" href="#m11"><span class="nav-num">11</span><span class="nav-label">Vocabulary Development</span></a>
+  <a class="nav-item" href="#m12"><span class="nav-num">12</span><span class="nav-label">Grammatical Range &amp; Accuracy</span></a>
+  <a class="nav-item" href="#m13"><span class="nav-num">13</span><span class="nav-label">Teaching Pronunciation</span></a>
+  <a class="nav-item" href="#m14"><span class="nav-num">14</span><span class="nav-label">Correcting Speaking Errors</span></a>
+  <a class="nav-item" href="#m15"><span class="nav-num">15</span><span class="nav-label">Designing Effective Lessons</span></a>
+  <a class="nav-item" href="#m16"><span class="nav-num">16</span><span class="nav-label">When Students Don't Understand</span></a>
+  <a class="nav-item" href="#m17"><span class="nav-num">17</span><span class="nav-label">Buying Thinking Time</span></a>
+  <a class="nav-item" href="#m18"><span class="nav-num">18</span><span class="nav-label">Classroom Activities</span></a>
+  <a class="nav-item" href="#m19"><span class="nav-num">19</span><span class="nav-label">Running Practice Tests</span></a>
+  <a class="nav-item" href="#m20"><span class="nav-num">20</span><span class="nav-label">Feedback &amp; Self-Assessment</span></a>
+</nav>
+
+<!-- MAIN -->
+<main id="main">
+
+  <!-- HERO -->
+  <div class="hero" id="hero">
+    <div class="hero-label">Instructor Reference Guide</div>
+    <h1>IELTS Speaking<br>Teacher Training Programme</h1>
+    <p>A comprehensive 20-module guide for IELTS and ESL instructors. Covers test architecture, assessment criteria, diagnostic strategies, teaching methodology, and classroom application.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">20 Modules</span>
+      <span class="hero-pill">4 Band Criteria</span>
+      <span class="hero-pill">IDEA Framework</span>
+      <span class="hero-pill">Parts 1, 2 &amp; 3</span>
+      <span class="hero-pill">Classroom Activities</span>
+      <span class="hero-pill">Mock Test Protocol</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 1 -->
+  <section class="module" id="m1">
+    <div class="module-header mh-blush">
+      <div class="module-num">Module 01</div>
+      <h2>The Architecture of the IELTS Speaking Test</h2>
+      <p class="module-tagline">Understanding the structure, purpose, and design logic of the test so teachers can train students strategically.</p>
+    </div>
+
+    <div class="section-block">
+      <p>The IELTS Speaking test is not simply a conversation. It is a structured interview designed to measure specific communicative abilities across three progressively demanding sections. Each part evaluates different aspects of spoken communication, assessed using four criteria: <strong>Fluency and Coherence, Lexical Resource, Grammatical Range and Accuracy,</strong> and <strong>Pronunciation.</strong></p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Explain the structure and timing of the IELTS Speaking test.</li>
+        <li>Identify the purpose of each part of the test.</li>
+        <li>Understand how examiners conduct the interview.</li>
+        <li>Recognize how the test progressively increases in difficulty.</li>
+        <li>Simulate the speaking test accurately in the classroom.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>Overview of the IELTS Speaking Test</h3>
+    <p>The IELTS Speaking test is a face-to-face interview between the candidate and an examiner. The total duration is approximately <strong>11–14 minutes</strong>. The examiner follows a standardized script to ensure fairness and consistency across candidates.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Part</th><th>Duration</th><th>Focus</th></tr></thead>
+        <tbody>
+          <tr><td>Part 1</td><td>4–5 minutes</td><td>Personal questions</td></tr>
+          <tr><td>Part 2</td><td>3–4 minutes</td><td>Individual long turn</td></tr>
+          <tr><td>Part 3</td><td>4–5 minutes</td><td>Abstract discussion</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Part 1 — Introduction and Personal Questions</h3>
+    <p>In this section, the examiner asks candidates about familiar topics such as hometown, work or studies, hobbies, daily routines, food, and travel. These questions help candidates relax and assess basic conversational ability. Candidates should give natural answers of one or two sentences rather than single-word responses.</p>
+
+    <h3>Part 2 — The Long Turn</h3>
+    <p>Candidates receive a cue card with a topic and are given <strong>1 minute to prepare</strong> and <strong>1–2 minutes to speak</strong>. This section measures fluency, narrative ability, and the ability to organize ideas.</p>
+    <div class="cue-card">
+      <div class="cc-label">Example Cue Card</div>
+      <p>Describe a memorable trip you took.</p>
+      <ul>
+        <li>where you went</li>
+        <li>who you went with</li>
+        <li>what you did there</li>
+        <li>and explain why it was memorable.</li>
+      </ul>
+    </div>
+
+    <h3>Part 3 — Two-Way Discussion</h3>
+    <p>This section expands on the Part 2 topic with more abstract and analytical questions. Part 3 measures the candidate's ability to express opinions, justify arguments, compare ideas, and speculate about the future. This section often determines whether a student can reach a higher band.</p>
+
+    <h3>Progressive Difficulty of the Test</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Section</th><th>Cognitive Demand</th></tr></thead>
+        <tbody>
+          <tr><td>Part 1</td><td>Personal information</td></tr>
+          <tr><td>Part 2</td><td>Personal storytelling</td></tr>
+          <tr><td>Part 3</td><td>Abstract discussion</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="divider">
+    <div class="section-label">Teaching Methodology</div>
+
+    <h3>The IDEA Framework</h3>
+    <p>Speaking lessons in this programme follow the IDEA framework to ensure students can generate ideas, structure responses, speak fluently, and extend their answers.</p>
+    <div class="framework">
+      <div class="fw-step fw-i"><span class="fw-letter">I</span><span class="fw-word">Input</span><span class="fw-desc">Topic introduction</span></div>
+      <div class="fw-step fw-d"><span class="fw-letter">D</span><span class="fw-word">Develop Ideas</span><span class="fw-desc">Brainstorm examples</span></div>
+      <div class="fw-step fw-e"><span class="fw-letter">E</span><span class="fw-word">Express</span><span class="fw-desc">Deliver the answer</span></div>
+      <div class="fw-step fw-a"><span class="fw-letter">A</span><span class="fw-word">Advance</span><span class="fw-desc">Add detail or reflection</span></div>
+    </div>
+
+    <hr class="divider">
+    <div class="section-label">Classroom Application</div>
+
+    <h3>Simulating the IELTS Speaking Test</h3>
+    <p>Teachers should regularly conduct mock speaking interviews using official timing: Part 1 — 4 min / Part 2 — 3 min / Part 3 — 4 min. After each test, provide feedback based on the band descriptors.</p>
+
+    <div class="callout callout-warn">
+      <strong>Common Teacher Mistakes</strong>
+      Treating all speaking questions the same · Ignoring the planning stage in Part 2 · Asking Part 3 questions too early in training · Overcorrecting grammar during fluency practice.
+    </div>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>How long does the IELTS Speaking test usually last?</li>
+        <li>Which part of the test requires preparation time?</li>
+        <li>Which section requires abstract discussion?</li>
+        <li>What four criteria are used to score speaking performance?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>The IELTS Speaking test is a structured interview consisting of three parts, each designed to measure different speaking abilities. Effective instruction requires understanding the purpose of each section, how examiners assess performance, and how to train students to respond appropriately in each section.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 2 -->
+  <section class="module" id="m2">
+    <div class="module-header mh-sage">
+      <div class="module-num">Module 02</div>
+      <h2>Understanding the IELTS Speaking Band Descriptors</h2>
+      <p class="module-tagline">Identifying how examiners score performance across the four assessment criteria.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Identify the four IELTS speaking band criteria.</li>
+        <li>Explain how examiners determine band scores.</li>
+        <li>Recognize the characteristics of different band levels.</li>
+        <li>Diagnose student performance using the descriptors.</li>
+        <li>Provide feedback aligned with IELTS scoring standards.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>The Four IELTS Speaking Assessment Criteria</h3>
+    <p>Each criterion is scored individually, and the final speaking band score is the <strong>average of the four scores</strong>.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Criterion</th><th>Focus</th></tr></thead>
+        <tbody>
+          <tr><td>Fluency and Coherence</td><td>Flow and organization of speech</td></tr>
+          <tr><td>Lexical Resource</td><td>Range and accuracy of vocabulary</td></tr>
+          <tr><td>Grammatical Range and Accuracy</td><td>Variety and correctness of grammar</td></tr>
+          <tr><td>Pronunciation</td><td>Clarity and intelligibility of speech</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Criterion 1 — Fluency and Coherence</h3>
+    <p><strong>Fluency</strong> refers to how smoothly and naturally a candidate speaks. <strong>Coherence</strong> refers to how logically ideas are organized and connected. Common indicators of weak fluency include frequent pauses, repetition, hesitation, and self-correction.</p>
+
+    <h3>Criterion 2 — Lexical Resource</h3>
+    <p>Examiners evaluate whether a candidate can use appropriate vocabulary, paraphrase effectively, and avoid excessive repetition. Higher band scores require flexible vocabulary use, natural collocations, and the ability to express nuanced ideas.</p>
+
+    <h3>Criterion 3 — Grammatical Range and Accuracy</h3>
+    <p>This criterion evaluates both the variety and accuracy of grammar structures. It is important to note that minor grammar mistakes do not automatically reduce the score if communication remains clear.</p>
+
+    <h3>Criterion 4 — Pronunciation</h3>
+    <p>Pronunciation is assessed based on <strong>intelligibility</strong> — the ability to communicate clearly. Examiners evaluate word stress, sentence stress, rhythm, intonation, and linking sounds. Accents are acceptable; clarity is more important than perfection.</p>
+
+    <h3>How the Final Speaking Score Is Calculated</h3>
+    <div class="example">
+      <div class="example-label">Scoring Example</div>
+      <div class="tbl-wrap" style="margin-bottom:0;">
+        <table>
+          <thead><tr><th>Criterion</th><th>Score</th></tr></thead>
+          <tbody>
+            <tr><td>Fluency and Coherence</td><td>6</td></tr>
+            <tr><td>Lexical Resource</td><td>7</td></tr>
+            <tr><td>Grammar</td><td>6</td></tr>
+            <tr><td>Pronunciation</td><td>6</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:.8rem; font-size:.88rem;">(6 + 7 + 6 + 6) ÷ 4 = <strong>6.25</strong> → Rounded to <strong>Band 6.5</strong><br><em>Note: In JIC, this becomes 6.0 as scores are rounded down to the nearest half band.</em></p>
+    </div>
+
+    <hr class="divider">
+    <div class="section-label">Teaching Methodology</div>
+
+    <h3>Using the IDEA Framework with Band Criteria</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>IDEA Stage</th><th>Band Criteria Developed</th></tr></thead>
+        <tbody>
+          <tr><td>Input</td><td>Vocabulary and topic understanding</td></tr>
+          <tr><td>Develop Ideas</td><td>Coherence and logical organization</td></tr>
+          <tr><td>Express</td><td>Fluency and grammar</td></tr>
+          <tr><td>Advance</td><td>Vocabulary sophistication and reasoning</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-warn">
+      <strong>Common Teacher Mistakes</strong>
+      Focusing only on grammar accuracy · Correcting students too frequently · Ignoring fluency development · Overlooking pronunciation training.
+    </div>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>What are the four IELTS speaking assessment criteria?</li>
+        <li>How is the final speaking band score calculated?</li>
+        <li>Which criterion measures vocabulary flexibility?</li>
+        <li>Which criterion evaluates clarity of speech?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>IELTS Speaking performance is evaluated using four equally weighted assessment criteria. Teachers must understand these criteria to diagnose student performance, design effective lessons, and provide accurate feedback.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 3 -->
+  <section class="module" id="m3">
+    <div class="module-header mh-sky">
+      <div class="module-num">Module 03</div>
+      <h2>Diagnosing Student Speaking Performance</h2>
+      <p class="module-tagline">Learning to observe, diagnose, and target individual student weaknesses systematically.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Identify the most common speaking problems IELTS students experience.</li>
+        <li>Diagnose performance issues using the band descriptors.</li>
+        <li>Distinguish between fluency problems and language problems.</li>
+        <li>Analyze student responses for evidence of strengths and weaknesses.</li>
+        <li>Provide targeted feedback based on diagnostic evidence.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>The Diagnostic Cycle</h3>
+    <div class="callout callout-info">
+      <strong>Observe → Diagnose → Train → Reassess</strong>
+      This cycle allows teachers to identify root causes of speaking difficulties rather than correcting isolated mistakes.
+    </div>
+
+    <h3>The Four Types of Speaking Problems</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Problem Type</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>Fluency Problems</td><td>Hesitation, pauses, repetition</td></tr>
+          <tr><td>Vocabulary Problems</td><td>Limited lexical range</td></tr>
+          <tr><td>Grammar Problems</td><td>Incorrect sentence structures</td></tr>
+          <tr><td>Pronunciation Problems</td><td>Difficulty being understood</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Fluency Problems</h3>
+    <p>Common indicators include long pauses, filler words ("uh", "um"), repetition, false starts, and self-corrections. Students with fluency problems may know the answer but cannot express ideas smoothly.</p>
+
+    <h3>Vocabulary Problems</h3>
+    <p>Common signs include repeating the same words frequently, using basic vocabulary, and difficulty paraphrasing.</p>
+    <div class="example">
+      <div class="example-label">Example</div>
+      <p><em>"I like traveling because it is very good and very nice."</em></p>
+      <p>The student has the idea but lacks the vocabulary to express it effectively.</p>
+    </div>
+
+    <h3>Grammar Problems</h3>
+    <p>Typical indicators include incorrect verb tenses, missing articles, incorrect word order, and overuse of simple sentences. Teachers should identify whether the issue is <strong>accuracy</strong> (errors) or <strong>range</strong> (limited sentence structures).</p>
+
+    <h3>Pronunciation Problems</h3>
+    <p>Common issues include incorrect word stress, unclear consonant sounds, monotone intonation, and syllable omission. Accent is not a problem as long as speech remains intelligible.</p>
+
+    <hr class="divider">
+    <div class="section-label">Teaching Methodology</div>
+
+    <h3>Separating Thinking Problems from Language Problems</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Problem Type</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>Thinking Problem</td><td>Student does not know what to say</td></tr>
+          <tr><td>Language Problem</td><td>Student knows the idea but cannot express it</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>If the problem is <strong>idea generation</strong>, provide input and brainstorming activities. If the problem is <strong>language expression</strong>, focus on vocabulary and grammar development.</p>
+
+    <h3>Using the IDEA Framework for Diagnosis</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Stage</th><th>Possible Student Problem</th></tr></thead>
+        <tbody>
+          <tr><td>Input</td><td>Student lacks background knowledge</td></tr>
+          <tr><td>Develop Ideas</td><td>Student cannot generate arguments</td></tr>
+          <tr><td>Express</td><td>Student struggles with vocabulary or grammar</td></tr>
+          <tr><td>Advance</td><td>Student cannot extend answers</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>What are the four major types of speaking problems?</li>
+        <li>Why should teachers diagnose problems before correcting errors?</li>
+        <li>What is the difference between a thinking problem and a language problem?</li>
+        <li>Which IELTS criterion relates to hesitation and pauses?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>Effective IELTS speaking instruction begins with accurate diagnosis of student performance. By diagnosing problems systematically — whether fluency, vocabulary, grammar, or pronunciation — teachers can design lessons that target specific weaknesses and improve performance more effectively.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 4 -->
+  <section class="module" id="m4">
+    <div class="module-header mh-lavender">
+      <div class="module-num">Module 04</div>
+      <h2>The Idea Generation Problem in IELTS Speaking</h2>
+      <p class="module-tagline">Training students not only to speak English, but to develop and organize ideas quickly.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Identify why students struggle to generate ideas during speaking tasks.</li>
+        <li>Distinguish between idea-generation problems and language problems.</li>
+        <li>Use teaching strategies that help students develop ideas before speaking.</li>
+        <li>Introduce structured thinking frameworks that support speaking responses.</li>
+        <li>Reduce student anxiety during speaking activities.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>Why Students Struggle to Generate Ideas</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Problem</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>Conceptual Gap</td><td>Student does not understand what the question requires</td></tr>
+          <tr><td>Knowledge Gap</td><td>Student lacks background knowledge</td></tr>
+          <tr><td>Language Gap</td><td>Student has ideas but cannot express them</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-info">
+      <strong>Key Insight</strong>
+      Teachers frequently assume the problem is language, when the real problem is ideas.
+    </div>
+
+    <h3>The Input → Processing → Output Model</h3>
+    <p>To solve the idea-generation problem, teachers can use a three-stage speaking model.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Stage</th><th>Purpose</th><th>Examples</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Input</strong></td><td>Provides content knowledge</td><td>Readings, statistics, images, opinion statements, videos</td></tr>
+          <tr><td><strong>Processing</strong></td><td>Develops thinking skills</td><td>Brainstorming, cause &amp; effect, advantages &amp; disadvantages</td></tr>
+          <tr><td><strong>Output</strong></td><td>Structured speaking response</td><td>IELTS-style questions answered with ideas, examples, vocabulary</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Connection to IELTS Assessment</h3>
+    <p>Idea development is directly related to <strong>Fluency and Coherence</strong>. Students who cannot generate ideas often pause frequently, give incomplete answers, and struggle to maintain fluency. Improving idea generation therefore improves fluency scores.</p>
+
+    <hr class="divider">
+    <div class="section-label">Teaching Methodology</div>
+
+    <h3>The IDEA Speaking Framework Applied to Idea Generation</h3>
+    <div class="framework">
+      <div class="fw-step fw-i"><span class="fw-letter">I</span><span class="fw-word">Input</span><span class="fw-desc">Provide topic info</span></div>
+      <div class="fw-step fw-d"><span class="fw-letter">D</span><span class="fw-word">Develop Ideas</span><span class="fw-desc">Advantages / causes</span></div>
+      <div class="fw-step fw-e"><span class="fw-letter">E</span><span class="fw-word">Express</span><span class="fw-desc">Answer confidently</span></div>
+      <div class="fw-step fw-a"><span class="fw-letter">A</span><span class="fw-word">Advance</span><span class="fw-desc">Add examples</span></div>
+    </div>
+
+    <div class="callout callout-tip">
+      <strong>Teaching Tips</strong>
+      Provide topic input before asking complex questions · Encourage pair brainstorming · Teach simple frameworks such as advantages/disadvantages · Focus on idea development before correcting language errors.
+    </div>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>What are the three common causes of idea-generation problems?</li>
+        <li>What are the three stages of the Input → Processing → Output model?</li>
+        <li>What does the IDEA framework stand for?</li>
+        <li>Why is idea generation important for IELTS speaking performance?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>Many IELTS speaking students struggle because they cannot generate ideas quickly enough. Teachers must support students by providing topic input, idea development activities, and structured thinking frameworks before expecting extended spoken output.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 5 -->
+  <section class="module" id="m5">
+    <div class="module-header mh-marigold">
+      <div class="module-num">Module 05</div>
+      <h2>Using Input to Support Speaking Development</h2>
+      <p class="module-tagline">Balancing input and output so students can respond with confidence and detail.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Explain why input is important in speaking classes.</li>
+        <li>Identify different types of input materials.</li>
+        <li>Use input to activate vocabulary and ideas.</li>
+        <li>Transition smoothly from input activities to speaking practice.</li>
+        <li>Balance input and output in IELTS speaking lessons.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>Types of Input Materials</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Input Type</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>Short Readings</td><td>A paragraph about renewable energy</td></tr>
+          <tr><td>Statistics</td><td>Data about social media usage</td></tr>
+          <tr><td>Images</td><td>Photos related to urban life</td></tr>
+          <tr><td>Opinion Statements</td><td>"Online learning is better than traditional classrooms."</td></tr>
+          <tr><td>Videos</td><td>Short clips introducing a topic</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Balancing Input and Output</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Stage</th><th>Recommended Time</th></tr></thead>
+        <tbody>
+          <tr><td>Input</td><td>30%</td></tr>
+          <tr><td>Idea Development</td><td>30%</td></tr>
+          <tr><td>Speaking Practice</td><td>40%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-warn">
+      <strong>Common Teacher Mistakes</strong>
+      Providing too much input · Allowing input activities to take too long · Skipping the speaking stage · Focusing only on vocabulary lists. Remember: input should support speaking, not replace it.
+    </div>
+
+    <div class="callout callout-tip">
+      <strong>Teaching Tips</strong>
+      Use short input materials (1–3 minutes maximum) · Choose input directly related to speaking topics · Encourage students to react to the input · Transition quickly from input to speaking tasks.
+    </div>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>What are three examples of input materials teachers can use?</li>
+        <li>Why is input important before speaking tasks?</li>
+        <li>What is the recommended balance between input and output in speaking classes?</li>
+        <li>Which stage of the IDEA framework does input correspond to?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>Providing appropriate input before speaking tasks helps students activate vocabulary, develop ideas, and gain confidence when speaking. Input activities should be short, focused, and directly connected to speaking practice.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 6 -->
+  <section class="module" id="m6">
+    <div class="module-header mh-blush">
+      <div class="module-num">Module 06</div>
+      <h2>Idea Development Frameworks for IELTS Speaking</h2>
+      <p class="module-tagline">Giving students structured thinking tools to organize ideas quickly and extend their answers.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Explain why structured thinking improves speaking performance.</li>
+        <li>Teach students simple frameworks for developing answers.</li>
+        <li>Use frameworks appropriate for different IELTS speaking tasks.</li>
+        <li>Help students expand short answers into longer responses.</li>
+        <li>Encourage students to give clearer explanations and examples.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>Why Students Need Idea Frameworks</h3>
+    <p>Speaking in a second language requires students to simultaneously generate ideas, organize them, choose vocabulary, and construct sentences. <strong>Idea frameworks reduce cognitive load</strong> by giving students a clear pattern to follow.</p>
+
+    <h3>Types of IELTS Speaking Questions</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Question Type</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>Opinion</td><td>Do you think public transportation should be free?</td></tr>
+          <tr><td>Experience</td><td>Describe a memorable trip.</td></tr>
+          <tr><td>Comparison</td><td>How is life different now compared to the past?</td></tr>
+          <tr><td>Prediction</td><td>How might technology change education in the future?</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="divider">
+
+    <h3>Framework 1 — ORE (Opinion → Reason → Example)</h3>
+    <p>Most useful for <strong>Part 1 and Part 3</strong> questions.</p>
+    <div class="example">
+      <div class="example-label">Example Response</div>
+      <p><em>Q: Do you think exercise is important?</em></p>
+      <p><strong>Opinion:</strong> Yes, I believe exercise is very important…<br>
+      <strong>Reason:</strong> …because it helps people maintain good physical and mental health.<br>
+      <strong>Example:</strong> For example, regular exercise can reduce stress and improve overall fitness.</p>
+    </div>
+
+    <h3>Framework 2 — Advantages and Disadvantages</h3>
+    <p>Works well for <strong>Part 3 discussion questions</strong>.</p>
+    <div class="example">
+      <div class="example-label">Example Response</div>
+      <p><em>Q: What are the advantages and disadvantages of online education?</em></p>
+      <p>One <strong>advantage</strong> is flexibility… However, a <strong>disadvantage</strong> is that some students may feel isolated without face-to-face interaction.</p>
+    </div>
+
+    <h3>Framework 3 — Cause and Effect</h3>
+    <p>Useful for <strong>analytical questions in Part 3</strong>.</p>
+    <div class="example">
+      <div class="example-label">Structure: Cause → Effect → Example</div>
+      <p>Many people move to big cities because they offer better job opportunities. <em>As a result,</em> cities often experience rapid population growth.</p>
+    </div>
+
+    <h3>Framework 4 — Past / Present / Future</h3>
+    <p>Works well for <strong>comparison and prediction questions</strong>.</p>
+    <div class="example">
+      <div class="example-label">Example Response</div>
+      <p><strong>In the past,</strong> most people traveled by train or bus. <strong>Today,</strong> many people prefer private cars or airplanes. <strong>In the future,</strong> we may see more electric and autonomous vehicles.</p>
+    </div>
+
+    <h3>Framework 5 — Storytelling Framework (Part 2)</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Stage</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Situation</td><td>Where the event took place</td></tr>
+          <tr><td>Events</td><td>What happened during the experience</td></tr>
+          <tr><td>Feelings</td><td>Why it was memorable</td></tr>
+          <tr><td>Reflection</td><td>What you learned from the experience</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-tip">
+      <strong>Key Principle</strong>
+      Frameworks should be presented as <em>thinking tools</em>, not rigid formulas. Students should understand the structure and adapt it naturally during speaking.
+    </div>
+
+    <hr class="divider">
+    <div class="section-label">Classroom Application</div>
+
+    <h3>Framework Matching Activity</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Question</th><th>Best Framework</th></tr></thead>
+        <tbody>
+          <tr><td>Do you think children should use smartphones?</td><td>Opinion → Reason → Example</td></tr>
+          <tr><td>What are the advantages of living in a big city?</td><td>Advantages / Disadvantages</td></tr>
+          <tr><td>How has technology changed communication?</td><td>Past / Present / Future</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>What is the purpose of idea development frameworks?</li>
+        <li>What does the ORE framework stand for?</li>
+        <li>Which framework is useful for comparison questions?</li>
+        <li>Which type of speaking task requires storytelling structures?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>Idea development frameworks help students organize thoughts clearly and respond more effectively. By teaching structured thinking patterns, teachers can help students expand short answers, give clearer explanations, and provide relevant examples — all of which improve the Fluency and Coherence criterion.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 7 -->
+  <section class="module" id="m7">
+    <div class="module-header mh-sage">
+      <div class="module-num">Module 07</div>
+      <h2>Teaching IELTS Speaking Part 1</h2>
+      <p class="module-tagline">Training students to answer naturally, expand short answers, and maintain conversational flow.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Explain the purpose of Part 1 of the IELTS Speaking test.</li>
+        <li>Train students to give natural and extended answers.</li>
+        <li>Help students avoid memorized responses.</li>
+        <li>Teach techniques for expanding short answers.</li>
+        <li>Build student confidence in conversational speaking.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>Typical Part 1 Topics</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Topic</th><th>Example Question</th></tr></thead>
+        <tbody>
+          <tr><td>Hometown</td><td>What do you like about your hometown?</td></tr>
+          <tr><td>Work or Study</td><td>What subject do you study?</td></tr>
+          <tr><td>Hobbies</td><td>What do you like to do in your free time?</td></tr>
+          <tr><td>Food</td><td>What kind of food do you enjoy?</td></tr>
+          <tr><td>Travel</td><td>Do you enjoy traveling?</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Expected Answer Length</h3>
+    <p>Part 1 answers should typically be <strong>two to three sentences</strong>. Very short answers may indicate weak fluency.</p>
+    <div class="example">
+      <div class="example-label">Weak vs. Strong Answer</div>
+      <p><strong>Weak:</strong> Yes, I like traveling.</p>
+      <p><strong>Stronger:</strong> Yes, I really enjoy traveling because it allows me to experience different cultures. For example, when I visited Japan, I was fascinated by the food and traditional architecture.</p>
+    </div>
+
+    <hr class="divider">
+    <div class="section-label">Teaching Methodology</div>
+
+    <h3>The Answer → Reason → Example / Detail Structure</h3>
+    <div class="example">
+      <div class="example-label">Expansion Pattern</div>
+      <p><em>Q: Do you enjoy reading?</em></p>
+      <p><strong>Answer:</strong> Yes, I enjoy reading…<br>
+      <strong>Reason:</strong> …because it helps me relax after a long day.<br>
+      <strong>Detail:</strong> For instance, I often read novels before going to bed.</p>
+    </div>
+
+    <div class="callout callout-warn">
+      <strong>Common Teacher Mistakes</strong>
+      Spending too much time on Part 1 practice · Allowing students to memorize answers · Asking overly complex questions · Correcting grammar excessively during fluency practice.
+    </div>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>How long does Part 1 usually last?</li>
+        <li>What types of topics appear in Part 1?</li>
+        <li>How many sentences should a typical Part 1 answer include?</li>
+        <li>What simple structure can students use to expand answers?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>Part 1 evaluates a candidate's ability to communicate naturally about familiar topics. Teachers should train students to give complete answers, add supporting details, and maintain conversational fluency through regular rapid-response and expansion practice.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 8 -->
+  <section class="module" id="m8">
+    <div class="module-header mh-sky">
+      <div class="module-num">Module 08</div>
+      <h2>Teaching IELTS Speaking Part 2 — The Long Turn</h2>
+      <p class="module-tagline">Helping students use preparation time effectively and sustain speech for two minutes.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Explain the structure and timing of Part 2.</li>
+        <li>Train students to use the 1-minute preparation time effectively.</li>
+        <li>Teach storytelling techniques that support longer responses.</li>
+        <li>Help students organize ideas during the long turn.</li>
+        <li>Prevent students from running out of ideas during their speech.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>Structure of Part 2</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Stage</th><th>Duration</th></tr></thead>
+        <tbody>
+          <tr><td>Preparation</td><td>1 minute</td></tr>
+          <tr><td>Speaking</td><td>1–2 minutes</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Types of Part 2 Topics</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Topic Type</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>Experience</td><td>Describe a memorable trip</td></tr>
+          <tr><td>Person</td><td>Describe someone who inspired you</td></tr>
+          <tr><td>Place</td><td>Describe a place you enjoy visiting</td></tr>
+          <tr><td>Object</td><td>Describe an important item you own</td></tr>
+          <tr><td>Event</td><td>Describe a celebration you attended</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Storytelling Structure for Part 2</h3>
+    <div class="example">
+      <div class="example-label">Situation → Events → Feelings → Reflection</div>
+      <p><strong>Situation:</strong> Last summer, I traveled to Jeju Island with my family.<br>
+      <strong>Events:</strong> We explored the beaches and visited several famous landmarks.<br>
+      <strong>Feelings:</strong> I felt very relaxed because the scenery was beautiful.<br>
+      <strong>Reflection:</strong> This trip was memorable because it allowed me to spend quality time with my family.</p>
+    </div>
+
+    <h3>Using the 1-Minute Preparation Time</h3>
+    <p>Teachers should train students to follow this planning process:</p>
+    <div class="callout callout-info">
+      <strong>Topic → Example → Key Details → Ending</strong>
+      Identify the topic · Select a specific example · Outline key points · Plan how to conclude
+    </div>
+
+    <div class="callout callout-warn">
+      <strong>Common Teacher Mistakes</strong>
+      Skipping the preparation stage · Forcing students to memorize answers · Interrupting during the long turn · Over-focusing on grammar correction.
+    </div>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>How much preparation time is given in Part 2?</li>
+        <li>How long should students speak during the long turn?</li>
+        <li>What types of topics appear in Part 2?</li>
+        <li>Why are storytelling structures useful for Part 2 responses?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>Part 2 evaluates a candidate's ability to speak continuously and organize ideas clearly. Teachers should train students to use the one-minute preparation time effectively, organize ideas using storytelling structures, and provide details and examples to maintain extended fluency.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 9 -->
+  <section class="module" id="m9">
+    <div class="module-header mh-lavender">
+      <div class="module-num">Module 09</div>
+      <h2>Teaching IELTS Speaking Part 3 — Abstract Discussion</h2>
+      <p class="module-tagline">Developing students' analytical thinking and argumentation skills for higher band performance.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Explain the purpose of Part 3 of the IELTS Speaking test.</li>
+        <li>Teach students how to respond to abstract questions.</li>
+        <li>Train students to justify opinions with reasons and examples.</li>
+        <li>Develop students' analytical thinking skills.</li>
+        <li>Prepare students for follow-up discussion questions.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>Typical Part 3 Question Types</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Question Type</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>Opinion</td><td>Do you think technology improves education?</td></tr>
+          <tr><td>Cause</td><td>Why do people prefer living in big cities?</td></tr>
+          <tr><td>Comparison</td><td>How is education different today compared to the past?</td></tr>
+          <tr><td>Prediction</td><td>How might transportation change in the future?</td></tr>
+          <tr><td>Problem–Solution</td><td>What can governments do to reduce pollution?</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="divider">
+    <div class="section-label">Discourse Patterns for Part 3</div>
+
+    <h3>Pattern 1 — Opinion → Reason → Example</h3>
+    <div class="example">
+      <div class="example-label">Example Response</div>
+      <p>Yes, I believe public transportation should be free <strong>because</strong> it encourages more people to use environmentally friendly transportation. <strong>For example,</strong> several cities have introduced free public transit to reduce traffic congestion.</p>
+    </div>
+
+    <h3>Pattern 2 — Cause → Effect</h3>
+    <div class="example">
+      <div class="example-label">Example Response</div>
+      <p>Many people move to big cities because they offer better employment opportunities. <strong>As a result,</strong> urban populations continue to grow rapidly.</p>
+    </div>
+
+    <h3>Pattern 3 — Advantage → Disadvantage</h3>
+    <div class="example">
+      <div class="example-label">Example Response</div>
+      <p>One <strong>advantage</strong> of social media is that it allows people to stay connected. <strong>However, a disadvantage</strong> is that excessive use may reduce face-to-face interaction.</p>
+    </div>
+
+    <h3>Pattern 4 — Past → Present → Future</h3>
+    <div class="example">
+      <div class="example-label">Example Response</div>
+      <p><strong>In the past,</strong> people relied on letters and phone calls. <strong>Today,</strong> communication is dominated by social media. <strong>In the future,</strong> communication may become even more advanced with new digital technologies.</p>
+    </div>
+
+    <div class="callout callout-warn">
+      <strong>Common Teacher Mistakes</strong>
+      Treating Part 3 like Part 1 · Asking overly simple questions · Interrupting students too frequently · Neglecting idea development.
+    </div>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>How long does Part 3 usually last?</li>
+        <li>What types of questions appear in Part 3?</li>
+        <li>What structure can students use to justify opinions?</li>
+        <li>Why is Part 3 important for achieving higher band scores?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>Part 3 evaluates a candidate's ability to analyze and discuss abstract topics. Developing opinion expression, argument justification, idea comparison, and prediction skills helps students demonstrate the higher-level speaking ability necessary for Band 7 and above.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 10 -->
+  <section class="module" id="m10">
+    <div class="module-header mh-marigold">
+      <div class="module-num">Module 10</div>
+      <h2>Teaching Fluency Development</h2>
+      <p class="module-tagline">Designing activities that allow students to speak frequently, comfortably, and continuously.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Explain what fluency means in the IELTS Speaking test.</li>
+        <li>Identify common causes of hesitation in student speech.</li>
+        <li>Use classroom techniques to improve speaking flow.</li>
+        <li>Design fluency-focused speaking activities.</li>
+        <li>Help students maintain speech during extended answers.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>Common Causes of Fluency Problems</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Cause</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>Idea Generation</td><td>Student does not know what to say</td></tr>
+          <tr><td>Vocabulary Retrieval</td><td>Student cannot find the right word</td></tr>
+          <tr><td>Grammar Monitoring</td><td>Student tries to speak perfectly</td></tr>
+          <tr><td>Anxiety</td><td>Student feels nervous during speaking</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Fluency Practice vs Accuracy Practice</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Practice Type</th><th>Focus</th><th>Correction Timing</th></tr></thead>
+        <tbody>
+          <tr><td>Fluency Practice</td><td>Continuous speaking</td><td>After the activity</td></tr>
+          <tr><td>Accuracy Practice</td><td>Grammar correction</td><td>During the activity</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="divider">
+    <div class="section-label">Classroom Application</div>
+
+    <h3>Activity — The 4–3–2 Fluency Technique</h3>
+    <p>Students repeat the same answer multiple times with decreasing time limits. Each repetition becomes smoother and more fluent, helping students reduce hesitation and organize ideas more efficiently.</p>
+    <div class="callout callout-info">
+      <strong>Procedure</strong>
+      1st round — 4 minutes &nbsp;·&nbsp; 2nd round — 3 minutes &nbsp;·&nbsp; 3rd round — 2 minutes
+    </div>
+
+    <div class="callout callout-tip">
+      <strong>Teaching Tips</strong>
+      Encourage students to keep speaking even if they make mistakes · Use timed speaking exercises regularly · Allow students to practice answers multiple times · Focus on communication rather than perfection.
+    </div>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>What does fluency mean in IELTS speaking assessment?</li>
+        <li>What are common causes of hesitation in speech?</li>
+        <li>What is the purpose of the 4–3–2 fluency technique?</li>
+        <li>Why should teachers avoid interrupting students during fluency practice?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>Fluency refers to the ability to speak smoothly and continuously while organizing ideas clearly. Teachers can help students improve fluency by providing frequent speaking opportunities, timed activities, and repeated practice — encouraging students to focus on communication rather than perfection.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 11 -->
+  <section class="module" id="m11">
+    <div class="module-header mh-blush">
+      <div class="module-num">Module 11</div>
+      <h2>Teaching Vocabulary Development</h2>
+      <p class="module-tagline">Building lexical resource through topic-based learning, paraphrasing, and collocations.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Explain how lexical resource is assessed in IELTS Speaking.</li>
+        <li>Identify common vocabulary limitations in student speech.</li>
+        <li>Teach students how to paraphrase effectively.</li>
+        <li>Introduce collocations and natural word combinations.</li>
+        <li>Design classroom activities that expand speaking vocabulary.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>Signs of Limited Vocabulary</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Problem</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>Repetition</td><td>"I like traveling because it is very good."</td></tr>
+          <tr><td>Vague language</td><td>"This thing is very interesting."</td></tr>
+          <tr><td>Limited description</td><td>"The place was nice."</td></tr>
+          <tr><td>Word search pauses</td><td>Long hesitation while finding words</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Teaching Paraphrasing Skills</h3>
+    <div class="example">
+      <div class="example-label">Paraphrasing Example</div>
+      <p><strong>Original:</strong> Traveling is <em>important</em> for personal growth.</p>
+      <p><strong>Paraphrased:</strong> Traveling plays a <em>significant role</em> in personal development.</p>
+      <p>Alternatives for "important": <em>significant · essential · meaningful · crucial · vital</em></p>
+    </div>
+
+    <h3>Teaching Collocations</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Verb</th><th>Correct Collocation</th><th>Incorrect Version</th></tr></thead>
+        <tbody>
+          <tr><td>make</td><td>make a decision / make progress</td><td>do a decision</td></tr>
+          <tr><td>take</td><td>take responsibility</td><td>do responsibility</td></tr>
+          <tr><td>play</td><td>play an important role</td><td>do an important role</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-warn">
+      <strong>Common Teacher Mistakes</strong>
+      Focusing on memorizing long vocabulary lists · Emphasizing difficult words instead of useful ones · Teaching vocabulary without context · Neglecting speaking practice after vocabulary instruction.
+    </div>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>What is lexical resource?</li>
+        <li>What are two signs of limited vocabulary in speaking?</li>
+        <li>What is a collocation?</li>
+        <li>Why is paraphrasing useful for IELTS speaking?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>Lexical resource refers to a candidate's ability to use vocabulary accurately, appropriately, and flexibly. Teachers can improve students' vocabulary by teaching topic-based vocabulary, encouraging paraphrasing, introducing collocations, and providing immediate opportunities for vocabulary use during speaking activities.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 12 -->
+  <section class="module" id="m12">
+    <div class="module-header mh-sage">
+      <div class="module-num">Module 12</div>
+      <h2>Teaching Grammatical Range and Accuracy</h2>
+      <p class="module-tagline">Developing grammar within communicative contexts through sentence expansion and structured feedback.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Explain how grammar is assessed in the IELTS Speaking test.</li>
+        <li>Identify common grammatical weaknesses in student speech.</li>
+        <li>Teach students to use a wider range of sentence structures.</li>
+        <li>Integrate grammar development into speaking activities.</li>
+        <li>Provide effective corrective feedback during speaking lessons.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>Grammatical Range vs Accuracy</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Concept</th><th>Definition</th><th>Example Issue</th></tr></thead>
+        <tbody>
+          <tr><td>Range</td><td>Variety of sentence structures produced</td><td>Using only simple sentences</td></tr>
+          <tr><td>Accuracy</td><td>Correctness of grammatical structures</td><td>Incorrect verb tense or article</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Sentence Expansion Technique</h3>
+    <div class="example">
+      <div class="example-label">Progression Example</div>
+      <p><strong>Basic:</strong> I like traveling.</p>
+      <p><strong>Expanded:</strong> I like traveling because it allows me to learn about different cultures.</p>
+      <p><strong>Advanced:</strong> I like traveling because it allows me to learn about different cultures, which broadens my perspective on the world.</p>
+    </div>
+
+    <h3>Corrective Feedback Techniques</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Technique</th><th>How It Works</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>Recasting</td><td>Teacher repeats with correct form</td><td>Student: "She go…" → Teacher: "Yes, she <em>goes</em>…"</td></tr>
+          <tr><td>Elicitation</td><td>Teacher prompts self-correction</td><td>"She… ?" → Student self-corrects</td></tr>
+          <tr><td>Clarification Request</td><td>Teacher signals something is unclear</td><td>"Sorry, could you say that again?"</td></tr>
+          <tr><td>Metalinguistic Feedback</td><td>Teacher names the error type</td><td>"Past tense?" → Student corrects</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-warn">
+      <strong>Common Teacher Mistakes</strong>
+      Interrupting students frequently during speaking · Focusing excessively on grammar accuracy · Teaching grammar separately from speaking practice · Discouraging students from speaking freely.
+    </div>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>What does grammatical range refer to?</li>
+        <li>What are common grammatical errors in speaking?</li>
+        <li>Why is sentence expansion useful for grammar development?</li>
+        <li>When should teachers provide grammar correction during speaking activities?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>Grammatical Range and Accuracy refers to a candidate's ability to use varied sentence structures with reasonable accuracy. Teachers can support grammar development by encouraging sentence expansion, combining ideas into complex sentences, and providing constructive post-activity feedback.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 13 -->
+  <section class="module" id="m13">
+    <div class="module-header mh-sky">
+      <div class="module-num">Module 13</div>
+      <h2>Teaching Pronunciation</h2>
+      <p class="module-tagline">Focusing on intelligibility, stress, rhythm, and intonation — not accent elimination.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Explain how pronunciation is assessed in the IELTS Speaking test.</li>
+        <li>Identify common pronunciation difficulties among students.</li>
+        <li>Teach key pronunciation features such as stress, rhythm, and intonation.</li>
+        <li>Use classroom activities that improve pronunciation naturally.</li>
+        <li>Provide effective pronunciation feedback during speaking lessons.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>Pronunciation Features Assessed</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Feature</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>Individual Sounds</td><td>Correct production of consonants and vowels</td></tr>
+          <tr><td>Word Stress</td><td>Emphasizing the correct syllable in a word</td></tr>
+          <tr><td>Sentence Stress</td><td>Highlighting important words in a sentence</td></tr>
+          <tr><td>Intonation</td><td>The rise and fall of pitch in speech</td></tr>
+          <tr><td>Rhythm</td><td>The natural timing of speech</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Common Pronunciation Problems</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Problem</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>Mispronounced consonants</td><td>"rice" pronounced as "lice"</td></tr>
+          <tr><td>Incorrect word stress</td><td>phoTOgraph vs PHOtograph</td></tr>
+          <tr><td>Flat intonation</td><td>Monotone speech without pitch variation</td></tr>
+          <tr><td>Unclear sentence stress</td><td>Stressing every word equally</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-info">
+      <strong>Key Principle</strong>
+      Candidates are not expected to sound like native speakers. Teachers should prioritize intelligibility — speech that is easy to understand — over accent correction.
+    </div>
+
+    <hr class="divider">
+    <div class="section-label">Classroom Application</div>
+
+    <h3>Word Stress Practice Example</h3>
+    <div class="example">
+      <div class="example-label">Stress Identification</div>
+      <p><strong>tech</strong>NOlogy &nbsp;·&nbsp; en<strong>VI</strong>ronment &nbsp;·&nbsp; edu<strong>CA</strong>tion</p>
+      <p>Students identify the stressed syllable, then use these words in speaking responses.</p>
+    </div>
+
+    <h3>Shadowing Technique</h3>
+    <p>Students listen to a short model answer and repeat it. This develops rhythm, stress patterns, and natural pronunciation simultaneously — one of the most effective pronunciation training methods available.</p>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>What does pronunciation assessment focus on in IELTS speaking?</li>
+        <li>What are the key pronunciation features examiners evaluate?</li>
+        <li>Why should teachers prioritize intelligibility over accent?</li>
+        <li>How can shadowing help students improve pronunciation?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>Pronunciation refers to the ability to produce clear and understandable speech. Teachers can support pronunciation development by focusing on stress patterns, rhythm, and intonation within communicative speaking practice, rather than isolated sound drills.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 14 -->
+  <section class="module" id="m14">
+    <div class="module-header mh-lavender">
+      <div class="module-num">Module 14</div>
+      <h2>Correcting Student Speaking Errors</h2>
+      <p class="module-tagline">Balancing fluency and accuracy with well-timed, supportive corrective feedback.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Identify different types of speaking errors.</li>
+        <li>Decide when error correction is necessary.</li>
+        <li>Apply different corrective feedback techniques.</li>
+        <li>Provide feedback without interrupting fluency practice.</li>
+        <li>Encourage students to self-correct their mistakes.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>Types of Speaking Errors</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Error Type</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>Grammar</td><td>"She go to school every day."</td></tr>
+          <tr><td>Vocabulary</td><td>"This thing is very interesting."</td></tr>
+          <tr><td>Pronunciation</td><td>Mispronouncing key words</td></tr>
+          <tr><td>Word Form</td><td>"He is success in business."</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>When to Correct Errors</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Activity Type</th><th>Correction Timing</th></tr></thead>
+        <tbody>
+          <tr><td>Fluency Practice</td><td>After the activity (delayed correction)</td></tr>
+          <tr><td>Accuracy Practice</td><td>During the activity</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Corrective Feedback Techniques</h3>
+    <div class="example">
+      <div class="example-label">1. Recasting — Model the correct form</div>
+      <p><strong>Student:</strong> She go to school every day.<br>
+      <strong>Teacher:</strong> Yes, she <em>goes</em> to school every day.</p>
+    </div>
+    <div class="example">
+      <div class="example-label">2. Elicitation — Prompt self-correction</div>
+      <p><strong>Teacher:</strong> She…? &nbsp;&nbsp; <strong>Student:</strong> She goes to school every day.</p>
+    </div>
+    <div class="example">
+      <div class="example-label">3. Metalinguistic Feedback — Name the error type</div>
+      <p><strong>Student:</strong> He go yesterday. &nbsp;&nbsp; <strong>Teacher:</strong> Past tense? &nbsp;&nbsp; <strong>Student:</strong> He went yesterday.</p>
+    </div>
+
+    <hr class="divider">
+    <div class="section-label">Classroom Application</div>
+
+    <h3>Delayed Feedback Board Activity</h3>
+    <p>During speaking activities, the teacher writes common errors on the board <em>without identifying the student</em>. Students then work together to identify and correct the errors. This encourages collaborative correction without causing embarrassment.</p>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>What are common types of speaking errors?</li>
+        <li>When should teachers correct errors during fluency practice?</li>
+        <li>What is recasting?</li>
+        <li>Why is delayed feedback effective in speaking lessons?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>Effective error correction requires teachers to balance fluency and accuracy. By prioritizing important errors, using delayed feedback, and encouraging self-correction, teachers can improve language accuracy without reducing confidence or fluency.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 15 -->
+  <section class="module" id="m15">
+    <div class="module-header mh-marigold">
+      <div class="module-num">Module 15</div>
+      <h2>Designing Effective IELTS Speaking Lessons</h2>
+      <p class="module-tagline">Structuring lessons that guide students from topic input to confident speaking output.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Structure an effective IELTS speaking lesson.</li>
+        <li>Balance input, idea generation, and speaking practice.</li>
+        <li>Design lessons that develop fluency and accuracy.</li>
+        <li>Integrate IELTS-style speaking questions into classroom activities.</li>
+        <li>Provide meaningful feedback after speaking practice.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>Common Challenges in Speaking Classes</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Problem</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>Too Much Output</td><td>Students are asked to speak immediately without preparation</td></tr>
+          <tr><td>Idea Shortage</td><td>Students do not know what to say</td></tr>
+          <tr><td>Over-Correction</td><td>Teachers interrupt students too frequently</td></tr>
+          <tr><td>Low Participation</td><td>Only a few students speak actively</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="divider">
+    <div class="section-label">The 45-Minute IELTS Speaking Lesson Model</div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Stage</th><th>Duration</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Warm-Up</td><td>5 minutes</td><td>Introduce topic, activate interest</td></tr>
+          <tr><td>Input</td><td>10 minutes</td><td>Provide vocabulary and ideas</td></tr>
+          <tr><td>Idea Development</td><td>10 minutes</td><td>Brainstorm and discuss</td></tr>
+          <tr><td>Speaking Practice</td><td>15 minutes</td><td>IELTS-style speaking tasks</td></tr>
+          <tr><td>Feedback</td><td>5 minutes</td><td>Error correction and reflection</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Sample Lesson Outline — Topic: Technology</h3>
+    <div class="callout callout-info">
+      <strong>Warm-Up</strong> What technology do you use every day?
+    </div>
+    <div class="callout callout-tip">
+      <strong>Input Stage</strong> Vocabulary: digital communication · artificial intelligence · online platforms. Short statement about technology.
+    </div>
+    <div class="callout callout-plum">
+      <strong>Idea Development</strong> Students discuss advantages and disadvantages of technology.
+    </div>
+    <div class="callout callout-info">
+      <strong>Speaking Practice</strong> Part 1: What technology do you use most often? / Part 3: How might technology change communication in the future?
+    </div>
+    <div class="callout callout-warn">
+      <strong>Feedback Stage</strong> Review vocabulary usage, grammar errors, and pronunciation issues.
+    </div>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>What does IDEA stand for in the lesson framework?</li>
+        <li>Why is the input stage important?</li>
+        <li>How long should speaking practice typically last in a 45-minute lesson?</li>
+        <li>Why is feedback necessary after speaking tasks?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>Effective IELTS speaking lessons guide students through topic input, idea development, speaking practice, and feedback. This approach allows students to develop ideas before speaking, which improves fluency, confidence, and overall performance.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 16 -->
+  <section class="module" id="m16">
+    <div class="module-header mh-blush">
+      <div class="module-num">Module 16</div>
+      <h2>Teaching Students What to Do When They Do Not Understand the Question</h2>
+      <p class="module-tagline">Equipping students with question analysis and paraphrasing strategies for unfamiliar topics.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Identify why students fail to understand IELTS speaking questions.</li>
+        <li>Teach students how to identify key words in questions.</li>
+        <li>Train students to paraphrase questions mentally.</li>
+        <li>Help students respond to unfamiliar topics.</li>
+        <li>Use classroom activities that develop question interpretation skills.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>Why Students Do Not Understand Questions</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Cause</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>Vocabulary Gap</td><td>Student does not know a word in the question</td></tr>
+          <tr><td>Unfamiliar Topic</td><td>Student has never considered the topic before</td></tr>
+          <tr><td>Complex Structure</td><td>Question grammar is confusing</td></tr>
+          <tr><td>Exam Anxiety</td><td>Student panics and stops thinking clearly</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Recognizing Common Question Types</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Question Type</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>Opinion</td><td>Do you think…?</td></tr>
+          <tr><td>Reason</td><td>Why do people…?</td></tr>
+          <tr><td>Comparison</td><td>How is X different from Y?</td></tr>
+          <tr><td>Prediction</td><td>How might this change in the future?</td></tr>
+          <tr><td>Advantage / Disadvantage</td><td>What are the benefits of…?</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>The Question Breakdown Technique</h3>
+    <div class="callout callout-info">
+      <strong>Step-by-Step Process</strong>
+      Step 1: Identify the topic · Step 2: Identify the task · Step 3: Think of one example · Step 4: Start speaking
+    </div>
+
+    <div class="example">
+      <div class="example-label">Application Example</div>
+      <p><em>Q: Why do people enjoy traveling?</em></p>
+      <p><strong>Topic:</strong> traveling &nbsp;·&nbsp; <strong>Task:</strong> explain reason &nbsp;·&nbsp; <strong>Example:</strong> relaxation, exploration → Begin speaking</p>
+    </div>
+
+    <h3>Mental Paraphrasing</h3>
+    <div class="example">
+      <div class="example-label">Example</div>
+      <p><strong>Original:</strong> How has technology changed communication?</p>
+      <p><strong>Mental paraphrase:</strong> How is communication different now because of technology?</p>
+    </div>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>What are common reasons students misunderstand speaking questions?</li>
+        <li>What two elements should students identify in a question?</li>
+        <li>Why is mental paraphrasing useful?</li>
+        <li>What classroom activities can help students interpret questions more effectively?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>Students sometimes struggle with questions due to vocabulary gaps, unfamiliar topics, or exam anxiety. Teachers can build resilience by training students to identify the main topic, recognize question types, paraphrase questions mentally, and begin speaking even when uncertain.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 17 -->
+  <section class="module" id="m17">
+    <div class="module-header mh-sage">
+      <div class="module-num">Module 17</div>
+      <h2>Teaching Students How to Buy Thinking Time</h2>
+      <p class="module-tagline">Replacing silence with natural hesitation strategies that maintain communication flow.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Explain why students sometimes need thinking time during speaking.</li>
+        <li>Teach natural hesitation strategies that maintain fluency.</li>
+        <li>Help students avoid long silent pauses.</li>
+        <li>Train students to organize ideas while speaking.</li>
+        <li>Use classroom activities that build spontaneous speaking skills.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>Silent Pauses vs Natural Hesitation</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Type</th><th>Example</th><th>Effect on Score</th></tr></thead>
+        <tbody>
+          <tr><td>Silent Pause</td><td>Long silence while thinking</td><td>Reduces fluency score</td></tr>
+          <tr><td>Natural Hesitation</td><td>"That's an interesting question…"</td><td>Maintains communication flow</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Common Thinking-Time Expressions</h3>
+    <div class="example">
+      <div class="example-label">Useful Phrases</div>
+      <ul>
+        <li>"That's an interesting question."</li>
+        <li>"Let me think about that for a moment."</li>
+        <li>"I've never really thought about that before."</li>
+        <li>"Well, in my opinion…"</li>
+        <li>"Actually…" / "You know…"</li>
+      </ul>
+    </div>
+
+    <h3>Combining Thinking-Time Phrases with Response Structures</h3>
+    <div class="example">
+      <div class="example-label">Application Example</div>
+      <p><em>Q: Why do people prefer living in big cities?</em></p>
+      <p>"<strong>That's an interesting question.</strong> I think one of the main reasons is that cities provide more job opportunities."</p>
+    </div>
+
+    <div class="callout callout-tip">
+      <strong>Teaching Tips</strong>
+      Teach several simple thinking-time phrases · Encourage students to avoid long silent pauses · Practice responding to unfamiliar questions · Emphasize natural communication rather than memorized phrases.
+    </div>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>Why is silent hesitation problematic in speaking tests?</li>
+        <li>What are examples of thinking-time expressions?</li>
+        <li>How can teachers train students to avoid long pauses?</li>
+        <li>Why should hesitation strategies sound natural?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>Students sometimes need time to think when responding to speaking questions. Teachers can help students maintain fluency by training them to use natural hesitation phrases, avoid long silent pauses, and organize ideas while speaking — even when faced with difficult or unfamiliar questions.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 18 -->
+  <section class="module" id="m18">
+    <div class="module-header mh-sky">
+      <div class="module-num">Module 18</div>
+      <h2>IELTS Speaking Classroom Activities</h2>
+      <p class="module-tagline">A varied activity bank for increasing participation, fluency, and confidence.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Use a variety of classroom speaking activities.</li>
+        <li>Increase student participation in speaking lessons.</li>
+        <li>Develop fluency through structured practice tasks.</li>
+        <li>Encourage students to expand their answers.</li>
+        <li>Prepare students for different parts of the IELTS speaking test.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Activity Bank</div>
+
+    <h3>Activity Type Overview</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Activity Type</th><th>Purpose</th><th>Best For</th></tr></thead>
+        <tbody>
+          <tr><td>Rapid Question Drills</td><td>Increase speaking speed and flow</td><td>Part 1</td></tr>
+          <tr><td>Timed Speaking</td><td>Develop extended speaking ability</td><td>Parts 2 &amp; 3</td></tr>
+          <tr><td>Cue Card Simulation</td><td>Practice Part 2 speaking tasks</td><td>Part 2</td></tr>
+          <tr><td>Opinion Debate</td><td>Practice Part 3 discussion skills</td><td>Part 3</td></tr>
+          <tr><td>Idea Expansion</td><td>Encourage longer, more detailed answers</td><td>All Parts</td></tr>
+          <tr><td>Partner Interview</td><td>Develop interactive speaking</td><td>Part 1</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Activity 1 — Rapid Question Drill</h3>
+    <p>Teacher asks students a series of short questions. Students must respond immediately with 2–3 sentences. This improves response speed and conversational fluency.</p>
+
+    <h3>Activity 2 — Timed Speaking</h3>
+    <p>Students answer a question for progressively longer periods: 30 seconds → 60 seconds → 90 seconds. This activity helps students sustain speech for longer periods of time.</p>
+
+    <h3>Activity 3 — Cue Card Simulation</h3>
+    <p>Teacher gives students cue cards similar to those used in the IELTS exam. Students have 1 minute to prepare and 2 minutes to speak.</p>
+    <div class="cue-card">
+      <div class="cc-label">Sample Cue Card</div>
+      <p>Describe a place you enjoy visiting.</p>
+      <ul>
+        <li>where it is</li>
+        <li>what you do there</li>
+        <li>who you go with</li>
+      </ul>
+    </div>
+
+    <h3>Activity 4 — Opinion Debate</h3>
+    <p>Teacher presents a statement. Students form two groups (agree / disagree) and present arguments with examples. This develops reasoning skills and vocabulary for argumentation.</p>
+
+    <h3>Activity 5 — Idea Expansion</h3>
+    <p>Teacher asks a question. Students must include: one reason · one example · one explanation. This helps students develop more detailed responses.</p>
+
+    <h3>Activity 6 — Partner Interview</h3>
+    <p>Students interview each other using IELTS-style questions, then report their partner's answers to the class. This develops interactive speaking skills and active listening.</p>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>What are examples of fluency-building activities?</li>
+        <li>Which activity helps students practice Part 2 speaking tasks?</li>
+        <li>Why are timed speaking activities useful?</li>
+        <li>How can debates support Part 3 speaking skills?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>Speaking ability improves through active and varied practice. Teachers can improve student speaking performance by rotating through a range of activities — rapid drills, timed speaking, cue card simulations, debates, and discussions — to build confidence, fluency, and idea development skills.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 19 -->
+  <section class="module" id="m19">
+    <div class="module-header mh-lavender">
+      <div class="module-num">Module 19</div>
+      <h2>Running Effective IELTS Speaking Practice Tests</h2>
+      <p class="module-tagline">Conducting realistic mock interviews that closely replicate actual exam conditions.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Conduct a realistic IELTS speaking interview.</li>
+        <li>Follow the correct structure for each speaking section.</li>
+        <li>Manage timing during the test.</li>
+        <li>Evaluate student performance using band descriptors.</li>
+        <li>Provide constructive feedback after the test.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>Structure of the IELTS Speaking Test</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Section</th><th>Duration</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Part 1</td><td>4–5 minutes</td><td>Introduction and personal questions</td></tr>
+          <tr><td>Part 2</td><td>3–4 minutes</td><td>Long turn (cue card task)</td></tr>
+          <tr><td>Part 3</td><td>4–5 minutes</td><td>Abstract discussion</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="divider">
+    <div class="section-label">Step-by-Step Mock Test Procedure</div>
+
+    <h4>Step 1 — Introduction</h4>
+    <div class="callout callout-info">
+      <strong>Examiner Script</strong>
+      "Good afternoon. My name is [Teacher's Name]. I will be your examiner today."<br>
+      Ask: What is your full name? / Where are you from?
+    </div>
+
+    <h4>Step 2 — Part 1 Questions</h4>
+    <p>Ask questions about familiar topics. Cover two or three related topic areas.</p>
+
+    <h4>Step 3 — Part 2 Cue Card</h4>
+    <div class="callout callout-info">
+      <strong>Instruction to Candidate</strong>
+      "You will have one minute to prepare your answer. You may take notes if you wish."<br>
+      After one minute, the student speaks for 1–2 minutes. Do not interrupt unless the student stops.
+    </div>
+
+    <h4>Step 4 — Part 3 Discussion</h4>
+    <p>Ask questions related to the Part 2 topic. Encourage extended discussion and reasoning.</p>
+
+    <h3>Providing Feedback After the Test</h3>
+    <p>Feedback should focus on all four speaking criteria. Highlight strengths, areas for improvement, and specific strategies for development. Feedback should be specific and constructive, never vague.</p>
+
+    <div class="callout callout-warn">
+      <strong>Common Teacher Mistakes</strong>
+      Interrupting students frequently · Correcting errors during the test · Asking questions beyond the official format · Allowing the test to run too long.
+    </div>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>How long does the IELTS speaking test usually last?</li>
+        <li>What are the three sections of the speaking test?</li>
+        <li>How much preparation time is given in Part 2?</li>
+        <li>Why is accurate timing important during mock tests?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>Practice speaking tests help students prepare for the IELTS exam by simulating real test conditions. Teachers can conduct effective mock tests by following the official structure, managing time carefully, maintaining appropriate examiner behavior, and providing constructive feedback after each session.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ MODULE 20 -->
+  <section class="module" id="m20">
+    <div class="module-header mh-marigold">
+      <div class="module-num">Module 20</div>
+      <h2>Using Feedback and Self-Assessment to Improve Speaking</h2>
+      <p class="module-tagline">Building independent learners who can evaluate, reflect on, and take ownership of their speaking development.</p>
+    </div>
+
+    <div class="objectives">
+      <strong>Learning Objectives</strong>
+      <ol>
+        <li>Provide constructive feedback on speaking performance.</li>
+        <li>Teach students how to evaluate their own speaking skills.</li>
+        <li>Incorporate peer feedback into speaking activities.</li>
+        <li>Use reflection techniques to support improvement.</li>
+        <li>Encourage students to take responsibility for their speaking development.</li>
+      </ol>
+    </div>
+
+    <div class="section-label">Core Knowledge</div>
+
+    <h3>Types of Feedback</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Type</th><th>Description</th><th>Benefit</th></tr></thead>
+        <tbody>
+          <tr><td>Teacher Feedback</td><td>Instructor evaluates speaking performance</td><td>Expert perspective, targeted advice</td></tr>
+          <tr><td>Peer Feedback</td><td>Students evaluate each other's responses</td><td>Collaborative awareness, active listening</td></tr>
+          <tr><td>Self-Assessment</td><td>Students evaluate their own speaking</td><td>Independent learning, self-monitoring</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Benefits of Self-Assessment</h3>
+    <p>Students who regularly evaluate their own speaking can identify recurring mistakes, monitor their progress, and set personal improvement goals. Self-assessment also helps students better understand the IELTS band descriptors.</p>
+
+    <hr class="divider">
+    <div class="section-label">Classroom Application</div>
+
+    <h3>Speaking Self-Evaluation Checklist</h3>
+    <div class="callout callout-plum">
+      <strong>Student Reflection Checklist</strong>
+      □ Did I speak for the full time?<br>
+      □ Did I explain my ideas clearly?<br>
+      □ Did I give examples?<br>
+      □ Did I use varied vocabulary?<br>
+      □ Did I speak fluently without long pauses?
+    </div>
+
+    <h3>Speaking Reflection Journal</h3>
+    <p>After each speaking activity, students record:</p>
+    <ul>
+      <li>What they did well</li>
+      <li>What they need to improve</li>
+      <li>What strategies they will use next time</li>
+    </ul>
+
+    <h3>Goal-Setting Examples</h3>
+    <ul>
+      <li>Speak more fluently during Part 2 tasks.</li>
+      <li>Use more varied vocabulary in responses.</li>
+      <li>Reduce grammatical errors in complex sentences.</li>
+    </ul>
+
+    <div class="callout callout-warn">
+      <strong>Common Teacher Mistakes</strong>
+      Providing only general feedback ("Good job!") · Focusing only on grammar errors · Neglecting student reflection · Correcting errors without explaining improvements.
+    </div>
+
+    <div class="knowledge-check">
+      <strong>Knowledge Check</strong>
+      <ol>
+        <li>What are three types of feedback in speaking classes?</li>
+        <li>Why is self-assessment useful for IELTS preparation?</li>
+        <li>How can students evaluate their own speaking performance?</li>
+        <li>Why should feedback focus on improvement rather than criticism?</li>
+      </ol>
+    </div>
+
+    <div class="summary">
+      <strong>Module Summary</strong>
+      <p>Feedback and self-assessment help students become more aware of their speaking performance. Teachers can support continuous improvement by providing constructive feedback, encouraging peer evaluation, and teaching students to reflect systematically on their speaking — promoting the independent learning habits essential for long-term IELTS success.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- BACK TO TOP -->
+<button id="back-top" title="Back to top">↑</button>
+
+<script>
+  // ── Sidebar active highlight ───────────────────────────
+  const modules = document.querySelectorAll('.module');
+  const navItems = document.querySelectorAll('.nav-item');
+  const headerH = 64;
+
+  function setActive() {
+    let current = '';
+    modules.forEach(m => {
+      if (window.scrollY >= m.offsetTop - headerH - 40) current = m.id;
+    });
+    navItems.forEach(n => {
+      n.classList.toggle('active', n.getAttribute('href') === '#' + current);
+    });
+  }
+
+  // ── Back to top ────────────────────────────────────────
+  const btn = document.getElementById('back-top');
+  window.addEventListener('scroll', () => {
+    setActive();
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // ── Mobile menu toggle ─────────────────────────────────
+  const toggle = document.getElementById('menu-toggle');
+  const sidebar = document.getElementById('sidebar');
+  toggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+  document.addEventListener('click', e => {
+    if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
+      sidebar.classList.remove('open');
+    }
+  });
+
+  // Close sidebar on nav item click (mobile)
+  navItems.forEach(n => n.addEventListener('click', () => {
+    if (window.innerWidth <= 900) sidebar.classList.remove('open');
+  }));
+</script>
+</body>
+</html>

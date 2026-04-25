@@ -1,0 +1,2091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Speaking Part 3 — Pattern-Based Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:      #fdf8f2;
+    --blush:      #f5e6da;
+    --sage:       #d6e8d4;
+    --sky:        #daeaf7;
+    --lavender:   #e8e2f5;
+    --marigold:   #f9edcc;
+    --rose:       #f2d8d8;
+    --mint:       #d4f0e8;
+
+    --text-dark:  #2b2522;
+    --text-mid:   #4a4240;
+    --text-light: #7a6f6b;
+
+    --accent1:    #7a9e7e;   /* sage green */
+    --accent2:    #7390b8;   /* steel blue */
+    --accent3:    #b07ba8;   /* dusty violet */
+    --accent4:    #c98c5a;   /* warm amber */
+    --accent5:    #c96868;   /* rose red */
+
+    --border:     #e0d8d0;
+    --sidebar-w:  280px;
+    --font-body:  'DM Sans', sans-serif;
+    --font-head:  'Lora', serif;
+    --font-mono:  'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.75;
+    font-size: 15.5px;
+    display: flex;
+  }
+
+  /* ── SIDEBAR ── */
+  #sidebar {
+    width: var(--sidebar-w);
+    min-height: 100vh;
+    background: #fff;
+    border-right: 1.5px solid var(--border);
+    position: fixed;
+    top: 0; left: 0;
+    overflow-y: auto;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-brand {
+    padding: 24px 22px 18px;
+    border-bottom: 1.5px solid var(--border);
+    background: var(--lavender);
+  }
+  .sidebar-brand .label {
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent3);
+    margin-bottom: 4px;
+  }
+  .sidebar-brand h2 {
+    font-family: var(--font-head);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.3;
+  }
+
+  .sidebar-nav { padding: 14px 0 30px; flex: 1; }
+
+  .nav-section-label {
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    padding: 12px 22px 4px;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 22px;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-mid);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all .18s;
+  }
+  .nav-link:hover { background: var(--cream); color: var(--text-dark); border-left-color: var(--border); }
+  .nav-link.active { background: var(--sky); color: var(--accent2); border-left-color: var(--accent2); font-weight: 600; }
+
+  .nav-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    font-size: 10.5px;
+    font-weight: 700;
+    flex-shrink: 0;
+    background: var(--blush);
+    color: var(--accent4);
+  }
+  .nav-link.active .nav-num { background: var(--accent2); color: #fff; }
+
+  /* ── MAIN ── */
+  #main {
+    margin-left: var(--sidebar-w);
+    flex: 1;
+    min-height: 100vh;
+  }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    background: linear-gradient(135deg, var(--lavender) 0%, var(--sky) 60%, var(--mint) 100%);
+    padding: 60px 64px 50px;
+    border-bottom: 1.5px solid var(--border);
+  }
+  .page-header .tag {
+    display: inline-block;
+    background: var(--accent3);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+  .page-header h1 {
+    font-family: var(--font-head);
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-dark);
+    max-width: 700px;
+  }
+  .page-header .subtitle {
+    margin-top: 14px;
+    font-size: 15px;
+    color: var(--text-mid);
+    max-width: 620px;
+    line-height: 1.7;
+  }
+  .header-meta {
+    margin-top: 24px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .meta-pill {
+    background: rgba(255,255,255,.7);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-mid);
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    padding: 60px 64px;
+    border-bottom: 1.5px solid var(--border);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+  .section-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    font-family: var(--font-head);
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .badge-lavender { background: var(--lavender); color: var(--accent3); }
+  .badge-sage     { background: var(--sage);     color: var(--accent1); }
+  .badge-sky      { background: var(--sky);      color: var(--accent2); }
+  .badge-blush    { background: var(--blush);    color: var(--accent4); }
+  .badge-rose     { background: var(--rose);     color: var(--accent5); }
+  .badge-mint     { background: var(--mint);     color: var(--accent1); }
+  .badge-marigold { background: var(--marigold); color: var(--accent4); }
+
+  .section-title-wrap .section-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 5px;
+  }
+  .section-title-wrap h2 {
+    font-family: var(--font-head);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.25;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  h3 {
+    font-family: var(--font-head);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 32px 0 12px;
+  }
+  h4 {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    margin: 24px 0 8px;
+  }
+  p { margin-bottom: 14px; color: var(--text-mid); }
+  p:last-child { margin-bottom: 0; }
+
+  ul, ol { padding-left: 22px; margin-bottom: 14px; }
+  li { margin-bottom: 6px; color: var(--text-mid); }
+
+  strong { color: var(--text-dark); font-weight: 600; }
+  em { font-style: italic; color: var(--text-mid); }
+
+  /* ── CARDS ── */
+  .card {
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+  .card-lavender { border-left: 4px solid var(--accent3); background: var(--lavender); }
+  .card-sage     { border-left: 4px solid var(--accent1); background: var(--sage); }
+  .card-sky      { border-left: 4px solid var(--accent2); background: var(--sky); }
+  .card-blush    { border-left: 4px solid var(--accent4); background: var(--blush); }
+  .card-rose     { border-left: 4px solid var(--accent5); background: var(--rose); }
+  .card-mint     { border-left: 4px solid var(--accent1); background: var(--mint); }
+  .card-marigold { border-left: 4px solid var(--accent4); background: var(--marigold); }
+  .card-white    { border: 1.5px solid var(--border); background: #fff; }
+
+  .card h3 { margin-top: 0; }
+
+  /* ── PATTERN CARD ── */
+  .pattern-card {
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+  .pattern-card-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 24px;
+    border-bottom: 1.5px solid var(--border);
+  }
+  .pattern-num {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 13px;
+    flex-shrink: 0;
+  }
+  .pattern-card-head h3 { margin: 0; font-size: 17px; }
+  .pattern-card-body { padding: 20px 24px; }
+  .pattern-card-body > *:last-child { margin-bottom: 0; }
+
+  .formula-box {
+    background: var(--marigold);
+    border: 1.5px dashed var(--accent4);
+    border-radius: 10px;
+    padding: 12px 18px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: #5a3e10;
+    margin: 10px 0 16px;
+    line-height: 1.6;
+  }
+
+  /* ── EXAMPLE BOX ── */
+  .example-box {
+    background: var(--cream);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 10px 0;
+    font-style: italic;
+    font-size: 14.5px;
+    color: var(--text-dark);
+    line-height: 1.7;
+  }
+  .example-box .speaker {
+    font-style: normal;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 5px;
+  }
+
+  /* ── BEFORE/AFTER ── */
+  .ba-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 14px 0;
+  }
+  .ba-box {
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .ba-before { background: var(--rose); border: 1.5px solid #e8c0c0; }
+  .ba-after  { background: var(--mint); border: 1.5px solid #b0ddd0; }
+  .ba-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .ba-before .ba-label { color: var(--accent5); }
+  .ba-after  .ba-label { color: var(--accent1); }
+  .ba-box p { font-size: 14px; line-height: 1.65; margin: 0; font-style: italic; }
+
+  /* ── TABLE ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1.5px solid var(--border);
+  }
+  thead tr { background: var(--lavender); }
+  th {
+    padding: 12px 16px;
+    text-align: left;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    border-bottom: 1.5px solid var(--border);
+  }
+  td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+  tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #fafaf8; }
+
+  /* ── LANGUAGE TABLE ── */
+  .lang-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .lang-box {
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .lang-box h4 { margin-top: 0; margin-bottom: 10px; }
+  .lang-box ul { padding-left: 0; list-style: none; }
+  .lang-box li {
+    padding: 5px 0;
+    border-bottom: 1px dashed var(--border);
+    font-size: 13.5px;
+  }
+  .lang-box li:last-child { border-bottom: none; }
+  .lang-box li em { font-style: normal; display: block; font-size: 12px; color: var(--text-light); margin-top: 2px; }
+
+  /* ── DRILL CARD ── */
+  .drill-item {
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .drill-q {
+    background: var(--sky);
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-dark);
+    border-bottom: 1.5px solid var(--border);
+  }
+  .drill-q .qnum {
+    display: inline-flex;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--accent2);
+    color: #fff;
+    font-size: 11px; font-weight: 700;
+    align-items: center; justify-content: center;
+    margin-right: 8px;
+  }
+  .drill-a {
+    padding: 14px 20px;
+    font-size: 13.5px;
+    color: var(--text-mid);
+    font-style: italic;
+    line-height: 1.7;
+  }
+  .drill-pattern-tag {
+    display: inline-block;
+    background: var(--lavender);
+    color: var(--accent3);
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+  }
+
+  /* ── TOPIC SECTION ── */
+  .topic-block {
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+  .topic-head {
+    padding: 14px 22px;
+    font-family: var(--font-head);
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .topic-education  { background: var(--accent2); }
+  .topic-technology { background: var(--accent3); }
+  .topic-environment{ background: var(--accent1); }
+  .topic-work       { background: var(--accent4); }
+  .topic-health     { background: var(--accent5); }
+  .topic-society    { background: #8e7dbf; }
+  .topic-body { padding: 20px 22px; }
+
+  /* ── CALLOUT ── */
+  .callout {
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 18px 0;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .callout-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+  .callout-body { flex: 1; }
+  .callout-body strong { display: block; margin-bottom: 4px; font-size: 14px; }
+  .callout-body p { margin: 0; font-size: 13.5px; }
+  .callout-tip    { background: var(--marigold); }
+  .callout-note   { background: var(--sky); }
+  .callout-warn   { background: var(--rose); }
+  .callout-check  { background: var(--mint); }
+
+  /* ── MOCK SECTION ── */
+  .mock-q {
+    background: var(--lavender);
+    border: 1.5px solid #ccc4e8;
+    border-radius: 12px;
+    padding: 16px 22px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-dark);
+  }
+  .mock-q .mock-qnum {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent3);
+    margin-bottom: 4px;
+    display: block;
+  }
+  .mock-a {
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    padding: 16px 22px;
+    font-size: 14px;
+    color: var(--text-mid);
+    font-style: italic;
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+  .mock-a .pattern-label {
+    display: inline-block;
+    background: var(--sage);
+    color: var(--accent1);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    font-style: normal;
+  }
+
+  /* ── PROBLEM CARD ── */
+  .problem-card {
+    border-radius: 14px;
+    border: 1.5px solid var(--border);
+    overflow: hidden;
+    margin-bottom: 24px;
+    background: #fff;
+  }
+  .problem-head {
+    background: var(--rose);
+    padding: 14px 22px;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--text-dark);
+    border-bottom: 1.5px solid #e8c0c0;
+  }
+  .problem-body { padding: 18px 22px; }
+  .problem-body .sub { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-light); margin-bottom: 5px; }
+
+  /* ── FLEX ROW ── */
+  .flex-row { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+  .flex-row > * { flex: 1; min-width: 220px; }
+
+  /* ── INTRO TABLE ── */
+  .compare-table {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1.5px solid var(--border);
+    margin: 16px 0;
+  }
+  .compare-table thead tr { background: var(--sky); }
+
+  /* ── SCROLL TOP ── */
+  #scroll-top {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 42px; height: 42px;
+    background: var(--accent2);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 16px rgba(115,144,184,.4);
+    transition: opacity .2s, transform .2s;
+    opacity: 0;
+    pointer-events: none;
+  }
+  #scroll-top.visible { opacity: 1; pointer-events: all; }
+  #scroll-top:hover { transform: translateY(-3px); }
+
+  /* ── PROGRESS BAR ── */
+  #progress-bar {
+    position: fixed;
+    top: 0; left: var(--sidebar-w); right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent2), var(--accent3));
+    transform-origin: left;
+    transform: scaleX(0);
+    z-index: 200;
+    transition: transform .1s linear;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    #sidebar { width: 220px; }
+    #main { margin-left: 220px; }
+    #progress-bar { left: 220px; }
+    .section { padding: 40px 32px; }
+    .page-header { padding: 40px 32px 34px; }
+    .ba-grid { grid-template-columns: 1fr; }
+    .lang-grid { grid-template-columns: 1fr; }
+    .page-header h1 { font-size: 28px; }
+  }
+
+  @media print {
+    #sidebar { display: none; }
+    #main { margin-left: 0; }
+    #progress-bar { display: none; }
+    #scroll-top { display: none; }
+  }
+/* === PASTEL MASTER SITE PATCH === */
+:root{--pastel-paper:#fbf8f3;--pastel-surface:#fffdf9;--pastel-line:#e8ded2;--pastel-ink:#2d2a27;--pastel-muted:#625a54;--pastel-sage:#dcefe5;--pastel-sky:#dcecf6;--pastel-lav:#e9e5f8;--pastel-peach:#fde5d5;--pastel-gold:#f7e8b9;--pastel-teal:#4f927f;--pastel-blue:#517f9b;--pastel-plum:#7b6ab4}body{background:var(--pastel-paper)!important;color:var(--pastel-ink)!important}#sidebar,.sidebar{background:var(--pastel-surface)!important;color:var(--pastel-ink)!important;border-right:1px solid var(--pastel-line)!important}.sidebar-brand,.sidebar-header,.sidebar-logo{background:linear-gradient(135deg,var(--pastel-lav),var(--pastel-sky) 70%,var(--pastel-sage))!important;border-bottom:1px solid var(--pastel-line)!important}.sidebar-brand h1,.sidebar-brand h2,.sidebar-title,.sidebar-logo h1{color:var(--pastel-ink)!important}.nav-link,.nav-item,#sidebar a,.nav-sub a{color:var(--pastel-muted)!important}.nav-link:hover,.nav-link.active,.nav-item:hover,.nav-item.active,#sidebar a:hover,#sidebar a.active{background:var(--pastel-sky)!important;color:var(--pastel-blue)!important;border-left-color:#8bbbd2!important}.hero,.page-header{background:linear-gradient(135deg,var(--pastel-lav),var(--pastel-sky) 58%,var(--pastel-sage))!important;color:var(--pastel-ink)!important;border-bottom:1px solid var(--pastel-line)!important}.hero h1,.hero h2,.page-header h1{color:var(--pastel-ink)!important}.hero p,.subtitle,.page-header .subtitle{color:var(--pastel-muted)!important}.card,.topic-block,.pattern-card,.problem-card,.drill-item,.example-block,.callout,.indicator-card,.mock-q,.mock-a,.lang-box{box-shadow:0 8px 24px rgba(64,48,36,.06)!important;}
+
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- ══════════════════════════════════════════════════
+     SIDEBAR
+══════════════════════════════════════════════════ -->
+<nav id="sidebar">
+  <div class="sidebar-brand">
+    <div class="label">IELTS Speaking</div>
+    <h2>Part 3 Pattern-Based Study Guide</h2>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Guide Sections</div>
+    <a href="#s1"  class="nav-link active"><span class="nav-num">1</span> What Is Part 3?</a>
+    <a href="#s2"  class="nav-link"><span class="nav-num">2</span> Core Speaking Patterns</a>
+    <a href="#s3"  class="nav-link"><span class="nav-num">3</span> Question Types & Patterns</a>
+    <a href="#s4"  class="nav-link"><span class="nav-num">4</span> Extending Answers</a>
+    <a href="#s5"  class="nav-link"><span class="nav-num">5</span> High-Utility Language</a>
+    <a href="#s6"  class="nav-link"><span class="nav-num">6</span> Flexibility Training</a>
+    <a href="#s7"  class="nav-link"><span class="nav-num">7</span> Common Problems & Fixes</a>
+    <a href="#s8"  class="nav-link"><span class="nav-num">8</span> Topic-Based Practice</a>
+    <a href="#s9"  class="nav-link"><span class="nav-num">9</span> Quick Response Drills</a>
+    <a href="#s10" class="nav-link"><span class="nav-num">10</span> Full Part 3 Mock</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════
+     MAIN CONTENT
+══════════════════════════════════════════════════ -->
+<main id="main">
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="tag">IELTS Speaking · Part 3</div>
+    <h1>The Pattern-Based Speaking System</h1>
+    <p class="subtitle">A comprehensive training guide for thinking clearly, speaking at length, and handling any Part 3 question with confidence — using flexible, repeatable patterns.</p>
+    <div class="header-meta">
+      <span class="meta-pill">10 Core Patterns</span>
+      <span class="meta-pill">8 Question Types</span>
+      <span class="meta-pill">6 Topic Banks</span>
+      <span class="meta-pill">Full Mock Included</span>
+      <span class="meta-pill">Self-Study Friendly</span>
+    </div>
+  </header>
+
+  <!-- ══ SECTION 1 ══ -->
+  <section class="section" id="s1">
+    <div class="section-header">
+      <div class="section-badge badge-lavender">1</div>
+      <div class="section-title-wrap">
+        <div class="section-eyebrow">Foundation</div>
+        <h2>What Is Part 3? A Clear, Practical Overview</h2>
+      </div>
+    </div>
+
+    <div class="card card-lavender">
+      <h3 style="margin-top:0">What happens in Part 3?</h3>
+      <p>Part 3 is a <strong>two-way discussion</strong> between you and the examiner. It lasts approximately <strong>4–5 minutes</strong>. The examiner asks you abstract, opinion-based questions that are connected to the topic of your Part 2 talk. You are expected to speak in depth, explain your reasoning, compare ideas, and discuss broader societal issues.</p>
+      <p>Unlike a simple interview, Part 3 is a genuine exchange of ideas. The examiner may follow up on your answers, ask you to clarify, or push deeper into a topic.</p>
+    </div>
+
+    <h3>How Part 3 Differs from Parts 1 and 2</h3>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Part 1</th>
+          <th>Part 2</th>
+          <th>Part 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Format</strong></td>
+          <td>Short Q&amp;A</td>
+          <td>Solo monologue (2 min)</td>
+          <td>Two-way discussion</td>
+        </tr>
+        <tr>
+          <td><strong>Topics</strong></td>
+          <td>Personal / familiar</td>
+          <td>Personal experience</td>
+          <td>Abstract / societal</td>
+        </tr>
+        <tr>
+          <td><strong>Answer length</strong></td>
+          <td>2–4 sentences</td>
+          <td>~2 minutes</td>
+          <td>30–60 seconds per question</td>
+        </tr>
+        <tr>
+          <td><strong>Thinking required</strong></td>
+          <td>Minimal</td>
+          <td>Moderate</td>
+          <td>High — ideas + reasoning</td>
+        </tr>
+        <tr>
+          <td><strong>Tone</strong></td>
+          <td>Conversational</td>
+          <td>Narrative</td>
+          <td>Analytical / discursive</td>
+        </tr>
+        <tr>
+          <td><strong>Key challenge</strong></td>
+          <td>Fluency</td>
+          <td>Organisation</td>
+          <td>Depth + flexibility</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Why Part 3 Questions Feel More Difficult</h3>
+    <p>Many learners find Part 3 challenging for three main reasons:</p>
+    <ul>
+      <li><strong>Abstract topics</strong> — Questions often involve society, trends, values, and concepts rather than personal experiences.</li>
+      <li><strong>Open-ended thinking</strong> — There is no single correct answer. You must form and defend an opinion in real time.</li>
+      <li><strong>Extended responses expected</strong> — Short answers of one or two sentences are not enough. You need to explain, justify, and develop your ideas.</li>
+    </ul>
+
+    <div class="callout callout-note">
+      <div class="callout-icon">💡</div>
+      <div class="callout-body">
+        <strong>The good news</strong>
+        <p>You do not need to be an expert on any topic. What matters is that you can <em>think out loud</em>, <em>give reasons</em>, and <em>express ideas clearly</em>. This guide gives you a system for doing exactly that.</p>
+      </div>
+    </div>
+
+    <h3>The Core Skill: Expanding Ideas Using Patterns</h3>
+    <p>The single most important skill in Part 3 is the ability to <strong>take a simple idea and expand it</strong> into a clear, developed answer. This is done not by memorising long sentences, but by following flexible <strong>thinking patterns</strong> — logical sequences that guide what to say next.</p>
+    <p>Think of each pattern as a <strong>thought path</strong>: once you have your first idea, the pattern tells you exactly how to build on it. Over time, these patterns become natural instincts — not templates you recite, but habits of thinking that make extended speaking feel easy.</p>
+
+    <div class="flex-row">
+      <div class="card card-sage">
+        <h4 style="margin-top:0">What patterns give you</h4>
+        <ul>
+          <li>A clear direction when you start talking</li>
+          <li>Logical ways to add more content</li>
+          <li>Natural sounding answers (not memorised scripts)</li>
+          <li>Confidence to handle unfamiliar questions</li>
+        </ul>
+      </div>
+      <div class="card card-sky">
+        <h4 style="margin-top:0">What patterns are NOT</h4>
+        <ul>
+          <li>Sentences you memorise word for word</li>
+          <li>Rigid templates that limit your ideas</li>
+          <li>Essay-writing structures</li>
+          <li>A guarantee of a specific answer</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 2 ══ -->
+  <section class="section" id="s2">
+    <div class="section-header">
+      <div class="section-badge badge-sage">2</div>
+      <div class="section-title-wrap">
+        <div class="section-eyebrow">Core Framework</div>
+        <h2>Core Speaking Patterns — The Heart of the Guide</h2>
+      </div>
+    </div>
+
+    <p>The ten patterns below are the foundation of this system. Each one gives you a thinking sequence — a series of steps that guides what you say next. Study each pattern carefully, practise with the examples, and then begin using them flexibly in your own answers.</p>
+
+    <div class="callout callout-tip">
+      <div class="callout-icon">📌</div>
+      <div class="callout-body">
+        <strong>How to use these patterns</strong>
+        <p>Do not try to memorise the exact wording of any example. Instead, understand the <em>logic</em> of each pattern — the sequence of steps. Then practise applying that logic to new questions.</p>
+      </div>
+    </div>
+
+    <!-- Pattern 1 -->
+    <div class="pattern-card">
+      <div class="pattern-card-head" style="background:var(--lavender)">
+        <div class="pattern-num" style="background:var(--accent3);color:#fff">P1</div>
+        <h3>Direct Answer → Reason → Example</h3>
+      </div>
+      <div class="pattern-card-body">
+        <h4>When to use it</h4>
+        <p>Best for opinion questions, factual questions, or any question with a clear "yes/no/I think…" answer. This is your most-used, go-to pattern.</p>
+        <div class="formula-box">
+          [State your position or answer clearly] + [Give the main reason] + [Support it with a real or hypothetical example]
+        </div>
+        <h4>Examples</h4>
+        <div class="example-box">
+          <div class="speaker">Question: Do you think children spend too much time on screens?</div>
+          I do think it's a growing concern. The main reason is that children are losing opportunities for physical play and face-to-face interaction, which are critical for their development. For example, studies in several countries have shown that children who spend more than four hours a day on screens tend to report higher levels of anxiety and lower social skills by the time they reach their teens.
+        </div>
+        <div class="example-box">
+          <div class="speaker">Question: Is it important for companies to offer flexible working hours?</div>
+          Absolutely, I think it's become essential. The reason is that people have very different productivity rhythms — some people focus best early in the morning, others late at night. A good example is the shift in many tech companies, where flexible hours have actually led to higher output and lower staff turnover.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pattern 2 -->
+    <div class="pattern-card">
+      <div class="pattern-card-head" style="background:var(--sage)">
+        <div class="pattern-num" style="background:var(--accent1);color:#fff">P2</div>
+        <h3>Opinion → Explanation → Result</h3>
+      </div>
+      <div class="pattern-card-body">
+        <h4>When to use it</h4>
+        <p>Use when you need to show not just what you think, but <em>why it matters</em>. This pattern forces you to think about consequences.</p>
+        <div class="formula-box">
+          [Express your view] + [Explain the reasoning or mechanism behind it] + [Describe the likely outcome or consequence]
+        </div>
+        <h4>Examples</h4>
+        <div class="example-box">
+          <div class="speaker">Question: Should environmental education be compulsory in schools?</div>
+          I strongly believe it should be. If young people understand how ecosystems work and how human behaviour affects them, they're far more likely to make sustainable choices as adults. The result would be a generation that treats environmental responsibility as a normal part of life, rather than a political issue.
+        </div>
+        <div class="example-box">
+          <div class="speaker">Question: Do you think governments should fund public art?</div>
+          I think they should, to a reasonable degree. When public spaces are visually engaging and culturally rich, they encourage people to spend more time outdoors and connect with their community. Over time, this can genuinely strengthen a sense of shared identity and civic pride.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pattern 3 -->
+    <div class="pattern-card">
+      <div class="pattern-card-head" style="background:var(--sky)">
+        <div class="pattern-num" style="background:var(--accent2);color:#fff">P3</div>
+        <h3>General Statement → Specific Example</h3>
+      </div>
+      <div class="pattern-card-body">
+        <h4>When to use it</h4>
+        <p>Great for answering questions about trends, society, or general habits. You make a broad claim, then immediately support it with a concrete example.</p>
+        <div class="formula-box">
+          [Make a general observation about the topic] + [Support it with a specific example, statistic, or scenario]
+        </div>
+        <h4>Examples</h4>
+        <div class="example-box">
+          <div class="speaker">Question: How has social media changed the way people communicate?</div>
+          In general, social media has made communication much faster but arguably shallower. A clear example is the shift from long emails or phone calls to short messages and emojis — we respond instantly, but we often share very little real meaning. A lot of nuance gets lost in that process.
+        </div>
+        <div class="example-box">
+          <div class="speaker">Question: Is reading still important in the digital age?</div>
+          Reading remains one of the most valuable skills anyone can develop. Take, for instance, the ability to understand complex instructions, evaluate news critically, or simply enjoy a long-form narrative — none of that is replaced by video content. If anything, the digital world demands stronger reading skills because we're bombarded with so much written information every day.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pattern 4 -->
+    <div class="pattern-card">
+      <div class="pattern-card-head" style="background:var(--blush)">
+        <div class="pattern-num" style="background:var(--accent4);color:#fff">P4</div>
+        <h3>Compare → Explain Difference → Give Reason</h3>
+      </div>
+      <div class="pattern-card-body">
+        <h4>When to use it</h4>
+        <p>Ideal for comparison questions, or whenever you want to contrast two approaches, groups, or time periods to make a point.</p>
+        <div class="formula-box">
+          [Identify two things being compared] + [Describe how they differ] + [Explain why the difference exists]
+        </div>
+        <h4>Examples</h4>
+        <div class="example-box">
+          <div class="speaker">Question: How do older and younger generations view work differently?</div>
+          There's quite a significant contrast. Older generations, broadly speaking, tend to prioritise job security and loyalty to one employer, whereas younger workers often prefer variety, flexibility, and purpose over stability. I think this difference comes from the economic environments they grew up in — older generations experienced recessions that made security feel paramount, while younger people have grown up seeing rapid change and have adapted accordingly.
+        </div>
+        <div class="example-box">
+          <div class="speaker">Question: How is public transport different in cities and rural areas?</div>
+          In urban areas, public transport tends to be frequent, affordable, and integrated, while in rural settings it's often minimal or non-existent. The reason is largely economic — cities have the population density to make investment viable, whereas rural areas simply can't generate enough demand to justify the cost.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pattern 5 -->
+    <div class="pattern-card">
+      <div class="pattern-card-head" style="background:var(--rose)">
+        <div class="pattern-num" style="background:var(--accent5);color:#fff">P5</div>
+        <h3>Cause → Effect → Real-World Example</h3>
+      </div>
+      <div class="pattern-card-body">
+        <h4>When to use it</h4>
+        <p>Perfect for cause and effect questions, or when explaining how one thing leads to another — a very common pattern in Part 3 discussions about social issues.</p>
+        <div class="formula-box">
+          [Identify what causes something] + [Explain what happens as a result] + [Anchor it with a real or plausible example]
+        </div>
+        <h4>Examples</h4>
+        <div class="example-box">
+          <div class="speaker">Question: What causes people to feel stressed about work?</div>
+          I think one of the biggest causes is the blurring of boundaries between work and personal life, particularly since remote working became common. When you can receive emails at any hour, it becomes very hard to truly switch off. As a result, many people report feeling constantly "on call," which builds into chronic stress over time. We can see this clearly in countries like Japan and South Korea, where overwork culture has become a serious public health conversation.
+        </div>
+        <div class="example-box">
+          <div class="speaker">Question: What are the effects of urbanisation on communities?</div>
+          Rapid urbanisation often weakens local community bonds. When people move to cities for work, they frequently don't know their neighbours, lack local support networks, and can feel quite isolated despite being surrounded by millions of people. Cities like London or Tokyo have very high population densities, yet research consistently shows high rates of loneliness among their residents.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pattern 6 -->
+    <div class="pattern-card">
+      <div class="pattern-card-head" style="background:var(--mint)">
+        <div class="pattern-num" style="background:var(--accent1);color:#fff">P6</div>
+        <h3>Advantage → Explanation → Result</h3>
+      </div>
+      <div class="pattern-card-body">
+        <h4>When to use it</h4>
+        <p>Use for advantage/disadvantage questions, or when you want to argue in favour of something clearly and persuasively.</p>
+        <div class="formula-box">
+          [State the main benefit] + [Explain why or how it provides that benefit] + [Describe the positive outcome]
+        </div>
+        <h4>Examples</h4>
+        <div class="example-box">
+          <div class="speaker">Question: What are the advantages of learning a second language?</div>
+          One of the clearest advantages is cognitive flexibility. When you constantly switch between languages, your brain becomes better at filtering out irrelevant information and managing complex tasks. As a result, bilingual individuals tend to perform better in problem-solving scenarios and show stronger concentration overall.
+        </div>
+        <div class="example-box">
+          <div class="speaker">Question: What are the benefits of living in a city?</div>
+          Access to opportunity is probably the most significant advantage. Cities concentrate jobs, universities, hospitals, and cultural institutions in one place. The result is that people in urban areas generally have more choices — in terms of careers, education, and lifestyle — which can significantly improve their quality of life.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pattern 7 -->
+    <div class="pattern-card">
+      <div class="pattern-card-head" style="background:var(--marigold)">
+        <div class="pattern-num" style="background:var(--accent4);color:#fff">P7</div>
+        <h3>Problem → Solution → Outcome</h3>
+      </div>
+      <div class="pattern-card-body">
+        <h4>When to use it</h4>
+        <p>Excellent for questions about social problems, challenges, or what should be done about an issue.</p>
+        <div class="formula-box">
+          [Describe the problem clearly] + [Propose a realistic solution] + [Explain the expected positive outcome]
+        </div>
+        <h4>Examples</h4>
+        <div class="example-box">
+          <div class="speaker">Question: How can governments reduce traffic congestion in cities?</div>
+          The core problem is that private car use is simply too convenient compared to alternatives. One effective solution would be investing heavily in affordable, reliable public transport while simultaneously making car ownership more expensive through congestion charges. If implemented well, cities would see fewer vehicles on the road, reduced pollution, and commuters who actually arrive at work less stressed.
+        </div>
+        <div class="example-box">
+          <div class="speaker">Question: What can be done to address youth unemployment?</div>
+          The central issue is often a skills mismatch — young people graduate with qualifications that don't match what employers actually need. A solution that's worked well in places like Germany is investing in vocational training and apprenticeship programmes that connect education directly to industry. The outcome is graduates who are immediately employable, and businesses that spend less time and money training new hires from scratch.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pattern 8 -->
+    <div class="pattern-card">
+      <div class="pattern-card-head" style="background:var(--lavender)">
+        <div class="pattern-num" style="background:var(--accent3);color:#fff">P8</div>
+        <h3>Present → Past Comparison → Reason</h3>
+      </div>
+      <div class="pattern-card-body">
+        <h4>When to use it</h4>
+        <p>Use when a question asks you to compare how things have changed, or when you want to show that something is better or worse than before.</p>
+        <div class="formula-box">
+          [Describe the current situation] + [Contrast it with how things were in the past] + [Explain what caused the change]
+        </div>
+        <h4>Examples</h4>
+        <div class="example-box">
+          <div class="speaker">Question: How have attitudes towards mental health changed?</div>
+          Today, there's much more openness around mental health — people are far more willing to seek help and talk about their experiences. This is quite different from even 20 years ago, when mental illness was heavily stigmatised and many people suffered in silence. I think the change has come from a combination of celebrity figures speaking publicly about their struggles, and campaigns by health organisations that gradually shifted the narrative.
+        </div>
+        <div class="example-box">
+          <div class="speaker">Question: Is shopping today different from how it was in the past?</div>
+          Shopping now is almost unrecognisably different. Today, people expect to buy anything online, receive it within 24 hours, and return it easily if needed. A generation ago, shopping meant physically visiting a store, comparing limited options, and waiting weeks for special orders. The shift has been driven almost entirely by technology and the expectations consumers have developed from it.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pattern 9 -->
+    <div class="pattern-card">
+      <div class="pattern-card-head" style="background:var(--sky)">
+        <div class="pattern-num" style="background:var(--accent2);color:#fff">P9</div>
+        <h3>Present → Future Prediction → Justification</h3>
+      </div>
+      <div class="pattern-card-body">
+        <h4>When to use it</h4>
+        <p>Essential for speculative and future-oriented questions. This pattern shows the examiner you can reason about what might happen and why.</p>
+        <div class="formula-box">
+          [Describe the current state of affairs] + [Make a clear prediction about the future] + [Justify why you believe this will happen]
+        </div>
+        <h4>Examples</h4>
+        <div class="example-box">
+          <div class="speaker">Question: How do you think AI will affect employment in the future?</div>
+          Currently, AI is automating routine tasks in industries like manufacturing and data processing. I think in the next decade we'll likely see significant disruption in roles that involve repetitive cognitive work — things like data entry, basic customer service, and even some aspects of accounting. The justification is simple: if a machine can do a job faster and more accurately at a lower cost, companies will use it. That said, I'd expect new jobs to emerge in areas we can't fully predict yet.
+        </div>
+        <div class="example-box">
+          <div class="speaker">Question: Will traditional newspapers survive in the digital age?</div>
+          Right now, print journalism is clearly struggling — circulation is falling and many papers have moved online. My prediction is that print will survive but in a much smaller, niche form — perhaps luxury weekend editions or highly specialised publications for professional readers. The reason is that some audiences still place high value on the experience of physical reading, and a well-designed newspaper can feel like a premium product.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pattern 10 -->
+    <div class="pattern-card">
+      <div class="pattern-card-head" style="background:var(--sage)">
+        <div class="pattern-num" style="background:var(--accent1);color:#fff">P10</div>
+        <h3>Idea → Counterpoint → Balanced Conclusion</h3>
+      </div>
+      <div class="pattern-card-body">
+        <h4>When to use it</h4>
+        <p>Use this when you want to show critical thinking. Presenting both sides of an issue demonstrates maturity of thought and avoids one-dimensional answers.</p>
+        <div class="formula-box">
+          [Present your main idea or one side] + [Acknowledge a valid counterpoint] + [Offer a balanced, nuanced conclusion]
+        </div>
+        <h4>Examples</h4>
+        <div class="example-box">
+          <div class="speaker">Question: Should university education be free for everyone?</div>
+          There's a strong argument that education is a public good — an educated population benefits society as a whole, so the state should invest in it. However, free university education isn't without its complications. If it's entirely free, there may be less accountability for the quality of programmes, and limited funding could affect resources. On balance, I think a model where fees are low or income-based, but quality is protected, is probably more realistic than completely free education for all.
+        </div>
+        <div class="example-box">
+          <div class="speaker">Question: Is it better to live in a city or in the countryside?</div>
+          Cities clearly offer more professional and social opportunities, and for younger people especially, that matters enormously. On the other hand, rural living offers space, cleaner air, and often a stronger sense of community that's very hard to find in a big city. Ultimately, I think it depends entirely on your stage of life — cities suit people building careers, while the countryside may suit families or those seeking a slower pace.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 3 ══ -->
+  <section class="section" id="s3">
+    <div class="section-header">
+      <div class="section-badge badge-sky">3</div>
+      <div class="section-title-wrap">
+        <div class="section-eyebrow">Application</div>
+        <h2>Question Types & Which Patterns to Use</h2>
+      </div>
+    </div>
+
+    <p>Part 3 questions fall into several recognisable types. Learning to identify the question type quickly allows you to choose the right pattern immediately — before you even start speaking.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Question Type</th>
+          <th>Signal Words</th>
+          <th>Best Patterns</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Opinion</strong></td>
+          <td>Do you think…? / What is your view…? / Should…?</td>
+          <td>P1, P2, P10</td>
+        </tr>
+        <tr>
+          <td><strong>Comparison</strong></td>
+          <td>How does X compare to Y? / Is X different from Y?</td>
+          <td>P4, P8</td>
+        </tr>
+        <tr>
+          <td><strong>Cause &amp; Effect</strong></td>
+          <td>Why do you think…? / What causes…? / What are the effects?</td>
+          <td>P5, P3</td>
+        </tr>
+        <tr>
+          <td><strong>Advantages/Disadvantages</strong></td>
+          <td>What are the benefits…? / What are the drawbacks…?</td>
+          <td>P6, P7, P10</td>
+        </tr>
+        <tr>
+          <td><strong>Hypothetical / Speculation</strong></td>
+          <td>What would happen if…? / Imagine a world where…</td>
+          <td>P9, P2, P7</td>
+        </tr>
+        <tr>
+          <td><strong>Past vs. Present</strong></td>
+          <td>How has X changed? / Is X different now compared to before?</td>
+          <td>P8, P4</td>
+        </tr>
+        <tr>
+          <td><strong>Future Predictions</strong></td>
+          <td>How do you think X will change? / What will happen to X?</td>
+          <td>P9, P2</td>
+        </tr>
+        <tr>
+          <td><strong>Social / Abstract</strong></td>
+          <td>To what extent…? / What role does X play in society?</td>
+          <td>P3, P10, P5</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Worked Examples by Question Type</h3>
+
+    <div class="card card-lavender">
+      <h3 style="margin-top:0">Opinion Question</h3>
+      <p><em>Question:</em> <strong>Do you think social media has been good for society overall?</strong></p>
+      <h4>Using Pattern 1 (Direct Answer → Reason → Example)</h4>
+      <div class="example-box">
+        I think it's had more negative than positive effects overall. The main reason is that while social media has connected people across distances, it has simultaneously created divisive echo chambers where people only encounter views that mirror their own. A clear example is the way misinformation spreads during election periods — it's not moderated effectively and it shapes public opinion in ways that weren't possible before.
+      </div>
+      <h4>Using Pattern 10 (Idea → Counterpoint → Balanced Conclusion)</h4>
+      <div class="example-box">
+        There are genuine benefits — social movements like climate activism have gained real traction through social media, and people in isolated places can find communities that support them. However, the negative effects on mental health, political polarisation, and the spread of misinformation are hard to ignore. My feeling is that social media is a powerful tool, and like most powerful tools, it depends entirely on how it's used — and right now, the regulation and design of these platforms hasn't caught up with the harm they can cause.
+      </div>
+    </div>
+
+    <div class="card card-sage">
+      <h3 style="margin-top:0">Cause & Effect Question</h3>
+      <p><em>Question:</em> <strong>Why do you think obesity rates are rising in many countries?</strong></p>
+      <h4>Using Pattern 5 (Cause → Effect → Real-World Example)</h4>
+      <div class="example-box">
+        I think the primary cause is the combination of ultra-processed food being cheap and aggressively marketed, alongside increasingly sedentary lifestyles. The effect is that people consume far more calories than they burn, almost without realising it. In the United States and UK, the rise in obesity has closely tracked the rise of fast food availability and desk-based work, which strongly suggests these are the main drivers.
+      </div>
+    </div>
+
+    <div class="card card-sky">
+      <h3 style="margin-top:0">Future Prediction Question</h3>
+      <p><em>Question:</em> <strong>How do you think cities will change in the next 50 years?</strong></p>
+      <h4>Using Pattern 9 (Present → Future Prediction → Justification)</h4>
+      <div class="example-box">
+        Right now, cities are dealing with challenges like congestion, pollution, and housing shortages. I would predict that future cities will be considerably greener and more vertical — with more rooftop gardens, built-in renewable energy systems, and far fewer personal vehicles. The justification is that both economic pressure and climate targets are going to force urban planners to rethink how space is used, and we're already seeing early versions of this in cities like Singapore and Amsterdam.
+      </div>
+    </div>
+
+    <div class="card card-blush">
+      <h3 style="margin-top:0">Hypothetical / Speculation Question</h3>
+      <p><em>Question:</em> <strong>What would happen if schools abolished homework?</strong></p>
+      <h4>Using Pattern 7 (Problem → Solution → Outcome)</h4>
+      <div class="example-box">
+        Well, the problem homework is meant to solve is reinforcing learning outside the classroom. If it were abolished, there would probably need to be more focused in-class practice time and better study skills taught directly. The outcome might actually be positive — research suggests that excessive homework causes stress without significantly improving results, so replacing it with more effective classroom methods could actually raise achievement levels while reducing student anxiety.
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 4 ══ -->
+  <section class="section" id="s4">
+    <div class="section-header">
+      <div class="section-badge badge-blush">4</div>
+      <div class="section-title-wrap">
+        <div class="section-eyebrow">Development Techniques</div>
+        <h2>How to Extend Answers Naturally</h2>
+      </div>
+    </div>
+
+    <p>Short answers are the most common problem in Part 3. Every answer needs to be built, not simply stated. The techniques below are the five most effective ways to expand any answer naturally — each one adds a different dimension to what you're saying.</p>
+
+    <div class="callout callout-note">
+      <div class="callout-icon">🔑</div>
+      <div class="callout-body">
+        <strong>Key principle</strong>
+        <p>You don't need to use all five techniques in one answer. Choose one or two, apply them naturally, and your answer will already feel much more complete.</p>
+      </div>
+    </div>
+
+    <!-- Technique 1 -->
+    <div class="card card-white">
+      <h3 style="margin-top:0">Technique 1: Add a Reason</h3>
+      <p>The simplest and most important extension technique. After making a statement, ask yourself: <em>Why is this true?</em></p>
+      <p><strong>What to say:</strong> "…because…" / "The reason is that…" / "This is largely due to…"</p>
+      <div class="ba-grid">
+        <div class="ba-box ba-before">
+          <div class="ba-label">❌ Too Short</div>
+          <p>"I think people should exercise more."</p>
+        </div>
+        <div class="ba-box ba-after">
+          <div class="ba-label">✓ Extended</div>
+          <p>"I think people should exercise more, largely because modern lifestyles have made physical activity almost completely optional — most of us sit at desks for eight hours a day and drive everywhere. Our bodies simply aren't designed for that level of inactivity."</p>
+        </div>
+      </div>
+      <p><strong>What changed:</strong> A reason (<em>why</em> exercise matters) was added, then it was made concrete by describing the modern sedentary lifestyle.</p>
+    </div>
+
+    <!-- Technique 2 -->
+    <div class="card card-white">
+      <h3 style="margin-top:0">Technique 2: Add an Example</h3>
+      <p>Examples make abstract ideas real. They show the examiner that you can connect general ideas to the real world.</p>
+      <p><strong>What to say:</strong> "For example…" / "Take, for instance…" / "A good example of this is…" / "We can see this in…"</p>
+      <div class="ba-grid">
+        <div class="ba-box ba-before">
+          <div class="ba-label">❌ Too Short</div>
+          <p>"Technology has changed the way people learn."</p>
+        </div>
+        <div class="ba-box ba-after">
+          <div class="ba-label">✓ Extended</div>
+          <p>"Technology has fundamentally changed the way people learn. Take platforms like Coursera or Khan Academy — a student in a rural village can now access the same university-level content as someone at an elite institution. That kind of equalisation of access simply wasn't possible twenty years ago."</p>
+        </div>
+      </div>
+      <p><strong>What changed:</strong> A specific platform example made the general claim feel real and grounded.</p>
+    </div>
+
+    <!-- Technique 3 -->
+    <div class="card card-white">
+      <h3 style="margin-top:0">Technique 3: Add a Consequence</h3>
+      <p>Explain what happens <em>as a result</em> of something. This shows analytical depth.</p>
+      <p><strong>What to say:</strong> "As a result…" / "This means that…" / "The consequence is…" / "This leads to…"</p>
+      <div class="ba-grid">
+        <div class="ba-box ba-before">
+          <div class="ba-label">❌ Too Short</div>
+          <p>"When people don't sleep enough, their health suffers."</p>
+        </div>
+        <div class="ba-box ba-after">
+          <div class="ba-label">✓ Extended</div>
+          <p>"When people don't sleep enough, their health suffers. As a result, we see higher rates of obesity, diabetes, and cardiovascular disease among people who consistently sleep fewer than six hours. This means that addressing sleep deprivation isn't just a personal choice — it's becoming a public health priority."</p>
+        </div>
+      </div>
+      <p><strong>What changed:</strong> A consequence chain was added — the answer moved from a statement to a linked sequence of outcomes.</p>
+    </div>
+
+    <!-- Technique 4 -->
+    <div class="card card-white">
+      <h3 style="margin-top:0">Technique 4: Add a Contrast</h3>
+      <p>Introduce an opposing idea or exception. This shows nuanced thinking and avoids oversimplification.</p>
+      <p><strong>What to say:</strong> "That said…" / "However…" / "On the other hand…" / "Although…" / "While this is true for many, it's worth noting that…"</p>
+      <div class="ba-grid">
+        <div class="ba-box ba-before">
+          <div class="ba-label">❌ Too Short</div>
+          <p>"University degrees are still valuable."</p>
+        </div>
+        <div class="ba-box ba-after">
+          <div class="ba-label">✓ Extended</div>
+          <p>"University degrees are still valuable in many fields — medicine, law, and engineering are obvious examples. That said, in areas like tech and entrepreneurship, practical skills and self-directed learning are increasingly more valued than formal qualifications. So the picture is quite nuanced, and it really depends on the industry."</p>
+        </div>
+      </div>
+      <p><strong>What changed:</strong> A contrast was introduced after the initial claim, showing the speaker can think beyond a single perspective.</p>
+    </div>
+
+    <!-- Technique 5 -->
+    <div class="card card-white">
+      <h3 style="margin-top:0">Technique 5: Add a Condition (if / when / unless)</h3>
+      <p>Introduce a hypothetical or conditional scenario. This adds sophistication and shows you can think about variables.</p>
+      <p><strong>What to say:</strong> "If that happens…" / "Provided that…" / "Unless governments act…" / "In the event that…"</p>
+      <div class="ba-grid">
+        <div class="ba-box ba-before">
+          <div class="ba-label">❌ Too Short</div>
+          <p>"Electric cars will become more common."</p>
+        </div>
+        <div class="ba-box ba-after">
+          <div class="ba-label">✓ Extended</div>
+          <p>"Electric cars will certainly become more common over the next decade. However, that growth really depends on whether the charging infrastructure keeps up — if people don't have convenient, affordable places to charge their vehicles, uptake will remain slower than expected. Provided governments and private companies invest adequately in that infrastructure, I think the transition could happen quite quickly."</p>
+        </div>
+      </div>
+      <p><strong>What changed:</strong> A condition was introduced that qualifies the prediction, adding realism and demonstrating higher-level thinking.</p>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 5 ══ -->
+  <section class="section" id="s5">
+    <div class="section-header">
+      <div class="section-badge badge-lavender">5</div>
+      <div class="section-title-wrap">
+        <div class="section-eyebrow">Language Bank</div>
+        <h2>High-Utility Language Organised by Function</h2>
+      </div>
+    </div>
+
+    <p>The phrases below are organised by what they <em>do</em> in a conversation. The goal is not to memorise all of them — choose two or three from each category that sound natural to you and practise until they come automatically.</p>
+
+    <div class="callout callout-tip">
+      <div class="callout-icon">📌</div>
+      <div class="callout-body">
+        <strong>Important note on style</strong>
+        <p>All phrases here are designed for <strong>spoken English</strong>. They sound natural and conversational — not like written academic essays. Avoid formal written phrases like "It is widely acknowledged that…" in speaking.</p>
+      </div>
+    </div>
+
+    <h3>A. Giving Opinions</h3>
+    <div class="lang-grid">
+      <div class="lang-box">
+        <ul>
+          <li>From my perspective, …<em>Personal viewpoint opener</em></li>
+          <li>Personally, I feel that …<em>Softer, conversational view</em></li>
+          <li>I'm fairly convinced that …<em>Confident but not absolute</em></li>
+          <li>In my view, it's quite clear that …<em>Confident opinion</em></li>
+          <li>I tend to think that …<em>Thoughtful, measured stance</em></li>
+        </ul>
+      </div>
+      <div class="lang-box">
+        <ul>
+          <li>As far as I can tell, …<em>Opinion based on observation</em></li>
+          <li>If you ask me, …<em>Direct, casual emphasis</em></li>
+          <li>I'd argue that …<em>Slightly assertive position</em></li>
+          <li>It seems to me that …<em>Tentative, reflective view</em></li>
+          <li>The way I see it, …<em>Natural spoken opener</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>B. Speculating</h3>
+    <div class="lang-grid">
+      <div class="lang-box">
+        <ul>
+          <li>I would imagine that …<em>Reasonable guess</em></li>
+          <li>It's quite likely that …<em>Probability</em></li>
+          <li>There's a good chance that …<em>Conversational probability</em></li>
+          <li>I'd expect that …<em>Based on logic</em></li>
+          <li>It's possible that …<em>Open to options</em></li>
+        </ul>
+      </div>
+      <div class="lang-box">
+        <ul>
+          <li>I suppose it's conceivable that …<em>More tentative</em></li>
+          <li>We might well see …<em>Prediction with doubt</em></li>
+          <li>I wouldn't be surprised if …<em>Natural spoken form</em></li>
+          <li>My guess would be that …<em>Informal prediction</em></li>
+          <li>I'd be willing to bet that …<em>Confident casual prediction</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>C. Hedging (Softening Statements)</h3>
+    <div class="lang-grid">
+      <div class="lang-box">
+        <ul>
+          <li>… to some extent.<em>Partial agreement</em></li>
+          <li>It depends on the situation, really.<em>Conditional stance</em></li>
+          <li>Generally speaking, …<em>Not always true, but usually</em></li>
+          <li>In many cases, …<em>Qualified generalisation</em></li>
+          <li>For the most part, …<em>Mostly true</em></li>
+        </ul>
+      </div>
+      <div class="lang-box">
+        <ul>
+          <li>… more often than not.<em>Usually true</em></li>
+          <li>That said, there are exceptions.<em>Balanced view</em></li>
+          <li>It's not always straightforward.<em>Acknowledging complexity</em></li>
+          <li>It's a bit of a double-edged sword.<em>Both sides matter</em></li>
+          <li>The reality is probably somewhere in between.<em>Balanced conclusion</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>D. Comparing</h3>
+    <div class="lang-grid">
+      <div class="lang-box">
+        <ul>
+          <li>In contrast to …, …<em>Direct comparison</em></li>
+          <li>Compared with …, …<em>Standard comparison</em></li>
+          <li>While X tends to …, Y often …<em>Simultaneous contrast</em></li>
+          <li>There's quite a difference between … and …<em>Highlighting gap</em></li>
+          <li>Both X and Y share …, but …<em>Similarity then difference</em></li>
+        </ul>
+      </div>
+      <div class="lang-box">
+        <ul>
+          <li>X is quite different from Y in that …<em>Specific difference</em></li>
+          <li>Whereas X …, Y …<em>Formal contrast connector</em></li>
+          <li>On the one hand … on the other hand …<em>Two-sided structure</em></li>
+          <li>X is arguably more … than Y.<em>Comparative judgment</em></li>
+          <li>The main distinction is …<em>Identifying key difference</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>E. Explaining Causes</h3>
+    <div class="lang-grid">
+      <div class="lang-box">
+        <ul>
+          <li>This is largely due to …<em>Main cause</em></li>
+          <li>One contributing factor is …<em>Partial cause</em></li>
+          <li>A lot of this stems from …<em>Root cause</em></li>
+          <li>This can be traced back to …<em>Historical cause</em></li>
+          <li>Part of the reason is …<em>Incomplete cause</em></li>
+        </ul>
+      </div>
+      <div class="lang-box">
+        <ul>
+          <li>It's mainly down to the fact that …<em>Casual spoken cause</em></li>
+          <li>The driving force behind this is …<em>Main cause emphasis</em></li>
+          <li>What really drives this is …<em>Spoken emphasis on cause</em></li>
+          <li>Fundamentally, it comes down to …<em>Core cause</em></li>
+          <li>The root cause is probably …<em>Deep cause</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>F. Giving Examples</h3>
+    <div class="lang-grid">
+      <div class="lang-box">
+        <ul>
+          <li>For example, …<em>Basic example connector</em></li>
+          <li>Take, for instance, …<em>Slightly more emphatic</em></li>
+          <li>A good example of this is …<em>Natural spoken style</em></li>
+          <li>This is clearly illustrated by …<em>Example as evidence</em></li>
+          <li>To give you an idea, …<em>Informal example intro</em></li>
+        </ul>
+      </div>
+      <div class="lang-box">
+        <ul>
+          <li>We can see this in the case of …<em>Real-world example</em></li>
+          <li>Consider, for instance, …<em>Inviting reflection</em></li>
+          <li>Think about how …<em>Engaging the listener</em></li>
+          <li>In places like …, we see this clearly.<em>Location-based example</em></li>
+          <li>A classic example would be …<em>Well-known case</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>G. Generalising</h3>
+    <div class="lang-grid">
+      <div class="lang-box">
+        <ul>
+          <li>On the whole, …<em>General overview</em></li>
+          <li>By and large, …<em>Natural spoken generalisation</em></li>
+          <li>In general terms, …<em>Broad scope</em></li>
+          <li>As a rule, …<em>Common pattern</em></li>
+          <li>Broadly speaking, …<em>Wide generalisation</em></li>
+        </ul>
+      </div>
+      <div class="lang-box">
+        <ul>
+          <li>People tend to …<em>General behaviour</em></li>
+          <li>There's a general trend towards …<em>Societal pattern</em></li>
+          <li>In most parts of the world, …<em>Universal scope</em></li>
+          <li>More often than not, …<em>Frequency-based claim</em></li>
+          <li>In the majority of cases, …<em>Statistical generalisation</em></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 6 ══ -->
+  <section class="section" id="s6">
+    <div class="section-header">
+      <div class="section-badge badge-mint">6</div>
+      <div class="section-title-wrap">
+        <div class="section-eyebrow">Flexibility Training</div>
+        <h2>One Question, Multiple Approaches</h2>
+      </div>
+    </div>
+
+    <p>The key to real fluency is <strong>not having one fixed answer</strong> — it's knowing that any question can be approached in several different ways depending on your ideas in that moment. The exercises below show you how the same question can produce very different, equally strong answers depending on which pattern you choose.</p>
+
+    <!-- Q1 -->
+    <div class="card card-white" style="margin-bottom:28px">
+      <h3 style="margin-top:0">Question: <em>"Do you think it's important to learn a foreign language?"</em></h3>
+
+      <div class="drill-pattern-tag">Approach A — Pattern 1 (Direct Answer → Reason → Example)</div>
+      <div class="example-box">
+        I do think it's genuinely important, yes. The main reason is that language shapes how you think — when you learn another language, you don't just learn words, you gain access to a different way of perceiving the world. A good example is how Japanese has specific words for concepts that don't exist in English, like <em>ma</em> — the idea of meaningful silence. Learning that kind of vocabulary shifts your perspective in a way that's hard to achieve otherwise.
+      </div>
+
+      <div class="drill-pattern-tag">Approach B — Pattern 10 (Idea → Counterpoint → Balanced Conclusion)</div>
+      <div class="example-box">
+        On one level, with translation apps becoming increasingly powerful, you could argue the practical need to learn foreign languages is declining. However, there's so much more to language than translation — cultural empathy, building genuine relationships, and the cognitive benefits of bilingualism. On balance, I'd say learning languages remains highly important, especially for young people, because the benefits go well beyond communication.
+      </div>
+
+      <div class="drill-pattern-tag">Approach C — Pattern 2 (Opinion → Explanation → Result)</div>
+      <div class="example-box">
+        I believe it's extremely important. When you speak another language, you signal respect for another culture — you've invested time in understanding the world from their perspective. The result is often a much deeper level of trust and connection, whether in business, friendship, or diplomacy. Countries that encourage multilingualism tend to have more successful international relationships for exactly this reason.
+      </div>
+
+      <p style="margin-top:12px"><strong>What's different?</strong> Approach A is factual and example-heavy. Approach B shows critical thinking and balance. Approach C focuses on consequences. All three are strong, natural answers to the same question.</p>
+    </div>
+
+    <!-- Q2 -->
+    <div class="card card-white" style="margin-bottom:28px">
+      <h3 style="margin-top:0">Question: <em>"How has technology changed the way people work?"</em></h3>
+
+      <div class="drill-pattern-tag">Approach A — Pattern 8 (Present → Past Comparison → Reason)</div>
+      <div class="example-box">
+        Work today is almost unrecognisably different from even thirty years ago. Previously, a job meant being in a physical office for fixed hours, with communication happening by post or phone. Now, someone can manage a global team entirely remotely, respond instantly to a colleague in another time zone, and complete tasks using AI tools that didn't exist a decade ago. The change has been driven by the combination of broadband internet, cloud computing, and smartphones all arriving within the same generation.
+      </div>
+
+      <div class="drill-pattern-tag">Approach B — Pattern 5 (Cause → Effect → Real-World Example)</div>
+      <div class="example-box">
+        The cause is really the rapid spread of affordable digital tools — communication platforms, project management software, and AI assistants. The effect is a dramatic shift in what employers expect: workers are now expected to be constantly reachable, highly adaptable, and able to manage their own time without supervision. In companies like Spotify and Airbnb, this has led to fully remote or "work from anywhere" policies that would have seemed radical just a decade ago.
+      </div>
+
+      <p><strong>What's different?</strong> Approach A takes a historical perspective and shows change over time. Approach B analyses the mechanism of change and its effects. Both are equally valid and both score well.</p>
+    </div>
+
+    <!-- Q3 -->
+    <div class="card card-white">
+      <h3 style="margin-top:0">Question: <em>"What responsibilities do wealthy countries have towards poorer ones?"</em></h3>
+
+      <div class="drill-pattern-tag">Approach A — Pattern 7 (Problem → Solution → Outcome)</div>
+      <div class="example-box">
+        The core problem is that global inequality creates instability — poverty, conflict, and climate vulnerability in one region don't stay contained there. A realistic solution is for wealthy nations to allocate a meaningful percentage of GDP to development aid, but more importantly, to reform trade rules that currently favour wealthier economies. If that happened, the outcome would be a more economically balanced world where fewer people are driven to extreme circumstances.
+      </div>
+
+      <div class="drill-pattern-tag">Approach B — Pattern 10 (Idea → Counterpoint → Balanced Conclusion)</div>
+      <div class="example-box">
+        There's a strong moral case that countries which have historically benefited from colonialism or global trade imbalances have a responsibility to give back. However, foreign aid is a complicated issue — poorly designed aid can create dependency and undermine local industries. On balance, I think the most responsible approach isn't charity but structural support: fair trade agreements, debt relief, and investment in education and infrastructure rather than direct handouts.
+      </div>
+
+      <p><strong>What's different?</strong> Approach A is solution-oriented and practical. Approach B is more reflective and nuanced, showing awareness of complexity. Both demonstrate sophisticated Part 3 thinking.</p>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 7 ══ -->
+  <section class="section" id="s7">
+    <div class="section-header">
+      <div class="section-badge badge-rose">7</div>
+      <div class="section-title-wrap">
+        <div class="section-eyebrow">Troubleshooting</div>
+        <h2>Common Speaking Problems & Practical Fixes</h2>
+      </div>
+    </div>
+
+    <p>Every learner experiences specific speaking problems. The key is to recognise yours, understand <em>why</em> it happens, and apply a targeted fix. Study each problem carefully and identify which ones apply to you.</p>
+
+    <div class="problem-card">
+      <div class="problem-head">⚠️ Problem 1: Answers Are Too Short</div>
+      <div class="problem-body">
+        <div class="sub">Why It Happens</div>
+        <p>The learner answers the question literally — they hear "Do you think X?" and simply say "Yes, I think X." This is a habit from everyday conversation, where short answers are normal. In Part 3, however, the examiner needs you to develop your ideas.</p>
+        <div class="sub" style="margin-top:16px">Simple Fix Strategy</div>
+        <p>After your first sentence, mentally ask yourself: <strong>"Why? What example? What happens as a result?"</strong> Train yourself to never stop at one sentence. Use the <em>1+3 rule</em>: one statement, plus at least three of these — a reason, an example, a consequence, a contrast, or a condition.</p>
+        <div class="ba-grid">
+          <div class="ba-box ba-before">
+            <div class="ba-label">❌ Before</div>
+            <p>"Yes, I think the internet has changed education a lot."</p>
+          </div>
+          <div class="ba-box ba-after">
+            <div class="ba-label">✓ After</div>
+            <p>"Yes, I think the internet has transformed education in really profound ways. For example, a student in a remote area can now access lectures from MIT or Oxford for free, which was completely unthinkable thirty years ago. The result is a democratisation of learning — but only for those with reliable internet access, which isn't everyone yet."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-head">⚠️ Problem 2: Repetition of Basic Vocabulary</div>
+      <div class="problem-body">
+        <div class="sub">Why It Happens</div>
+        <p>Under pressure, learners default to the words they know best — "good," "bad," "important," "nice," "a lot." This happens because the brain prioritises speed and safety when anxious.</p>
+        <div class="sub" style="margin-top:16px">Simple Fix Strategy</div>
+        <p>Prepare topic-specific vocabulary banks <em>before</em> your exam. For each major topic (technology, environment, work, etc.), learn 10–15 more precise alternatives for common words. In practice, slow down slightly and give yourself a moment to retrieve the richer word.</p>
+        <table>
+          <thead>
+            <tr><th>Overused Word</th><th>Richer Alternatives</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>good</td><td>beneficial, valuable, advantageous, meaningful, constructive</td></tr>
+            <tr><td>bad</td><td>detrimental, harmful, concerning, problematic, counterproductive</td></tr>
+            <tr><td>important</td><td>essential, critical, significant, fundamental, indispensable</td></tr>
+            <tr><td>change</td><td>transform, reshape, alter, influence, revolutionise</td></tr>
+            <tr><td>think</td><td>believe, feel, suspect, recognise, perceive, argue</td></tr>
+            <tr><td>a lot</td><td>significantly, considerably, substantially, to a great extent</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-head">⚠️ Problem 3: "I Don't Know" Moments</div>
+      <div class="problem-body">
+        <div class="sub">Why It Happens</div>
+        <p>The learner encounters a question about a topic they haven't considered before, panics, and freezes. This is common with abstract or philosophical questions.</p>
+        <div class="sub" style="margin-top:16px">Simple Fix Strategy</div>
+        <p>You never need to actually know the "right answer." Your job is to <strong>think out loud</strong>. Use <em>buying time phrases</em> to give yourself a moment, then start with the most obvious thing that comes to mind and build from there using a pattern.</p>
+        <div class="card card-marigold" style="margin:10px 0">
+          <h4 style="margin-top:0">Buying Time Phrases</h4>
+          <ul>
+            <li>"That's an interesting question — let me think about that for a moment."</li>
+            <li>"I haven't thought about this in exactly this way before, but off the top of my head…"</li>
+            <li>"Well, there are a few ways to look at this…"</li>
+            <li>"I'm not entirely sure, but I think the key point here is…"</li>
+            <li>"That's quite a complex issue. I'd probably start by saying…"</li>
+          </ul>
+        </div>
+        <div class="ba-grid">
+          <div class="ba-box ba-before">
+            <div class="ba-label">❌ Before</div>
+            <p>"I don't know. It's very complicated. I can't answer that."</p>
+          </div>
+          <div class="ba-box ba-after">
+            <div class="ba-label">✓ After</div>
+            <p>"That's quite a complex question — let me think. Well, I'd probably say that governments have the primary responsibility here, because individuals can only do so much on their own. Without policy and infrastructure, personal action has limited impact."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-head">⚠️ Problem 4: Overthinking Before Speaking</div>
+      <div class="problem-body">
+        <div class="sub">Why It Happens</div>
+        <p>Learners try to plan a perfect, complete answer in their head before saying anything. This creates long silences and internal pressure. In spoken English, this level of pre-planning is unnatural.</p>
+        <div class="sub" style="margin-top:16px">Simple Fix Strategy</div>
+        <p>Use the <strong>"Start and Build"</strong> method. Open your answer with a simple sentence, then let the pattern guide you. You don't need to know where you're going before you start — you just need to know the first step. Trust the pattern to carry you forward.</p>
+        <div class="example-box">
+          <div class="speaker">Starting sentence only — then building using Pattern 1</div>
+          "I think access to healthcare should be a basic right…" [→ Reason: because health affects a person's ability to participate fully in society] [→ Example: countries like Norway or Canada that have universal systems tend to have higher productivity and lower inequality overall]
+        </div>
+      </div>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-head">⚠️ Problem 5: Translating from L1 (First Language)</div>
+      <div class="problem-body">
+        <div class="sub">Why It Happens</div>
+        <p>The learner constructs the answer in their native language first, then translates. This causes unnatural phrasing, wrong collocations, and slow delivery.</p>
+        <div class="sub" style="margin-top:16px">Simple Fix Strategy</div>
+        <p>Shift your thinking to English <em>immediately</em> by using pattern openers as a bridge. Instead of translating a thought, <strong>start with an English phrase you know</strong> and let your idea follow it. Practice "thinking in English" by doing daily micro-conversations with yourself in English — describe what you see, react to the news, or argue both sides of a simple issue out loud.</p>
+        <div class="callout callout-check">
+          <div class="callout-icon">✅</div>
+          <div class="callout-body">
+            <strong>Daily Practice Tip</strong>
+            <p>Every day, pick one Part 3 topic and speak about it for 60 seconds in English — even if no one is listening. Start with "Personally, I think…" and build from there. After a week, this thinking-in-English habit begins to feel automatic.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 8 ══ -->
+  <section class="section" id="s8">
+    <div class="section-header">
+      <div class="section-badge badge-sky">8</div>
+      <div class="section-title-wrap">
+        <div class="section-eyebrow">Topical Practice</div>
+        <h2>Topic-Based Practice Questions & Model Answers</h2>
+      </div>
+    </div>
+
+    <p>The six topics below are among the most common in Part 3. For each topic, practise the questions on your own first, then study the model answers to see how patterns are applied in context.</p>
+
+    <!-- Education -->
+    <div class="topic-block">
+      <div class="topic-head topic-education">📚 Topic 1: Education</div>
+      <div class="topic-body">
+        <h4>Practice Questions</h4>
+        <ol>
+          <li>Do you think the traditional classroom model is still effective today?</li>
+          <li>How important is it for schools to teach practical life skills?</li>
+          <li>Should higher education be free for all students?</li>
+          <li>How has technology changed the way students learn?</li>
+          <li>What is the purpose of education beyond getting a job?</li>
+          <li>Do you think exams are the best way to assess students?</li>
+          <li>How might education change in the next 20 years?</li>
+        </ol>
+
+        <h4>Model Answers</h4>
+
+        <div class="drill-pattern-tag">Q1 — Pattern 10 (Idea → Counterpoint → Balanced Conclusion)</div>
+        <div class="example-box">
+          The traditional classroom model still has real strengths — face-to-face interaction, structured learning, and the social development that comes from being with peers are all things that online learning struggles to replicate. However, the rigid, one-size-fits-all approach of most traditional classrooms fails learners who think differently or who learn at a different pace. My view is that the most effective education today blends the best of both — structured classroom time combined with personalised, technology-assisted learning at home.
+        </div>
+
+        <div class="drill-pattern-tag">Q5 — Pattern 2 (Opinion → Explanation → Result)</div>
+        <div class="example-box">
+          I believe education's deepest purpose is to teach people how to think, not just what to think. If schools focus purely on vocational outcomes, we produce people who can perform tasks but lack the critical thinking needed to navigate complex life decisions, evaluate information, or contribute to a democracy. The result of truly liberal education — one that cultivates curiosity, reasoning, and ethics — is a more thoughtful, engaged citizenry, which benefits everyone.
+        </div>
+
+        <h4>Useful Vocabulary</h4>
+        <p><em>critical thinking · learner autonomy · curriculum · standardised testing · vocational training · pedagogical approach · academic achievement · lifelong learning · inclusive education · digital literacy</em></p>
+      </div>
+    </div>
+
+    <!-- Technology -->
+    <div class="topic-block">
+      <div class="topic-head topic-technology">💻 Topic 2: Technology</div>
+      <div class="topic-body">
+        <h4>Practice Questions</h4>
+        <ol>
+          <li>How has technology changed social relationships?</li>
+          <li>Do you think AI will be beneficial or harmful to society?</li>
+          <li>Are people too dependent on their smartphones?</li>
+          <li>How do you think technology has affected privacy?</li>
+          <li>Should children have access to social media?</li>
+          <li>What are the risks of rapid technological development?</li>
+          <li>How might technology improve healthcare in the future?</li>
+        </ol>
+
+        <h4>Model Answers</h4>
+
+        <div class="drill-pattern-tag">Q2 — Pattern 10 (Idea → Counterpoint → Balanced Conclusion)</div>
+        <div class="example-box">
+          AI has extraordinary potential — in medical diagnostics, climate modelling, and making education accessible to remote areas, the applications are genuinely exciting. That said, the risks are substantial: mass automation of jobs, deepfake misinformation, and the concentration of AI power in a very small number of corporations are all serious concerns. On balance, I think the technology itself isn't inherently good or bad — it entirely depends on the governance frameworks we build around it. Without strong regulation, the risks will likely outweigh the benefits.
+        </div>
+
+        <div class="drill-pattern-tag">Q7 — Pattern 9 (Present → Future Prediction → Justification)</div>
+        <div class="example-box">
+          Currently, technology already plays a major role in healthcare — from electronic patient records to robotic surgery. In the coming decades, I think we'll see AI become central to early disease detection, analysing patterns in data that human doctors simply can't process at speed. The justification is that conditions like cancer and heart disease are most treatable when caught early, and AI diagnostic tools have already demonstrated higher accuracy than physicians in specific imaging tasks. If adopted widely, this could dramatically improve survival rates.
+        </div>
+
+        <h4>Useful Vocabulary</h4>
+        <p><em>artificial intelligence · automation · digital divide · data privacy · algorithmic bias · disruptive technology · cybersecurity · digital footprint · tech regulation · surveillance capitalism</em></p>
+      </div>
+    </div>
+
+    <!-- Environment -->
+    <div class="topic-block">
+      <div class="topic-head topic-environment">🌿 Topic 3: Environment</div>
+      <div class="topic-body">
+        <h4>Practice Questions</h4>
+        <ol>
+          <li>Who is more responsible for climate change — individuals or governments?</li>
+          <li>How can consumption habits be changed at a societal level?</li>
+          <li>Should companies face heavier penalties for polluting?</li>
+          <li>Is it too late to reverse climate change?</li>
+          <li>How has awareness of environmental issues changed in recent years?</li>
+          <li>What role should renewable energy play in the future?</li>
+          <li>How can cities become more environmentally sustainable?</li>
+        </ol>
+
+        <h4>Model Answers</h4>
+
+        <div class="drill-pattern-tag">Q1 — Pattern 10 (Idea → Counterpoint → Balanced Conclusion)</div>
+        <div class="example-box">
+          There's a strong case for placing primary responsibility on governments and corporations — after all, just 100 companies are responsible for over 70% of global carbon emissions. Individual choices, while meaningful, are limited by the systems we're born into. On the other hand, consumer demand shapes corporate behaviour, and cultural shifts — like the rise of plant-based diets or public opposition to single-use plastic — have proven influential. I'd say the most realistic answer is that governments need to create the conditions for individual action, and individuals need to create the political pressure for governments to act — it's a two-way relationship.
+        </div>
+
+        <div class="drill-pattern-tag">Q6 — Pattern 2 (Opinion → Explanation → Result)</div>
+        <div class="example-box">
+          Renewable energy isn't just an environmental choice — it's rapidly becoming the economically rational one. Solar and wind power have fallen dramatically in cost over the past decade, making them competitive with fossil fuels even without government subsidies. As countries transition, the result will be more energy independence, more stable prices, and millions of new jobs in installation, maintenance, and manufacturing. Nations that lead this transition will have a significant economic advantage in the coming decades.
+        </div>
+
+        <h4>Useful Vocabulary</h4>
+        <p><em>carbon footprint · renewable energy · climate policy · biodiversity · sustainable development · greenhouse gases · circular economy · net zero · ecological damage · environmental legislation</em></p>
+      </div>
+    </div>
+
+    <!-- Work -->
+    <div class="topic-block">
+      <div class="topic-head topic-work">💼 Topic 4: Work & Employment</div>
+      <div class="topic-body">
+        <h4>Practice Questions</h4>
+        <ol>
+          <li>Do you think work-life balance has improved or worsened in recent years?</li>
+          <li>Should there be a shorter working week — say, four days?</li>
+          <li>How has remote working changed the culture of work?</li>
+          <li>What are the challenges of the gig economy?</li>
+          <li>Do you think job security matters more to people than career satisfaction?</li>
+          <li>How might automation affect certain professions in the future?</li>
+          <li>What makes a good workplace culture?</li>
+        </ol>
+
+        <h4>Model Answers</h4>
+
+        <div class="drill-pattern-tag">Q2 — Pattern 6 (Advantage → Explanation → Result)</div>
+        <div class="example-box">
+          I think a four-day working week has real potential benefits. The main advantage is that it forces organisations to focus on output rather than hours — which, frankly, is a more honest measure of productivity. Several trials, including those in Iceland and New Zealand, have shown that employees working four days achieved the same or greater output than those working five, while reporting significantly higher well-being. The result is a potential win-win: healthier employees and no loss of organisational productivity.
+        </div>
+
+        <div class="drill-pattern-tag">Q4 — Pattern 5 (Cause → Effect → Real-World Example)</div>
+        <div class="example-box">
+          The gig economy grew primarily because digital platforms made it easy to match short-term demand with available workers. The effect, however, is that many workers have lost the protections that traditional employment provided — things like sick pay, pensions, and legal minimum wages. We can see the consequences clearly in cases like food delivery workers in the UK and US, many of whom earn below minimum wage when you factor in the costs of using their own vehicles and the time spent waiting between orders.
+        </div>
+
+        <h4>Useful Vocabulary</h4>
+        <p><em>remote working · work-life balance · job satisfaction · gig economy · occupational stress · productivity · flexible hours · corporate culture · talent retention · employee well-being</em></p>
+      </div>
+    </div>
+
+    <!-- Health -->
+    <div class="topic-block">
+      <div class="topic-head topic-health">🏥 Topic 5: Health & Well-Being</div>
+      <div class="topic-body">
+        <h4>Practice Questions</h4>
+        <ol>
+          <li>Why do people in wealthy countries struggle with mental health despite material comfort?</li>
+          <li>Should fast food companies be regulated more strictly?</li>
+          <li>How important is preventive healthcare compared to treatment?</li>
+          <li>How has the public's attitude towards mental health changed?</li>
+          <li>Do you think governments should incentivise healthy lifestyle choices?</li>
+          <li>What is the relationship between physical health and mental well-being?</li>
+          <li>How might healthcare systems need to change in the coming decades?</li>
+        </ol>
+
+        <h4>Model Answers</h4>
+
+        <div class="drill-pattern-tag">Q1 — Pattern 5 (Cause → Effect → Real-World Example)</div>
+        <div class="example-box">
+          I think one major cause is the disconnection between material success and meaningful social connection. In wealthy societies, people are busy, isolated, and often lack a strong sense of community or purpose. The effect is a kind of "affluent loneliness" — where material needs are met but psychological ones aren't. Countries like the US and UK consistently report high rates of depression and anxiety despite their wealth, while nations scoring highest for well-being — like Finland or Denmark — tend to prioritise social cohesion and work-life balance over pure economic growth.
+        </div>
+
+        <div class="drill-pattern-tag">Q3 — Pattern 1 (Direct Answer → Reason → Example)</div>
+        <div class="example-box">
+          Preventive healthcare is almost certainly more important, in both human and economic terms. The reason is straightforward — treating an established condition is always more costly and difficult than preventing it in the first place. A clear example is how campaigns promoting smoking cessation have, over time, dramatically reduced rates of lung cancer and cardiovascular disease, saving healthcare systems billions and extending millions of lives.
+        </div>
+
+        <h4>Useful Vocabulary</h4>
+        <p><em>mental health · preventive medicine · public health policy · well-being · chronic illness · healthcare access · health inequality · sedentary lifestyle · psychological resilience · healthcare infrastructure</em></p>
+      </div>
+    </div>
+
+    <!-- Society & Culture -->
+    <div class="topic-block">
+      <div class="topic-head topic-society">🌍 Topic 6: Society & Culture</div>
+      <div class="topic-body">
+        <h4>Practice Questions</h4>
+        <ol>
+          <li>How important is it for a society to preserve its cultural traditions?</li>
+          <li>Has globalisation made the world more uniform or more diverse?</li>
+          <li>How has the role of family changed in modern society?</li>
+          <li>Is social inequality a natural or a constructed phenomenon?</li>
+          <li>What role does media play in shaping cultural values?</li>
+          <li>How do different generations approach social norms differently?</li>
+          <li>What does it mean to be a citizen in the modern world?</li>
+        </ol>
+
+        <h4>Model Answers</h4>
+
+        <div class="drill-pattern-tag">Q2 — Pattern 10 (Idea → Counterpoint → Balanced Conclusion)</div>
+        <div class="example-box">
+          On the surface, globalisation has created a kind of cultural homogeneity — the same brands, films, and music dominate globally, which can feel like a flattening of local distinctiveness. However, I'd argue that it's also created access: people in smaller cultures can now share their traditions, music, and food with global audiences more effectively than ever before. The reality is probably both — globalisation has both eroded and amplified culture simultaneously, depending on how a community engages with it.
+        </div>
+
+        <div class="drill-pattern-tag">Q5 — Pattern 3 (General Statement → Specific Example)</div>
+        <div class="example-box">
+          Media is one of the most powerful forces shaping what a culture considers normal, acceptable, or desirable. A clear example is the way advertising has historically shaped beauty standards — for decades, mainstream media presented a very narrow, often unattainable body type as the ideal, contributing to widespread insecurity and eating disorders. More recently, the shift towards inclusive representation in advertising and film has begun to challenge those norms, suggesting that media can also be used as a force for positive cultural change.
+        </div>
+
+        <h4>Useful Vocabulary</h4>
+        <p><em>cultural identity · social cohesion · globalisation · multiculturalism · civic responsibility · societal norms · intergenerational change · cultural heritage · social mobility · diversity and inclusion</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 9 ══ -->
+  <section class="section" id="s9">
+    <div class="section-header">
+      <div class="section-badge badge-marigold">9</div>
+      <div class="section-title-wrap">
+        <div class="section-eyebrow">Practice Exercises</div>
+        <h2>Quick Response Drills</h2>
+      </div>
+    </div>
+
+    <p>The drills below are designed for <strong>timed practice</strong>. For each question, aim for a <strong>20–40 second spoken response</strong>. This is approximately 60–100 words. Study the model answer after attempting your own, and note which pattern is used.</p>
+
+    <div class="callout callout-tip">
+      <div class="callout-icon">⏱️</div>
+      <div class="callout-body">
+        <strong>How to use these drills</strong>
+        <p>Cover the model answer. Read the question. Speak for 20–40 seconds without stopping. Then compare your answer to the model — look for which extension techniques you used and which you could add next time.</p>
+      </div>
+    </div>
+
+    <div class="drill-item">
+      <div class="drill-q"><span class="qnum">1</span> Do you think people today read less than they used to?</div>
+      <div class="drill-a">
+        <div class="drill-pattern-tag">Pattern 8 + Contrast</div>
+        I think the type of reading has changed rather than the amount. People read enormous amounts on their phones — articles, captions, messages, news — but the sustained deep reading of long-form books has declined. That said, audiobooks and e-readers have kept narrative reading alive in a different form, so I'd say the habit has shifted rather than disappeared entirely.
+      </div>
+    </div>
+
+    <div class="drill-item">
+      <div class="drill-q"><span class="qnum">2</span> Should governments control what food companies are allowed to advertise?</div>
+      <div class="drill-a">
+        <div class="drill-pattern-tag">Pattern 1 + Consequence</div>
+        Yes, I think some regulation is both reasonable and necessary. The reason is that advertising shapes behaviour, especially in children, and unhealthy food is disproportionately targeted at young audiences. As a consequence, restricting advertising of high-sugar or high-fat products — particularly during children's programming — would likely contribute to healthier diets over time without restricting adult consumer choice.
+      </div>
+    </div>
+
+    <div class="drill-item">
+      <div class="drill-q"><span class="qnum">3</span> Do you think cities will ever replace the need for the countryside?</div>
+      <div class="drill-a">
+        <div class="drill-pattern-tag">Pattern 10</div>
+        Cities clearly offer a concentration of services and opportunities that rural areas can't match. However, the countryside serves functions that cities simply can't replace — food production, biodiversity, natural water filtration, and a psychological space for recovery from urban stress. My view is that cities and countryside are interdependent — we can't sustain one without the other.
+      </div>
+    </div>
+
+    <div class="drill-item">
+      <div class="drill-q"><span class="qnum">4</span> What impact does advertising have on people's spending habits?</div>
+      <div class="drill-a">
+        <div class="drill-pattern-tag">Pattern 5</div>
+        The primary mechanism is that advertising creates desire for things people didn't previously feel they needed. The effect is normalised overconsumption — people buy more, save less, and often experience what's called "buyer's remorse" after purchases driven by marketing rather than genuine need. We see this most clearly in the fashion industry, where "fast fashion" brands release new collections constantly to keep consumers buying.
+      </div>
+    </div>
+
+    <div class="drill-item">
+      <div class="drill-q"><span class="qnum">5</span> How important is a sense of community in modern life?</div>
+      <div class="drill-a">
+        <div class="drill-pattern-tag">Pattern 2</div>
+        I think it's more important than ever, precisely because it's become rarer. When people have strong community ties, they experience lower rates of depression, higher resilience, and a greater sense of purpose. The result is that investing in community — through shared spaces, local events, or simply knowing your neighbours — is one of the most cost-effective things both individuals and local governments can do for collective well-being.
+      </div>
+    </div>
+
+    <div class="drill-item">
+      <div class="drill-q"><span class="qnum">6</span> Do you think equality between genders has been fully achieved?</div>
+      <div class="drill-a">
+        <div class="drill-pattern-tag">Pattern 8 + Hedging</div>
+        Significant progress has been made — in many countries, women have equal legal rights, educational access, and professional opportunities that simply didn't exist a century ago. That said, in most places genuine equality in pay, leadership representation, and domestic responsibilities remains unrealised. I'd say we're somewhere in the middle of a long, uneven journey — not at the beginning, but certainly not at the end.
+      </div>
+    </div>
+
+    <div class="drill-item">
+      <div class="drill-q"><span class="qnum">7</span> Should animals be used in medical research?</div>
+      <div class="drill-a">
+        <div class="drill-pattern-tag">Pattern 10</div>
+        This is genuinely difficult. Animal research has contributed to many life-saving treatments, including vaccines, cancer therapies, and antibiotics — the human benefit is real and substantial. However, the ethical cost of causing suffering to sentient creatures is hard to justify indefinitely, especially as alternatives like lab-grown tissue and computer modelling improve. My position is that it should be permitted only where strictly necessary, heavily regulated, and actively replaced as alternatives become viable.
+      </div>
+    </div>
+
+    <div class="drill-item">
+      <div class="drill-q"><span class="qnum">8</span> How has the concept of "family" changed over the past few decades?</div>
+      <div class="drill-a">
+        <div class="drill-pattern-tag">Pattern 8</div>
+        Today, the definition of family is far broader and more inclusive than it was even thirty years ago. It now encompasses single-parent households, same-sex parents, blended families, and childless partnerships — all of which carry the same social weight as the traditional nuclear family. This shift has come from legal changes, cultural evolution, and a growing recognition that what defines a family is care and commitment, not a fixed structure.
+      </div>
+    </div>
+
+    <div class="drill-item">
+      <div class="drill-q"><span class="qnum">9</span> Is it better for a country to have one official language or many?</div>
+      <div class="drill-a">
+        <div class="drill-pattern-tag">Pattern 4 + Condition</div>
+        Countries with a single dominant language often find it easier to administer services, education, and governance efficiently. However, countries that protect minority languages — like Switzerland, with four official languages — tend to have stronger cultural identity and social cohesion among regional communities. If a government can invest in the infrastructure needed to support multiple languages, I think the cultural richness that comes with it is worth it.
+      </div>
+    </div>
+
+    <div class="drill-item">
+      <div class="drill-q"><span class="qnum">10</span> What do you think motivates people to volunteer in their communities?</div>
+      <div class="drill-a">
+        <div class="drill-pattern-tag">Pattern 3 + Reason</div>
+        People volunteer for a surprisingly wide range of reasons. For some, it's about a sense of purpose — feeling that they're contributing to something larger than their own daily life. For others, especially younger people, it's about building skills and connections. Generally speaking, the motivation tends to be a mix of altruism and self-interest, and that's not a contradiction — the most powerful community action tends to be where personal fulfilment and social good overlap.
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 10 ══ -->
+  <section class="section" id="s10">
+    <div class="section-header">
+      <div class="section-badge badge-lavender">10</div>
+      <div class="section-title-wrap">
+        <div class="section-eyebrow">Full Assessment</div>
+        <h2>Full Part 3 Mock — Pattern-Focused</h2>
+      </div>
+    </div>
+
+    <p>The following mock replicates a real Part 3 discussion. It is linked to a hypothetical Part 2 topic: <strong>"Describe a change you would like to make to your local community."</strong></p>
+    <p>Read each question as if the examiner is asking you. Study the model answer carefully, and note the pattern label at the top of each response.</p>
+
+    <div class="callout callout-check">
+      <div class="callout-icon">✅</div>
+      <div class="callout-body">
+        <strong>Self-study tip</strong>
+        <p>Before reading the model answer, attempt your own response out loud. Then compare: Did you use similar extension techniques? Did you stay on topic? Did you give at least 3–4 sentences?</p>
+      </div>
+    </div>
+
+    <div class="mock-q">
+      <span class="mock-qnum">Q1</span>
+      Why do you think some people feel more connected to their local community than others?
+    </div>
+    <div class="mock-a">
+      <span class="pattern-label">Pattern 5 — Cause → Effect → Real-World Example</span>
+      I think a lot of it comes down to how long someone has lived in a place and whether they have personal ties there — family, long-standing friendships, or shared history with the area. When those ties exist, people feel invested. But when someone has just moved in, or lives in a transient neighbourhood where everyone is a stranger, it's very difficult to feel that sense of belonging. We see this most clearly in cities like London, where resident turnover is high and many people genuinely don't know their neighbours despite living in close proximity for years.
+    </div>
+
+    <div class="mock-q">
+      <span class="mock-qnum">Q2</span>
+      Do you think local governments do enough to support community life?
+    </div>
+    <div class="mock-a">
+      <span class="pattern-label">Pattern 1 — Direct Answer → Reason → Example</span>
+      Honestly, I think in most places they could do considerably more. The reason is that community infrastructure — things like parks, community centres, local libraries, and public events — tends to be the first thing cut when budgets are reduced, yet these are precisely the spaces that allow people to mix and form bonds. For example, in areas where libraries and youth centres have been closed, researchers have documented corresponding rises in antisocial behaviour and social isolation, which suggests these spaces matter far more than their cost might suggest.
+    </div>
+
+    <div class="mock-q">
+      <span class="mock-qnum">Q3</span>
+      How has urbanisation affected the way people relate to the communities around them?
+    </div>
+    <div class="mock-a">
+      <span class="pattern-label">Pattern 8 — Present → Past Comparison → Reason</span>
+      In urban environments today, the relationship between people and community is much more fragmented than it was for previous generations. In smaller, pre-industrial communities, people relied on each other for survival — shared resources, childcare, food production — and that created deep, organic bonds. Now, in cities, people are largely economically self-sufficient and can meet most of their needs anonymously, which removes the structural incentive to form close community ties. The density of cities creates proximity without connection.
+    </div>
+
+    <div class="mock-q">
+      <span class="mock-qnum">Q4</span>
+      Do you think technology could help bring communities together, or does it create more division?
+    </div>
+    <div class="mock-a">
+      <span class="pattern-label">Pattern 10 — Idea → Counterpoint → Balanced Conclusion</span>
+      Technology definitely has the potential to strengthen communities — local Facebook groups, neighbourhood apps like Nextdoor, and online forums have helped people organise events, share information, and support each other in practical ways. However, the same tools can also create division — they amplify local grievances, spread misinformation, and give a disproportionate voice to the loudest or most confrontational members of a group. On balance, I think technology is a useful supplement to community life, but it can't substitute for face-to-face interaction — which is where real trust and belonging are built.
+    </div>
+
+    <div class="mock-q">
+      <span class="mock-qnum">Q5</span>
+      What do you think individuals can do to make their communities stronger?
+    </div>
+    <div class="mock-a">
+      <span class="pattern-label">Pattern 7 — Problem → Solution → Outcome</span>
+      The core problem is that most people are waiting for someone else to create the community they want to live in. A simple but powerful solution is to act as a connector — organise a street event, introduce yourself to a neighbour, share resources, or volunteer with a local organisation. If even a small percentage of people in a neighbourhood took those steps, the cumulative effect would be a significantly more cohesive and resilient community — one where people feel they belong and are looked after.
+    </div>
+
+    <div class="mock-q">
+      <span class="mock-qnum">Q6</span>
+      Should wealthier members of a community have a greater responsibility to support others?
+    </div>
+    <div class="mock-a">
+      <span class="pattern-label">Pattern 10 — Idea → Counterpoint → Balanced Conclusion</span>
+      There's a compelling argument that those with more resources — whether financial, professional, or social — should contribute more to the communities that have supported their success. It's not just about charity; it's about recognising that wealth is rarely created entirely independently. On the other hand, making community contribution feel like an obligation can breed resentment and undermine the goodwill that makes it effective. I think the better approach is fostering a culture where giving back is seen as a social norm and a source of meaning — something people genuinely want to do rather than feel forced into.
+    </div>
+
+    <div class="mock-q">
+      <span class="mock-qnum">Q7</span>
+      How do you think the idea of community will change in the next few decades?
+    </div>
+    <div class="mock-a">
+      <span class="pattern-label">Pattern 9 — Present → Future Prediction → Justification</span>
+      At present, community is still primarily geographic — we belong to communities defined by where we live. My prediction is that over the next few decades, "community" will increasingly be defined by shared values and interests rather than shared location. Online spaces already allow people with niche interests to form genuinely meaningful communities across continents. The justification is that as remote working, digital life, and global mobility continue to grow, the accident of geography will matter less than the intentional choice of who you connect with and why.
+    </div>
+
+    <div class="mock-q">
+      <span class="mock-qnum">Q8</span>
+      Is it realistic to expect a strong sense of community in large, diverse cities?
+    </div>
+    <div class="mock-a">
+      <span class="pattern-label">Pattern 3 — General Statement → Specific Example + Condition</span>
+      I think it's realistic, but it requires deliberate effort and good urban design. Large, diverse cities can absolutely sustain strong community life — the key is creating physical and social spaces where mixing happens naturally. Take the neighbourhood of Brixton in London, or the Marais district in Paris — both are diverse, dense urban areas with strong local identities and active community life. These examples show it's possible, provided the city invests in shared infrastructure and doesn't allow commercial development to hollow out the local character.
+    </div>
+
+    <div style="margin-top:32px" class="card card-sage">
+      <h3 style="margin-top:0">Pattern Usage Summary — This Mock</h3>
+      <table>
+        <thead>
+          <tr><th>Question</th><th>Pattern Used</th><th>Extension Technique Added</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Q1</td><td>Pattern 5 — Cause → Effect → Example</td><td>Real-world location example</td></tr>
+          <tr><td>Q2</td><td>Pattern 1 — Direct Answer → Reason → Example</td><td>Research evidence</td></tr>
+          <tr><td>Q3</td><td>Pattern 8 — Present → Past → Reason</td><td>Historical contrast</td></tr>
+          <tr><td>Q4</td><td>Pattern 10 — Idea → Counterpoint → Conclusion</td><td>Balance + nuance</td></tr>
+          <tr><td>Q5</td><td>Pattern 7 — Problem → Solution → Outcome</td><td>Conditional outcome</td></tr>
+          <tr><td>Q6</td><td>Pattern 10 — Idea → Counterpoint → Conclusion</td><td>Cultural framing</td></tr>
+          <tr><td>Q7</td><td>Pattern 9 — Present → Prediction → Justification</td><td>Trend justification</td></tr>
+          <tr><td>Q8</td><td>Pattern 3 — General → Specific Example</td><td>Condition added</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-check" style="margin-top:32px">
+      <div class="callout-icon">🎯</div>
+      <div class="callout-body">
+        <strong>Your next step</strong>
+        <p>Go back to Section 2 and review any patterns you didn't use in this mock. Then return to this mock and try answering each question using a <em>different</em> pattern than the one shown. This flexibility training is the most powerful thing you can do to prepare for Part 3.</p>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  // ── Active nav highlight ──
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const progressBar = document.getElementById('progress-bar');
+  const scrollTopBtn = document.getElementById('scroll-top');
+
+  function onScroll() {
+    const scrollY = window.scrollY;
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docH > 0 ? scrollY / docH : 0;
+    progressBar.style.transform = `scaleX(${progress})`;
+
+    if (scrollY > 400) scrollTopBtn.classList.add('visible');
+    else scrollTopBtn.classList.remove('visible');
+
+    let current = '';
+    sections.forEach(s => {
+      if (scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
+
+</body>
+</html>

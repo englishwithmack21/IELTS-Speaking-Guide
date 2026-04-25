@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Speaking — Band Descriptors Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mint:       #d4ede6;
+    --mint-mid:   #a8d8c8;
+    --mint-deep:  #3d8b74;
+    --lavender:   #e2dcf5;
+    --lav-mid:    #c0b0e8;
+    --lav-deep:   #6147b0;
+    --peach:      #fce8dc;
+    --peach-mid:  #f5c4a8;
+    --peach-deep: #c25e28;
+    --butter:     #fdf2d0;
+    --butter-mid: #f5dd8a;
+    --butter-deep:#8a6e00;
+    --ink:        #1e1e2e;
+    --ink-light:  #4a4a6a;
+    --paper:      #faf9f6;
+    --rule:       #e5e3dc;
+    --sidebar-w:  260px;
+    --serif:      'Lora', Georgia, serif;
+    --sans:       'DM Sans', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--serif);
+    background: var(--paper);
+    color: var(--ink);
+    display: flex;
+    min-height: 100vh;
+    line-height: 1.75;
+  }
+
+  /* ── SIDEBAR ── */
+  #sidebar {
+    width: var(--sidebar-w);
+    height: 100vh;
+    max-height: 100vh;
+    position: fixed;
+    top: 0; left: 0;
+    background: var(--ink);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    overflow-y: auto;
+  }
+
+  .sidebar-brand {
+    padding: 28px 24px 20px;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+  }
+  .sidebar-brand .label {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.45);
+    margin-bottom: 4px;
+  }
+  .sidebar-brand h1 {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+  }
+
+  nav { padding: 16px 0 32px; flex: 1; }
+
+  .nav-section { margin-bottom: 4px; }
+
+  .nav-section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 24px;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.9);
+    cursor: pointer;
+    transition: background .15s;
+  }
+  .nav-section-header:hover { background: rgba(255,255,255,.07); }
+
+  .nav-pill {
+    width: 22px; height: 22px;
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .pill-a { background: var(--mint-mid); color: var(--ink); }
+  .pill-b { background: var(--lav-mid); color: var(--ink); }
+  .pill-c { background: var(--peach-mid); color: var(--ink); }
+  .pill-d { background: var(--butter-mid); color: var(--ink); }
+
+  .nav-sub { display: flex; flex-direction: column; }
+  .nav-sub a {
+    padding: 6px 24px 6px 56px;
+    font-family: var(--sans);
+    font-size: 12px;
+    color: rgba(255,255,255,.55);
+    text-decoration: none;
+    transition: color .15s, background .15s;
+  }
+  .nav-sub a:hover { color: #fff; background: rgba(255,255,255,.05); }
+
+  .nav-divider {
+    height: 1px;
+    background: rgba(255,255,255,.08);
+    margin: 10px 24px;
+  }
+
+  /* ── MAIN CONTENT ── */
+  main {
+    margin-left: var(--sidebar-w);
+    flex: 1;
+    padding: 0 0 80px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    color: #fff;
+    padding: 60px 64px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    right: -60px; top: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(164,208,196,.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero .eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.45);
+    margin-bottom: 14px;
+  }
+  .hero h2 {
+    font-family: var(--serif);
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 520px;
+  }
+  .hero p {
+    font-family: var(--sans);
+    font-size: 15px;
+    color: rgba(255,255,255,.65);
+    margin-top: 16px;
+    max-width: 480px;
+  }
+  .hero-chips {
+    display: flex;
+    gap: 10px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  .chip {
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .chip-a { background: var(--mint); color: var(--mint-deep); }
+  .chip-b { background: var(--lavender); color: var(--lav-deep); }
+  .chip-c { background: var(--peach); color: var(--peach-deep); }
+  .chip-d { background: var(--butter); color: var(--butter-deep); }
+
+  /* ── SECTION WRAPPERS ── */
+  .content-section { padding: 0 64px; }
+
+  .section-header {
+    padding: 56px 64px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .section-tag {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--sans);
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .tag-a { background: var(--mint); color: var(--mint-deep); }
+  .tag-b { background: var(--lavender); color: var(--lav-deep); }
+  .tag-c { background: var(--peach); color: var(--peach-deep); }
+  .tag-d { background: var(--butter); color: var(--butter-deep); }
+
+  .section-title-block {}
+  .section-title-block .section-letter {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 4px;
+  }
+  .section-title-block h2 {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .section-title-block .section-desc {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--ink-light);
+    margin-top: 8px;
+    max-width: 560px;
+  }
+
+  .section-rule {
+    height: 2px;
+    margin: 28px 64px 0;
+    border-radius: 2px;
+  }
+  .rule-a { background: linear-gradient(90deg, var(--mint-mid), transparent); }
+  .rule-b { background: linear-gradient(90deg, var(--lav-mid), transparent); }
+  .rule-c { background: linear-gradient(90deg, var(--peach-mid), transparent); }
+  .rule-d { background: linear-gradient(90deg, var(--butter-mid), transparent); }
+
+  /* ── CONTENT TYPOGRAPHY ── */
+  .content-section h3 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 40px 0 14px;
+    color: var(--ink);
+  }
+  .content-section h4 {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin: 28px 0 10px;
+  }
+  .content-section p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #2d2d3e;
+    margin-bottom: 12px;
+    max-width: 680px;
+  }
+  .content-section ul, .content-section ol {
+    margin: 8px 0 14px 20px;
+    max-width: 660px;
+  }
+  .content-section li {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #2d2d3e;
+    margin-bottom: 5px;
+  }
+
+  /* ── SUBSECTION (Key Indicators) ── */
+  .subsection-label {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+  .sub-a { background: var(--mint); color: var(--mint-deep); }
+  .sub-b { background: var(--lavender); color: var(--lav-deep); }
+  .sub-c { background: var(--peach); color: var(--peach-deep); }
+  .sub-d { background: var(--butter); color: var(--butter-deep); }
+
+  /* ── KEY INDICATOR CARDS ── */
+  .indicator-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 0 0 36px;
+    max-width: 760px;
+  }
+  @media (max-width: 900px) { .indicator-grid { grid-template-columns: 1fr; } }
+
+  .indicator-card {
+    border-radius: 12px;
+    padding: 20px 22px;
+    border: 1px solid transparent;
+  }
+  .ind-a { background: var(--mint); border-color: var(--mint-mid); }
+  .ind-b { background: var(--lavender); border-color: var(--lav-mid); }
+  .ind-c { background: var(--peach); border-color: var(--peach-mid); }
+  .ind-d { background: var(--butter); border-color: var(--butter-mid); }
+
+  .indicator-card .ic-title {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .indicator-card p {
+    font-size: 13.5px;
+    line-height: 1.65;
+    margin: 0;
+    color: var(--ink-light);
+  }
+
+  /* ── EXAMPLE BOXES ── */
+  .example-block {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 12px 0 18px;
+    max-width: 660px;
+  }
+  .example-block .ex-label {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 8px;
+  }
+  .ex-bad, .ex-good {
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+  }
+  .ex-bad { background: #fff1f1; color: #8a2b2b; }
+  .ex-good { background: #edfaf5; color: #1a5c40; }
+  .ex-bad::before { content: '✗  '; }
+  .ex-good::before { content: '✓  '; }
+  .ex-neutral {
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink);
+    padding: 4px 0;
+  }
+
+  /* ── JIC SCORESHEET TABLE ── */
+  .jic-table {
+    width: 100%;
+    max-width: 760px;
+    border-collapse: collapse;
+    margin: 16px 0 36px;
+    font-family: var(--sans);
+    font-size: 13.5px;
+  }
+  .jic-table thead tr th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    border-bottom: 2px solid;
+  }
+  .jic-table tbody tr td {
+    padding: 14px 16px;
+    vertical-align: top;
+    border-bottom: 1px solid var(--rule);
+    line-height: 1.65;
+  }
+  .jic-table tbody tr:last-child td { border-bottom: none; }
+  .jic-table .td-name { font-weight: 600; color: var(--ink); width: 160px; }
+  .jic-table .td-type { width: 120px; }
+
+  .th-a { background: var(--mint); border-color: var(--mint-mid) !important; color: var(--mint-deep); }
+  .th-b { background: var(--lavender); border-color: var(--lav-mid) !important; color: var(--lav-deep); }
+  .th-c { background: var(--peach); border-color: var(--peach-mid) !important; color: var(--peach-deep); }
+  .th-d { background: var(--butter); border-color: var(--butter-mid) !important; color: var(--butter-deep); }
+  .tr-alt { background: #fafaf8; }
+
+  .tag-q {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    letter-spacing: .05em;
+  }
+  .tag-qn { background: #e8f4fd; color: #1a5a8a; }
+  .tag-ql { background: #f3e8fd; color: #5a1a8a; }
+  .tag-both { background: #fde8e8; color: #8a1a1a; }
+
+  /* ── BAND SCORE CARDS ── */
+  .bands-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 760px;
+    margin: 20px 0 40px;
+  }
+  @media (max-width: 900px) { .bands-grid { grid-template-columns: 1fr; } }
+
+  .band-card {
+    border-radius: 14px;
+    border: 1px solid var(--rule);
+    overflow: hidden;
+    background: #fff;
+    transition: box-shadow .2s;
+  }
+  .band-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.07); }
+
+  .band-card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .band-num {
+    font-family: var(--sans);
+    font-size: 26px;
+    font-weight: 700;
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .bn-1 { background: #fee2e2; color: #991b1b; }
+  .bn-2 { background: #fef3c7; color: #92400e; }
+  .bn-3 { background: #fef9c3; color: #713f12; }
+  .bn-4 { background: #ecfccb; color: #365314; }
+  .bn-5 { background: #d1fae5; color: #065f46; }
+  .bn-6 { background: #cffafe; color: #155e75; }
+  .bn-7 { background: #e0e7ff; color: #3730a3; }
+  .bn-8 { background: #ede9fe; color: #5b21b6; }
+  .bn-9 { background: #fce7f3; color: #9d174d; }
+
+  .band-card-title {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  .band-card-body {
+    padding: 16px 20px;
+  }
+  .band-descriptor {
+    font-family: var(--serif);
+    font-size: 13.5px;
+    color: var(--ink-light);
+    font-style: italic;
+    line-height: 1.6;
+    border-left: 3px solid var(--rule);
+    padding-left: 12px;
+    margin-bottom: 12px;
+  }
+  .band-card-body p {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #3a3a50;
+    margin-bottom: 8px;
+    font-family: var(--sans);
+    max-width: none;
+  }
+  .band-card-body ul {
+    font-family: var(--sans);
+    font-size: 13px;
+    margin: 4px 0 8px 16px;
+  }
+  .band-card-body li { margin-bottom: 3px; color: #3a3a50; }
+
+  .band-example {
+    background: #f9f9f6;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-top: 10px;
+  }
+  .band-example .be-label {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 6px;
+  }
+  .band-example .be-q {
+    font-family: var(--sans);
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+  .band-example .be-a {
+    font-family: var(--serif);
+    font-size: 13px;
+    color: #2d2d3e;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* ── DEFINITION TABLE ── */
+  .def-table {
+    width: 100%;
+    max-width: 680px;
+    border-collapse: collapse;
+    margin: 12px 0 24px;
+    font-size: 14px;
+  }
+  .def-table th {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    text-align: left;
+    border-bottom: 2px solid;
+  }
+  .def-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    line-height: 1.7;
+  }
+  .def-table td:first-child { font-family: var(--sans); font-weight: 600; width: 140px; }
+  .def-table tr:last-child td { border-bottom: none; }
+
+  /* ── PAGE DIVIDER ── */
+  .page-divider {
+    height: 1px;
+    background: var(--rule);
+    margin: 60px 64px;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 16px 0 24px;
+    max-width: 660px;
+    display: flex;
+    gap: 14px;
+  }
+  .callout-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+  .callout-body p { font-family: var(--sans); font-size: 14px; margin: 0; line-height: 1.65; }
+  .callout-a { background: var(--mint); }
+  .callout-b { background: var(--lavender); }
+  .callout-c { background: var(--peach); }
+  .callout-d { background: var(--butter); }
+
+  /* ── STICKY SECTION NAV ── */
+  .sticky-bar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 10px 64px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--rule);
+    backdrop-filter: blur(12px);
+    background: rgba(250,249,246,.92);
+  }
+  .sticky-bar .sb-label {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+  .sticky-bar .sb-links {
+    display: flex; gap: 4px; flex-wrap: wrap;
+  }
+  .sticky-bar a {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--ink-light);
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 6px;
+    transition: background .15s, color .15s;
+  }
+  .sticky-bar a:hover { background: var(--rule); color: var(--ink); }
+
+  /* ── SCROLL TO TOP ── */
+  #top-btn {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity .3s;
+    z-index: 200;
+  }
+  #top-btn.visible { opacity: 1; }
+
+  /* ── BAND SUMMARY BAR ── */
+  .band-summary {
+    display: flex;
+    gap: 0;
+    max-width: 680px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0 32px;
+    border: 1px solid var(--rule);
+  }
+  .bsum-cell {
+    flex: 1;
+    text-align: center;
+    padding: 12px 4px 8px;
+    font-family: var(--sans);
+  }
+  .bsum-num { font-size: 17px; font-weight: 700; }
+  .bsum-word { font-size: 9px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .75; }
+  .bsc-1 { background: #fee2e2; color: #991b1b; }
+  .bsc-2 { background: #fef3c7; color: #92400e; }
+  .bsc-3 { background: #fef9c3; color: #713f12; }
+  .bsc-4 { background: #ecfccb; color: #365314; }
+  .bsc-5 { background: #d1fae5; color: #065f46; }
+  .bsc-6 { background: #cffafe; color: #155e75; }
+  .bsc-7 { background: #e0e7ff; color: #3730a3; }
+  .bsc-8 { background: #ede9fe; color: #5b21b6; }
+  .bsc-9 { background: #fce7f3; color: #9d174d; }
+/* === PASTEL MASTER SITE PATCH === */
+:root{--ink:#2d2a27;--ink-light:#625a54;--paper:#fbf8f3;--rule:#e8ded2;--mint:#dcefe5;--lavender:#e9e5f8;--peach:#fde5d5;--butter:#f7e8b9;--mint-deep:#4f927f;--lav-deep:#7b6ab4;--peach-deep:#c97752;--butter-deep:#9a8032}#sidebar{background:#fffdf9!important;color:#2d2a27!important;border-right:1px solid var(--rule)!important}.sidebar-brand{background:linear-gradient(135deg,#e9e5f8,#dcecf6,#dcefe5)!important;border-bottom:1px solid var(--rule)!important}.sidebar-brand h1{color:#2d2a27!important}.sidebar-brand .label{color:#7b6ab4!important}.nav-section-header,.nav-sub a{color:#625a54!important}.nav-section-header:hover,.nav-sub a:hover{background:#dcecf6!important;color:#517f9b!important}.hero{background:linear-gradient(135deg,#e9e5f8,#dcecf6 60%,#dcefe5)!important;color:#2d2a27!important}.hero h2{color:#2d2a27!important}.hero p,.hero .eyebrow{color:#625a54!important;}
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ SIDEBAR ═══════════════════ -->
+<div id="sidebar">
+  <div class="sidebar-brand">
+    <div class="label">Study Guide</div>
+    <h1>IELTS Speaking Band Descriptors</h1>
+  </div>
+  <nav>
+    <div class="nav-section">
+      <div class="nav-section-header">
+        <span class="nav-pill pill-a">A</span>
+        Fluency &amp; Coherence
+      </div>
+      <div class="nav-sub">
+        <a href="#a-key-fluency">Key Indicators — Fluency</a>
+        <a href="#a-key-coherence">Key Indicators — Coherence</a>
+        <a href="#a-spoken-sentence">Spoken Sentence</a>
+        <a href="#a-jic">JIC Scoresheet</a>
+        <a href="#a-bands">Band Scores 1–9</a>
+      </div>
+    </div>
+    <div class="nav-divider"></div>
+    <div class="nav-section">
+      <div class="nav-section-header">
+        <span class="nav-pill pill-b">B</span>
+        Lexical Resource
+      </div>
+      <div class="nav-sub">
+        <a href="#b-key">Key Indicators</a>
+        <a href="#b-jic">JIC Scoresheet</a>
+        <a href="#b-bands">Band Scores 1–9</a>
+      </div>
+    </div>
+    <div class="nav-divider"></div>
+    <div class="nav-section">
+      <div class="nav-section-header">
+        <span class="nav-pill pill-c">C</span>
+        Grammatical Range &amp; Accuracy
+      </div>
+      <div class="nav-sub">
+        <a href="#c-key-range">Key Indicators — Range</a>
+        <a href="#c-key-accuracy">Key Indicators — Accuracy</a>
+        <a href="#c-jic">JIC Scoresheet</a>
+        <a href="#c-bands">Band Scores 1–9</a>
+      </div>
+    </div>
+    <div class="nav-divider"></div>
+    <div class="nav-section">
+      <div class="nav-section-header">
+        <span class="nav-pill pill-d">D</span>
+        Pronunciation
+      </div>
+      <div class="nav-sub">
+        <a href="#d-key">Key Indicators</a>
+        <a href="#d-jic">JIC Scoresheet</a>
+        <a href="#d-bands">Band Scores 1–9</a>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!-- ═══════════════════ MAIN ═══════════════════ -->
+<main>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="eyebrow">IELTS Speaking</div>
+    <h2>Band Descriptors<br>Study Guide</h2>
+    <p>A complete reference for all four assessment criteria, key indicators, JIC scoresheets, and band-level descriptions with examples.</p>
+    <div class="hero-chips">
+      <span class="chip chip-a">A · Fluency &amp; Coherence</span>
+      <span class="chip chip-b">B · Lexical Resource</span>
+      <span class="chip chip-c">C · Grammar Range &amp; Accuracy</span>
+      <span class="chip chip-d">D · Pronunciation</span>
+    </div>
+  </div>
+
+  <!-- ════════════ SECTION A ════════════ -->
+  <div id="section-a">
+    <div class="section-header">
+      <div class="section-tag tag-a">A</div>
+      <div class="section-title-block">
+        <div class="section-letter">Criterion A</div>
+        <h2>Fluency &amp; Coherence</h2>
+        <p class="section-desc">How smooth and continuous speech is, and how well ideas are organised and logically linked throughout a response.</p>
+      </div>
+    </div>
+    <div class="section-rule rule-a"></div>
+
+    <div class="content-section">
+
+      <!-- Definitions -->
+      <div class="subsection-label sub-a" id="a-key-fluency">Definitions</div>
+      <table class="def-table">
+        <thead>
+          <tr>
+            <th class="th-a">Term</th>
+            <th class="th-a">Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fluency</td>
+            <td>How smooth and continuous speech is — without too much pausing, hesitating, or restarting.</td>
+          </tr>
+          <tr class="tr-alt">
+            <td>Coherence</td>
+            <td>How well ideas are organised and linked — do sentences and thoughts flow logically and clearly?</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Key Indicators — Fluency -->
+      <h3>Key Indicators of Fluency</h3>
+      <div class="indicator-grid">
+        <div class="indicator-card ind-a">
+          <div class="ic-title">Speech Rate</div>
+          <p>Not too fast (which causes errors or slurring) and not too slow (which affects listener focus). Measured by meaningful words per minute — not fillers.</p>
+        </div>
+        <div class="indicator-card ind-a">
+          <div class="ic-title">Speech Continuity</div>
+          <p>Is speech interrupted by false starts, backtracking, unnecessary repetition, or long word-search pauses? Fluency is about naturalness, not speed alone.</p>
+        </div>
+      </div>
+
+      <div class="example-block">
+        <div class="ex-label">Speech Rate — Examples</div>
+        <div class="ex-bad">"Uhh... I... think... maybe... yes... because it's... uhh... hot."</div>
+        <div class="ex-good">"Yes, I think summer is better because the weather is warm and there are more things to do outside."</div>
+      </div>
+
+      <div class="example-block">
+        <div class="ex-label">Speech Continuity — Examples</div>
+        <div class="ex-bad">"I uhh… I think… it's… good. Because… umm… people… people can… can…"</div>
+        <div class="ex-good">"I think it's a good idea because people have more time to relax."</div>
+      </div>
+
+      <!-- Key Indicators — Coherence -->
+      <h3 id="a-key-coherence">Key Indicators of Coherence</h3>
+      <div class="indicator-grid">
+        <div class="indicator-card ind-a">
+          <div class="ic-title">Logical Sequencing</div>
+          <p>The listener should follow the speaker's train of thought without confusion. Spoken sentences should build upon each other logically.</p>
+        </div>
+        <div class="indicator-card ind-a">
+          <div class="ic-title">Clear Stage Marking</div>
+          <p>Use signposts like "Firstly…", "On the other hand…", "In my opinion…". Proper pauses and intonation signal when one idea ends and another begins.</p>
+        </div>
+        <div class="indicator-card ind-a">
+          <div class="ic-title">Relevance</div>
+          <p>All parts of an answer should stay on topic and move the answer forward. Avoid rambling or jumping topics without clear purpose.</p>
+        </div>
+        <div class="indicator-card ind-a">
+          <div class="ic-title">Cohesive Devices</div>
+          <p>Words and phrases that link ideas: logical connectors (<em>because, although, since, so</em>), pronouns, conjunctions, referencing tools (<em>in contrast, for example</em>).</p>
+        </div>
+      </div>
+
+      <div class="example-block">
+        <div class="ex-label">Logical Sequencing</div>
+        <div class="ex-good">"I usually get up early. After that, I go jogging for about 30 minutes. Then I take a shower and eat breakfast."</div>
+        <div class="ex-bad">"I get up. I breakfast. Shower. Um… jogging… no… jogging later."</div>
+      </div>
+
+      <div class="example-block">
+        <div class="ex-label">Relevance — Poor vs. Better</div>
+        <div class="ex-bad">"So I like traveling. I also have a dog. My dog is big. Traveling is good."</div>
+        <div class="ex-good">"I like traveling because it helps me learn about new cultures. One time, I even took my dog on a trip to the mountains."</div>
+      </div>
+
+      <!-- Spoken Sentence -->
+      <div id="a-spoken-sentence"></div>
+      <div class="callout callout-a" style="margin-top:36px;">
+        <span class="callout-icon">💬</span>
+        <div class="callout-body">
+          <p><strong>What is a "Spoken Sentence"?</strong> IELTS uses this term to describe a unit of speech that functions like a sentence, even if not grammatically perfect. It has one clear idea, often a pause and falling pitch at the end, and can be informal or fragmented. Examples: <em>"Yeah, totally agree."</em> and <em>"Couldn't believe it!"</em> — both short, but coherent and meaningful in context.</p>
+        </div>
+      </div>
+
+      <!-- JIC Scoresheet -->
+      <div class="subsection-label sub-a" id="a-jic">JIC Scoresheet — Fluency &amp; Coherence</div>
+
+      <h4>Fluency Indicators</h4>
+      <table class="jic-table">
+        <thead>
+          <tr>
+            <th class="th-a" style="width:150px;">Indicator</th>
+            <th class="th-a" style="width:130px;">Assessment Type</th>
+            <th class="th-a">What It Is &amp; How to Check</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-name">Hesitation</td>
+            <td><span class="tag-q tag-qn">Quantifying</span></td>
+            <td>Unnatural or frequent pauses when searching for words or grammar. Count unnatural hesitations (not natural thinking pauses). Hesitations for idea generation are more forgivable than for word recall.</td>
+          </tr>
+          <tr class="tr-alt">
+            <td class="td-name">False Start</td>
+            <td><span class="tag-q tag-both">Both</span></td>
+            <td>Speaker begins, stops, and rephrases. Note if rewordings are fluid or clumsy. Starting with "Because…" is a discourse marker — not a false start. Frequent, clumsy false starts lower fluency.</td>
+          </tr>
+          <tr>
+            <td class="td-name">Intrusive Filler</td>
+            <td><span class="tag-q tag-qn">Quantifying</span></td>
+            <td>Overuse of empty fillers: <em>"like," "you know," "uhm," "so yeah."</em> Penalize only when they dominate the response.</td>
+          </tr>
+          <tr class="tr-alt">
+            <td class="td-name">Self-Corrections</td>
+            <td><span class="tag-q tag-both">Both</span></td>
+            <td>Student corrects mid-sentence. If rare and natural = good. Frequent and disruptive = lower fluency. Also check if grammar improves after correction. e.g. <em>"She go—she goes to school."</em></td>
+          </tr>
+          <tr>
+            <td class="td-name">Willingness to Respond</td>
+            <td><span class="tag-q tag-ql">Qualifying</span></td>
+            <td>Student answers promptly even if imperfectly. Do they stall or engage right away? Short responses may indicate nervousness or language limitation.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Coherence Indicators</h4>
+      <table class="jic-table">
+        <thead>
+          <tr>
+            <th class="th-a">Indicator</th>
+            <th class="th-a" style="width:130px;">Assessment Type</th>
+            <th class="th-a">What It Is &amp; How to Check</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-name">Understanding of Questions</td>
+            <td><span class="tag-q tag-ql">Qualifying</span></td>
+            <td>Ability to grasp what is being asked. Note if they ask to repeat a lot, or respond off-topic. Repeating questions may show comprehension difficulty.</td>
+          </tr>
+          <tr class="tr-alt">
+            <td class="td-name">Accuracy of Answer</td>
+            <td><span class="tag-q tag-ql">Qualifying</span></td>
+            <td>Does the response match the question logically and grammatically? If the student consistently answers the wrong type of question, mark lower.</td>
+          </tr>
+          <tr>
+            <td class="td-name">Organisation of Ideas</td>
+            <td><span class="tag-q tag-ql">Qualifying</span></td>
+            <td>Logical flow using sequencing words. e.g., <em>"First of all… Then… Finally…"</em> Are there clear transitions? Does the answer build logically?</td>
+          </tr>
+          <tr class="tr-alt">
+            <td class="td-name">Complex &amp; Detailed Responses</td>
+            <td><span class="tag-q tag-ql">Qualifying</span></td>
+            <td>Extended answers beyond yes/no — including examples, reasons, or elaboration. Are responses only 1–2 sentences? Do they give details or just generic answers?</td>
+          </tr>
+          <tr>
+            <td class="td-name">Topic Development</td>
+            <td><span class="tag-q tag-ql">Qualifying</span></td>
+            <td>Student can expand or sustain conversation around a theme. Look for expansion: opinions, examples, contrast, consequences. Do they show progression of ideas?</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Band Scores -->
+      <div class="subsection-label sub-a" id="a-bands">Band Scores — Fluency &amp; Coherence</div>
+
+      <div class="band-summary">
+        <div class="bsum-cell bsc-1"><div class="bsum-num">1</div><div class="bsum-word">None</div></div>
+        <div class="bsum-cell bsc-2"><div class="bsum-num">2</div><div class="bsum-word">Minimal</div></div>
+        <div class="bsum-cell bsc-3"><div class="bsum-num">3</div><div class="bsum-word">Limited</div></div>
+        <div class="bsum-cell bsc-4"><div class="bsum-num">4</div><div class="bsum-word">Basic</div></div>
+        <div class="bsum-cell bsc-5"><div class="bsum-num">5</div><div class="bsum-word">Modest</div></div>
+        <div class="bsum-cell bsc-6"><div class="bsum-num">6</div><div class="bsum-word">Competent</div></div>
+        <div class="bsum-cell bsc-7"><div class="bsum-num">7</div><div class="bsum-word">Good</div></div>
+        <div class="bsum-cell bsc-8"><div class="bsum-num">8</div><div class="bsum-word">Very Good</div></div>
+        <div class="bsum-cell bsc-9"><div class="bsum-num">9</div><div class="bsum-word">Expert</div></div>
+      </div>
+
+      <div class="bands-grid">
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-1">1</div>
+            <div class="band-card-title">Essentially None</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Speech is totally incoherent.</div>
+            <p>No real language produced. If they try to speak, it's so minimal or broken that nothing is understandable. The examiner cannot follow any train of thought — even individual words may not connect meaningfully.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Do you work or are you a student?"</div>
+              <div class="be-a">"Uhh... you... you do... yes... student... me... yes okay..."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-2">2</div>
+            <div class="band-card-title">Isolated Words Only</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Lengthy pauses before nearly every word. Speech is of virtually no communicative significance.</div>
+            <p>Student stops for a long time before almost every single word — likely mentally translating. Isolated recognisable words appear ("school," "coffee," "go") but no full sentences, so no meaningful communication.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Do you work or are you a student?"</div>
+              <div class="be-a">"…uh… me… uh… student… uh… go… school… uh… study… uh… book."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-3">3</div>
+            <div class="band-card-title">Frequent Long Pauses</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Frequent, sometimes long, pauses while searching for words. Limited ability to link simple sentences. Frequently unable to convey basic message.</div>
+            <p>Knows some English but stops often to remember vocabulary. Short, choppy sentences with rare linking words. Ideas don't come across clearly — the listener often has to guess.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Tell me about your hometown."</div>
+              <div class="be-a">"Uh… my… city… is… big… uh… many… car… people… um… go… job… uh… traffic…"</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-4">4</div>
+            <div class="band-card-title">Cannot Maintain Pace</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Unable to keep going without noticeable pauses. Often self-corrects. Some links but repetitious connectives. Some breakdowns in coherence.</div>
+            <p>Tries to speak but keeps stopping. Repetitive pace, slow and unnatural. Can use basic connectors ("and," "but," "because") but overuses them. Thoughts are sometimes jumbled or incomplete.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "What do you do on the weekend?"</div>
+              <div class="be-a">"Uh… weekend… I go to… I go… uh… shopping… and uh… and I eat food and… uh… I… my friends go too… and… uh… I buy, I buy clothes. Because… um… because I like clothes."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-5">5</div>
+            <div class="band-card-title">Keeps Going but Relies on Crutches</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Usually able to keep going, but relies on repetition and self-correction. Hesitations often mid-sentence. Overuse of discourse markers. Simple language may be produced fluently.</div>
+            <p>Can speak continuously but not always smoothly. Pauses for simple vocabulary. Overuses the same linkers ("and, so, because"). Fluent in basic sentences, disfluent in complex ones.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Do you enjoy shopping?"</div>
+              <div class="be-a">"Yes, I enjoy shopping. I go shopping every weekend and, uh, I buy clothes and… uh… shoes. And… because… uh… I like fashion. Uh… it's… relaxing… shopping is relaxing for me."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-6">6</div>
+            <div class="band-card-title">Willing to Produce Long Turns</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Able to keep going and produce long turns. Coherence may be lost at times. Uses a range of discourse markers though not always appropriately.</div>
+            <p>Can talk at length with effort. Develops ideas without constant prompting. May stumble — pauses, repetitions, corrections — but meaning remains clear. Tries various linkers but sometimes misuses them.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Do you enjoy shopping?"</div>
+              <div class="be-a">"Yes, I enjoy shopping, especially when I need something. For example, last week I went to buy a gift for my friend's birthday. Uh… it was hard to choose but finally I bought a nice bag. Actually, I don't go shopping very often, but I enjoy it when I do."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-7">7</div>
+            <div class="band-card-title">Long Turns Without Effort</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Readily produces long turns without noticeable effort. Some hesitation may occur mid-sentence but won't affect coherence. Flexible use of discourse markers.</div>
+            <p>Speaks naturally and continuously. Minor pauses are for vocabulary retrieval, not grammar confusion. Uses a variety of linkers appropriately and in context. Logic and progression are always intact.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Do you enjoy shopping?"</div>
+              <div class="be-a">"I don't really enjoy shopping for clothes, to be honest. I find it a bit tedious. On the other hand, I love going to bookstores. I could spend hours browsing through titles, especially if they're related to history or travel."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-8">8</div>
+            <div class="band-card-title">Fluent with Rare Lapses</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Fluent with only very occasional repetition or self-correction. Hesitation is mostly content-related. Topic development is coherent, appropriate and relevant.</div>
+            <p>Speaks almost effortlessly. Self-corrections are minor, fast, and accurate. Pauses are for choosing the right idea — not language gaps. Answers are well-organised, connected, and developed with clear examples.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Do you think young people spend too much time on their phones?"</div>
+              <div class="be-a">"Yes, I do think so, to an extent. Many young people rely on their phones for communication and entertainment, which isn't necessarily bad. However, I believe it becomes problematic when it replaces real-life interaction. I've noticed that some of my younger cousins struggle to hold a conversation without checking their phones every few minutes."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-9">9</div>
+            <div class="band-card-title">Total Fluency</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Fluent with very occasional repetition or self-correction. Hesitation is only to prepare the next utterance — never to find words. Speech is situationally appropriate. Topic development is fully coherent and extended.</div>
+            <p>Speaks with complete ease. Any pauses are thoughtful and intentional. Cohesive devices are woven in naturally for register and context. Responses are deeply structured with examples, comparisons, and causes.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Do you think the media influences the way people think?"</div>
+              <div class="be-a">"Absolutely, the media plays a powerful role in shaping public perception. Take news outlets, for instance — how a story is framed can drastically alter how viewers interpret it. Moreover, social media platforms often amplify extreme opinions, which can distort reality for users who aren't critically engaged."</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /bands-grid -->
+    </div><!-- /content-section -->
+  </div><!-- /section-a -->
+
+  <div class="page-divider"></div>
+
+  <!-- ════════════ SECTION B ════════════ -->
+  <div id="section-b">
+    <div class="section-header">
+      <div class="section-tag tag-b">B</div>
+      <div class="section-title-block">
+        <div class="section-letter">Criterion B</div>
+        <h2>Lexical Resource</h2>
+        <p class="section-desc">How well vocabulary is used — including variety, accuracy, appropriacy, and the ability to paraphrase when needed.</p>
+      </div>
+    </div>
+    <div class="section-rule rule-b"></div>
+
+    <div class="content-section">
+
+      <div class="subsection-label sub-b" id="b-key">Key Indicators of Lexical Resource</div>
+
+      <div class="indicator-grid">
+        <div class="indicator-card ind-b">
+          <div class="ic-title">Variety of Words Used</div>
+          <p>Does the test taker avoid repeating the same words? Do they show synonyms or topic-related vocabulary rather than repeating basic terms?</p>
+        </div>
+        <div class="indicator-card ind-b">
+          <div class="ic-title">Referential Meaning</div>
+          <p>Using the correct word for a thing or idea. e.g., saying "plane" instead of "the flying thing you ride to another country."</p>
+        </div>
+        <div class="indicator-card ind-b">
+          <div class="ic-title">Style (Formal/Informal)</div>
+          <p>Adapting word choice to the situation. <em>"I'm keen on trying new cuisines"</em> is appropriate for IELTS; <em>"I'm hella into food"</em> is too informal.</p>
+        </div>
+        <div class="indicator-card ind-b">
+          <div class="ic-title">Collocation &amp; Idioms</div>
+          <p>Natural word combinations (<em>"make a decision"</em> not <em>"do a decision"</em>; <em>"strong coffee"</em> not <em>"hard coffee"</em>) and appropriate idiomatic expressions (<em>"I hit the books."</em>)</p>
+        </div>
+        <div class="indicator-card ind-b">
+          <div class="ic-title">Indicating Attitude</div>
+          <p>Using vocabulary to express opinions and feelings clearly. e.g., <em>"That law is quite controversial"</em> vs. the vague <em>"I think it's good."</em></p>
+        </div>
+        <div class="indicator-card ind-b">
+          <div class="ic-title">Ability to Paraphrase</div>
+          <p>Can the student explain an idea in other words when they forget the exact term? e.g., <em>"It's a tool you use to open cans — like scissors, but stronger."</em></p>
+        </div>
+      </div>
+
+      <!-- JIC Scoresheet B -->
+      <div class="subsection-label sub-b" id="b-jic">JIC Scoresheet — Lexical Resource</div>
+
+      <table class="jic-table">
+        <thead>
+          <tr>
+            <th class="th-b">Indicator</th>
+            <th class="th-b" style="width:130px;">Assessment Type</th>
+            <th class="th-b">What It Is &amp; How to Check</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-name">Use of Simple Vocabulary</td>
+            <td><span class="tag-q tag-ql">Qualifying</span></td>
+            <td>Using only basic or high-frequency words like <em>"good," "bad," "nice," "thing."</em> Ask: Did the student go beyond textbook words, or did they rely on simple or vague ones?</td>
+          </tr>
+          <tr class="tr-alt">
+            <td class="td-name">Dependence on Question</td>
+            <td><span class="tag-q tag-ql">Qualifying</span></td>
+            <td>Simply repeating the question's vocabulary without rephrasing. e.g., Q: "What's your hobby?" A: "My hobby is reading." A better response rewords: "I love getting lost in novels."</td>
+          </tr>
+          <tr>
+            <td class="td-name">Repetitive Extensions</td>
+            <td><span class="tag-q tag-both">Both</span></td>
+            <td>Repeating the same word within a response due to limited vocabulary. e.g., <em>"It's a big city with a big park and a big mall."</em> Count repetitions and check for alternatives.</td>
+          </tr>
+          <tr class="tr-alt">
+            <td class="td-name">Appropriacy and Precision</td>
+            <td><span class="tag-q tag-ql">Qualifying</span></td>
+            <td>Using the right word for the right context. <em>"I attended a concert"</em> is more precise than <em>"I went to a concert."</em> Listen for vague language or incorrect collocations.</td>
+          </tr>
+          <tr>
+            <td class="td-name">Use of Connectives and Markers</td>
+            <td><span class="tag-q tag-ql">Qualifying</span></td>
+            <td>Using linking words to logically connect ideas: <em>because, however, although, in contrast, on top of that.</em> Do they only use "and… and… and…"?</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Band Scores B -->
+      <div class="subsection-label sub-b" id="b-bands">Band Scores — Lexical Resource</div>
+
+      <div class="band-summary">
+        <div class="bsum-cell bsc-1"><div class="bsum-num">1</div><div class="bsum-word">None</div></div>
+        <div class="bsum-cell bsc-2"><div class="bsum-num">2</div><div class="bsum-word">Minimal</div></div>
+        <div class="bsum-cell bsc-3"><div class="bsum-num">3</div><div class="bsum-word">Simple</div></div>
+        <div class="bsum-cell bsc-4"><div class="bsum-num">4</div><div class="bsum-word">Basic</div></div>
+        <div class="bsum-cell bsc-5"><div class="bsum-num">5</div><div class="bsum-word">Modest</div></div>
+        <div class="bsum-cell bsc-6"><div class="bsum-num">6</div><div class="bsum-word">Competent</div></div>
+        <div class="bsum-cell bsc-7"><div class="bsum-num">7</div><div class="bsum-word">Flexible</div></div>
+        <div class="bsum-cell bsc-8"><div class="bsum-num">8</div><div class="bsum-word">Wide</div></div>
+        <div class="bsum-cell bsc-9"><div class="bsum-num">9</div><div class="bsum-word">Total</div></div>
+      </div>
+
+      <div class="bands-grid">
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-1">1</div>
+            <div class="band-card-title">No Resource</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">No resource bar a few isolated words. No communication possible.</div>
+            <p>Only a tiny number of basic, unrelated English words. Cannot combine words into phrases or sentences. No coherent thought is communicated — even with individual words, no message gets through.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Can you tell me about your hometown?"</div>
+              <div class="be-a">"City… big… car… umm… nice."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-2">2</div>
+            <div class="band-card-title">Very Limited</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Very limited resource. Utterances consist of isolated words or memorised phrases. Little communication possible without mime or gesture.</div>
+            <p>Knows only a small number of basic words. May produce some memorised phrases. Communicative value is extremely low; listener cannot construct a clear meaning.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Do you work or are you a student?"</div>
+              <div class="be-a">"Uh… I am student. School. Morning. Bus. Teacher. Good."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-3">3</div>
+            <div class="band-card-title">Personal Info Only</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Resource limited to simple vocabulary to convey personal information. Vocabulary inadequate for unfamiliar topics.</div>
+            <p>Can talk about self, home, daily routine. Vocabulary is repetitive. Falls silent or uses incorrect words for abstract topics like technology or environment. Simple words like "good," "nice," "bad" dominate.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "What are the advantages of public transport?"</div>
+              <div class="be-a">"Uh… good… bus… um… I no car… easy go school…"</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-4">4</div>
+            <div class="band-card-title">Familiar Topics Only</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Resource sufficient for familiar topics but only basic meaning on unfamiliar ones. Frequent inappropriacies and errors in word choice. Rarely attempts paraphrase.</div>
+            <p>Can speak about family, hobbies, food clearly. Struggles with abstract topics. Frequently chooses wrong words (e.g., "relax" instead of "relaxing"). When a word is missing, tends to give up rather than rephrase.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Describe your ideal home."</div>
+              <div class="be-a">"My home… big… have many room… TV… sofa… very relax."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-5">5</div>
+            <div class="band-card-title">Wide Range, Limited Flexibility</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Resource sufficient to discuss familiar and unfamiliar topics but with limited flexibility. Attempts paraphrase but not always with success.</div>
+            <p>Can attempt most topics but sticks to safe, repetitive vocabulary. Overuses "many," "good," "problem." Tries to rephrase missing words but sometimes creates confusion. No precision or idiomatic expression.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "How can people protect the environment?"</div>
+              <div class="be-a">"They should not use plastic. And also take bus or train. It help not make bad air."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-6">6</div>
+            <div class="band-card-title">Sufficient for All Topics</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Resource sufficient to discuss topics at length. Vocabulary use may be inappropriate but meaning is clear. Generally able to paraphrase successfully.</div>
+            <p>Extended answers across all topics. Occasional wrong word choices (e.g., "hears my feeling" for "understands how I feel") but meaning is never blocked. Paraphrases are usually clear and effective.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Why do some people prefer living in cities?"</div>
+              <div class="be-a">"I think cities give more chance for jobs and education. Also, public transportation is better. But sometimes, it's too crowded and noisy."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-7">7</div>
+            <div class="band-card-title">Flexibly Used</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Resource flexibly used across all topics. Some ability to use less common and idiomatic items with awareness of style and collocation. Effective use of paraphrase.</div>
+            <p>Speaks comfortably about abstract and personal topics. Begins using idioms and topic-appropriate words. May misuse some expressions occasionally. Paraphrases are natural and usually successful.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Describe a time you made a decision that changed your life."</div>
+              <div class="be-a">"I decided to switch careers from finance to education. It was a huge leap, but ultimately it aligned with my values and gave me more purpose."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-8">8</div>
+            <div class="band-card-title">Wide, Precise, Idiomatic</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Wide resource, readily and flexibly used to convey precise meaning. Skilful use of less common and idiomatic items despite occasional inaccuracies. Effective paraphrase.</div>
+            <p>Large vocabulary applied confidently. Uses specific, precise vocabulary ("stringent regulations," "curb"). Less common and idiomatic items used correctly most of the time. Rare collocational slip-ups don't affect meaning.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Describe a difficult decision you made."</div>
+              <div class="be-a">"Relocating overseas was daunting, but ultimately it broadened my horizons and pushed me out of my comfort zone."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-9">9</div>
+            <div class="band-card-title">Total Flexibility</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Total flexibility and precise use in all contexts. Sustained use of accurate and idiomatic language.</div>
+            <p>Master-level command. Adjusts register effortlessly across formal, informal, and academic contexts. Idioms, phrasal verbs, and collocations are used accurately and naturally throughout — not occasionally, but sustained.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Do you think young people today face more challenges than in the past?"</div>
+              <div class="be-a">"Absolutely. While technological advancements have opened up countless doors, they've also ushered in a wave of mental health issues, social disconnection, and information overload. The pressure to curate a perfect online persona can be exhausting."</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="page-divider"></div>
+
+  <!-- ════════════ SECTION C ════════════ -->
+  <div id="section-c">
+    <div class="section-header">
+      <div class="section-tag tag-c">C</div>
+      <div class="section-title-block">
+        <div class="section-letter">Criterion C</div>
+        <h2>Grammatical Range &amp; Accuracy</h2>
+        <p class="section-desc">How much variety and how correctly a speaker uses grammar — not just avoiding mistakes, but demonstrating control and flexibility of sentence structures.</p>
+      </div>
+    </div>
+    <div class="section-rule rule-c"></div>
+
+    <div class="content-section">
+
+      <div class="subsection-label sub-c" id="c-key-range">Key Indicators of Grammatical Range</div>
+
+      <div class="indicator-grid">
+        <div class="indicator-card ind-c">
+          <div class="ic-title">Length of Spoken Sentences</div>
+          <p>Moving beyond short isolated statements toward longer, connected thoughts. e.g., <em>"Although I like pizza, I try not to eat it too often because it's unhealthy."</em></p>
+        </div>
+        <div class="indicator-card ind-c">
+          <div class="ic-title">Subordinate Clauses</div>
+          <p>Phrases that add detail or show cause/effect using: <em>because, although, when, which, that, if.</em> e.g., <em>"I decided to study abroad because I wanted to improve my English."</em></p>
+        </div>
+        <div class="indicator-card ind-c">
+          <div class="ic-title">Complex Verb Phrases</div>
+          <p>Correct use of: Perfect aspect (<em>"I have lived here for five years"</em>), Continuous (<em>"I've been studying since morning"</em>), Modals (<em>"I might go later"</em>), and Passive voice.</p>
+        </div>
+        <div class="indicator-card ind-c">
+          <div class="ic-title">Pre- and Post-Modification</div>
+          <p>Extra detail before or after nouns/adjectives. Pre: <em>"an expensive Italian leather sofa."</em> Post: <em>"a man who works in a hospital."</em></p>
+        </div>
+        <div class="indicator-card ind-c">
+          <div class="ic-title">Flexibility in Structure</div>
+          <p>Moving parts for emphasis or variety: <em>"It was pizza that I really wanted"</em> (cleft sentence); <em>"Not only is it easy to cook, but it's also delicious"</em> (inversion).</p>
+        </div>
+      </div>
+
+      <div class="subsection-label sub-c" id="c-key-accuracy">Key Indicators of Grammatical Accuracy</div>
+
+      <div class="indicator-grid">
+        <div class="indicator-card ind-c">
+          <div class="ic-title">Error Density</div>
+          <p>How many mistakes appear per stretch of speech, and whether they affect understanding. Band 3–4: frequent and noticeable. Band 6–9: less frequent, typically not affecting clarity.</p>
+        </div>
+        <div class="indicator-card ind-c">
+          <div class="ic-title">Effect of Errors on Communication</div>
+          <p>Do grammar mistakes confuse the listener or require significant effort to understand? A few small errors that don't interfere with communication are acceptable at higher bands.</p>
+        </div>
+      </div>
+
+      <!-- JIC C -->
+      <div class="subsection-label sub-c" id="c-jic">JIC Scoresheet — Grammatical Range &amp; Accuracy</div>
+
+      <table class="jic-table">
+        <thead>
+          <tr>
+            <th class="th-c">Indicator</th>
+            <th class="th-c" style="width:130px;">Assessment Type</th>
+            <th class="th-c">What It Is &amp; How to Check</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-name">Word Forms</td>
+            <td><span class="tag-q tag-ql">Qualifying</span></td>
+            <td>Using the correct grammatical form of a word. Listen for: incorrect adjective/adverb forms, using verbs instead of nouns (e.g., <em>"I decision it"</em> instead of <em>"I decided"</em>).</td>
+          </tr>
+          <tr class="tr-alt">
+            <td class="td-name">Sentence Forms / Structure</td>
+            <td><span class="tag-q tag-ql">Qualifying</span></td>
+            <td>Variety of sentence types: Simple (<em>"I like pizza"</em>), Compound (<em>"I like pizza, and I enjoy pasta"</em>), Complex (<em>"Although I like pizza, I try not to eat it often"</em>). Are longer, more complex ones being attempted?</td>
+          </tr>
+          <tr>
+            <td class="td-name">Grammar Control</td>
+            <td><span class="tag-q tag-both">Both</span></td>
+            <td>Overall accuracy: tenses, subject-verb agreement, prepositions, articles. Quantifying: how frequent are mistakes? Qualifying: how severe? Do errors impact understanding?</td>
+          </tr>
+          <tr class="tr-alt">
+            <td class="td-name">Tenses</td>
+            <td><span class="tag-q tag-both">Both</span></td>
+            <td>Using the correct verb tense. Focus on: present perfect vs. simple past (<em>"I have lived"</em> vs. <em>"I lived"</em>), future vs. present, consistency within an answer. Do they mix up tenses or shift accurately?</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Band Scores C -->
+      <div class="subsection-label sub-c" id="c-bands">Band Scores — Grammatical Range &amp; Accuracy</div>
+
+      <div class="band-summary">
+        <div class="bsum-cell bsc-1"><div class="bsum-num">1</div><div class="bsum-word">None</div></div>
+        <div class="bsum-cell bsc-2"><div class="bsum-num">2</div><div class="bsum-word">Absent</div></div>
+        <div class="bsum-cell bsc-3"><div class="bsum-num">3</div><div class="bsum-word">Attempted</div></div>
+        <div class="bsum-cell bsc-4"><div class="bsum-num">4</div><div class="bsum-word">Basic</div></div>
+        <div class="bsum-cell bsc-5"><div class="bsum-num">5</div><div class="bsum-word">Controlled</div></div>
+        <div class="bsum-cell bsc-6"><div class="bsum-num">6</div><div class="bsum-word">Mixed</div></div>
+        <div class="bsum-cell bsc-7"><div class="bsum-num">7</div><div class="bsum-word">Flexible</div></div>
+        <div class="bsum-cell bsc-8"><div class="bsum-num">8</div><div class="bsum-word">Wide</div></div>
+        <div class="bsum-cell bsc-9"><div class="bsum-num">9</div><div class="bsum-word">Precise</div></div>
+      </div>
+
+      <div class="bands-grid">
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-1">1</div>
+            <div class="band-card-title">No Rateable Language</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">No rateable language unless memorised.</div>
+            <p>No original sentences produced. There is nothing to evaluate. If any speech occurs, it consists only of pre-learned fixed phrases from a script that don't reflect actual ability (e.g., <em>"I live in Manila"</em>).</p>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-2">2</div>
+            <div class="band-card-title">No Sentence Forms</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">No evidence of basic sentence forms.</div>
+            <p>Cannot produce even Subject + Verb structures. Words are spoken without being joined meaningfully. Nothing resembles real sentence grammar.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Where do you live?"</div>
+              <div class="be-a">"Live… home… Manila… me."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-3">3</div>
+            <div class="band-card-title">Attempted but Numerous Errors</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Basic sentence forms attempted but grammatical errors are numerous except in apparently memorised utterances.</div>
+            <p>Tries Subject + Verb structures but most attempts have wrong word order, verb tense, missing articles or auxiliaries. Occasionally correct phrases sound memorised and can't be applied to new topics.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "What do you usually do on weekends?"</div>
+              <div class="be-a">"I go mall. And uh… meet my friend. He like… we together. Eat."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-4">4</div>
+            <div class="band-card-title">Basic Forms with Frequent Errors</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Can produce basic sentence forms and some short utterances are error-free. Subordinate clauses are rare. Turns are short, structures repetitive, errors frequent.</div>
+            <p>Gets simple sentences right occasionally but repeats the same patterns. Rarely uses "because," "although," or "when." Mistakes persist with verb tense, plurals, articles, and prepositions.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Tell me about your hometown."</div>
+              <div class="be-a">"My hometown is big. Many people. It have park. I like the park. It's nice."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-5">5</div>
+            <div class="band-card-title">Basic Controlled, Complex Attempted</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Basic sentence forms fairly well controlled. Complex structures attempted but limited, nearly always contain errors, and may lead to reformulation.</div>
+            <p>Uses present/past/future tenses correctly most of the time. Attempts subordinate clauses and conditionals but they're usually wrong. Sometimes stops and restarts sentences in a simpler way (reformulation).</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Tell me about your best friend."</div>
+              <div class="be-a">"My best friend is Anna. She is very kind and funny. She help… helps me when I have problem. She's person… the person who always understand me."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-6">6</div>
+            <div class="band-card-title">Mix of Structures, Limited Flexibility</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Produces a mix of short and complex sentence forms with limited flexibility. Errors in complex structures rarely impede communication.</div>
+            <p>Uses conditionals, relative clauses, and adverbial clauses. Sticks to familiar patterns when pushed. Grammar errors are present (e.g., wrong clause word "which" for "who") but meaning is still clear.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Tell me about your hometown."</div>
+              <div class="be-a">"I love it because even it is not big, people are very friendly. The place where I live now is far from there, but I visit sometimes."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-7">7</div>
+            <div class="band-card-title">Range Flexibly Used</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">A range of structures flexibly used. Error-free sentences are frequent. Both simple and complex used effectively. A few basic errors persist.</div>
+            <p>Switches between tenses, clauses, passive voice, modals naturally. Many sentences are error-free. Experiments with complex forms. Occasional slips with prepositions, articles, subject-verb agreement.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "What do you usually do on weekends?"</div>
+              <div class="be-a">"Sometimes I prefer staying at home because I need to rest, especially after a stressful week. But if the weather is nice, I go hiking with my friends. I also try to do some household chores, which I usually postpone during the week."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-8">8</div>
+            <div class="band-card-title">Wide Range, Majority Error-Free</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Wide range of structures, flexibly used. Majority of sentences are error-free. Occasional inappropriacies and non-systematic errors occur.</div>
+            <p>Broad variety of sentence forms chosen appropriately for the situation. Speaks quickly and accurately. Errors are random and non-patterned — speaker can usually self-correct if given time.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "Do you prefer working alone or in a team?"</div>
+              <div class="be-a">"When I'm writing or doing analytical work, I tend to prefer working alone because I can focus better. But for creative projects or brainstorming, collaborating with others usually leads to more innovative ideas. Although there can be some conflict in team settings, I think the benefits outweigh the challenges."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-9">9</div>
+            <div class="band-card-title">Precise and Accurate Throughout</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Structures are precise and accurate at all times, apart from 'mistakes' characteristic of native speaker speech.</div>
+            <p>Uses advanced forms — conditionals, cleft sentences, passive, subjunctive, relative clauses — correctly and effortlessly. Any slips are natural native-like adjustments (e.g., <em>"There's lots of people who…"</em>), not knowledge gaps.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">Examiner: "What kinds of things make people feel stressed these days?"</div>
+              <div class="be-a">"I suppose issues like job security, financial uncertainty, and even the pressure to maintain a work-life balance contribute significantly. What's particularly interesting is that, despite technological advancements aimed at convenience, many people actually report feeling more overwhelmed than ever."</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="page-divider"></div>
+
+  <!-- ════════════ SECTION D ════════════ -->
+  <div id="section-d">
+    <div class="section-header">
+      <div class="section-tag tag-d">D</div>
+      <div class="section-title-block">
+        <div class="section-letter">Criterion D</div>
+        <h2>Pronunciation</h2>
+        <p class="section-desc">Speaking clearly enough to be understood, and using the features of spoken English to make your message easy to follow and expressive. IELTS does not penalise accents — as long as they do not interfere with understanding.</p>
+      </div>
+    </div>
+    <div class="section-rule rule-d"></div>
+
+    <div class="content-section">
+
+      <div class="subsection-label sub-d" id="d-key">Key Indicators of Pronunciation</div>
+
+      <div class="indicator-grid">
+        <div class="indicator-card ind-d">
+          <div class="ic-title">Chunking</div>
+          <p>Breaking speech into natural, meaningful parts with breathing pauses. <em>"When I was a child // I used to play // in the park every day."</em> Without chunking, listeners cannot follow ideas.</p>
+        </div>
+        <div class="indicator-card ind-d">
+          <div class="ic-title">Rhythm and Stress Timing</div>
+          <p>English is stress-timed: some syllables are stressed and others reduced. <em>"I WENT to the STORE to buy some MILK."</em> Stressing everything equally sounds unnatural and is harder to process.</p>
+        </div>
+        <div class="indicator-card ind-d">
+          <div class="ic-title">Connected Speech</div>
+          <p>Sounds are linked or reduced in fluent speech. Includes: Linking (<em>go_on</em>), Elision — dropping a sound (<em>friends → fren's</em>), Intrusion (<em>go out → go_wout</em>). Helps speech sound more fluent.</p>
+        </div>
+      </div>
+
+      <!-- JIC D -->
+      <div class="subsection-label sub-d" id="d-jic">JIC Scoresheet — Pronunciation</div>
+
+      <table class="jic-table">
+        <thead>
+          <tr>
+            <th class="th-d">Indicator</th>
+            <th class="th-d" style="width:130px;">Assessment Type</th>
+            <th class="th-d">What It Is &amp; How to Check</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-name">Mispronunciation</td>
+            <td><span class="tag-q tag-ql">Qualifying</span></td>
+            <td>Incorrect pronunciation of words — vowel/consonant errors or syllable stress. Does the error change meaning or make it hard to understand? Minor slips are forgivable unless frequent.</td>
+          </tr>
+          <tr class="tr-alt">
+            <td class="td-name">Incomplete Word Endings</td>
+            <td><span class="tag-q tag-both">Both</span></td>
+            <td>Dropping the last sound of a word — common with past tense <em>-ed</em> or plural <em>-s</em>. e.g., saying "walk" instead of "walked." Track instances that affect clarity or grammatical understanding.</td>
+          </tr>
+          <tr>
+            <td class="td-name">Stress and Intonation</td>
+            <td><span class="tag-q tag-ql">Qualifying</span></td>
+            <td>Word stress (e.g., <em>reCORD</em> noun vs. <em>REcord</em> verb), sentence stress (content words emphasized), and intonation (rising/falling appropriately). Does it rise and fall naturally or sound flat?</td>
+          </tr>
+          <tr class="tr-alt">
+            <td class="td-name">Accent</td>
+            <td><span class="tag-q tag-ql">Qualifying</span></td>
+            <td>Everyone has an accent. Checks whether the accent interferes with understanding. Is it so strong it causes confusion or mishearing? If not, it is fine — even native speakers have accents.</td>
+          </tr>
+          <tr>
+            <td class="td-name">Voice Quality</td>
+            <td><span class="tag-q tag-ql">Qualifying</span></td>
+            <td>Clarity, tone, and breath control. Are they speaking too softly, too fast, or too monotone? Any quality that affects the listener's ability to hear and process clearly.</td>
+          </tr>
+          <tr class="tr-alt">
+            <td class="td-name">Voice Inflection</td>
+            <td><span class="tag-q tag-ql">Qualifying</span></td>
+            <td>Changes in pitch to show emotion, questioning, contrast, or emphasis. Does the voice rise/fall naturally? A more expressive voice signals a higher band.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Band Scores D -->
+      <div class="subsection-label sub-d" id="d-bands">Band Scores — Pronunciation</div>
+
+      <div class="band-summary">
+        <div class="bsum-cell bsc-1"><div class="bsum-num">1</div><div class="bsum-word">None</div></div>
+        <div class="bsum-cell bsc-2"><div class="bsum-num">2</div><div class="bsum-word">Minimal</div></div>
+        <div class="bsum-cell bsc-3"><div class="bsum-num">3</div><div class="bsum-word">Inconsistent</div></div>
+        <div class="bsum-cell bsc-4"><div class="bsum-num">4</div><div class="bsum-word">Effortful</div></div>
+        <div class="bsum-cell bsc-5"><div class="bsum-num">5</div><div class="bsum-word">Emerging</div></div>
+        <div class="bsum-cell bsc-6"><div class="bsum-num">6</div><div class="bsum-word">Variable</div></div>
+        <div class="bsum-cell bsc-7"><div class="bsum-num">7</div><div class="bsum-word">Good</div></div>
+        <div class="bsum-cell bsc-8"><div class="bsum-num">8</div><div class="bsum-word">Wide</div></div>
+        <div class="bsum-cell bsc-9"><div class="bsum-num">9</div><div class="bsum-word">Full</div></div>
+      </div>
+
+      <div class="bands-grid">
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-1">1</div>
+            <div class="band-card-title">Unintelligible</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Can produce occasional individual words and phonemes that are recognisable, but no overall meaning is conveyed. Unintelligible.</div>
+            <p>Almost completely impossible to understand. May say a few English sounds or words, but no understandable sentences. No meaningful communication — listener cannot follow the speech at all.</p>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-2">2</div>
+            <div class="band-card-title">Often Unintelligible</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Uses few acceptable phonological features. Individual words and phonemes mainly mispronounced. Little meaning conveyed. Often unintelligible.</div>
+            <p>Mostly incorrect sounds (confusing /b/ and /v/, /l/ and /r/). No natural rhythm. Disconnected, robotic delivery. Listener must guess heavily and frequently. Memorised phrases may be present but mispronounced.</p>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-3">3</div>
+            <div class="band-card-title">Inconsistent Features</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Displays some features of Band 2, and some (but not all) of the positive features of Band 4.</div>
+            <p>Sometimes understandable, but many parts are unclear. May try using stress or intonation but inconsistently. Most words still mispronounced. Listener must work hard and ask for clarification frequently.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">"I study engineering at university."</div>
+              <div class="be-a">"I… uh… stu… eh… en-gin… ear… uni… uh… sit… ree…" (stress on wrong syllable; broken rhythm)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-4">4</div>
+            <div class="band-card-title">Requires Listener Effort</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Uses some acceptable phonological features with limited range. Some chunking but frequent rhythm lapses. Limited control of intonation and stress. Individual words often mispronounced.</div>
+            <p>Understandable in short bursts but listener must frequently work to extract meaning. Some English pronunciation patterns attempted but inconsistently. Speech may sound choppy or robotic.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">"I study engineering at university."</div>
+              <div class="be-a">"I stuh-dy enjin-earing at… un-i-var-si-tee." (closer to real words, but stressed incorrectly)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-5">5</div>
+            <div class="band-card-title">Emerging Control</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Displays some features of Band 4 and some (but not all) of Band 6.</div>
+            <p>Some attempt at English-like speech but control is weak. Mispronunciations still frequent, especially consonant clusters ("spl," "thr") and vowels. Mostly understandable but listener effort required — especially in faster or spontaneous speech.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">"I usually go shopping with my friends on weekends."</div>
+              <div class="be-a">"I… yoo-sually go… shop-ing… weeth my… frens… on week-end." (flat, misplaced stress; still understandable)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-6">6</div>
+            <div class="band-card-title">Variable Control</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Uses a range of phonological features but control is variable. Chunking generally appropriate but rhythm may be affected. Some effective use of intonation and stress but not sustained. Can generally be understood throughout without much effort.</div>
+            <p>Sounds mostly natural with clear weaknesses. Intonation and stress used more effectively than Band 5 but not consistently over longer turns. May speak too quickly, hurting rhythm.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">"I usually go shopping with my friends on weekends."</div>
+              <div class="be-a">"I usually go shopping with my friends on weekends." (rhythm mostly natural; stress on content words; occasional slips)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-7">7</div>
+            <div class="band-card-title">Good, Sustained</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Displays some features of Band 6 and some (but not all) of Band 8.</div>
+            <p>Uses intonation, rhythm, and stress well, especially in familiar topics. Can sustain natural-sounding speech. Any mispronunciations are rare and don't confuse the listener. Accent present but not interfering.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">"I think it's important for people to take regular breaks from work to avoid burnout."</div>
+              <div class="be-a">Proper chunking, stress on content words, intonation marks opinion — one minor issue doesn't distract.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-8">8</div>
+            <div class="band-card-title">Wide Range, Expressive</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Uses a wide range of phonological features to convey precise meaning. Can sustain appropriate rhythm. Flexible stress and intonation across long utterances despite occasional lapses. Accent has minimal effect on intelligibility.</div>
+            <p>Stress and intonation used flexibly to make speech more expressive and meaningful. Fluent and clear over long stretches. Very rare pronunciation mistakes. Light accent, zero interference.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">"…to avoid burnout."</div>
+              <div class="be-a">Expressive intonation — slight rising pitch on "important," falling on "burnout." Sounds natural. No mispronunciations.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="band-card">
+          <div class="band-card-header">
+            <div class="band-num bn-9">9</div>
+            <div class="band-card-title">Full Range, Effortless</div>
+          </div>
+          <div class="band-card-body">
+            <div class="band-descriptor">Uses a full range of phonological features to convey precise and/or subtle meaning. Flexible use of connected speech features is sustained throughout. Can be effortlessly understood. Accent has no effect on intelligibility.</div>
+            <p>Complete mastery of intonation, stress, pitch, and pausing. Sounds blend naturally (linking, elision, assimilation). Stress-timed rhythm. Controls pitch to show emotion, contrast, certainty. Any accent is minimal or undetectable.</p>
+            <div class="band-example">
+              <div class="be-label">Example</div>
+              <div class="be-q">"Although I agree with the idea in principle, I don't think it's practical in the real world."</div>
+              <div class="be-a">Contrastive stress on key words; smooth linking ("I-don't-think-it's"); natural reductions in fast speech; falling intonation marks conclusion. Completely effortless.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="padding: 40px 64px 20px; border-top: 1px solid var(--rule); margin-top: 20px;">
+    <p style="font-family: var(--sans); font-size: 12px; color: var(--ink-light); max-width: none;">
+      IELTS Speaking Band Descriptors Study Guide · Criteria: Fluency &amp; Coherence · Lexical Resource · Grammatical Range &amp; Accuracy · Pronunciation
+    </p>
+  </div>
+
+</main>
+
+<!-- SCROLL TO TOP -->
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('top-btn').classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+</body>
+</html>
