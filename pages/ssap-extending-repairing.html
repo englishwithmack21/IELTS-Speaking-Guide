@@ -1185,7 +1185,25 @@
   strong { font-weight: 600; }
 /* === PASTEL MASTER SITE PATCH === */
 :root{--pastel-paper:#fbf8f3;--pastel-surface:#fffdf9;--pastel-line:#e8ded2;--pastel-ink:#2d2a27;--pastel-muted:#625a54;--pastel-sage:#dcefe5;--pastel-sky:#dcecf6;--pastel-lav:#e9e5f8;--pastel-peach:#fde5d5;--pastel-gold:#f7e8b9;--pastel-teal:#4f927f;--pastel-blue:#517f9b;--pastel-plum:#7b6ab4}body{background:var(--pastel-paper)!important;color:var(--pastel-ink)!important}#sidebar,.sidebar{background:var(--pastel-surface)!important;color:var(--pastel-ink)!important;border-right:1px solid var(--pastel-line)!important}.sidebar-brand,.sidebar-header,.sidebar-logo{background:linear-gradient(135deg,var(--pastel-lav),var(--pastel-sky) 70%,var(--pastel-sage))!important;border-bottom:1px solid var(--pastel-line)!important}.sidebar-brand h1,.sidebar-brand h2,.sidebar-title,.sidebar-logo h1{color:var(--pastel-ink)!important}.nav-link,.nav-item,#sidebar a,.nav-sub a{color:var(--pastel-muted)!important}.nav-link:hover,.nav-link.active,.nav-item:hover,.nav-item.active,#sidebar a:hover,#sidebar a.active{background:var(--pastel-sky)!important;color:var(--pastel-blue)!important;border-left-color:#8bbbd2!important}.hero,.page-header{background:linear-gradient(135deg,var(--pastel-lav),var(--pastel-sky) 58%,var(--pastel-sage))!important;color:var(--pastel-ink)!important;border-bottom:1px solid var(--pastel-line)!important}.hero h1,.hero h2,.page-header h1{color:var(--pastel-ink)!important}.hero p,.subtitle,.page-header .subtitle{color:var(--pastel-muted)!important}.card,.topic-block,.pattern-card,.problem-card,.drill-item,.example-block,.callout,.indicator-card,.mock-q,.mock-a,.lang-box{box-shadow:0 8px 24px rgba(64,48,36,.06)!important;}
+/* ── MOBILE SIDEBAR FIX ── */
+@media (max-width: 768px) {
 
+  #sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+
+  main {
+    margin-left: 0;
+  }
+
+  body {
+    flex-direction: column;
+  }
+
+}
 </style>
 </head>
 <body>
