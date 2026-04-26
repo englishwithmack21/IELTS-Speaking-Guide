@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Discourse Markers – IELTS Speaking & Writing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ─── Design Tokens ─────────────────────────────────────── */
+  :root {
+    --bg:          #F7F5F0;
+    --surface:     #FFFFFF;
+    --border:      #E4DED4;
+    --text-main:   #2C2A25;
+    --text-muted:  #6B6660;
+    --text-light:  #9C9590;
+
+    --teal:        #3D8B8B;
+    --teal-light:  #EBF5F5;
+    --teal-mid:    #A8D5D5;
+    --sage:        #5A7A5A;
+    --sage-light:  #EDF4ED;
+    --coral:       #C0614A;
+    --coral-light: #FAF0EE;
+    --gold:        #8A6D2F;
+    --gold-light:  #FBF5E8;
+    --plum:        #6B4A7A;
+    --plum-light:  #F3EFF7;
+    --navy:        #2E4A6B;
+    --navy-light:  #EBF0F7;
+    --rose:        #A04060;
+    --rose-light:  #F9EEF2;
+    --slate:       #4A5568;
+    --slate-light: #EEF0F4;
+
+    --radius-sm:   6px;
+    --radius-md:   10px;
+    --radius-lg:   16px;
+    --shadow-sm:   0 1px 3px rgba(0,0,0,.07);
+    --shadow-md:   0 4px 16px rgba(0,0,0,.09);
+    --transition:  .2s ease;
+  }
+
+  /* ─── Reset & Base ───────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 15px; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text-main);
+    line-height: 1.7;
+  }
+  h1,h2,h3,h4,h5 { font-family: 'Lora', Georgia, serif; line-height: 1.3; }
+  p { margin-bottom: .75rem; }
+  a { color: var(--teal); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ─── Site Header ────────────────────────────────────────── */
+  .site-header {
+    background: var(--surface);
+    border-bottom: 2px solid var(--teal);
+    position: sticky; top: 0; z-index: 200;
+    box-shadow: var(--shadow-sm);
+  }
+  .site-header-inner {
+    max-width: 1100px; margin: 0 auto;
+    padding: .7rem 1.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .site-logo {
+    font-family: 'Lora', serif;
+    font-size: 1rem; font-weight: 700;
+    color: var(--teal);
+    letter-spacing: -.01em;
+  }
+  .site-logo span { color: var(--text-muted); font-weight: 400; }
+  .breadcrumb {
+    font-size: .8rem; color: var(--text-muted);
+    display: flex; align-items: center; gap: .4rem;
+  }
+  .breadcrumb a { color: var(--teal); }
+  .breadcrumb .sep { color: var(--border); }
+
+  /* ─── Hero Banner ─────────────────────────────────────────── */
+  .hero {
+    background: linear-gradient(135deg, #EBF5F5 0%, #EDF4ED 50%, #F7F5F0 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 2.5rem 1.5rem 2rem;
+  }
+  .hero-inner { max-width: 1100px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: var(--teal); color: #fff;
+    font-size: .7rem; font-weight: 600; letter-spacing: .08em;
+    padding: .25rem .75rem; border-radius: 20px;
+    text-transform: uppercase; margin-bottom: .9rem;
+  }
+  .hero h1 {
+    font-size: 1.9rem; color: var(--text-main);
+    margin-bottom: .5rem;
+  }
+  .hero-sub {
+    font-size: .95rem; color: var(--text-muted);
+    max-width: 640px; margin-bottom: 1.2rem;
+  }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .hero-tag {
+    font-size: .75rem; padding: .25rem .75rem;
+    border-radius: 20px; border: 1px solid;
+    font-weight: 500;
+  }
+  .tag-teal  { background: var(--teal-light);  color: var(--teal);  border-color: var(--teal-mid); }
+  .tag-sage  { background: var(--sage-light);  color: var(--sage);  border-color: #B8D4B8; }
+  .tag-gold  { background: var(--gold-light);  color: var(--gold);  border-color: #D4B870; }
+  .tag-plum  { background: var(--plum-light);  color: var(--plum);  border-color: #C4A8D8; }
+
+  /* ─── Main Layout ─────────────────────────────────────────── */
+  .page-layout {
+    max-width: 1100px; margin: 0 auto;
+    padding: 2rem 1.5rem;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  /* ─── Sidebar Nav ─────────────────────────────────────────── */
+  .sidebar { position: sticky; top: 70px; }
+  .sidebar-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .sidebar-title {
+    background: var(--teal); color: #fff;
+    font-size: .75rem; font-weight: 600;
+    letter-spacing: .06em; text-transform: uppercase;
+    padding: .7rem 1rem;
+  }
+  .sidebar-nav { list-style: none; }
+  .sidebar-nav li { border-bottom: 1px solid var(--border); }
+  .sidebar-nav li:last-child { border-bottom: none; }
+  .sidebar-nav a {
+    display: block; padding: .6rem 1rem;
+    font-size: .82rem; color: var(--text-muted);
+    transition: var(--transition);
+  }
+  .sidebar-nav a:hover, .sidebar-nav a.active {
+    background: var(--teal-light); color: var(--teal);
+    text-decoration: none;
+  }
+  .sidebar-nav .nav-num {
+    display: inline-block;
+    background: var(--border); color: var(--text-muted);
+    font-size: .65rem; border-radius: 3px;
+    padding: .05rem .35rem; margin-right: .4rem;
+    font-weight: 600;
+  }
+  .sidebar-nav a.active .nav-num {
+    background: var(--teal); color: #fff;
+  }
+
+  /* ─── Main Content ────────────────────────────────────────── */
+  .main-content { min-width: 0; }
+
+  /* ─── Section Wrapper ─────────────────────────────────────── */
+  .section { margin-bottom: 3rem; }
+  .section-header {
+    display: flex; align-items: center; gap: .75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: .75rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .section-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; flex-shrink: 0;
+  }
+  .icon-teal  { background: var(--teal-light);  }
+  .icon-sage  { background: var(--sage-light);  }
+  .icon-coral { background: var(--coral-light); }
+  .icon-gold  { background: var(--gold-light);  }
+  .icon-plum  { background: var(--plum-light);  }
+  .icon-navy  { background: var(--navy-light);  }
+  .icon-rose  { background: var(--rose-light);  }
+  .icon-slate { background: var(--slate-light); }
+
+  .section-title { font-size: 1.35rem; }
+  .section-label {
+    font-size: .7rem; font-family: 'DM Sans', sans-serif;
+    font-weight: 600; text-transform: uppercase; letter-spacing: .08em;
+    color: var(--text-light);
+  }
+
+  /* ─── Cards ───────────────────────────────────────────────── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .card-title {
+    font-size: .8rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .07em;
+    margin-bottom: .75rem;
+    display: flex; align-items: center; gap: .5rem;
+  }
+  .card-title .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-teal  { background: var(--teal);  }
+  .dot-sage  { background: var(--sage);  }
+  .dot-coral { background: var(--coral); }
+  .dot-gold  { background: var(--gold);  }
+  .dot-plum  { background: var(--plum);  }
+  .dot-navy  { background: var(--navy);  }
+  .dot-rose  { background: var(--rose);  }
+  .dot-slate { background: var(--slate); }
+
+  /* Tinted card variants */
+  .card-teal  { border-left: 3px solid var(--teal);  background: linear-gradient(to right, var(--teal-light), #fff 40%); }
+  .card-sage  { border-left: 3px solid var(--sage);  background: linear-gradient(to right, var(--sage-light), #fff 40%); }
+  .card-coral { border-left: 3px solid var(--coral); background: linear-gradient(to right, var(--coral-light), #fff 40%); }
+  .card-gold  { border-left: 3px solid var(--gold);  background: linear-gradient(to right, var(--gold-light), #fff 40%); }
+  .card-plum  { border-left: 3px solid var(--plum);  background: linear-gradient(to right, var(--plum-light), #fff 40%); }
+  .card-navy  { border-left: 3px solid var(--navy);  background: linear-gradient(to right, var(--navy-light), #fff 40%); }
+  .card-rose  { border-left: 3px solid var(--rose);  background: linear-gradient(to right, var(--rose-light), #fff 40%); }
+
+  /* ─── Inline Examples ─────────────────────────────────────── */
+  .example-block {
+    background: var(--bg); border-radius: var(--radius-sm);
+    padding: .85rem 1rem; margin: .75rem 0;
+    border: 1px solid var(--border);
+    font-size: .88rem;
+  }
+  .ex-label {
+    font-size: .68rem; font-weight: 700; letter-spacing: .07em;
+    text-transform: uppercase; margin-bottom: .4rem;
+  }
+  .ex-good  { color: var(--sage); }
+  .ex-bad   { color: var(--coral); }
+  .ex-note  { color: var(--gold); }
+  .ex-speak { color: var(--teal); }
+  .ex-write { color: var(--navy); }
+
+  .highlight { font-style: italic; font-family: 'Lora', serif; }
+
+  /* ─── Pattern Pills ───────────────────────────────────────── */
+  .pattern-list { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+  .pattern-list li {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: .6rem .9rem;
+    font-size: .88rem;
+    position: relative; padding-left: 1.6rem;
+  }
+  .pattern-list li::before {
+    content: "›";
+    position: absolute; left: .65rem; top: 50%; transform: translateY(-50%);
+    color: var(--teal); font-size: 1.1rem; font-weight: 700;
+  }
+  .pattern-list.write li::before { color: var(--navy); }
+
+  .blank {
+    display: inline-block;
+    border-bottom: 1.5px solid var(--text-muted);
+    min-width: 80px; margin: 0 .2rem;
+  }
+
+  /* ─── Tables ──────────────────────────────────────────────── */
+  .table-wrap { overflow-x: auto; margin: .75rem 0; }
+  table {
+    width: 100%; border-collapse: collapse;
+    font-size: .83rem;
+  }
+  thead th {
+    background: var(--teal); color: #fff;
+    padding: .55rem .8rem; text-align: left;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600; font-size: .75rem;
+    letter-spacing: .04em;
+  }
+  tbody tr:nth-child(even) { background: var(--bg); }
+  tbody td { padding: .5rem .8rem; border-bottom: 1px solid var(--border); }
+  tbody tr:last-child td { border-bottom: none; }
+  .tick { color: var(--sage); font-weight: 700; }
+  .cross { color: var(--coral); font-weight: 700; }
+  .badge {
+    display: inline-block; font-size: .67rem; font-weight: 700;
+    padding: .15rem .5rem; border-radius: 10px;
+    text-transform: uppercase; letter-spacing: .05em;
+  }
+  .badge-high   { background: #D4EDDA; color: #2E7D32; }
+  .badge-med    { background: #FFF3CD; color: #856404; }
+  .badge-low    { background: #FCE8E8; color: #B71C1C; }
+  .badge-both   { background: var(--teal-light); color: var(--teal); }
+  .badge-speak  { background: var(--sage-light);  color: var(--sage); }
+  .badge-write  { background: var(--navy-light);  color: var(--navy); }
+
+  /* ─── Info Boxes ──────────────────────────────────────────── */
+  .info-box {
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    margin: .75rem 0;
+    font-size: .88rem;
+  }
+  .info-box-teal  { background: var(--teal-light);  border: 1px solid var(--teal-mid); }
+  .info-box-coral { background: var(--coral-light); border: 1px solid #E8B0A0; }
+  .info-box-gold  { background: var(--gold-light);  border: 1px solid #D4B870; }
+  .info-box-sage  { background: var(--sage-light);  border: 1px solid #B8D4B8; }
+  .info-box-plum  { background: var(--plum-light);  border: 1px solid #C4A8D8; }
+  .info-box-navy  { background: var(--navy-light);  border: 1px solid #A8BDD8; }
+  .info-box-title {
+    font-weight: 700; font-size: .78rem;
+    text-transform: uppercase; letter-spacing: .06em; margin-bottom: .4rem;
+  }
+
+  /* ─── Divider ─────────────────────────────────────────────── */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+  /* ─── Fluency Drills ──────────────────────────────────────── */
+  .drill-block {
+    background: var(--surface);
+    border: 2px solid var(--teal-mid);
+    border-radius: var(--radius-md);
+    overflow: hidden; margin-bottom: 1rem;
+  }
+  .drill-header {
+    background: var(--teal); color: #fff;
+    padding: .6rem 1rem;
+    font-size: .78rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .06em;
+    display: flex; align-items: center; gap: .5rem;
+  }
+  .drill-body { padding: 1rem 1.25rem; }
+
+  /* ─── Two-col grid ────────────────────────────────────────── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: .75rem 0; }
+
+  /* ─── Master table accent ─────────────────────────────────── */
+  .master-table thead th:first-child { border-radius: var(--radius-sm) 0 0 0; }
+  .master-table thead th:last-child  { border-radius: 0 var(--radius-sm) 0 0; }
+  .master-table td:first-child { font-weight: 600; }
+
+  /* ─── Accordion (Category tabs) ──────────────────────────── */
+  .accordion { margin-bottom: 1rem; }
+  .accordion-btn {
+    width: 100%; text-align: left;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: .9rem 1.2rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: .75rem;
+    font-family: 'Lora', serif; font-size: 1rem; font-weight: 600;
+    color: var(--text-main);
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+  }
+  .accordion-btn:hover { border-color: var(--teal); }
+  .accordion-btn .acc-left { display: flex; align-items: center; gap: .75rem; }
+  .accordion-btn .acc-badge {
+    font-size: .7rem; padding: .2rem .6rem;
+    border-radius: 12px; font-family: 'DM Sans', sans-serif;
+    font-weight: 600; text-transform: uppercase; letter-spacing: .06em;
+  }
+  .accordion-btn .chevron {
+    font-size: .8rem; color: var(--text-light);
+    transition: transform .3s ease;
+  }
+  .accordion-btn.open { border-color: var(--teal); }
+  .accordion-btn.open .chevron { transform: rotate(180deg); }
+  .accordion-panel {
+    background: var(--surface);
+    border: 1px solid var(--border); border-top: none;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    padding: 1.5rem;
+    display: none;
+  }
+  .accordion-panel.open { display: block; }
+
+  /* ─── Sub-tabs within each category ──────────────────────── */
+  .subtab-nav {
+    display: flex; gap: .4rem; flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: .75rem;
+  }
+  .subtab-btn {
+    background: none; border: 1px solid var(--border);
+    border-radius: 20px; padding: .35rem .85rem;
+    font-size: .78rem; font-weight: 500; cursor: pointer;
+    color: var(--text-muted); transition: var(--transition);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .subtab-btn:hover { border-color: var(--teal); color: var(--teal); }
+  .subtab-btn.active {
+    background: var(--teal); color: #fff; border-color: var(--teal);
+  }
+  .subtab-panel { display: none; }
+  .subtab-panel.active { display: block; }
+
+  /* ─── Responsive ──────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .two-col { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════ HEADER ═══════════════════════════ -->
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="site-logo">IELTS Speaking <span>/ Discourse Markers</span></div>
+    <nav class="breadcrumb">
+      <a href="#">Home</a>
+      <span class="sep">›</span>
+      <a href="#">Speaking & Writing</a>
+      <span class="sep">›</span>
+      Discourse Markers
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════════════════ HERO ══════════════════════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">B2 – C2 Study Guide</div>
+    <h1>Discourse Markers</h1>
+    <p class="hero-sub">A complete module on how discourse markers function in real communication — covering all eight categories for IELTS Speaking and Writing Task 2.</p>
+    <div class="hero-tags">
+      <span class="hero-tag tag-teal">IELTS Speaking Parts 1–3</span>
+      <span class="hero-tag tag-sage">Writing Task 2</span>
+      <span class="hero-tag tag-gold">Fluency Building</span>
+      <span class="hero-tag tag-plum">Pattern-Based Practice</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ LAYOUT ════════════════════════════ -->
+<div class="page-layout">
+
+  <!-- ── Sidebar ────────────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-title">Contents</div>
+      <ul class="sidebar-nav">
+        <li><a href="#overview" class="active"><span class="nav-num">①</span>System Overview</a></li>
+        <li><a href="#categories"><span class="nav-num">②</span>All 8 Categories</a></li>
+        <li><a href="#speak-vs-write"><span class="nav-num">③</span>Speaking vs Writing</a></li>
+        <li><a href="#ielts-application"><span class="nav-num">④</span>IELTS Application</a></li>
+        <li><a href="#fluency-drills"><span class="nav-num">⑤</span>Fluency Drills</a></li>
+        <li><a href="#master-table"><span class="nav-num">⑥</span>Master Summary Table</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- ── Main ───────────────────────────────────────────────── -->
+  <main class="main-content">
+
+    <!-- ══════════ SECTION 1 · OVERVIEW ══════════════════════ -->
+    <section class="section" id="overview">
+      <div class="section-header">
+        <div class="section-icon icon-teal">🔍</div>
+        <div>
+          <div class="section-label">Section 1</div>
+          <h2 class="section-title">Discourse System Overview</h2>
+        </div>
+      </div>
+
+      <div class="card card-teal">
+        <div class="card-title"><span class="dot dot-teal"></span>What Are Discourse Markers?</div>
+        <p>Discourse markers are words and phrases that connect, organise, and signal the relationship between ideas in spoken and written communication. They are <em>not</em> just linking words you memorise for an exam — they are <strong>thinking tools</strong> that help both the speaker and the listener follow the logic of what is being said.</p>
+        <div class="info-box info-box-teal">
+          <div class="info-box-title">💡 Core Principle</div>
+          <p style="margin:0"><strong>Discourse markers are thinking tools, not vocabulary items.</strong> A student who uses them naturally is thinking in connected English — not stitching memorised phrases onto pre-planned ideas.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="dot dot-teal"></span>What Discourse Markers Actually Do</div>
+        <div class="two-col">
+          <div>
+            <div class="example-block">
+              <div class="ex-label ex-speak">Organise Ideas</div>
+              They give structure to speech and writing so that ideas flow in a logical order. Without them, communication can feel like disconnected facts.
+            </div>
+            <div class="example-block">
+              <div class="ex-label ex-speak">Signal Relationships</div>
+              They show HOW ideas connect — whether you are adding, contrasting, explaining, or concluding.
+            </div>
+          </div>
+          <div>
+            <div class="example-block">
+              <div class="ex-label ex-speak">Help Real-Time Thinking</div>
+              In speaking, markers like <em>"well,"</em> <em>"you know,"</em> and <em>"I mean"</em> give the speaker a moment to think while keeping the listener engaged.
+            </div>
+            <div class="example-block">
+              <div class="ex-label ex-speak">Improve Listener Comprehension</div>
+              They tell the listener what to expect next — <em>"on the other hand"</em> signals contrast before the contrast even arrives.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-coral">
+        <div class="card-title"><span class="dot dot-coral"></span>The Key Distinction</div>
+        <div class="two-col">
+          <div class="example-block">
+            <div class="ex-label ex-bad">❌ Memorised Linking Words</div>
+            <p><em>"Furthermore, it is undeniable that… Moreover, this demonstrates that…"</em></p>
+            <p>Sounds mechanical. The student is performing the language, not using it.</p>
+          </div>
+          <div class="example-block">
+            <div class="ex-label ex-good">✅ Functional Communication Tools</div>
+            <p><em>"And I think the main reason is… Actually, what's interesting is… I mean, when you think about it…"</em></p>
+            <p>Sounds natural. The language follows the thinking, not the other way around.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="dot dot-teal"></span>The 8 Discourse Categories at a Glance</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>#</th><th>Category</th><th>Core Question It Answers</th><th>Example Markers</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td><strong>Additive</strong></td><td>What else is there?</td><td>also, and, besides, on top of that</td></tr>
+              <tr><td>2</td><td><strong>Apposition</strong></td><td>What do you mean exactly?</td><td>for example, in other words, that is</td></tr>
+              <tr><td>3</td><td><strong>Consequential</strong></td><td>Why? / So what happens?</td><td>because, so, therefore, as a result</td></tr>
+              <tr><td>4</td><td><strong>Comparison</strong></td><td>How are these similar?</td><td>similarly, likewise, in the same way</td></tr>
+              <tr><td>5</td><td><strong>Contrastive</strong></td><td>How are these different?</td><td>but, although, however, whereas</td></tr>
+              <tr><td>6</td><td><strong>Clarification</strong></td><td>Let me make this clearer…</td><td>actually, especially, in general</td></tr>
+              <tr><td>7</td><td><strong>Sequential</strong></td><td>What order does this happen in?</td><td>first, then, finally, moving on</td></tr>
+              <tr><td>8</td><td><strong>Summative</strong></td><td>What's the takeaway?</td><td>overall, in conclusion, so basically</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ SECTION 2 · CATEGORIES ══════════════════════ -->
+    <section class="section" id="categories">
+      <div class="section-header">
+        <div class="section-icon icon-sage">🧩</div>
+        <div>
+          <div class="section-label">Section 2</div>
+          <h2 class="section-title">Category Breakdown</h2>
+        </div>
+      </div>
+      <p style="color:var(--text-muted); margin-bottom:1.25rem; font-size:.9rem">Each accordion below covers one complete discourse category. Click to expand any category and use the sub-tabs inside to navigate between Function, Patterns, Errors, and more.</p>
+
+      <!-- ─── CAT 1 · ADDITIVE ────────────────────────────── -->
+      <div class="accordion" id="cat1">
+        <button class="accordion-btn" onclick="toggleAcc(this)">
+          <span class="acc-left">
+            <span class="acc-badge" style="background:var(--teal-light);color:var(--teal)">Cat 1</span>
+            Additive Markers
+          </span>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="accordion-panel">
+          <div class="subtab-nav">
+            <button class="subtab-btn active" onclick="switchTab(this,'add')">A. Function</button>
+            <button class="subtab-btn" onclick="switchTab(this,'add')">B. Signposting Table</button>
+            <button class="subtab-btn" onclick="switchTab(this,'add')">C. Speaking Patterns</button>
+            <button class="subtab-btn" onclick="switchTab(this,'add')">D. Writing Patterns</button>
+            <button class="subtab-btn" onclick="switchTab(this,'add')">E. Common Errors</button>
+          </div>
+
+          <!-- Function -->
+          <div class="subtab-panel active">
+            <div class="card card-teal">
+              <div class="card-title"><span class="dot dot-teal"></span>What Additive Markers Do</div>
+              <p>Additive markers add information — they say <em>"here is something else that supports, expands, or extends what I just said."</em> They represent <strong>cumulative thinking</strong>: stacking evidence, examples, and ideas to build a stronger point.</p>
+              <p>A speaker uses additive markers when they have <em>more than one thing to say</em> and want the listener to understand all of it belongs together. Without them, two connected ideas may sound like unrelated statements.</p>
+            </div>
+            <div class="card">
+              <div class="card-title"><span class="dot dot-teal"></span>Subtypes</div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Marker</th><th>Nuance</th><th>Strength</th></tr></thead>
+                  <tbody>
+                    <tr><td><em>and</em></td><td>The simplest connector — neutral addition</td><td>Low formality, very natural in speech</td></tr>
+                    <tr><td><em>also / too</em></td><td>Reinforces or adds a parallel point</td><td>Medium — works in both modes</td></tr>
+                    <tr><td><em>in addition</em></td><td>Signals a formal extra point</td><td>Writing-leaning; sounds stiff in speech</td></tr>
+                    <tr><td><em>furthermore / moreover</em></td><td>Strong, formal addition — intensifies the point</td><td>Writing only — avoid in speech</td></tr>
+                    <tr><td><em>on top of that</em></td><td>Colloquial emphatic addition</td><td>High naturalness in speech</td></tr>
+                    <tr><td><em>not only that / what's more</em></td><td>Emphatic — signals something surprising or important</td><td>Good in speech, semi-formal</td></tr>
+                    <tr><td><em>besides / apart from that</em></td><td>Adds a tangential extra point</td><td>Natural in speech</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Signposting -->
+          <div class="subtab-panel">
+            <div class="card">
+              <div class="card-title"><span class="dot dot-teal"></span>Signposting Classification</div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Marker</th><th>Speaking Only</th><th>Writing Only</th><th>Both</th><th>Naturalness in Speech</th></tr></thead>
+                  <tbody>
+                    <tr><td><em>and</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>also</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>too</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>on top of that</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>besides / apart from that</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>in addition</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-low">Low</span></td></tr>
+                    <tr><td><em>furthermore</em></td><td></td><td class="tick">✔</td><td></td><td><span class="badge badge-low">Low</span></td></tr>
+                    <tr><td><em>moreover</em></td><td></td><td class="tick">✔</td><td></td><td><span class="badge badge-low">Low</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="info-box info-box-coral" style="margin-top:.75rem">
+                <div class="info-box-title">⚠️ Why "furthermore" sounds wrong in speech</div>
+                Native speakers almost never say <em>furthermore</em> in conversation. It signals that the speaker is reading from a script rather than thinking spontaneously. In IELTS Speaking, this lowers your <strong>fluency</strong> band score because it sounds rehearsed.
+              </div>
+            </div>
+          </div>
+
+          <!-- Speaking Patterns -->
+          <div class="subtab-panel">
+            <div class="card card-sage">
+              <div class="card-title"><span class="dot dot-sage"></span>🎤 Natural Speaking Patterns</div>
+              <ul class="pattern-list">
+                <li>I think ___, and also, ___.</li>
+                <li>Another thing is ___. That's actually quite important.</li>
+                <li>On top of that, ___.</li>
+                <li>And what's more, ___.</li>
+                <li>Not only that, but ___.</li>
+                <li>Apart from that, I'd say ___.</li>
+              </ul>
+              <div class="example-block" style="margin-top:.85rem">
+                <div class="ex-label ex-speak">✅ Natural IELTS Part 3 Answer</div>
+                <em>"I think social media has changed the way we communicate, and also, it's affected how we get our news. On top of that, it's really changed the way young people interact socially. So there are quite a few dimensions to it."</em>
+              </div>
+            </div>
+          </div>
+
+          <!-- Writing Patterns -->
+          <div class="subtab-panel">
+            <div class="card card-navy">
+              <div class="card-title"><span class="dot dot-navy"></span>✍️ Writing Patterns (Task 2)</div>
+              <ul class="pattern-list write">
+                <li>In addition to this, ___.</li>
+                <li>Furthermore, it can be argued that ___.</li>
+                <li>Moreover, the evidence suggests that ___.</li>
+                <li>A further consideration is that ___.</li>
+              </ul>
+              <div class="example-block" style="margin-top:.85rem">
+                <div class="ex-label ex-write">✅ Band 7–9 Writing Example</div>
+                <em>"Urban green spaces improve the mental wellbeing of city residents. Furthermore, they provide vital ecosystems for local wildlife, which is increasingly threatened by urban expansion."</em>
+              </div>
+            </div>
+          </div>
+
+          <!-- Errors -->
+          <div class="subtab-panel">
+            <div class="card card-coral">
+              <div class="card-title"><span class="dot dot-coral"></span>⚠️ Common Errors</div>
+              <div class="example-block">
+                <div class="ex-label ex-bad">Error 1 · Using writing markers in speech</div>
+                <em>❌ "Moreover, I strongly believe that…"</em><br>
+                <em>✅ "I also think that…" / "And what's more, I believe…"</em>
+              </div>
+              <div class="example-block">
+                <div class="ex-label ex-bad">Error 2 · Overusing "also"</div>
+                <em>❌ "I like sport. I also like music. I also enjoy cooking. I also…"</em><br>
+                <em>✅ Vary: "I like sport. On top of that, music is a big part of my life. And I enjoy cooking, too."</em>
+              </div>
+              <div class="example-block">
+                <div class="ex-label ex-bad">Error 3 · Mechanical chaining</div>
+                <em>❌ "Firstly… Secondly… Furthermore… Additionally… Moreover…"</em><br>
+                <em>✅ Mix structures and patterns rather than stacking formal markers.</em>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── CAT 2 · APPOSITION ─────────────────────────── -->
+      <div class="accordion" id="cat2">
+        <button class="accordion-btn" onclick="toggleAcc(this)">
+          <span class="acc-left">
+            <span class="acc-badge" style="background:var(--sage-light);color:var(--sage)">Cat 2</span>
+            Apposition — Exemplification & Restatement
+          </span>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="accordion-panel">
+          <div class="subtab-nav">
+            <button class="subtab-btn active" onclick="switchTab(this,'app')">A. Function</button>
+            <button class="subtab-btn" onclick="switchTab(this,'app')">B. Signposting Table</button>
+            <button class="subtab-btn" onclick="switchTab(this,'app')">C. Speaking Patterns</button>
+            <button class="subtab-btn" onclick="switchTab(this,'app')">D. Writing Patterns</button>
+            <button class="subtab-btn" onclick="switchTab(this,'app')">E. Common Errors</button>
+          </div>
+
+          <div class="subtab-panel active">
+            <div class="card card-sage">
+              <div class="card-title"><span class="dot dot-sage"></span>What Apposition Markers Do</div>
+              <p>Apposition markers clarify or develop a point by either <strong>exemplifying</strong> (giving an example) or <strong>restating</strong> (saying the same thing in different words). They answer the listener's silent question: <em>"Can you give me an example?"</em> or <em>"What exactly do you mean?"</em></p>
+              <p>These are among the most important markers for IELTS Speaking because the examiner is explicitly looking for your ability to <strong>develop and extend your answers</strong>.</p>
+            </div>
+            <div class="card">
+              <div class="card-title"><span class="dot dot-sage"></span>Subtypes: Exemplification vs Restatement</div>
+              <div class="two-col">
+                <div>
+                  <div class="info-box info-box-sage">
+                    <div class="info-box-title">Exemplification</div>
+                    <p>Giving a concrete example to support a general claim.</p>
+                    <em>for example / for instance / take ___ for example / like / such as</em>
+                  </div>
+                </div>
+                <div>
+                  <div class="info-box info-box-teal">
+                    <div class="info-box-title">Restatement</div>
+                    <p>Rewording a complex idea to make it clearer.</p>
+                    <em>in other words / I mean / what I mean is / that is / basically / put simply</em>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card">
+              <div class="card-title"><span class="dot dot-sage"></span>Signposting Classification</div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Marker</th><th>Speaking Only</th><th>Writing Only</th><th>Both</th><th>Naturalness in Speech</th></tr></thead>
+                  <tbody>
+                    <tr><td><em>like</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>I mean</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>what I mean is</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>basically</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>take ___ for example</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>for example</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>for instance</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>in other words</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>namely / i.e.</em></td><td></td><td class="tick">✔</td><td></td><td><span class="badge badge-low">Low</span></td></tr>
+                    <tr><td><em>such as</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-sage">
+              <div class="card-title"><span class="dot dot-sage"></span>🎤 Natural Speaking Patterns</div>
+              <ul class="pattern-list">
+                <li>___, like ___. That's a good example of what I mean.</li>
+                <li>Take ___ for example — it's actually a really good illustration of ___.</li>
+                <li>I mean, what I'm saying is ___.</li>
+                <li>What I mean is, ___ — basically, it comes down to ___.</li>
+                <li>___, such as ___ or ___.</li>
+                <li>In other words, ___.</li>
+              </ul>
+              <div class="example-block" style="margin-top:.85rem">
+                <div class="ex-label ex-speak">✅ Natural IELTS Part 2 Response</div>
+                <em>"I'd say the most significant change is how we stay connected — I mean, before smartphones, if you were out of the house, no one could reach you. Take my parents, for example — they had to use payphones. In other words, communication used to require a lot more effort."</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-navy">
+              <div class="card-title"><span class="dot dot-navy"></span>✍️ Writing Patterns (Task 2)</div>
+              <ul class="pattern-list write">
+                <li>For example, ___.</li>
+                <li>For instance, a recent study found that ___.</li>
+                <li>This can be illustrated by ___.</li>
+                <li>That is to say, ___.</li>
+                <li>In other words, ___.</li>
+                <li>To illustrate this point, ___.</li>
+              </ul>
+              <div class="example-block" style="margin-top:.85rem">
+                <div class="ex-label ex-write">✅ Band 7–9 Writing Example</div>
+                <em>"Many governments have struggled to implement effective climate policy. For instance, several nations that signed the Paris Agreement have failed to meet their initial emissions targets, demonstrating that international commitments do not automatically translate into domestic action."</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-coral">
+              <div class="card-title"><span class="dot dot-coral"></span>⚠️ Common Errors</div>
+              <div class="example-block">
+                <div class="ex-label ex-bad">Error 1 · Vague examples</div>
+                <em>❌ "For example, some people do this."</em><br>
+                <em>✅ Make it specific: "Take Japan, for example — the government introduced a four-day work week policy…"</em>
+              </div>
+              <div class="example-block">
+                <div class="ex-label ex-bad">Error 2 · Restating without developing</div>
+                <em>❌ "It is bad. In other words, it is not good."</em><br>
+                <em>✅ Add new information when restating — don't just repeat the same idea with different words.</em>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── CAT 3 · CONSEQUENTIAL ──────────────────────── -->
+      <div class="accordion" id="cat3">
+        <button class="accordion-btn" onclick="toggleAcc(this)">
+          <span class="acc-left">
+            <span class="acc-badge" style="background:var(--coral-light);color:var(--coral)">Cat 3</span>
+            Consequential — Cause, Result & Condition
+          </span>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="accordion-panel">
+          <div class="subtab-nav">
+            <button class="subtab-btn active" onclick="switchTab(this,'cons')">A. Function</button>
+            <button class="subtab-btn" onclick="switchTab(this,'cons')">B. Signposting Table</button>
+            <button class="subtab-btn" onclick="switchTab(this,'cons')">C. Speaking Patterns</button>
+            <button class="subtab-btn" onclick="switchTab(this,'cons')">D. Writing Patterns</button>
+            <button class="subtab-btn" onclick="switchTab(this,'cons')">E. Common Errors</button>
+          </div>
+
+          <div class="subtab-panel active">
+            <div class="card card-coral">
+              <div class="card-title"><span class="dot dot-coral"></span>What Consequential Markers Do</div>
+              <p>Consequential markers express logical relationships of <strong>cause, result, and condition</strong>. They tell the listener <em>why</em> something happens or <em>what happens as a result</em>. This category is central to analytical thinking — and IELTS rewards candidates who can explain, not just describe.</p>
+              <div class="two-col">
+                <div class="info-box info-box-coral">
+                  <div class="info-box-title">Cause</div>
+                  <p>because, since, as, due to, owing to</p>
+                </div>
+                <div class="info-box info-box-gold">
+                  <div class="info-box-title">Result</div>
+                  <p>so, therefore, as a result, consequently, this means that, that's why</p>
+                </div>
+              </div>
+              <div class="info-box info-box-plum" style="margin-top:.75rem">
+                <div class="info-box-title">Condition</div>
+                <p>if, unless, provided that, as long as, in that case</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card">
+              <div class="card-title"><span class="dot dot-coral"></span>Signposting Classification</div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Marker</th><th>Speaking Only</th><th>Writing Only</th><th>Both</th><th>Naturalness in Speech</th></tr></thead>
+                  <tbody>
+                    <tr><td><em>so</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>because</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>that's why</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>this means that</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>as a result</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>therefore</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-low">Low</span></td></tr>
+                    <tr><td><em>consequently</em></td><td></td><td class="tick">✔</td><td></td><td><span class="badge badge-low">Low</span></td></tr>
+                    <tr><td><em>due to / owing to</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-low">Low</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card" style="border-left:3px solid var(--coral); background:linear-gradient(to right, var(--coral-light), #fff 40%)">
+              <div class="card-title"><span class="dot dot-coral"></span>🎤 Natural Speaking Patterns</div>
+              <ul class="pattern-list">
+                <li>___, so ___. That's basically why ___.</li>
+                <li>The main reason is that ___. I mean, if ___, then ___.</li>
+                <li>It happens because ___. And that's why ___.</li>
+                <li>As a result, ___ — which makes sense when you think about it.</li>
+                <li>___, which means that ___.</li>
+                <li>If ___, then obviously ___.</li>
+              </ul>
+              <div class="example-block" style="margin-top:.85rem">
+                <div class="ex-label ex-speak">✅ Natural IELTS Part 3 Answer</div>
+                <em>"I think people are moving to cities mainly because there are more job opportunities there. So naturally, rural areas end up losing their younger population, which means that local communities start to decline. And if governments don't step in, that process becomes really difficult to reverse."</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-navy">
+              <div class="card-title"><span class="dot dot-navy"></span>✍️ Writing Patterns (Task 2)</div>
+              <ul class="pattern-list write">
+                <li>As a result of ___, ___.</li>
+                <li>This has led to ___, which consequently ___.</li>
+                <li>Due to ___, many ___ have experienced ___.</li>
+                <li>Therefore, it can be argued that ___.</li>
+                <li>Provided that ___, ___ could be achievable.</li>
+              </ul>
+              <div class="example-block" style="margin-top:.85rem">
+                <div class="ex-label ex-write">✅ Band 7–9 Writing Example</div>
+                <em>"As global temperatures continue to rise, coastal ecosystems face increasing degradation. Consequently, millions of people who depend on fisheries for their livelihoods may experience severe economic hardship in the coming decades."</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-coral">
+              <div class="card-title"><span class="dot dot-coral"></span>⚠️ Common Errors</div>
+              <div class="example-block">
+                <div class="ex-label ex-bad">Error 1 · "Therefore" in speech</div>
+                <em>❌ "Therefore, I strongly believe that…"</em><br>
+                <em>✅ "So I think…" / "That's why I believe…"</em>
+              </div>
+              <div class="example-block">
+                <div class="ex-label ex-bad">Error 2 · Confusing cause and result</div>
+                <em>❌ "Because of pollution, this is the reason." (unclear logic)</em><br>
+                <em>✅ Be precise: "Pollution causes health problems, and as a result, healthcare costs rise."</em>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── CAT 4 · COMPARISON ─────────────────────────── -->
+      <div class="accordion" id="cat4">
+        <button class="accordion-btn" onclick="toggleAcc(this)">
+          <span class="acc-left">
+            <span class="acc-badge" style="background:var(--gold-light);color:var(--gold)">Cat 4</span>
+            Comparison Markers
+          </span>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="accordion-panel">
+          <div class="subtab-nav">
+            <button class="subtab-btn active" onclick="switchTab(this,'comp')">A. Function</button>
+            <button class="subtab-btn" onclick="switchTab(this,'comp')">B. Signposting Table</button>
+            <button class="subtab-btn" onclick="switchTab(this,'comp')">C. Speaking Patterns</button>
+            <button class="subtab-btn" onclick="switchTab(this,'comp')">D. Writing Patterns</button>
+            <button class="subtab-btn" onclick="switchTab(this,'comp')">E. Common Errors</button>
+          </div>
+
+          <div class="subtab-panel active">
+            <div class="card card-gold">
+              <div class="card-title"><span class="dot dot-gold"></span>What Comparison Markers Do</div>
+              <p>Comparison markers draw <strong>similarities</strong> between two ideas, situations, or things. They signal that the speaker is thinking in parallel — seeing a connection between different things. This type of thinking demonstrates analytical depth and is valued in both IELTS Speaking and Writing.</p>
+              <p>Key markers: <em>similarly, likewise, in the same way, equally, by the same token, just as</em></p>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card">
+              <div class="card-title"><span class="dot dot-gold"></span>Signposting Classification</div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Marker</th><th>Speaking Only</th><th>Writing Only</th><th>Both</th><th>Naturalness in Speech</th></tr></thead>
+                  <tbody>
+                    <tr><td><em>in the same way</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>similarly</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>it's the same with ___</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>just like ___</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>likewise</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-low">Low</span></td></tr>
+                    <tr><td><em>by the same token</em></td><td></td><td class="tick">✔</td><td></td><td><span class="badge badge-low">Low</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-gold">
+              <div class="card-title"><span class="dot dot-gold"></span>🎤 Natural Speaking Patterns</div>
+              <ul class="pattern-list">
+                <li>It's the same with ___ — ___.</li>
+                <li>Just like ___, ___ also ___.</li>
+                <li>___, and similarly, ___.</li>
+                <li>You could say the same about ___.</li>
+                <li>In the same way, ___.</li>
+              </ul>
+              <div class="example-block" style="margin-top:.85rem">
+                <div class="ex-label ex-speak">✅ Natural IELTS Answer</div>
+                <em>"I think children learn languages much faster than adults — it's the same with music, actually. Just like language, musical training is much more effective when it starts early."</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-navy">
+              <div class="card-title"><span class="dot dot-navy"></span>✍️ Writing Patterns (Task 2)</div>
+              <ul class="pattern-list write">
+                <li>Similarly, ___.</li>
+                <li>Likewise, ___ has also been shown to ___.</li>
+                <li>In the same way that ___, ___ also ___.</li>
+                <li>This parallels the situation in ___, where ___.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-coral">
+              <div class="card-title"><span class="dot dot-coral"></span>⚠️ Common Errors</div>
+              <div class="example-block">
+                <div class="ex-label ex-bad">Error · Using comparison markers when contrasting</div>
+                <em>❌ "Similarly, online education is worse than traditional classrooms."</em><br>
+                <em>✅ Use contrast markers when ideas differ — comparison markers only for genuine similarities.</em>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── CAT 5 · CONTRASTIVE ────────────────────────── -->
+      <div class="accordion" id="cat5">
+        <button class="accordion-btn" onclick="toggleAcc(this)">
+          <span class="acc-left">
+            <span class="acc-badge" style="background:var(--plum-light);color:var(--plum)">Cat 5</span>
+            Contrastive — Antithetic, Concessive, Reformulatory & Replacive
+          </span>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="accordion-panel">
+          <div class="subtab-nav">
+            <button class="subtab-btn active" onclick="switchTab(this,'cont')">A. Function & Subtypes</button>
+            <button class="subtab-btn" onclick="switchTab(this,'cont')">B. Signposting Table</button>
+            <button class="subtab-btn" onclick="switchTab(this,'cont')">C. Speaking Patterns</button>
+            <button class="subtab-btn" onclick="switchTab(this,'cont')">D. Writing Patterns</button>
+            <button class="subtab-btn" onclick="switchTab(this,'cont')">E. Common Errors</button>
+          </div>
+
+          <div class="subtab-panel active">
+            <div class="card card-plum">
+              <div class="card-title"><span class="dot dot-plum"></span>What Contrastive Markers Do</div>
+              <p>Contrastive markers express <strong>opposition, exception, or alternatives</strong> between ideas. They are among the most commonly tested markers in IELTS because expressing nuanced disagreement and counter-argument is a core skill at Band 7+.</p>
+            </div>
+            <div class="card">
+              <div class="card-title"><span class="dot dot-plum"></span>Four Subtypes Explained</div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Subtype</th><th>Meaning</th><th>Key Markers</th><th>Example</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Antithetic</strong></td><td>Direct, clear opposition — "A is true, B is the opposite"</td><td>but, however, whereas, while, on the other hand</td><td><em>Some prefer cities; others prefer the countryside.</em></td></tr>
+                    <tr><td><strong>Concessive</strong></td><td>Acknowledging a point but reducing its strength — "Yes, but…"</td><td>although, even though, despite, nevertheless, granted</td><td><em>Although it has benefits, the drawbacks are significant.</em></td></tr>
+                    <tr><td><strong>Reformulatory</strong></td><td>Correcting or adjusting what was just said</td><td>actually, I mean, rather, or rather, well</td><td><em>It's expensive — or rather, it's not affordable for most people.</em></td></tr>
+                    <tr><td><strong>Replacive</strong></td><td>Offering an alternative instead</td><td>instead, alternatively, rather than, on the contrary</td><td><em>Instead of banning cars, cities could expand cycling infrastructure.</em></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-title"><span class="dot dot-plum"></span>Nuance: "although" vs "even though" vs "despite"</div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Marker</th><th>Structure</th><th>Emphasis</th><th>Example</th></tr></thead>
+                  <tbody>
+                    <tr><td><em>although</em></td><td>+ clause</td><td>Neutral concession</td><td><em>Although it is expensive, many people still buy it.</em></td></tr>
+                    <tr><td><em>even though</em></td><td>+ clause</td><td>Stronger — the speaker is surprised</td><td><em>Even though it is very expensive, people still buy it.</em></td></tr>
+                    <tr><td><em>despite</em></td><td>+ noun/gerund</td><td>Formal, factual concession</td><td><em>Despite the high price, people continue to buy it.</em></td></tr>
+                    <tr><td><em>in spite of</em></td><td>+ noun/gerund</td><td>Same as despite — slightly more formal</td><td><em>In spite of the high price, demand has remained strong.</em></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card">
+              <div class="card-title"><span class="dot dot-plum"></span>Signposting Classification</div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Marker</th><th>Speaking Only</th><th>Writing Only</th><th>Both</th><th>Naturalness in Speech</th></tr></thead>
+                  <tbody>
+                    <tr><td><em>but</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>at the same time</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>actually / well</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>though (end-position)</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>whereas</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>although / even though</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>however</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-low">Low</span></td></tr>
+                    <tr><td><em>nevertheless / nonetheless</em></td><td></td><td class="tick">✔</td><td></td><td><span class="badge badge-low">Low</span></td></tr>
+                    <tr><td><em>on the contrary</em></td><td></td><td class="tick">✔</td><td></td><td><span class="badge badge-low">Low</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-plum">
+              <div class="card-title"><span class="dot dot-plum"></span>🎤 Natural Speaking Patterns</div>
+              <ul class="pattern-list">
+                <li>I see your point, but at the same time, ___.</li>
+                <li>Some people think ___, whereas I think ___.</li>
+                <li>___, though. That's an important distinction.</li>
+                <li>Even though ___, ___.</li>
+                <li>Well, actually, ___. Or rather, ___.</li>
+                <li>Instead of ___, I think it would be better to ___.</li>
+              </ul>
+              <div class="example-block" style="margin-top:.85rem">
+                <div class="ex-label ex-speak">✅ Natural IELTS Part 3 Answer</div>
+                <em>"I think technology has improved our lives in many ways. At the same time, though, there are definitely some downsides. Even though we're more connected than ever, a lot of people actually feel more isolated. So it's not really a simple picture — it depends a lot on how you use it."</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-navy">
+              <div class="card-title"><span class="dot dot-navy"></span>✍️ Writing Patterns (Task 2)</div>
+              <ul class="pattern-list write">
+                <li>While ___, ___.</li>
+                <li>Although ___, it can be argued that ___.</li>
+                <li>Despite ___, many argue that ___.</li>
+                <li>However, there are those who contend that ___.</li>
+                <li>On the other hand, ___.</li>
+                <li>Nevertheless, the evidence suggests that ___.</li>
+              </ul>
+              <div class="example-block" style="margin-top:.85rem">
+                <div class="ex-label ex-write">✅ Band 7–9 Writing Example</div>
+                <em>"While economic growth has historically depended on industrial expansion, it can be argued that sustainable development offers a more viable long-term model. Despite the higher initial costs, renewable energy infrastructure consistently proves cost-effective over a 20-year horizon."</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-coral">
+              <div class="card-title"><span class="dot dot-coral"></span>⚠️ Common Errors</div>
+              <div class="example-block">
+                <div class="ex-label ex-bad">Error 1 · "However" overuse in writing</div>
+                <em>❌ Using "however" to begin every counter-argument paragraph.</em><br>
+                <em>✅ Vary: While / Although / Even so / That said / Nevertheless</em>
+              </div>
+              <div class="example-block">
+                <div class="ex-label ex-bad">Error 2 · "But" only in speaking</div>
+                <em>❌ "But, the government should not…" (in a formal essay)</em><br>
+                <em>✅ Use "However" or "Nevertheless" in writing; keep "but" for speech.</em>
+              </div>
+              <div class="example-block">
+                <div class="ex-label ex-bad">Error 3 · Wrong structure with "despite"</div>
+                <em>❌ "Despite the fact, many people…"</em><br>
+                <em>✅ "Despite the fact that…" OR "Despite + noun phrase"</em>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── CAT 6 · CLARIFICATION ──────────────────────── -->
+      <div class="accordion" id="cat6">
+        <button class="accordion-btn" onclick="toggleAcc(this)">
+          <span class="acc-left">
+            <span class="acc-badge" style="background:var(--navy-light);color:var(--navy)">Cat 6</span>
+            Clarification — Corroborative, Emphasizing & Generalization
+          </span>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="accordion-panel">
+          <div class="subtab-nav">
+            <button class="subtab-btn active" onclick="switchTab(this,'clar')">A. Function & Subtypes</button>
+            <button class="subtab-btn" onclick="switchTab(this,'clar')">B. Signposting Table</button>
+            <button class="subtab-btn" onclick="switchTab(this,'clar')">C. Speaking Patterns</button>
+            <button class="subtab-btn" onclick="switchTab(this,'clar')">D. Writing Patterns</button>
+            <button class="subtab-btn" onclick="switchTab(this,'clar')">E. Common Errors</button>
+          </div>
+
+          <div class="subtab-panel active">
+            <div class="card card-navy">
+              <div class="card-title"><span class="dot dot-navy"></span>What Clarification Markers Do</div>
+              <p>Clarification markers help a speaker <strong>refine, strengthen, or broaden</strong> what they have just said. Rather than adding new information, they sharpen focus. This category includes three distinct functions:</p>
+            </div>
+            <div class="card">
+              <div class="card-title"><span class="dot dot-navy"></span>Three Subtypes</div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Subtype</th><th>Function</th><th>Key Markers</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Corroborative</strong></td><td>Confirms or reinforces the previous statement</td><td>indeed, of course, after all, obviously, clearly</td></tr>
+                    <tr><td><strong>Emphasizing</strong></td><td>Highlights the most important part</td><td>especially, particularly, above all, most importantly, what's key is, what really matters is</td></tr>
+                    <tr><td><strong>Generalization</strong></td><td>Broadens a claim — moves from specific to general</td><td>in general, generally, on the whole, broadly speaking, as a rule</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card">
+              <div class="card-title"><span class="dot dot-navy"></span>Signposting Classification</div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Marker</th><th>Speaking Only</th><th>Writing Only</th><th>Both</th><th>Naturalness in Speech</th></tr></thead>
+                  <tbody>
+                    <tr><td><em>obviously / of course</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>what's key is</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>especially / particularly</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>on the whole</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>broadly speaking</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>in general</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>above all</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>indeed</em></td><td></td><td class="tick">✔</td><td></td><td><span class="badge badge-low">Low</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-navy">
+              <div class="card-title"><span class="dot dot-navy"></span>🎤 Natural Speaking Patterns</div>
+              <ul class="pattern-list">
+                <li>___, especially ___. That's where it really matters.</li>
+                <li>What's really key here is ___.</li>
+                <li>Generally speaking, ___, but of course there are exceptions.</li>
+                <li>On the whole, I'd say ___.</li>
+                <li>Obviously, ___ — that goes without saying. But what's interesting is ___.</li>
+                <li>Above all, ___.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-navy">
+              <div class="card-title"><span class="dot dot-navy"></span>✍️ Writing Patterns (Task 2)</div>
+              <ul class="pattern-list write">
+                <li>In particular, ___.</li>
+                <li>Particularly noteworthy is ___.</li>
+                <li>Broadly speaking, ___.</li>
+                <li>It is worth noting that, above all, ___.</li>
+                <li>Indeed, this demonstrates that ___.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-coral">
+              <div class="card-title"><span class="dot dot-coral"></span>⚠️ Common Errors</div>
+              <div class="example-block">
+                <div class="ex-label ex-bad">Error · Overusing "obviously"</div>
+                <em>❌ "Obviously, the government should… Obviously, people want… Obviously, this shows…"</em><br>
+                <em>✅ Use sparingly — it can sound dismissive or condescending if overused.</em>
+              </div>
+              <div class="example-block">
+                <div class="ex-label ex-bad">Error · Vague generalisations</div>
+                <em>❌ "In general, things are getting better."</em><br>
+                <em>✅ Follow generalisations with a specific qualifier: "In general, access to education has improved — though significant regional disparities remain."</em>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── CAT 7 · SEQUENTIAL ────────────────────────── -->
+      <div class="accordion" id="cat7">
+        <button class="accordion-btn" onclick="toggleAcc(this)">
+          <span class="acc-left">
+            <span class="acc-badge" style="background:var(--rose-light);color:var(--rose)">Cat 7</span>
+            Sequential — Ordering, Timing & Transition
+          </span>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="accordion-panel">
+          <div class="subtab-nav">
+            <button class="subtab-btn active" onclick="switchTab(this,'seq')">A. Function & Subtypes</button>
+            <button class="subtab-btn" onclick="switchTab(this,'seq')">B. Signposting Table</button>
+            <button class="subtab-btn" onclick="switchTab(this,'seq')">C. Speaking Patterns</button>
+            <button class="subtab-btn" onclick="switchTab(this,'seq')">D. Writing Patterns</button>
+            <button class="subtab-btn" onclick="switchTab(this,'seq')">E. Common Errors</button>
+          </div>
+
+          <div class="subtab-panel active">
+            <div class="card card-rose">
+              <div class="card-title"><span class="dot dot-rose"></span>What Sequential Markers Do</div>
+              <p>Sequential markers organise ideas in <strong>time or logical order</strong>. They are essential for IELTS Speaking Part 2, where you must structure a two-minute monologue clearly. They help the listener track where you are in your response.</p>
+            </div>
+            <div class="card">
+              <div class="card-title"><span class="dot dot-rose"></span>Three Subtypes</div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Subtype</th><th>Function</th><th>Key Markers</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Ordering</strong></td><td>Sequences information logically</td><td>first, second, firstly, to begin with, next, then, finally, lastly</td></tr>
+                    <tr><td><strong>Timing</strong></td><td>Locates events in time</td><td>when, after that, at first, eventually, once, as soon as, before long</td></tr>
+                    <tr><td><strong>Transition</strong></td><td>Moves to a new topic or aspect</td><td>moving on, turning to, now, anyway, as for ___</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card">
+              <div class="card-title"><span class="dot dot-rose"></span>Signposting Classification</div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Marker</th><th>Speaking Only</th><th>Writing Only</th><th>Both</th><th>Naturalness in Speech</th></tr></thead>
+                  <tbody>
+                    <tr><td><em>so, to start with</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>then / after that</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>eventually / before long</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>moving on to</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>first of all / to begin with</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>finally / lastly</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>subsequently</em></td><td></td><td class="tick">✔</td><td></td><td><span class="badge badge-low">Low</span></td></tr>
+                    <tr><td><em>formerly / previously</em></td><td></td><td class="tick">✔</td><td></td><td><span class="badge badge-low">Low</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-rose">
+              <div class="card-title"><span class="dot dot-rose"></span>🎤 Natural Speaking Patterns</div>
+              <ul class="pattern-list">
+                <li>So, to start with, ___. Then ___. And eventually, ___.</li>
+                <li>The first thing I'd mention is ___. After that, ___.</li>
+                <li>To begin with, ___. Moving on, ___. And finally, ___.</li>
+                <li>At first, ___. But then, ___. Before long, ___.</li>
+                <li>As for ___, I'd say ___.</li>
+              </ul>
+              <div class="example-block" style="margin-top:.85rem">
+                <div class="ex-label ex-speak">✅ IELTS Part 2 Structure (2-minute cue card)</div>
+                <em>"Right, so the person I'd like to talk about is my secondary school teacher, Mr. Santos. To begin with, I should explain where I met him — it was actually in my third year of school. Then, what I remember most is how he used to explain things — he had this really engaging way of teaching. Eventually, I realised he'd had a huge impact on how I think. And looking back, I'd say he's one of the main reasons I became interested in learning."</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-navy">
+              <div class="card-title"><span class="dot dot-navy"></span>✍️ Writing Patterns (Task 2)</div>
+              <ul class="pattern-list write">
+                <li>First and foremost, ___.</li>
+                <li>Subsequently, ___.</li>
+                <li>In the first instance, ___. This is followed by ___.</li>
+                <li>As a final point, ___.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-coral">
+              <div class="card-title"><span class="dot dot-coral"></span>⚠️ Common Errors</div>
+              <div class="example-block">
+                <div class="ex-label ex-bad">Error 1 · Overusing "firstly… secondly… thirdly…"</div>
+                <em>❌ Every IELTS essay beginning with: "Firstly… Secondly… Thirdly… Finally…"</em><br>
+                <em>✅ Vary your sequencing language and embed it naturally into sentences.</em>
+              </div>
+              <div class="example-block">
+                <div class="ex-label ex-bad">Error 2 · "Subsequently" in IELTS Speaking</div>
+                <em>❌ "Subsequently, I decided to…"</em><br>
+                <em>✅ "After that, I decided to…" / "Then I thought, well…"</em>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── CAT 8 · SUMMATIVE ──────────────────────────── -->
+      <div class="accordion" id="cat8">
+        <button class="accordion-btn" onclick="toggleAcc(this)">
+          <span class="acc-left">
+            <span class="acc-badge" style="background:var(--slate-light);color:var(--slate)">Cat 8</span>
+            Summative Markers
+          </span>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="accordion-panel">
+          <div class="subtab-nav">
+            <button class="subtab-btn active" onclick="switchTab(this,'sum')">A. Function</button>
+            <button class="subtab-btn" onclick="switchTab(this,'sum')">B. Signposting Table</button>
+            <button class="subtab-btn" onclick="switchTab(this,'sum')">C. Speaking Patterns</button>
+            <button class="subtab-btn" onclick="switchTab(this,'sum')">D. Writing Patterns</button>
+            <button class="subtab-btn" onclick="switchTab(this,'sum')">E. Common Errors</button>
+          </div>
+
+          <div class="subtab-panel active">
+            <div class="card" style="border-left:3px solid var(--slate); background:linear-gradient(to right, var(--slate-light), #fff 40%)">
+              <div class="card-title"><span class="dot dot-slate"></span>What Summative Markers Do</div>
+              <p>Summative markers signal that the speaker is <strong>wrapping up</strong> a sequence of ideas and drawing a conclusion. They are used to synthesise everything that has been said into a single, clear takeaway.</p>
+              <p>In IELTS Speaking, effective use of summative markers shows that the candidate can <strong>manage longer turns</strong> and bring them to a coherent close — which directly affects your Coherence & Cohesion score.</p>
+              <p>Key markers: <em>overall, in conclusion, so basically, all in all, to sum up, on balance, in short, when all is said and done, the bottom line is</em></p>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card">
+              <div class="card-title"><span class="dot dot-slate"></span>Signposting Classification</div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Marker</th><th>Speaking Only</th><th>Writing Only</th><th>Both</th><th>Naturalness in Speech</th></tr></thead>
+                  <tbody>
+                    <tr><td><em>so basically</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>all in all</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>the bottom line is</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-high">High</span></td></tr>
+                    <tr><td><em>when all is said and done</em></td><td class="tick">✔</td><td></td><td></td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>overall</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>on balance</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>in short</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>to sum up</em></td><td></td><td></td><td class="tick">✔</td><td><span class="badge badge-med">Medium</span></td></tr>
+                    <tr><td><em>in conclusion</em></td><td></td><td class="tick">✔</td><td></td><td><span class="badge badge-low">Low</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="info-box info-box-coral" style="margin-top:.75rem">
+                <div class="info-box-title">⚠️ "In conclusion" in speaking</div>
+                Saying <em>"In conclusion"</em> in a speaking test sounds extremely unnatural — like reading the end of an essay. Use <em>"So basically…"</em> or <em>"All in all…"</em> instead.
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card" style="border-left:3px solid var(--slate); background:linear-gradient(to right, var(--slate-light), #fff 40%)">
+              <div class="card-title"><span class="dot dot-slate"></span>🎤 Natural Speaking Patterns</div>
+              <ul class="pattern-list">
+                <li>So basically, ___ — that's my main point.</li>
+                <li>All in all, I'd say ___.</li>
+                <li>The bottom line is ___.</li>
+                <li>When all is said and done, ___.</li>
+                <li>Overall, though, I think ___.</li>
+                <li>So, to bring it all together, ___.</li>
+              </ul>
+              <div class="example-block" style="margin-top:.85rem">
+                <div class="ex-label ex-speak">✅ Natural Part 3 Close</div>
+                <em>"So basically, I think the biggest issue is that we treat these problems separately when they're actually interconnected. All in all, what we really need is a more holistic approach — one that looks at the social, economic, and environmental dimensions together."</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-navy">
+              <div class="card-title"><span class="dot dot-navy"></span>✍️ Writing Patterns (Task 2)</div>
+              <ul class="pattern-list write">
+                <li>In conclusion, it can be argued that ___.</li>
+                <li>To summarise, ___.</li>
+                <li>On balance, the evidence suggests that ___.</li>
+                <li>Overall, while ___, the preponderance of evidence indicates ___.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="subtab-panel">
+            <div class="card card-coral">
+              <div class="card-title"><span class="dot dot-coral"></span>⚠️ Common Errors</div>
+              <div class="example-block">
+                <div class="ex-label ex-bad">Error 1 · "In conclusion, I have discussed…" (summary, not synthesis)</div>
+                <em>❌ Repeating what you said rather than drawing a meaningful conclusion.</em><br>
+                <em>✅ State a clear position or leave the reader with a thought-provoking idea.</em>
+              </div>
+              <div class="example-block">
+                <div class="ex-label ex-bad">Error 2 · Mid-answer summary</div>
+                <em>❌ Saying "So basically…" too early, before you've fully developed the point.</em><br>
+                <em>✅ Summative markers should come at the END of a complete idea — not as an escape from developing it further.</em>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ══════════ SECTION 3 · SPEAK VS WRITE ════════════════ -->
+    <section class="section" id="speak-vs-write">
+      <div class="section-header">
+        <div class="section-icon icon-coral">🔄</div>
+        <div>
+          <div class="section-label">Section 3</div>
+          <h2 class="section-title">Why Good Writing ≠ Good Speaking</h2>
+        </div>
+      </div>
+
+      <div class="card card-coral">
+        <div class="card-title"><span class="dot dot-coral"></span>The Core Difference</div>
+        <p>Writing and speaking are two fundamentally different modes of communication. A student who writes well does not automatically speak well — and vice versa. This distinction is critical for IELTS, which tests both modes separately.</p>
+        <div class="two-col">
+          <div class="info-box info-box-sage">
+            <div class="info-box-title">🎤 Speaking Is…</div>
+            <p>Real-time, spontaneous, flexible, and conversational. It allows for hesitation, self-correction, and natural filler markers (<em>well, you know, I mean</em>). It rewards naturalness, not formality.</p>
+          </div>
+          <div class="info-box info-box-navy">
+            <div class="info-box-title">✍️ Writing Is…</div>
+            <p>Planned, formal, structured, and controlled. It rewards precision, cohesion, and sophisticated vocabulary — but these same qualities sound unnatural when spoken aloud.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="dot dot-coral"></span>Direct Comparison Table</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Idea</th><th>❌ Written Style in Speech</th><th>✅ Natural Spoken Version</th></tr></thead>
+            <tbody>
+              <tr><td>Adding a point</td><td><em>Moreover, it is evident that…</em></td><td><em>And also, I think…</em></td></tr>
+              <tr><td>Contrasting</td><td><em>Nevertheless, one must consider…</em></td><td><em>At the same time, though…</em></td></tr>
+              <tr><td>Cause</td><td><em>Consequently, this has led to…</em></td><td><em>So basically, that's why…</em></td></tr>
+              <tr><td>Concluding</td><td><em>In conclusion, I have discussed…</em></td><td><em>All in all, I'd say…</em></td></tr>
+              <tr><td>Giving an example</td><td><em>For instance, it is observable that…</em></td><td><em>Like, take ___ for example…</em></td></tr>
+              <tr><td>Ordering ideas</td><td><em>Subsequently, one may observe…</em></td><td><em>Then, after that…</em></td></tr>
+              <tr><td>Emphasising</td><td><em>It is of paramount importance that…</em></td><td><em>What's really important is…</em></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card card-gold">
+        <div class="card-title"><span class="dot dot-gold"></span>What This Means for IELTS Band Score</div>
+        <p>The IELTS Speaking band descriptors reward <strong>natural language use</strong>. A candidate who uses overly formal markers consistently will be marked down for lack of fluency and naturalness — even if the grammar is correct.</p>
+        <p>Conversely, in Writing Task 2, informal spoken markers (<em>so, and, but, basically</em>) at the start of every sentence will reduce your Lexical Resource and Coherence scores.</p>
+        <div class="info-box info-box-gold">
+          <div class="info-box-title">💡 The Rule of Thumb</div>
+          <p style="margin:0"><strong>If it sounds like something you'd write in a formal essay, don't say it.</strong> If it sounds like something a friend would say, don't write it in Task 2.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ══════════ SECTION 4 · IELTS APPLICATION ════════════ -->
+    <section class="section" id="ielts-application">
+      <div class="section-header">
+        <div class="section-icon icon-plum">🎯</div>
+        <div>
+          <div class="section-label">Section 4</div>
+          <h2 class="section-title">IELTS Application</h2>
+        </div>
+      </div>
+
+      <div class="card card-teal" style="margin-bottom:1rem">
+        <div class="card-title"><span class="dot dot-teal"></span>Speaking Part 2 — Organising a Long Answer</div>
+        <p>Part 2 requires a 1–2 minute monologue. Discourse markers are what make the difference between a <strong>list of facts</strong> and a <strong>coherent, developed response</strong>.</p>
+        <div class="example-block">
+          <div class="ex-label ex-speak">✅ Model Part 2 Structure</div>
+          <p><strong>Open:</strong> <em>"Right, so the topic I've been given is about a place I enjoy visiting…"</em></p>
+          <p><strong>Describe:</strong> <em>"To begin with, I should say that this place is actually quite close to where I grew up…"</em></p>
+          <p><strong>Develop:</strong> <em>"What makes it special is… On top of that… I mean, what I find most interesting is…"</em></p>
+          <p><strong>Conclude:</strong> <em>"So all in all, I'd say it holds a lot of personal significance for me."</em></p>
+        </div>
+      </div>
+
+      <div class="card card-sage" style="margin-bottom:1rem">
+        <div class="card-title"><span class="dot dot-sage"></span>Speaking Part 3 — Discussion & Opinion</div>
+        <p>Part 3 is a discussion where you need to express opinions, agree/disagree, speculate, and explore ideas. Discourse markers are essential for all of these functions.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Function</th><th>Natural Marker</th><th>Example</th></tr></thead>
+            <tbody>
+              <tr><td>Expressing opinion</td><td><em>I think / I'd say / personally</em></td><td><em>"I'd say the main issue is…"</em></td></tr>
+              <tr><td>Showing contrast</td><td><em>At the same time / but / whereas</em></td><td><em>"At the same time, it's important to…"</em></td></tr>
+              <tr><td>Cause/effect</td><td><em>because / so / that's why</em></td><td><em>"That's probably why so many people…"</em></td></tr>
+              <tr><td>Speculating</td><td><em>I imagine / it might be that / I suppose</em></td><td><em>"I suppose it depends a lot on…"</em></td></tr>
+              <tr><td>Conceding</td><td><em>granted / even though / fair enough</em></td><td><em>"Granted, there are some benefits, but…"</em></td></tr>
+              <tr><td>Concluding thought</td><td><em>all in all / so basically</em></td><td><em>"So basically, my view is…"</em></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card card-navy">
+        <div class="card-title"><span class="dot dot-navy"></span>Writing Task 2 — Band Score Impact</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Marker Type</th><th>Effect on Band Score</th><th>Recommendation</th></tr></thead>
+            <tbody>
+              <tr><td>Overused basics (<em>but, also, so</em>)</td><td>Lowers Lexical Resource (Band 5–6)</td><td>Vary with formal equivalents</td></tr>
+              <tr><td>Mechanical list (<em>firstly, secondly, thirdly</em>)</td><td>Lowers Coherence (feels formulaic)</td><td>Embed sequencing in sentences</td></tr>
+              <tr><td>Appropriate formal markers (<em>however, furthermore, consequently</em>)</td><td>Supports Band 7 Coherence & Cohesion</td><td>Use correctly and not excessively</td></tr>
+              <tr><td>Sophisticated range (<em>notwithstanding, by the same token, in so far as</em>)</td><td>Indicates Band 8–9 range</td><td>Use only when natural, not forced</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ══════════ SECTION 5 · FLUENCY DRILLS ════════════════ -->
+    <section class="section" id="fluency-drills">
+      <div class="section-header">
+        <div class="section-icon icon-gold">🧠</div>
+        <div>
+          <div class="section-label">Section 5</div>
+          <h2 class="section-title">Fluency Training Drills</h2>
+        </div>
+      </div>
+      <p style="color:var(--text-muted); margin-bottom:1.25rem; font-size:.9rem">These drills are designed for independent study. Complete each exercise before checking the model answers.</p>
+
+      <!-- Drill 1 -->
+      <div class="drill-block">
+        <div class="drill-header">Drill 1 · Formal → Natural Conversion</div>
+        <div class="drill-body">
+          <p style="margin-bottom:.85rem; font-size:.9rem">Rewrite each formal written phrase as a natural spoken version. Try before reading the suggested answer.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Formal (Written)</th><th>Natural (Spoken) — Try first, then check</th></tr></thead>
+              <tbody>
+                <tr><td><em>Moreover, it is evident that…</em></td><td><em>And also, I think… / What's more, …</em></td></tr>
+                <tr><td><em>Nevertheless, one must consider…</em></td><td><em>At the same time, though, … / But then again, …</em></td></tr>
+                <tr><td><em>Consequently, this has resulted in…</em></td><td><em>So basically, that's why… / And as a result, …</em></td></tr>
+                <tr><td><em>In conclusion, the evidence demonstrates that…</em></td><td><em>All in all, I'd say… / So to bring it together, …</em></td></tr>
+                <tr><td><em>Furthermore, it is undeniable that…</em></td><td><em>And on top of that, … / Not only that, but …</em></td></tr>
+                <tr><td><em>Subsequently, the situation deteriorated…</em></td><td><em>After that, things got worse… / And then, …</em></td></tr>
+                <tr><td><em>Notwithstanding the aforementioned points…</em></td><td><em>Even so, … / That said, …</em></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drill 2 -->
+      <div class="drill-block">
+        <div class="drill-header">Drill 2 · Answer Expansion</div>
+        <div class="drill-body">
+          <p style="margin-bottom:.85rem; font-size:.9rem">Start with the short answer provided. Expand it into a full 4–6 sentence response using at least THREE different discourse marker categories. A model is given for the first item.</p>
+          <div class="example-block">
+            <div class="ex-label ex-speak">Question: "Do you prefer living in the city or the countryside?"</div>
+            <strong>Short Answer:</strong> <em>"I prefer the city."</em><br><br>
+            <strong>✅ Expanded Version:</strong> <em>"I think I prefer the city, mainly because there's more going on — <strong>[consequential]</strong> like, there are more job opportunities and things to do socially. <strong>[additive]</strong> On top of that, public transport is much better. <strong>[contrastive]</strong> That said, I can see why people enjoy the countryside — the pace of life is much calmer. <strong>[summative]</strong> All in all, though, I'm more of a city person."</em>
+          </div>
+          <div class="example-block" style="border: 1px dashed var(--teal)">
+            <div class="ex-label ex-speak">Question: "Do you think social media is mostly positive or negative for young people?"</div>
+            <strong>Short Answer:</strong> <em>"It's mostly negative."</em><br><br>
+            <span style="color:var(--text-muted); font-size:.85rem; font-style:italic">→ Expand this using: additive + consequential + contrastive + summative markers. Write your response here.</span>
+          </div>
+          <div class="example-block" style="border: 1px dashed var(--teal)">
+            <div class="ex-label ex-speak">Question: "Should governments invest more in public transport?"</div>
+            <strong>Short Answer:</strong> <em>"Yes, definitely."</em><br><br>
+            <span style="color:var(--text-muted); font-size:.85rem; font-style:italic">→ Expand this using: consequential + apposition + clarification + summative markers. Write your response here.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drill 3 -->
+      <div class="drill-block">
+        <div class="drill-header">Drill 3 · Pattern Completion</div>
+        <div class="drill-body">
+          <p style="margin-bottom:.85rem; font-size:.9rem">Complete each sentence stem with a natural, relevant continuation. The category is shown in brackets to guide you.</p>
+          <ul class="pattern-list" style="gap:.75rem">
+            <li><strong>[Additive]</strong> I think the main advantage is the flexibility, and on top of that, <span class="blank"></span>.</li>
+            <li><strong>[Apposition]</strong> Take education, for example — <span class="blank"></span>.</li>
+            <li><strong>[Consequential]</strong> People are spending more time online, which means that <span class="blank"></span>.</li>
+            <li><strong>[Contrastive]</strong> I can see your point, but at the same time, <span class="blank"></span>.</li>
+            <li><strong>[Comparison]</strong> It's the same with healthcare, actually — just like <span class="blank"></span>.</li>
+            <li><strong>[Clarification]</strong> Generally speaking, <span class="blank"></span>, though there are obviously exceptions.</li>
+            <li><strong>[Sequential]</strong> To begin with, <span class="blank"></span>. Then, moving on, <span class="blank"></span>.</li>
+            <li><strong>[Summative]</strong> All in all, I'd say <span class="blank"></span>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ══════════ SECTION 6 · MASTER TABLE ═════════════════ -->
+    <section class="section" id="master-table">
+      <div class="section-header">
+        <div class="section-icon icon-teal">🧾</div>
+        <div>
+          <div class="section-label">Section 6</div>
+          <h2 class="section-title">Master Summary Table</h2>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="table-wrap">
+          <table class="master-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Core Function</th>
+                <th>Best Markers for Speaking</th>
+                <th>Best Markers for Writing</th>
+                <th>Key Natural Speaking Patterns</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Additive</td>
+                <td>Add more information</td>
+                <td><em>also, on top of that, what's more</em></td>
+                <td><em>furthermore, moreover, in addition</em></td>
+                <td><em>"And also… / On top of that…"</em></td>
+              </tr>
+              <tr>
+                <td>Apposition</td>
+                <td>Exemplify or restate</td>
+                <td><em>like, I mean, take ___ for example</em></td>
+                <td><em>for example, for instance, that is to say</em></td>
+                <td><em>"Take ___ for example… / I mean, what I'm saying is…"</em></td>
+              </tr>
+              <tr>
+                <td>Consequential</td>
+                <td>Show cause, result, condition</td>
+                <td><em>so, because, that's why, which means</em></td>
+                <td><em>therefore, consequently, due to, as a result</em></td>
+                <td><em>"So basically… / That's why… / Which means that…"</em></td>
+              </tr>
+              <tr>
+                <td>Comparison</td>
+                <td>Draw similarities</td>
+                <td><em>it's the same with, just like</em></td>
+                <td><em>similarly, likewise, by the same token</em></td>
+                <td><em>"It's the same with… / Just like…"</em></td>
+              </tr>
+              <tr>
+                <td>Contrastive</td>
+                <td>Show opposition, concede, replace</td>
+                <td><em>but, at the same time, even though, actually</em></td>
+                <td><em>however, whereas, despite, nevertheless</em></td>
+                <td><em>"I see your point, but… / At the same time, though…"</em></td>
+              </tr>
+              <tr>
+                <td>Clarification</td>
+                <td>Corroborate, emphasise, generalise</td>
+                <td><em>especially, obviously, on the whole</em></td>
+                <td><em>particularly, indeed, broadly speaking</em></td>
+                <td><em>"What's key here is… / Generally speaking…"</em></td>
+              </tr>
+              <tr>
+                <td>Sequential</td>
+                <td>Order, time, transition</td>
+                <td><em>to begin with, then, moving on, eventually</em></td>
+                <td><em>first and foremost, subsequently, lastly</em></td>
+                <td><em>"To begin with… / After that… / Moving on…"</em></td>
+              </tr>
+              <tr>
+                <td>Summative</td>
+                <td>Conclude and synthesise</td>
+                <td><em>all in all, so basically, the bottom line is</em></td>
+                <td><em>in conclusion, to summarise, on balance, overall</em></td>
+                <td><em>"All in all, I'd say… / So basically…"</em></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="info-box info-box-teal" style="margin-top:1rem">
+        <div class="info-box-title">📌 Final Reminder for IELTS Learners</div>
+        <p>Discourse markers only improve your score when they are used <strong>correctly</strong> and <strong>naturally</strong>. A response with three well-placed, genuinely connected markers will always outperform one that mechanically inserts ten formal linking words.</p>
+        <p style="margin:0">Your goal is not to <em>use</em> discourse markers — your goal is to <em>think</em> with them.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════════ -->
+<footer style="background:var(--surface); border-top:1px solid var(--border); padding:1.5rem; text-align:center; margin-top:2rem;">
+  <p style="font-size:.8rem; color:var(--text-light)">IELTS Speaking & Writing · Discourse Markers Study Guide · B2–C2 · englishwithmack21</p>
+</footer>
+
+<script>
+  // ── Accordion ────────────────────────────────────────────────
+  function toggleAcc(btn) {
+    const panel = btn.nextElementSibling;
+    const isOpen = panel.classList.contains('open');
+    // Close all others
+    document.querySelectorAll('.accordion-panel.open').forEach(p => {
+      p.classList.remove('open');
+      p.previousElementSibling.classList.remove('open');
+    });
+    if (!isOpen) {
+      panel.classList.add('open');
+      btn.classList.add('open');
+      // Activate first subtab
+      const firstBtn = panel.querySelector('.subtab-btn');
+      const firstPanel = panel.querySelector('.subtab-panel');
+      if (firstBtn && firstPanel) {
+        panel.querySelectorAll('.subtab-btn').forEach(b => b.classList.remove('active'));
+        panel.querySelectorAll('.subtab-panel').forEach(p => p.classList.remove('active'));
+        firstBtn.classList.add('active');
+        firstPanel.classList.add('active');
+      }
+    }
+  }
+
+  // ── Sub-tabs ──────────────────────────────────────────────────
+  function switchTab(btn, _id) {
+    const nav = btn.closest('.subtab-nav');
+    const panel = nav.closest('.accordion-panel');
+    const buttons = nav.querySelectorAll('.subtab-btn');
+    const panels  = panel.querySelectorAll('.subtab-panel');
+    const idx = Array.from(buttons).indexOf(btn);
+    buttons.forEach(b => b.classList.remove('active'));
+    panels.forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    if (panels[idx]) panels[idx].classList.add('active');
+  }
+
+  // ── Sidebar active state on scroll ───────────────────────────
+  const sections = document.querySelectorAll('.section');
+  const navLinks = document.querySelectorAll('.sidebar-nav a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const link = document.querySelector(`.sidebar-nav a[href="#${entry.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { threshold: 0.3 });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

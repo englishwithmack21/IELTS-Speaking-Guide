@@ -1,0 +1,733 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+.g-wrap{font-family:'DM Sans',system-ui,sans-serif;max-width:760px;margin:0 auto;padding:0 0 3rem;}
+.g-serif{font-family:'Playfair Display',Georgia,serif;}
+.g-tab-btn{padding:6px 14px;border-radius:20px;font-size:12px;cursor:pointer;transition:all 0.15s;background:transparent;font-family:inherit;}
+.g-tab-btn:hover{background:var(--color-background-secondary);}
+.g-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem 1.5rem;margin-bottom:1rem;}
+.g-step-num{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0;}
+.g-pill{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:0.4px;}
+.g-pattern-row{display:flex;gap:10px;padding:7px 0;border-bottom:0.5px solid var(--color-border-tertiary);}
+.g-pattern-row:last-child{border-bottom:none;}
+.g-drill-card{border-left:3px solid;border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;padding:10px 14px;margin-bottom:8px;}
+.g-rubric-row{display:grid;grid-template-columns:40px 120px 1fr;gap:12px;align-items:start;padding:8px 0;border-bottom:0.5px solid var(--color-border-tertiary);}
+.g-rubric-row:last-child{border-bottom:none;}
+.g-ex-table{width:100%;border-collapse:collapse;font-size:12.5px;}
+.g-ex-table th,.g-ex-table td{padding:8px 10px;text-align:left;border-bottom:0.5px solid var(--color-border-tertiary);}
+.g-ex-table tbody tr:nth-child(even){background:var(--color-background-secondary);}
+.g-quiz-opt{display:flex;align-items:center;gap:10px;padding:10px 14px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);cursor:pointer;margin-bottom:6px;transition:all 0.1s;}
+.g-quiz-opt:hover{background:var(--color-background-secondary);}
+.g-pitfall-row{display:flex;gap:10px;padding:9px 0;border-bottom:0.5px solid var(--color-border-tertiary);}
+.g-pitfall-row:last-child{border-bottom:none;}
+.g-var-row{display:grid;grid-template-columns:180px 1fr;gap:10px;padding:8px 0;border-bottom:0.5px solid var(--color-border-tertiary);font-size:13px;}
+.g-var-row:last-child{border-bottom:none;}
+</style>
+
+<div class="g-wrap" id="root"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+
+<script>
+const {useState,useEffect} = React;
+
+const TC = {
+  1:{bg:"#EEEDFE",border:"#AFA9EC",text:"#3C3489",btn:"#534AB7",light:"#f5f4ff"},
+  2:{bg:"#E1F5EE",border:"#5DCAA5",text:"#085041",btn:"#0F6E56",light:"#f0fbf6"},
+  3:{bg:"#FAECE7",border:"#F0997B",text:"#712B13",btn:"#993C1D",light:"#fdf5f2"},
+  4:{bg:"#E6F1FB",border:"#85B7EB",text:"#0C447C",btn:"#185FA5",light:"#f0f7fe"},
+  5:{bg:"#FAEEDA",border:"#FAC775",text:"#633806",btn:"#854F0B",light:"#fdf8ee"},
+};
+
+const DATA = {
+1:{
+  title:"Lexical Paraphrasing",sub:"Changing Words & Vocabulary",
+  criteria:"Lexical Resource (LR)",
+  def:"Replace key vocabulary items with synonyms, collocations, hyponyms, hypernyms, or descriptive phrases — without changing the grammatical structure of your sentence.",
+  tip:"IELTS examiners reward Lexical Resource when candidates avoid copying words from the question prompt. Band 7 descriptors specify using 'less common and idiomatic vocabulary' and paraphrasing effectively. Never repeat the topic word from the question.",
+  vars:[
+    ["Synonyms / near-synonyms","Direct substitution of a word with a similar meaning.","big → large; like → enjoy; job → occupation"],
+    ["Register shift","Moving between formal and informal vocabulary.","kid → child → minor (increasingly formal)"],
+    ["Collocations / chunks","Using vocabulary in its natural word-partner grouping.","make a decision; heavy traffic; strong coffee"],
+    ["Phrasal ↔ single verb","Swapping a phrasal verb for its single-word equivalent, or vice versa.","continue → carry on; investigate → look into; give up → abandon"],
+    ["Hyponym (more specific)","Moving to a more specific term within the same category.","fruit → mango; transport → bicycle; sport → swimming"],
+    ["Hypernym (more general)","Moving to the broader category that contains the specific item.","iPhone → smartphone; sushi → Japanese food"],
+    ["Idiomatic reformulation","Expressing the same idea through a natural idiomatic phrase.","very tired → exhausted / worn out; very angry → fuming"],
+    ["Multiword description","Using a phrase when a single specific word is unavailable.","insomnia → trouble sleeping; traffic → congestion on the roads"],
+  ],
+  steps:[
+    {n:1,t:"Spot the repeated word",d:"Identify the key noun, verb, or adjective you are about to repeat — usually the main topic word from the examiner's question."},
+    {n:2,t:"Choose a direction",d:"Synonym: same level. Hyponym: zoom in (more specific). Hypernym: zoom out (more general). Chunk: use a natural collocational phrase."},
+    {n:3,t:"Apply a natural collocation",d:"Don't just swap the word in isolation — rebuild the phrase so it sounds natural: 'strong opinion' not 'big opinion'; 'reach a decision' not 'arrive at a decision.'"},
+    {n:4,t:"Check meaning and register",d:"Confirm the meaning is preserved (economical ≠ economic). Confirm the register fits the context (commence sounds too formal for casual Part 1 answers)."},
+  ],
+  patterns:[
+    ["I'm really into … / I'm keen on … / I'm fond of …","Replacing 'I like'"],
+    ["I tend to … / I gravitate towards …","Describing habits or preferences"],
+    ["It's a significant / key / crucial factor.","Replacing 'important'"],
+    ["I prefer [hyponym] like [example].","Going more specific with preference"],
+    ["What I enjoy most is [specific activity].","Fronting + specificity"],
+    ["I have a soft spot for …","Informal register for liking something"],
+  ],
+  examples:[
+    {t:"Lifestyle",o:"I like food.",p:"I'm into spicy dishes — especially Thai curries.",n:"like → I'm into; food → spicy dishes (hyponym) + example"},
+    {t:"Technology",o:"I use my iPhone a lot.",p:"I rely on my smartphone constantly — mainly for photos and notes.",n:"iPhone → smartphone (hypernym); use → rely on (chunk)"},
+    {t:"Education",o:"My teacher was nice.",p:"My instructor was incredibly supportive.",n:"teacher → instructor (register shift); nice → supportive (more precise)"},
+    {t:"Environment",o:"Pollution is bad.",p:"Air and water contamination are serious environmental problems.",n:"pollution → contamination (near-synonym); bad → serious problems"},
+    {t:"Work",o:"My job is tiring.",p:"My occupation is physically demanding.",n:"job → occupation (formal register); tiring → demanding (collocation)"},
+  ],
+  pitfalls:[
+    {l:"Thesaurus traps",d:"Choosing unnatural collocations: 'enormous happiness' (→ great happiness); 'consume water' (→ drink water). These exist in a dictionary but sound wrong in speech."},
+    {l:"Over-formality",d:"Using 'commence' instead of 'start' in a casual Part 1 answer makes speech sound memorised, not natural."},
+    {l:"Meaning drift",d:"Near-synonyms can have different nuances: 'economical' (thrifty) ≠ 'economic' (related to the economy). Choose carefully."},
+    {l:"Wrong hierarchical direction",d:"'A fruit is a type of apple' is incorrect logic. Always check: the hyponym is the specific term; the hypernym is the general category."},
+  ],
+  drills:[
+    {n:"No-repeat challenge",i:"Answer 3 Part 1 questions (e.g., Do you like music? What food do you enjoy? Do you exercise?) without using the key topic word once. Replace it every time using a synonym, hyponym, or chunk.",tm:"3 min"},
+    {n:"Hyponym / hypernym ladder",i:"Pick 3 broad topics. For each: say the general term → a hyponym → a full example sentence. E.g., Transport → bicycle → 'The old mountain bike I use for my morning commute.'",tm:"2 min"},
+    {n:"Chunk-swap warm-up",i:"Replace 5 simple verbs with natural chunks: decide → make a decision; start → kick off; like → have a soft spot for; improve → make progress; stop → put an end to.",tm:"1 min"},
+  ],
+  rubric:[
+    {s:"0",l:"No change",d:"The original question word is copied without any substitution."},
+    {s:"1",l:"Synonym used",d:"A synonym is used but the collocation or register feels slightly unnatural."},
+    {s:"2",l:"Natural & precise",d:"A natural collocation, hyponym, hypernym, or idiomatic phrase is used fluently with meaning fully preserved."},
+  ],
+},
+2:{
+  title:"Structural Paraphrasing",sub:"Changing Grammar & Sentence Form",
+  criteria:"Grammatical Range and Accuracy (GRA)",
+  def:"Keep the same idea but change how the sentence is grammatically constructed — switching voice, clause type, or overall sentence pattern.",
+  tip:"IELTS examiners assess Grammatical Range and Accuracy. Using only Subject–Verb–Object patterns limits your GRA score. Band 7 requires 'a variety of complex structures with some flexibility and accuracy.' Structural transformation demonstrates this range.",
+  vars:[
+    ["Active → Passive","Shift focus from who does the action to what is done.","People watch movies → Movies are watched widely."],
+    ["Passive → Active","Restore a more personal or direct tone.","It is believed that… → Many people believe that…"],
+    ["Clause → Phrase","Replace a full clause with a noun or prepositional phrase.","I think that education is important → In my opinion, education is important."],
+    ["Finite → Non-finite","Replace a 'that' clause with a gerund or infinitive.","I like it when I travel → Travelling makes me happy."],
+    ["Adjective / It-construction → Nominalisation","Shift from an evaluative adjective to a noun phrase.","It's important to recycle → The importance of recycling is undeniable."],
+    ["Two clauses → One complex clause","Compress and combine ideas for more efficient expression.","I like reading. It relaxes me. → Reading helps me relax."],
+    ["Cleft sentence (fronting)","Use an emphasis structure to foreground a key element.","Technology changed everything → It's technology that has changed everything."],
+    ["Coordination → Subordination","Replace 'and/but' with a subordinating conjunction for complexity.","I was tired but I kept working → Despite being tired, I kept working."],
+  ],
+  steps:[
+    {n:1,t:"State your basic sentence first",d:"Begin with the simplest version of your idea: subject + verb + object. This is your base sentence."},
+    {n:2,t:"Choose one transformation",d:"Select a single change: voice (active/passive), clause type (finite/non-finite), or structure (compress, front, subordinate). Don't apply two transformations at once."},
+    {n:3,t:"Rebuild the sentence",d:"Keep the time reference consistent (don't shift tense accidentally). Maintain grammatical agreement (especially in passives and nominalisations)."},
+    {n:4,t:"Check for emphasis and naturalness",d:"Passive and fronted structures shift focus. Ask: where is the emphasis now? Is that where you want it? Does the sentence sound natural in spoken English?"},
+  ],
+  patterns:[
+    ["In my opinion, / From my perspective, / As I see it, …","Replacing 'I think that' (clause → phrase)"],
+    ["There's no denying that … / It's widely accepted that …","Impersonal, passive-style framing"],
+    ["X tends to … / X is known to …","Habitual / generalising passive framing"],
+    ["The [noun] of [V-ing] …","Nominalisation (The benefit of exercising…)"],
+    ["Despite [V-ing], … / Although …, …","Subordination replacing coordination"],
+    ["It is [X] that …","Cleft sentence for emphasis"],
+  ],
+  examples:[
+    {t:"Environment",o:"We should recycle more.",p:"Recycling should be encouraged more widely.",n:"Active → Passive; subject shifts from 'we' to 'recycling'"},
+    {t:"Technology",o:"People use phones to connect.",p:"Phones are used to keep people connected.",n:"Active → Passive; focus shifts to 'phones'"},
+    {t:"Education",o:"It's vital to read.",p:"The value of reading cannot be overstated.",n:"Adjective → Nominalisation (vital → value of)"},
+    {t:"Health",o:"I like swimming. It keeps me fit.",p:"Swimming keeps me fit and healthy.",n:"Two clauses → one compressed clause"},
+    {t:"Society",o:"Many people think social media is harmful.",p:"Social media is widely considered to be harmful.",n:"Active → Passive + 'widely' as adverb of generalisation"},
+  ],
+  pitfalls:[
+    {l:"Passive voice errors",d:"Don't forget the form: 'is/are + past participle.' Common error: 'Social media is used by people to connected' → should be 'to connect.'"},
+    {l:"Over-nominalisation in speech",d:"Strings of noun phrases sound written, not spoken: 'The implementation of the improvement of the condition…' — use sparingly in IELTS speaking."},
+    {l:"Tense shifts",d:"When changing to passive, preserve the original tense: 'People used phones' → 'Phones were used' (past), not 'Phones are used.'"},
+    {l:"Losing emphasis",d:"Passive structures de-emphasise the agent. Don't use passive when you specifically want to highlight who is doing the action."},
+  ],
+  drills:[
+    {n:"One idea, three forms",i:"Express the same idea three ways: (a) active voice, (b) passive voice, (c) non-finite ('-ing' or 'to-' form). E.g., 'People built this city.' → 'This city was built.' → 'Building this city took decades.'",tm:"3 min"},
+    {n:"Join & compress",i:"Combine 5 pairs of short sentences into one fluent sentence using subordinators or relative clauses. E.g., 'I studied hard. I passed.' → 'By studying hard, I managed to pass the exam.'",tm:"3 min"},
+    {n:"Cleft transformation",i:"Rewrite 3 statements using a cleft structure (It is X that…). E.g., 'Hard work made the difference.' → 'It is hard work that makes the difference.'",tm:"2 min"},
+  ],
+  rubric:[
+    {s:"0",l:"Identical structure",d:"The grammatical pattern exactly mirrors the original sentence."},
+    {s:"1",l:"Transformed but clunky",d:"The structure is changed but the result sounds unnatural or has minor errors."},
+    {s:"2",l:"Transformed and fluent",d:"The structure is accurately transformed and sounds natural in spoken English."},
+  ],
+},
+3:{
+  title:"Functional Paraphrasing",sub:"Changing Word Class & Grammatical Role",
+  criteria:"Grammatical Range & Accuracy + Lexical Resource",
+  def:"Change the grammatical function of a word by shifting it to another member of its word family — turning a verb into a noun, an adjective into a clause, or a noun into an adjective phrase.",
+  tip:"This technique bridges both LR and GRA criteria. Band 7 LR descriptors specifically reward candidates who use word families accurately and naturally. Key skill: knowing which verb pairs with each noun (make a decision, take pride, reach a conclusion).",
+  vars:[
+    ["Verb → Noun (nominalisation)","Turn the main verb into a noun and rebuild the sentence.","I decided to leave → My decision to leave surprised everyone."],
+    ["Adjective → Noun phrase","Convert an evaluative adjective into its noun form.","It's important to recycle → The importance of recycling…"],
+    ["Adjective → Clause","Replace an adjective with a relative or nominal clause.","Exercise is healthy → What makes exercise valuable is…"],
+    ["Verb → Gerund / Infinitive","Use the non-finite form as grammatical subject or object.","I exercise daily → Exercising daily boosts my mood."],
+    ["Noun → Adjective phrase","Convert a noun topic into its adjectival form.","I care about the environment → I care about environmental issues."],
+    ["Statement → Clause as subject","Use a noun clause as the new subject of the sentence.","Education is important → What matters most is equal access to education."],
+  ],
+  steps:[
+    {n:1,t:"Identify the key word",d:"Find the main verb, adjective, or noun you want to transform (e.g., 'decide', 'important', 'succeed')."},
+    {n:2,t:"Find another word family member",d:"Build a quick mental table: decide → decision → decisive → decisively. Choose the form you need for your new sentence structure."},
+    {n:3,t:"Rebuild the sentence",d:"The new word form requires a different sentence structure. A verb becoming a noun needs an article and possibly a new main verb: 'I decided' → 'The decision (was made / changed everything).'"},
+    {n:4,t:"Check the collocation",d:"Many nouns have fixed verb partners: 'make a decision' (not 'do a decision'); 'take pride' (not 'make pride'); 'reach a conclusion.' Memorise the most common ones."},
+  ],
+  patterns:[
+    ["The [noun] of [V-ing] …","Nominalisation (The benefit of reading; The importance of sleeping)"],
+    ["[V-ing] leads to / results in …","Gerund as subject + result"],
+    ["What makes X [adj] is …","Adjective → nominal clause"],
+    ["[Noun] plays a key / central role in …","Noun-focus framing"],
+    ["My [noun] has always been to …","Goal / aspiration framing"],
+    ["… leads to greater [noun].","Cause → result with nominalisation"],
+  ],
+  examples:[
+    {t:"Personal growth",o:"I decided to move abroad.",p:"The decision to move abroad changed my perspective entirely.",n:"decided (V) → decision (N); sentence restructured around noun"},
+    {t:"Career",o:"I succeeded because I worked hard.",p:"My success came from consistent effort and dedication.",n:"succeeded (V) → success (N); new subject"},
+    {t:"Study habits",o:"I want to improve my English.",p:"Improvement in my English is my main goal this term.",n:"improve (V) → improvement (N); fronted as grammatical subject"},
+    {t:"Health",o:"It is healthy to exercise.",p:"The health benefits of regular exercise are well established.",n:"healthy (adj) → health benefits (noun phrase)"},
+    {t:"Technology",o:"Technology connects people.",p:"The role of technology in connecting people is undeniable.",n:"connects (V) → role in connecting (N + gerund)"},
+  ],
+  pitfalls:[
+    {l:"Wrong word form",d:"'The decide was good' → should be 'the decision.' Common errors: the decide; the success used as an adjective; the educate instead of education."},
+    {l:"Wrong collocation",d:"'Do a decision' should be 'make a decision.' 'Make a success' → 'achieve success.' Always pair the correct verb with its nominalised form."},
+    {l:"Over-packing in speech",d:"Strings of nominalisations sound unnatural in spoken English: 'The implementation of the improvement of the management system…' — limit to one or two per answer."},
+    {l:"Missing article or preposition",d:"Nominalisations need articles and prepositions: 'importance recycling' → 'the importance of recycling.' Don't drop these small words."},
+  ],
+  drills:[
+    {n:"Word-family builder",i:"Take 5 words: decide, happy, succeed, reduce, important. For each: write the noun, adjective, and adverb forms. Then write one sentence using each form. E.g., decision / decisive / decisively — 'I made a quick decision; she is decisive; he spoke decisively.'",tm:"5 min"},
+    {n:"Double-take exercise",i:"Express the same idea twice: first with a verb focus, then with a noun focus. E.g., 'I improved my score significantly.' → 'The improvement in my score was significant.' Repeat with 5 sentences.",tm:"3 min"},
+    {n:"Collocation match-up",i:"Match these nouns to their correct verbs: a decision (make/take/do?), pride (take/make/have?), a conclusion (reach/arrive at/come to?), an effort (make/do/have?), progress (make/do/achieve?).",tm:"2 min"},
+  ],
+  rubric:[
+    {s:"0",l:"Incorrect form",d:"The wrong word form is used ('the decide') or an unnatural collocation ('do a decision')."},
+    {s:"1",l:"Correct but stiff",d:"The form is correct but the sentence sounds written or awkward in spoken English."},
+    {s:"2",l:"Smooth and natural",d:"The correct word form is used with the right collocation, and the sentence sounds fluent."},
+  ],
+},
+4:{
+  title:"Contextual / Semantic Paraphrasing",sub:"Changing Conceptual Level or Meaning Frame",
+  criteria:"Lexical Resource (LR) + Coherence and Cohesion (CC)",
+  def:"Express the same idea by moving through meaning relations — going more specific or general, describing parts, expressing function, or reframing the idea as a cause or effect — without mechanically swapping words.",
+  tip:"This type tests genuine understanding of a concept, not just its label. It is especially useful in Part 2 (long turn) and Part 3 (discussion), where you need to develop ideas and avoid repeating key topic nouns.",
+  vars:[
+    ["Hyponym (more specific)","Move to a specific member of the category.","I like animals → I love spending time with dogs and cats."],
+    ["Hypernym (more general)","Move to the broader category containing the specific item.","I like pizza → I enjoy Italian cuisine."],
+    ["Meronym (part → whole)","Refer to a component of the thing instead of the whole.","I love cars → I'm fascinated by engines and car design."],
+    ["Periphrasis (description)","Use a descriptive phrase when a single word is being avoided.","the elderly → people in their later years; children → young learners"],
+    ["Metonymy (association)","Use something closely associated with the concept to represent it.","Hollywood → the film industry; Silicon Valley → the tech sector"],
+    ["Cause / Effect reframing","Express the same idea as its cause or its result.","It's convenient → It saves time; It leads to stress → It harms wellbeing"],
+    ["Analogy","Compare the concept to something more familiar to explain it.","A city is like a magnet — it attracts ambitious graduates."],
+    ["Definition by function","Define what something does rather than naming it.","A smartwatch monitors health data and tracks your activity throughout the day."],
+  ],
+  steps:[
+    {n:1,t:"Identify the concept to avoid repeating",d:"Note the key topic noun — often a word like 'food,' 'transport,' 'cinema,' or 'health' that you don't want to repeat."},
+    {n:2,t:"Choose your semantic direction",d:"Zoom in (hyponym): name a specific member. Zoom out (hypernym): name the broader category. Describe parts (meronym). Define by function. Restate as cause or effect."},
+    {n:3,t:"Build a natural sentence around the new framing",d:"Don't just substitute the word — restructure the whole phrase so the new framing feels integrated and natural in the sentence."},
+    {n:4,t:"Check that core meaning is preserved",d:"Semantic paraphrasing risks 'meaning drift' — saying something slightly different. Confirm the main idea is intact after the reframing."},
+  ],
+  patterns:[
+    ["It's a type / kind of …","Hypernym framing"],
+    ["It belongs to the category of …","Formal hypernym framing"],
+    ["It's used for … / It helps you …","Definition by function"],
+    ["In practical terms, it means …","Cause / effect or consequence reframing"],
+    ["People in their [later / early / formative] years …","Periphrasis for age groups"],
+    ["… which leads to … / … which results in …","Effect-based reframing"],
+  ],
+  examples:[
+    {t:"Entertainment",o:"I enjoy going to the cinema.",p:"I love watching films on a large screen in a darkened hall.",n:"cinema → described by experience (periphrasis / definition by function)"},
+    {t:"Food",o:"I eat a lot of fast food.",p:"I rely quite heavily on convenience meals — things like burgers and pizza.",n:"fast food → convenience meals (near-synonym) + hyponyms as examples"},
+    {t:"Society",o:"Old people often feel isolated.",p:"People in their later years frequently experience feelings of loneliness.",n:"old people → periphrasis; isolated → feelings of loneliness (effect framing)"},
+    {t:"Technology",o:"I use my phone constantly.",p:"Portable devices have become central to almost every part of my daily routine.",n:"phone → portable devices (hypernym); constantly → central to daily routine"},
+    {t:"Environment",o:"Cars cause pollution.",p:"Vehicle emissions contribute significantly to poor air quality.",n:"cars → vehicles (hypernym); pollution → poor air quality (cause/effect)"},
+  ],
+  pitfalls:[
+    {l:"Wrong hierarchical direction",d:"'A fruit is a kind of apple' is incorrect — a mango is a kind of fruit. Always check: the hyponym is the specific term; the hypernym is the general category."},
+    {l:"Over-wordy periphrasis",d:"'People who are in the state of being young' is far too long. Periphrasis should be cleaner than the original: just say 'young people' or 'younger generations.'"},
+    {l:"Meaning drift in cause/effect",d:"If you reframe an idea as its effect, make sure the effect is accurate. 'Fast food is popular → fast food saves time' is only partially true — and partially inaccurate."},
+    {l:"Confusion of near-meaning words",d:"'Junk food' and 'street food' overlap but are not always interchangeable — context matters. Ensure the substitution is semantically precise."},
+  ],
+  drills:[
+    {n:"Zoom in / zoom out",i:"Choose 3 topics. For each: (1) say the hypernym, (2) say a hyponym, (3) give a full example sentence. E.g., Transport → bicycle → 'I cycle to work every morning — it's become part of my routine.'",tm:"3 min"},
+    {n:"Purpose line",i:"For 5 everyday items around you, define each by its function without naming it directly. E.g., 'It's used for holding hot drinks.' 'It allows you to listen to audio privately.' Can a listener guess the item?",tm:"2 min"},
+    {n:"Cause / effect swap",i:"Rewrite 5 sentences to express the idea as a result or a cause. E.g., 'People like social media' → 'Social media is popular because it keeps people connected.' Or: 'Fast food is unhealthy' → 'Frequent consumption of convenience food can lead to long-term health problems.'",tm:"3 min"},
+  ],
+  rubric:[
+    {s:"0",l:"Meaning drift",d:"The paraphrase changes or loses the core meaning of the original idea."},
+    {s:"1",l:"Correct but clunky",d:"The semantic relation is correct but the sentence sounds unnatural or overly complicated."},
+    {s:"2",l:"Precise and natural",d:"The correct semantic relation is chosen and the sentence sounds fluent and purposeful."},
+  ],
+},
+5:{
+  title:"Discoursal / Reformulative Paraphrasing",sub:"Real-Time Clarification & Restatement",
+  criteria:"Fluency and Coherence (FC) + Coherence and Cohesion (CC)",
+  def:"While speaking, you restate, clarify, simplify, or repair your idea in real time using a reformulation marker. This manages your listener's understanding and demonstrates control of spoken discourse structure.",
+  tip:"Band 7 for Fluency and Coherence describes speech that 'uses a range of cohesive devices appropriately.' Reformulation markers are cohesive devices — they also fill thinking time more naturally than fillers like 'um' or 'you know.'",
+  vars:[
+    ["Clarify / Refine","Explain what you meant more precisely.","What I mean is…; Let me put it another way…; To be more specific…"],
+    ["Restate / Reframe","Say the same idea again with different words.","In other words…; To put it differently…; That is to say…"],
+    ["Simplify / Summarise","Reduce a complex idea to its core message.","Basically…; To put it simply…; In short…; The short answer is…"],
+    ["Emphasise / Foreground","Signal what the key point is in your answer.","The main point is…; What matters most is…; The key thing here is…"],
+    ["Repair / Self-correct","Fix an inaccurate or imprecise statement mid-speech.","I mean…; Or rather…; Sorry — what I should say is…"],
+    ["Hedge (use sparingly)","Signal approximation or uncertainty without derailing the answer.","Kind of; sort of; in a sense; to some extent (use only when meaning is genuinely approximate)"],
+  ],
+  steps:[
+    {n:1,t:"Notice a clarity gap",d:"Identify a moment when your idea might be unclear, too abstract, or expressed too quickly — this is the cue to use a reformulation marker."},
+    {n:2,t:"Choose the right function",d:"Clarify (add detail), Restate (say it again differently), Simplify (reduce to core), Emphasise (signal importance), Repair (fix an error you just made)."},
+    {n:3,t:"Use a marker + clean restatement",d:"Signal the reformulation clearly, then restate the idea more precisely or simply. Keep it short — don't re-explain the entire point all over again."},
+    {n:4,t:"Return to the main thread",d:"After reformulating, continue with your next point. The reformulation is a tool for clarity, not a way to fill time with repetition."},
+  ],
+  patterns:[
+    ["What I mean is, [core message].","Clarify a vague or abstract idea"],
+    ["In other words, [same idea, clearer].","Restate an idea in a different way"],
+    ["Basically, [simple summary].","Simplify a complex point"],
+    ["The point is, [main claim].","Foreground the key argument"],
+    ["Or rather, [correction].","Repair a slightly inaccurate statement"],
+    ["To put it simply, [condensed version].","Clarify a technical or abstract idea"],
+  ],
+  examples:[
+    {t:"Technology",o:"It has a big impact on society.",p:"It has a big impact on society — what I mean is, it's changed the way we communicate and stay connected.",n:"Clarification: vague 'big impact' → specific example added"},
+    {t:"Work–life",o:"Balance is necessary.",p:"Balance is necessary — in other words, working too much without rest leads directly to burnout.",n:"Restatement: abstract claim → concrete consequence"},
+    {t:"Education",o:"Access is the priority.",p:"The main point is that every child, regardless of background, should have equal access to quality education.",n:"Emphasis: short claim → full, developed expansion"},
+    {t:"Habits",o:"I go running every day.",p:"I go running every day — I mean, almost every day — maybe four or five times a week.",n:"Repair: overclaim corrected mid-sentence, naturally"},
+    {t:"Environment",o:"Pollution is a complex issue.",p:"Pollution is a complex issue — to put it simply, it affects both health and the economy in ways that are difficult to separate.",n:"Simplification: complex → concrete, accessible restatement"},
+  ],
+  pitfalls:[
+    {l:"Fillers without function",d:"'Like, you know, basically…' without following up with an actual reformulation is just noise. Every marker must introduce a genuine restatement, not more vague content."},
+    {l:"Wrong use of 'In other words'",d:"'In other words' must be followed by the SAME core idea rephrased — not a new, different point. Using it to change topic is a coherence error the examiner will notice."},
+    {l:"Overusing 'basically'",d:"Once or twice per answer is appropriate. Repeating 'basically' every sentence suggests limited reformulation range and sounds like a filler habit."},
+    {l:"Hedges in formal Part 3 contexts",d:"'Kind of' and 'sort of' are appropriate in informal Part 1, but sound imprecise in Part 3 discussions on complex topics. Use 'to some extent' or 'in a sense' instead."},
+  ],
+  drills:[
+    {n:"Two-line restate",i:"Speak one sentence about a topic. Immediately follow it with 'In other words, …' and restate the same idea differently. Repeat 5 times with different topics. E.g., 'Social media is addictive. In other words, people find it very difficult to put their phones down.'",tm:"3 min"},
+    {n:"Clarify the vague",i:"Write 5 vague sentences (e.g., 'Technology is important.' / 'Exercise is good.'). For each, follow up with 'What I mean is…' and add a specific, concrete explanation. Avoid repeating any word from the original sentence.",tm:"3 min"},
+    {n:"30-second summary drill",i:"Speak freely for 30 seconds on any IELTS topic. Then say 'Basically, …' and summarise your entire answer in one clear, concise sentence. The summary should capture the most important idea only.",tm:"2 min per topic"},
+  ],
+  rubric:[
+    {s:"0",l:"Filler only",d:"A marker is used but followed by more vague content — no genuine reformulation occurs."},
+    {s:"1",l:"Marker used, too long",d:"A reformulation is attempted but it's rambling — the restatement isn't clearly different from or clearer than the original."},
+    {s:"2",l:"Crisp reformulation",d:"The marker is used correctly, the restatement is concise, and it genuinely aids the listener's understanding."},
+  ],
+},
+};
+
+const PRACTICE = [
+  {q:`"I like movies." → "I enjoy watching films."\n\nWhich type of paraphrasing is shown?`,opts:["Type 1: Lexical","Type 2: Structural","Type 3: Functional","Type 4: Contextual"],ans:0,exp:"Both 'enjoy' (synonym of 'like') and 'films' (synonym of 'movies') are vocabulary substitutions. The grammar is unchanged — this is Lexical (Type 1) paraphrasing."},
+  {q:`"People build houses." → "Houses are built by people."\n\nWhich type of paraphrasing is shown?`,opts:["Type 1: Lexical","Type 2: Structural","Type 3: Functional","Type 5: Discoursal"],ans:1,exp:"The same idea is expressed by switching from active voice to passive voice. The vocabulary is unchanged — this is Structural (Type 2) paraphrasing."},
+  {q:`"I decided to study abroad." → "The decision to study abroad changed my life."\n\nWhich type of paraphrasing is shown?`,opts:["Type 1: Lexical","Type 2: Structural","Type 3: Functional","Type 4: Contextual"],ans:2,exp:"The verb 'decided' has been transformed into the noun 'decision,' changing its grammatical function. This is Functional (Type 3) paraphrasing."},
+  {q:`"Old people often feel lonely." → "People in their later years frequently experience feelings of isolation."\n\nWhich type of paraphrasing is shown?`,opts:["Type 1: Lexical","Type 2: Structural","Type 3: Functional","Type 4: Contextual"],ans:3,exp:"'Old people' is replaced by the descriptive phrase 'people in their later years' (periphrasis), and 'lonely' is expressed as 'feelings of isolation' (effect framing). This is Contextual / Semantic (Type 4) paraphrasing."},
+  {q:`"Technology has changed a lot. In other words, the way we communicate is completely different now."\n\nWhich type of paraphrasing is shown?`,opts:["Type 1: Lexical","Type 2: Structural","Type 4: Contextual","Type 5: Discoursal"],ans:3,exp:"The speaker uses 'In other words' to restate their initial claim more clearly. This is a real-time reformulation — Discoursal (Type 5) paraphrasing."},
+  {q:`"I like animals." → "I have a soft spot for dogs and cats — especially rescue pets."\n\nWhich technique is primarily used?`,opts:["Synonym substitution","Hyponym (more specific)","Nominalisation","Register shift"],ans:1,exp:"'Animals' (general) is replaced by 'dogs and cats — especially rescue pets' (specific members of the category). This is the hyponym technique in Lexical / Contextual paraphrasing."},
+  {q:`"It's important to exercise." → "The importance of exercising regularly cannot be overstated."\n\nWhich technique is primarily used?`,opts:["Active → Passive","Adjective → Nominalisation","Verb → Gerund","Hyponym"],ans:1,exp:"The adjective 'important' has been transformed into the noun phrase 'the importance of,' restructuring the sentence around a nominalised form. This is Functional (Type 3) — adjective → noun phrase."},
+  {q:`"I think social media is harmful." → "In my opinion, social media is harmful."\n\nWhich technique is primarily used?`,opts:["Synonym substitution","Active → Passive","Finite clause → Phrase","Cause/effect reframing"],ans:2,exp:"The finite clause 'I think (that)' has been replaced by the prepositional phrase 'In my opinion,' — a clause-to-phrase structural transformation. This is Structural (Type 2) paraphrasing."},
+  {q:`"Fast food is convenient." → "Convenience meals save busy people a great deal of time."\n\nWhich technique is primarily used?`,opts:["Synonym substitution","Cause/effect reframing","Nominalisation","Cleft sentence"],ans:1,exp:"'Convenient' (an adjective) has been reframed as its effect: 'saves time.' This is a cause/effect semantic reframing — Contextual (Type 4) paraphrasing."},
+  {q:`"Exercise is healthy — what I mean is, it has real benefits for both your body and your mind."\n\nWhich type of paraphrasing is shown?`,opts:["Type 1: Lexical","Type 2: Structural","Type 3: Functional","Type 5: Discoursal"],ans:3,exp:"The speaker uses 'what I mean is' to clarify a vague opening statement by adding specific detail. This is real-time clarification — Discoursal (Type 5) paraphrasing."},
+];
+
+// ── Components ─────────────────────────────────────────────────
+
+function TypeBadge({num}){
+  const c=TC[num];
+  return React.createElement('span',{className:'g-pill',style:{background:c.btn,color:'#fff'}},`TYPE ${num}`);
+}
+
+function CritBadge({text}){
+  return React.createElement('span',{className:'g-pill',style:{background:'var(--color-background-secondary)',color:'var(--color-text-secondary)',border:'0.5px solid var(--color-border-tertiary)',fontWeight:400}},text);
+}
+
+function SectionHead({t,accent}){
+  return React.createElement('h3',{style:{margin:'0 0 12px',fontSize:11,fontWeight:600,textTransform:'uppercase',letterSpacing:1.2,color:accent||'var(--color-text-tertiary)'}},t);
+}
+
+function StepList({steps,typeNum}){
+  const c=TC[typeNum];
+  return React.createElement('div',null,steps.map((s,i)=>
+    React.createElement('div',{key:i,style:{display:'flex',gap:12,marginBottom:12}},
+      React.createElement('div',{className:'g-step-num',style:{background:c.bg,color:c.text}},s.n),
+      React.createElement('div',null,
+        React.createElement('div',{style:{fontWeight:600,fontSize:13,color:'var(--color-text-primary)',marginBottom:2}},s.t),
+        React.createElement('div',{style:{fontSize:13,color:'var(--color-text-secondary)',lineHeight:1.6}},s.d)
+      )
+    )
+  ));
+}
+
+function PatternList({patterns,typeNum}){
+  const c=TC[typeNum];
+  return React.createElement('div',null,patterns.map(([p,u],i)=>
+    React.createElement('div',{key:i,className:'g-pattern-row'},
+      React.createElement('div',{style:{flex:1,fontFamily:"'DM Sans',monospace",fontSize:13,color:'var(--color-text-primary)',background:c.light,padding:'4px 8px',borderRadius:4,borderLeft:`3px solid ${c.border}`}},p),
+      React.createElement('div',{style:{width:180,fontSize:12,color:'var(--color-text-secondary)',paddingTop:4}},u)
+    )
+  ));
+}
+
+function VarsTable({vars,typeNum}){
+  const c=TC[typeNum];
+  return React.createElement('div',null,vars.map(([name,desc,ex],i)=>
+    React.createElement('div',{key:i,className:'g-var-row'},
+      React.createElement('div',null,
+        React.createElement('div',{style:{fontWeight:600,fontSize:12.5,color:c.text,marginBottom:2}},name),
+        React.createElement('div',{style:{fontSize:11.5,color:'var(--color-text-secondary)',lineHeight:1.5}},desc)
+      ),
+      React.createElement('div',{style:{fontSize:12.5,color:'var(--color-text-primary)',background:c.light,padding:'6px 10px',borderRadius:4,lineHeight:1.6}},ex)
+    )
+  ));
+}
+
+function ExamplesTable({examples,typeNum}){
+  const c=TC[typeNum];
+  return React.createElement('div',{style:{overflowX:'auto'}},
+    React.createElement('table',{className:'g-ex-table'},
+      React.createElement('thead',null,
+        React.createElement('tr',{style:{background:c.bg}},
+          ['Topic','Original','Paraphrased','What changed?'].map((h,i)=>
+            React.createElement('th',{key:i,style:{color:c.text,borderBottom:`2px solid ${c.border}`,fontSize:11,textTransform:'uppercase',letterSpacing:0.8,padding:'8px 10px'}},h)
+          )
+        )
+      ),
+      React.createElement('tbody',null,examples.map((e,i)=>
+        React.createElement('tr',{key:i},
+          React.createElement('td',{style:{color:'var(--color-text-tertiary)',fontSize:11.5,fontWeight:500}},e.t),
+          React.createElement('td',{style:{color:'var(--color-text-secondary)',fontStyle:'italic'}},`"${e.o}"`),
+          React.createElement('td',{style:{color:'var(--color-text-primary)',fontWeight:500}},`"${e.p}"`),
+          React.createElement('td',{style:{color:'var(--color-text-secondary)',fontSize:11.5}},e.n)
+        )
+      ))
+    )
+  );
+}
+
+function PitfallList({pitfalls,typeNum}){
+  const c=TC[typeNum];
+  return React.createElement('div',null,pitfalls.map((p,i)=>
+    React.createElement('div',{key:i,className:'g-pitfall-row'},
+      React.createElement('div',{style:{width:6,height:6,borderRadius:'50%',background:c.btn,flexShrink:0,marginTop:6}}),
+      React.createElement('div',null,
+        React.createElement('span',{style:{fontWeight:600,fontSize:13,color:'var(--color-text-primary)'}},p.l+': '),
+        React.createElement('span',{style:{fontSize:13,color:'var(--color-text-secondary)',lineHeight:1.6}},p.d)
+      )
+    )
+  ));
+}
+
+function DrillList({drills,typeNum}){
+  const c=TC[typeNum];
+  return React.createElement('div',null,drills.map((d,i)=>
+    React.createElement('div',{key:i,className:'g-drill-card',style:{borderColor:c.btn,background:c.light,marginBottom:10}},
+      React.createElement('div',{style:{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:4}},
+        React.createElement('div',{style:{fontWeight:600,fontSize:13,color:c.text}},d.n),
+        React.createElement('span',{style:{fontSize:11,color:c.btn,background:c.bg,padding:'2px 8px',borderRadius:10}},d.tm)
+      ),
+      React.createElement('div',{style:{fontSize:13,color:'var(--color-text-secondary)',lineHeight:1.65}},d.i)
+    )
+  ));
+}
+
+function RubricTable({rubric,typeNum}){
+  const c=TC[typeNum];
+  const bgMap={0:'#FCEBEB',1:'#FAEEDA',2:'#E1F5EE'};
+  const tMap={0:'#A32D2D',1:'#633806',2:'#085041'};
+  return React.createElement('div',null,rubric.map((r,i)=>
+    React.createElement('div',{key:i,className:'g-rubric-row'},
+      React.createElement('div',{style:{width:32,height:32,borderRadius:'50%',background:bgMap[i],display:'flex',alignItems:'center',justifyContent:'center',fontSize:15,fontWeight:600,color:tMap[i],flexShrink:0}},r.s),
+      React.createElement('div',{style:{fontWeight:600,fontSize:13,color:'var(--color-text-primary)',paddingTop:7}},r.l),
+      React.createElement('div',{style:{fontSize:13,color:'var(--color-text-secondary)',lineHeight:1.6,paddingTop:6}},r.d)
+    )
+  ));
+}
+
+// ── Type Tab ────────────────────────────────────────────
+
+function TypeTab({num}){
+  const d=DATA[num];
+  const c=TC[num];
+  const [sec,setSec]=useState('what');
+  const secs=[{id:'what',l:'Overview'},{id:'vars',l:'Variations'},{id:'steps',l:'How To'},{id:'patterns',l:'Patterns'},{id:'examples',l:'Examples'},{id:'pitfalls',l:'Pitfalls'},{id:'drills',l:'Drills'},{id:'rubric',l:'Self-Check'}];
+  return React.createElement('div',null,
+    React.createElement('div',{style:{background:c.bg,borderRadius:'var(--border-radius-lg)',padding:'1.5rem',marginBottom:'1rem'}},
+      React.createElement('div',{style:{display:'flex',gap:8,alignItems:'center',marginBottom:8}},
+        React.createElement(TypeBadge,{num}),
+        React.createElement(CritBadge,{text:d.criteria})
+      ),
+      React.createElement('h2',{className:'g-serif',style:{margin:'0 0 6px',fontSize:22,fontWeight:600,color:c.text,lineHeight:1.2}},d.title),
+      React.createElement('div',{style:{fontSize:13,color:c.text,opacity:0.8,marginBottom:12}},d.sub),
+      React.createElement('p',{style:{margin:'0 0 10px',fontSize:13.5,color:'var(--color-text-primary)',lineHeight:1.7}},d.def),
+      React.createElement('div',{style:{background:'var(--color-background-primary)',borderRadius:'var(--border-radius-md)',padding:'10px 14px',borderLeft:`3px solid ${c.btn}`}},
+        React.createElement('div',{style:{fontSize:11,fontWeight:600,textTransform:'uppercase',letterSpacing:1,color:c.btn,marginBottom:4}},'IELTS Examiner Note'),
+        React.createElement('p',{style:{margin:0,fontSize:13,color:'var(--color-text-secondary)',lineHeight:1.65}},d.tip)
+      )
+    ),
+    React.createElement('div',{style:{display:'flex',gap:4,flexWrap:'wrap',marginBottom:'1rem'}},
+      secs.map(s=>React.createElement('button',{key:s.id,onClick:()=>setSec(s.id),className:'g-tab-btn',style:{border:`0.5px solid ${sec===s.id?c.btn:'var(--color-border-tertiary)'}`,fontWeight:sec===s.id?600:400,background:sec===s.id?c.bg:'transparent',color:sec===s.id?c.text:'var(--color-text-secondary)'}},s.l))
+    ),
+    React.createElement('div',{className:'g-card'},
+      sec==='what'&&React.createElement('div',null,
+        React.createElement(SectionHead,{t:'What counts as '+d.title+'?',accent:c.btn}),
+        React.createElement('p',{style:{fontSize:13.5,color:'var(--color-text-secondary)',lineHeight:1.7,margin:'0 0 1rem'}},`There are several techniques that fall under ${d.title}. Each one expresses the same idea through a different angle. Learn to recognise all variations so you can apply them flexibly in your speaking responses.`),
+        React.createElement(VarsTable,{vars:d.vars,typeNum:num})
+      ),
+      sec==='steps'&&React.createElement('div',null,
+        React.createElement(SectionHead,{t:'Step-by-step: How to paraphrase',accent:c.btn}),
+        React.createElement(StepList,{steps:d.steps,typeNum:num})
+      ),
+      sec==='vars'&&React.createElement('div',null,
+        React.createElement(SectionHead,{t:'All variations at a glance',accent:c.btn}),
+        React.createElement(VarsTable,{vars:d.vars,typeNum:num})
+      ),
+      sec==='patterns'&&React.createElement('div',null,
+        React.createElement(SectionHead,{t:'Ready-to-use patterns',accent:c.btn}),
+        React.createElement('p',{style:{fontSize:13,color:'var(--color-text-secondary)',lineHeight:1.65,margin:'0 0 1rem'}},'Memorise these sentence frames and use them as your starting point. Each pattern is a natural, colloquially fluent structure that IELTS examiners expect at Band 6.5 and above.'),
+        React.createElement(PatternList,{patterns:d.patterns,typeNum:num})
+      ),
+      sec==='examples'&&React.createElement('div',null,
+        React.createElement(SectionHead,{t:'Worked examples — five IELTS topics',accent:c.btn}),
+        React.createElement('p',{style:{fontSize:13,color:'var(--color-text-secondary)',lineHeight:1.65,margin:'0 0 1rem'}},'Study each example carefully. Notice how the original sentence is transformed and what specific technique is applied. Then try to produce your own version before looking at the answer.'),
+        React.createElement(ExamplesTable,{examples:d.examples,typeNum:num})
+      ),
+      sec==='pitfalls'&&React.createElement('div',null,
+        React.createElement(SectionHead,{t:'Common mistakes to avoid',accent:c.btn}),
+        React.createElement(PitfallList,{pitfalls:d.pitfalls,typeNum:num})
+      ),
+      sec==='drills'&&React.createElement('div',null,
+        React.createElement(SectionHead,{t:'Practice drills',accent:c.btn}),
+        React.createElement('p',{style:{fontSize:13,color:'var(--color-text-secondary)',lineHeight:1.65,margin:'0 0 12px'}},'Complete these drills daily. Even 5–10 minutes of focused practice per session builds the automaticity needed to use paraphrasing naturally under exam pressure.'),
+        React.createElement(DrillList,{drills:d.drills,typeNum:num})
+      ),
+      sec==='rubric'&&React.createElement('div',null,
+        React.createElement(SectionHead,{t:'Self-check rubric',accent:c.btn}),
+        React.createElement('p',{style:{fontSize:13,color:'var(--color-text-secondary)',lineHeight:1.65,margin:'0 0 12px'}},'After each practice answer, rate your paraphrasing on this 0–2 scale. Aim for consistent 2s before moving to the next type.'),
+        React.createElement(RubricTable,{rubric:d.rubric,typeNum:num})
+      )
+    )
+  );
+}
+
+// ── Overview Tab ──────────────────────────────────────
+
+function OverviewTab(){
+  const types=[
+    [1,"Lexical","Words & Vocabulary","Replace key words with synonyms, collocations, hyponyms, or hypernyms.","Lexical Resource"],
+    [2,"Structural","Grammar & Sentence Form","Change voice, clause type, or sentence structure while keeping the same idea.","Grammatical Range"],
+    [3,"Functional","Word Class & Role","Transform a word to another member of its word family (verb→noun, adj→clause).","GRA + Lexical Resource"],
+    [4,"Contextual","Conceptual Level & Frame","Restate an idea by moving through meaning relations: specific↔general, cause/effect.","Lexical Resource + CC"],
+    [5,"Discoursal","Real-Time Reformulation","Clarify, restate, or repair your ideas while speaking using discourse markers.","Fluency & Coherence"],
+  ];
+  return React.createElement('div',null,
+    React.createElement('div',{style:{background:'var(--color-background-secondary)',borderRadius:'var(--border-radius-lg)',padding:'1.5rem',marginBottom:'1rem',border:'0.5px solid var(--color-border-tertiary)'}},
+      React.createElement('h2',{className:'g-serif',style:{margin:'0 0 10px',fontSize:20,fontWeight:600,color:'var(--color-text-primary)'}},`Why Paraphrasing Matters in IELTS Speaking`),
+      React.createElement('p',{style:{fontSize:13.5,color:'var(--color-text-secondary)',lineHeight:1.75,margin:'0 0 12px'}},'Paraphrasing is one of the most visible skills IELTS Speaking examiners assess. When you simply repeat the words from the question prompt, examiners hear limited vocabulary and limited grammatical flexibility. When you paraphrase — even partially — you signal both Lexical Resource and Grammatical Range and Accuracy, two of the four IELTS Speaking criteria.'),
+      React.createElement('p',{style:{fontSize:13.5,color:'var(--color-text-secondary)',lineHeight:1.75,margin:0}},'This guide breaks paraphrasing into five clearly defined types so you can study, practise, and apply each one deliberately — rather than hoping it comes naturally under pressure.')
+    ),
+    React.createElement('div',{className:'g-card',style:{marginBottom:'1rem'}},
+      React.createElement('h3',{style:{margin:'0 0 4px',fontSize:14,fontWeight:600,color:'var(--color-text-primary)'}},`IELTS Speaking: The Four Assessment Criteria`),
+      React.createElement('p',{style:{fontSize:12.5,color:'var(--color-text-secondary)',margin:'0 0 12px',lineHeight:1.6}},'All four criteria below are affected by how well you paraphrase. The criteria in bold are most directly impacted.'),
+      React.createElement('table',{style:{width:'100%',borderCollapse:'collapse',fontSize:12.5}},
+        React.createElement('thead',null,React.createElement('tr',{style:{background:'var(--color-background-secondary)'}},
+          ['Criterion','Weight','How paraphrasing helps'].map(h=>React.createElement('th',{key:h,style:{padding:'8px 10px',textAlign:'left',fontWeight:600,color:'var(--color-text-primary)',borderBottom:'1.5px solid var(--color-border-secondary)',fontSize:11,textTransform:'uppercase',letterSpacing:0.8}},h))
+        )),
+        React.createElement('tbody',null,
+          [['Fluency & Coherence','25%','Discourse markers and reformulation (Type 5) replace hesitation fillers and keep ideas connected.'],
+           ['Lexical Resource','25%','Types 1 and 4 directly demonstrate vocabulary range — the single biggest impact area for paraphrasing.'],
+           ['Grammatical Range & Accuracy','25%','Types 2 and 3 show structural flexibility and accurate use of complex patterns.'],
+           ['Pronunciation','25%','Not directly affected, but speaking more naturally through paraphrasing supports better rhythm and pace.']
+          ].map(([c,w,h],i)=>
+            React.createElement('tr',{key:i,style:{background:i%2===0?'var(--color-background-primary)':'var(--color-background-secondary)'}},
+              React.createElement('td',{style:{padding:'8px 10px',fontWeight:500,color:'var(--color-text-primary)',borderBottom:'0.5px solid var(--color-border-tertiary)'}},c),
+              React.createElement('td',{style:{padding:'8px 10px',color:'var(--color-text-secondary)',borderBottom:'0.5px solid var(--color-border-tertiary)'}},w),
+              React.createElement('td',{style:{padding:'8px 10px',color:'var(--color-text-secondary)',borderBottom:'0.5px solid var(--color-border-tertiary)',lineHeight:1.5}},h)
+            )
+          )
+        )
+      )
+    ),
+    React.createElement('h3',{style:{margin:'0 0 12px',fontSize:14,fontWeight:600,color:'var(--color-text-primary)'}},`The Five Paraphrasing Types — At a Glance`),
+    React.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))',gap:10,marginBottom:'1.5rem'}},
+      types.map(([num,name,sub,desc,crit])=>{
+        const c=TC[num];
+        return React.createElement('div',{key:num,style:{background:c.light,border:`0.5px solid ${c.border}`,borderRadius:'var(--border-radius-lg)',padding:'1rem'}},
+          React.createElement('div',{style:{display:'flex',gap:8,alignItems:'center',marginBottom:8}},
+            React.createElement('div',{style:{width:28,height:28,borderRadius:'50%',background:c.btn,display:'flex',alignItems:'center',justifyContent:'center',fontSize:12,fontWeight:700,color:'#fff',flexShrink:0}},num),
+            React.createElement('div',null,
+              React.createElement('div',{style:{fontWeight:600,fontSize:13,color:c.text}},name),
+              React.createElement('div',{style:{fontSize:11,color:c.text,opacity:0.8}},sub)
+            )
+          ),
+          React.createElement('p',{style:{margin:'0 0 8px',fontSize:12.5,color:'var(--color-text-secondary)',lineHeight:1.6}},desc),
+          React.createElement('div',{style:{fontSize:11,background:c.bg,color:c.text,padding:'3px 8px',borderRadius:10,display:'inline-block'}},'Criterion: '+crit)
+        );
+      })
+    ),
+    React.createElement('div',{className:'g-card'},
+      React.createElement('h3',{style:{margin:'0 0 10px',fontSize:14,fontWeight:600,color:'var(--color-text-primary)'}},`How to Use This Guide`),
+      React.createElement('div',null,[
+        ['1. Study one type at a time.','Begin with Type 1 (Lexical) and work through to Type 5. Each type builds on the previous one.'],
+        ['2. Do the drills aloud.','Paraphrasing is a speaking skill. Writing practice is useful, but vocal production is essential. Record yourself and listen back.'],
+        ['3. Apply the self-check rubric.','After each practice answer, give yourself a 0–2 score. Be honest — aim for consistent 2s before moving on.'],
+        ['4. Integrate, do not isolate.','In a real IELTS answer, you will use multiple types together. Use the Quick Reference and Practice tabs to practise combining types.'],
+        ['5. Use the Practice tab regularly.','The 10-question quiz tests your ability to identify and explain paraphrase types — a key metalinguistic skill.'],
+      ].map(([t,d],i)=>React.createElement('div',{key:i,style:{display:'flex',gap:10,marginBottom:10,paddingBottom:10,borderBottom:i<4?'0.5px solid var(--color-border-tertiary)':'none'}},
+        React.createElement('div',{style:{width:20,height:20,borderRadius:'50%',background:'var(--color-background-secondary)',border:'0.5px solid var(--color-border-secondary)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:11,fontWeight:600,flexShrink:0,marginTop:1}},i+1),
+        React.createElement('div',null,
+          React.createElement('span',{style:{fontWeight:600,fontSize:13,color:'var(--color-text-primary)'}},t+' '),
+          React.createElement('span',{style:{fontSize:13,color:'var(--color-text-secondary)',lineHeight:1.65}},d)
+        )
+      )))
+    )
+  );
+}
+
+// ── Quick Reference Tab ───────────────────────────────
+
+function QuickRefTab(){
+  const tree=[
+    ["Am I about to repeat a word?","→ Use Type 1","Synonym / chunk / hyponym / hypernym"],
+    ["Is my sentence too similar to the question?","→ Use Type 2","Change voice, clause type, or pattern"],
+    ["Do I need tighter flow or word variety?","→ Use Type 3","Change word form / grammatical function"],
+    ["Can I explain the idea without the keyword?","→ Use Type 4","Meaning-based reframing"],
+    ["Did the listener look confused or hesitate?","→ Use Type 5","Clarify, restate, or simplify"],
+  ];
+  const menu=[
+    ["like","enjoy / be into / be keen on / be fond of / appreciate"],
+    ["important","essential / crucial / vital / key / significant"],
+    ["people","individuals / many / society / the public / citizens"],
+    ["because","since / as / given that / due to the fact that"],
+    ["I think","in my opinion / from my perspective / I'd say / I believe"],
+    ["make better","improve / enhance / boost / strengthen / develop"],
+    ["big","large / considerable / substantial / significant"],
+    ["problem","challenge / issue / concern / difficulty / obstacle"],
+    ["use","utilise / employ / rely on / make use of"],
+    ["show","demonstrate / reveal / illustrate / highlight"],
+  ];
+  return React.createElement('div',null,
+    React.createElement('div',{className:'g-card',style:{marginBottom:'1rem'}},
+      React.createElement('h3',{style:{margin:'0 0 14px',fontSize:14,fontWeight:600,color:'var(--color-text-primary)'}},'Decision Tree — Which Type to Use?'),
+      React.createElement('p',{style:{margin:'0 0 14px',fontSize:13,color:'var(--color-text-secondary)',lineHeight:1.65}},'When you notice you are about to repeat a word or your answer sounds too close to the question, run through this quick mental checklist:'),
+      React.createElement('div',null,tree.map(([q,a,how],i)=>
+        React.createElement('div',{key:i,style:{display:'grid',gridTemplateColumns:'1fr auto 1fr',gap:10,alignItems:'center',padding:'10px 0',borderBottom:i<4?'0.5px solid var(--color-border-tertiary)':'none'}},
+          React.createElement('div',{style:{fontSize:13,color:'var(--color-text-primary)',fontStyle:'italic'}},q),
+          React.createElement('div',{style:{padding:'3px 12px',background:TC[i+1].bg,color:TC[i+1].text,borderRadius:20,fontSize:12,fontWeight:600,whiteSpace:'nowrap'}},a),
+          React.createElement('div',{style:{fontSize:12.5,color:'var(--color-text-secondary)'}},how)
+        )
+      ))
+    ),
+    React.createElement('div',{className:'g-card',style:{marginBottom:'1rem'}},
+      React.createElement('h3',{style:{margin:'0 0 14px',fontSize:14,fontWeight:600,color:'var(--color-text-primary)'}},'Quick Substitution Menu'),
+      React.createElement('p',{style:{margin:'0 0 14px',fontSize:13,color:'var(--color-text-secondary)',lineHeight:1.65}},'Memorise these core substitutions. Every IELTS topic recycles the same high-frequency words — knowing these alternatives instantly expands your Lexical Resource score.'),
+      React.createElement('table',{style:{width:'100%',borderCollapse:'collapse',fontSize:12.5}},
+        React.createElement('thead',null,React.createElement('tr',{style:{background:'var(--color-background-secondary)'}},
+          ['Overused word','Natural alternatives'].map(h=>React.createElement('th',{key:h,style:{padding:'8px 10px',textAlign:'left',fontWeight:600,color:'var(--color-text-primary)',borderBottom:'1.5px solid var(--color-border-secondary)',fontSize:11,textTransform:'uppercase',letterSpacing:0.8}},h))
+        )),
+        React.createElement('tbody',null,menu.map(([w,alts],i)=>
+          React.createElement('tr',{key:i,style:{background:i%2===0?'var(--color-background-primary)':'var(--color-background-secondary)'}},
+            React.createElement('td',{style:{padding:'8px 10px',fontWeight:600,color:'var(--color-text-primary)',borderBottom:'0.5px solid var(--color-border-tertiary)',fontStyle:'italic'}},w),
+            React.createElement('td',{style:{padding:'8px 10px',color:'var(--color-text-secondary)',borderBottom:'0.5px solid var(--color-border-tertiary)'}},alts)
+          )
+        ))
+      )
+    ),
+    React.createElement('div',{className:'g-card'},
+      React.createElement('h3',{style:{margin:'0 0 10px',fontSize:14,fontWeight:600,color:'var(--color-text-primary)'}},'60-Second Daily Drill — All Five Types'),
+      React.createElement('p',{style:{fontSize:13,color:'var(--color-text-secondary)',lineHeight:1.65,margin:'0 0 14px'}},'Take any IELTS Part 1 question and give five answers in 60 seconds — one for each type. This trains your brain to access multiple paraphrasing strategies automatically.'),
+      React.createElement('div',{style:{background:'var(--color-background-secondary)',borderRadius:'var(--border-radius-md)',padding:'1rem',marginBottom:'1rem'}},
+        React.createElement('div',{style:{fontSize:12,fontWeight:600,textTransform:'uppercase',letterSpacing:1,color:'var(--color-text-tertiary)',marginBottom:8}},'Example question: "Is exercise important?"'),
+        [['Type 1','Lexical',"It's essential to stay active — physical activity is a key part of a healthy lifestyle.",'#EEEDFE','#3C3489'],
+         ['Type 2','Structural',"The importance of regular exercise simply cannot be overstated.",'#E1F5EE','#085041'],
+         ['Type 3','Functional',"Regular exercising has been shown to improve both mental and physical wellbeing.",'#FAECE7','#712B13'],
+         ['Type 4','Contextual',"For busy professionals, physical activity — whether that's running or cycling — is essential for long-term energy.",'#E6F1FB','#0C447C'],
+         ['Type 5','Discoursal',"Yes, definitely — in other words, without some form of movement, both your body and your mood suffer.",'#FAEEDA','#633806'],
+        ].map(([type,name,ex,bg,text],i)=>
+          React.createElement('div',{key:i,style:{display:'flex',gap:10,marginBottom:8,padding:'8px 10px',background:bg,borderRadius:6,alignItems:'flex-start'}},
+            React.createElement('div',{style:{fontSize:11,fontWeight:700,color:text,whiteSpace:'nowrap',paddingTop:1}},[type,name].join(' · ')),
+            React.createElement('div',{style:{fontSize:13,color:'var(--color-text-primary)',lineHeight:1.55,fontStyle:'italic'}},'"'+ex+'"')
+          )
+        )
+      ),
+      React.createElement('div',{style:{fontSize:13,color:'var(--color-text-secondary)',lineHeight:1.65}},'Try this with different questions each day: Do you like music? How do you travel to work? Is education important? What do you enjoy doing in your free time?')
+    )
+  );
+}
+
+// ── Practice Tab ──────────────────────────────────────
+
+function PracticeTab(){
+  const [answers,setAnswers]=useState({});
+  const [show,setShow]=useState({});
+
+  function select(qi,oi){
+    if(answers[qi]!==undefined)return;
+    setAnswers(a=>({...a,[qi]:oi}));
+    setShow(s=>({...s,[qi]:true}));
+  }
+
+  const correct=Object.entries(answers).filter(([qi,oi])=>Number(oi)===PRACTICE[Number(qi)].ans).length;
+  const total=Object.keys(answers).length;
+
+  return React.createElement('div',null,
+    React.createElement('div',{style:{background:'var(--color-background-secondary)',borderRadius:'var(--border-radius-lg)',padding:'1.25rem 1.5rem',marginBottom:'1rem',border:'0.5px solid var(--color-border-tertiary)'}},
+      React.createElement('h2',{className:'g-serif',style:{margin:'0 0 6px',fontSize:20,fontWeight:600,color:'var(--color-text-primary)'}},`Paraphrasing Identification Quiz`),
+      React.createElement('p',{style:{margin:'0 0 10px',fontSize:13.5,color:'var(--color-text-secondary)',lineHeight:1.65}},'Read each paraphrase example and identify which type — or which technique — is being used. After selecting an answer, the explanation will appear. Work through all 10 questions at your own pace.'),
+      total>0&&React.createElement('div',{style:{display:'flex',gap:16,alignItems:'center'}},
+        React.createElement('div',{style:{fontSize:13,color:'var(--color-text-secondary)'}},`Progress: ${total}/10 answered`),
+        React.createElement('div',{style:{fontSize:13,fontWeight:600,color:correct===total&&total===10?'#0F6E56':'var(--color-text-primary)'}},`Score: ${correct}/${total}`)
+      )
+    ),
+    PRACTICE.map((q,qi)=>{
+      const chosen=answers[qi];
+      const revealed=show[qi];
+      const isCorrect=chosen===q.ans;
+      return React.createElement('div',{key:qi,className:'g-card',style:{marginBottom:'0.75rem'}},
+        React.createElement('div',{style:{fontSize:11,fontWeight:600,textTransform:'uppercase',letterSpacing:1,color:'var(--color-text-tertiary)',marginBottom:8}},`Question ${qi+1} of 10`),
+        React.createElement('pre',{style:{margin:'0 0 14px',fontFamily:"'DM Sans',system-ui,sans-serif",fontSize:13.5,color:'var(--color-text-primary)',lineHeight:1.7,whiteSpace:'pre-wrap',background:'var(--color-background-secondary)',padding:'10px 14px',borderRadius:'var(--border-radius-md)'}},q.q),
+        React.createElement('div',null,q.opts.map((opt,oi)=>{
+          let bg='transparent',border='0.5px solid var(--color-border-tertiary)',col='var(--color-text-primary)';
+          if(revealed){
+            if(oi===q.ans){bg='#E1F5EE';border='1px solid #5DCAA5';col='#085041';}
+            else if(oi===chosen&&!isCorrect){bg='#FCEBEB';border='1px solid #F09595';col='#A32D2D';}
+          }
+          return React.createElement('div',{key:oi,className:'g-quiz-opt',onClick:()=>select(qi,oi),style:{background:bg,border,cursor:chosen!==undefined?'default':'pointer'}},
+            React.createElement('div',{style:{width:20,height:20,borderRadius:'50%',border:`1.5px solid ${revealed&&oi===q.ans?'#085041':revealed&&oi===chosen&&!isCorrect?'#A32D2D':'var(--color-border-secondary)'}`,flexShrink:0,display:'flex',alignItems:'center',justifyContent:'center',fontSize:10,color:revealed&&oi===q.ans?'#085041':revealed&&oi===chosen&&!isCorrect?'#A32D2D':'var(--color-text-tertiary)'}},chosen!==undefined&&oi===q.ans?'✓':chosen!==undefined&&oi===chosen&&!isCorrect?'✗':''),
+            React.createElement('span',{style:{fontSize:13,color:col}},opt)
+          );
+        })),
+        revealed&&React.createElement('div',{style:{marginTop:12,padding:'10px 14px',background:isCorrect?'#E1F5EE':'#FAEEDA',borderRadius:'var(--border-radius-md)',borderLeft:`3px solid ${isCorrect?'#0F6E56':'#854F0B'}`}},
+          React.createElement('div',{style:{fontSize:11,fontWeight:600,textTransform:'uppercase',letterSpacing:1,color:isCorrect?'#085041':'#633806',marginBottom:4}},isCorrect?'Correct!':'Not quite — here is why:'),
+          React.createElement('p',{style:{margin:0,fontSize:13,color:'var(--color-text-secondary)',lineHeight:1.65}},q.exp)
+        )
+      );
+    }),
+    total===10&&React.createElement('div',{style:{textAlign:'center',padding:'2rem',background:'var(--color-background-secondary)',borderRadius:'var(--border-radius-lg)',marginTop:'0.5rem'}},
+      React.createElement('div',{className:'g-serif',style:{fontSize:24,fontWeight:600,color:'var(--color-text-primary)',marginBottom:8}},`${correct}/10 Correct`),
+      React.createElement('p',{style:{margin:'0 0 12px',fontSize:13.5,color:'var(--color-text-secondary)',lineHeight:1.65}},correct>=8?'Excellent work. You can identify paraphrase types reliably — now focus on producing them fluently in your own answers.':correct>=5?'Good progress. Review the types you found difficult and revisit the relevant module before re-attempting.':'Keep studying — work through each type module carefully, then try the quiz again. Identification skills build with repeated exposure.'),
+      React.createElement('button',{onClick:()=>{setAnswers({});setShow({});}},`Retry quiz`)
+    )
+  );
+}
+
+// ── Main App ──────────────────────────────────────────
+
+function App(){
+  const [tab,setTab]=useState('overview');
+  useEffect(()=>{
+    const l=document.createElement('link');
+    l.rel='stylesheet';
+    l.href='https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap';
+    document.head.appendChild(l);
+    return()=>document.head.removeChild(l);
+  },[]);
+  const TABS=[{id:'overview',l:'Overview'},{id:'1',l:'Type 1: Lexical'},{id:'2',l:'Type 2: Structural'},{id:'3',l:'Type 3: Functional'},{id:'4',l:'Type 4: Contextual'},{id:'5',l:'Type 5: Discoursal'},{id:'quickref',l:'Quick Reference'},{id:'practice',l:'Practice Quiz'}];
+  return React.createElement('div',{className:'g-wrap'},
+    React.createElement('div',{style:{paddingTop:'1.5rem',paddingBottom:'1.25rem',borderBottom:'0.5px solid var(--color-border-tertiary)',marginBottom:'1.25rem'}},
+      React.createElement('div',{style:{fontSize:11,letterSpacing:2,textTransform:'uppercase',color:'var(--color-text-tertiary)',marginBottom:6}},'IELTS Speaking · Self-Study Guide'),
+      React.createElement('h1',{className:'g-serif',style:{margin:'0 0 5px',fontSize:26,fontWeight:600,color:'var(--color-text-primary)',lineHeight:1.2}},'Mastering Paraphrasing in IELTS Speaking'),
+      React.createElement('p',{style:{margin:0,fontSize:13.5,color:'var(--color-text-secondary)'}},`Five types · Worked examples · Drills · Self-check rubrics · Practice quiz`)
+    ),
+    React.createElement('div',{style:{display:'flex',gap:4,flexWrap:'wrap',marginBottom:'1.25rem'}},
+      TABS.map(t=>React.createElement('button',{key:t.id,onClick:()=>setTab(t.id),className:'g-tab-btn',style:{border:tab===t.id?'1.5px solid var(--color-border-primary)':'0.5px solid var(--color-border-tertiary)',fontWeight:tab===t.id?600:400,background:tab===t.id?'var(--color-background-secondary)':'transparent',color:tab===t.id?'var(--color-text-primary)':'var(--color-text-secondary)'}},t.l))
+    ),
+    tab==='overview'&&React.createElement(OverviewTab),
+    tab==='1'&&React.createElement(TypeTab,{num:1}),
+    tab==='2'&&React.createElement(TypeTab,{num:2}),
+    tab==='3'&&React.createElement(TypeTab,{num:3}),
+    tab==='4'&&React.createElement(TypeTab,{num:4}),
+    tab==='5'&&React.createElement(TypeTab,{num:5}),
+    tab==='quickref'&&React.createElement(QuickRefTab),
+    tab==='practice'&&React.createElement(PracticeTab)
+  );
+}
+
+ReactDOM.render(React.createElement(App),document.getElementById('root'));
+</script>
