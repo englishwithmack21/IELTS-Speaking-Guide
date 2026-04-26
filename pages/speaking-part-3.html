@@ -631,20 +631,31 @@
 /* ── MOBILE SIDEBAR FIX ── */
 @media (max-width: 768px) {
 
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
   body {
     display: block;
   }
 
   #sidebar {
-    display: none;
+    display: none !important;
   }
 
   #main {
-    margin-left: 0;
-    width: 100%;
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   .page-header {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
     padding: 36px 24px 32px;
   }
 
@@ -656,6 +667,10 @@
   .page-header .subtitle {
     font-size: 15px;
     line-height: 1.6;
+  }
+
+  .section {
+    padding: 36px 24px;
   }
 
 }
