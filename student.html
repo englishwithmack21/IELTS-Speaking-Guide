@@ -41,7 +41,22 @@ a{text-decoration:none;color:inherit}.eyebrow{font-size:11px;letter-spacing:.18e
   </main>
 </div>
 <script>
-const items = [{"id": "home", "type": "home", "title": "Home", "section": "Overview", "desc": "Guided IELTS Speaking learning portal."}, {"id": "part1", "type": "html", "dest": "pages/speaking-part-1.html", "title": "Speaking Part 1 Guide", "section": "Student Core", "desc": "Short-answer patterns, natural expansion, topic practice, and Part 1 model answers."}, {"id": "part2", "type": "html", "dest": "pages/speaking-part-2.html", "title": "Speaking Part 2 Guide", "section": "Student Core", "desc": "Cue-card planning, long-turn structures, topic development, and model answers."}, {"id": "part3", "type": "html", "dest": "pages/speaking-part-3.html", "title": "Speaking Part 3 Guide", "section": "Student Core", "desc": "Abstract discussion patterns, argument development, examples, and opinion language."}, {"id": "ssap-repair", "type": "html", "dest": "pages/ssap-extending-repairing.html", "title": "SSAP: Extending & Repairing Answers", "section": "SSAP Skill Layer", "desc": "Controlled practice for extending short answers and repairing responses in real time."}];
+const items = [{"id": "home", "type": "home", "title": "Home", "section": "Overview", "desc": "Guided IELTS Speaking learning portal."}, {"id": "part1", "type": "html", "dest": "pages/speaking-part-1.html", "title": "Speaking Part 1 Guide", "section": "Student Core", "desc": "Short-answer patterns, natural expansion, topic practice, and Part 1 model answers."}, {"id": "part2", "type": "html", "dest": "pages/speaking-part-2.html", "title": "Speaking Part 2 Guide", "section": "Student Core", "desc": "Cue-card planning, long-turn structures, topic development, and model answers."}, {"id": "part3", "type": "html", "dest": "pages/speaking-part-3.html", "title": "Speaking Part 3 Guide", "section": "Student Core", "desc": "Abstract discussion patterns, argument development, examples, and opinion language."}, {"id": "ssap-repair", "type": "html", "dest": "pages/ssap-extending-repairing.html", "title": "SSAP: Extending & Repairing Answers", "section": "SSAP Skill Layer", "desc": "Controlled practice for extending short answers and repairing responses in real time."},{
+  id: "paraphrasing",
+  type: "html",
+  dest: "pages/ielts_speaking_paraphrasing_guide.html",
+  title: "Paraphrasing System (SSAP)",
+  section: "SSAP Skill Layer",
+  desc: "Full paraphrasing system covering lexical, structural, and discoursal strategies."
+},
+{
+  id: "discourse-markers",
+  type: "html",
+  dest: "pages/discourse-markers.html",
+  title: "Discourse Markers Guide",
+  section: "SSAP Skill Layer",
+  desc: "Complete system for discourse markers in speaking and writing (B2–C2)."
+}];
 const groups = [...new Set(items.filter(x=>x.id!=='home').map(x=>x.section))];
 const nav = document.getElementById('nav'); const homeCards = document.getElementById('homeCards');
 function iconFor(type, section){ if(type==='pdf') return 'PDF'; if(section.includes('Student')) return 'S'; if(section.includes('SSAP')) return 'A'; if(section.includes('Teacher')) return 'T'; if(section.includes('Scoring')) return 'B'; return 'G'; }
