@@ -965,7 +965,25 @@
 /* === PASTEL MASTER SITE PATCH === */
 :root{--bg:#fbf8f3;--sidebar-bg:#fffdf9;--text:#2d2a27;--text-light:#645b54;--white:#fffdf9;--mint:#dcefe5;--mint-dark:#4f927f;--mint-mid:#b7ddcf;--lavender:#e9e5f8;--lavender-dark:#7b6ab4;--lavender-mid:#cec6ef;--peach:#fde5d5;--peach-dark:#c97752;--peach-mid:#f3c7aa;--sky:#dcecf6;--sky-dark:#517f9b;--sky-mid:#b7d8eb;--blush:#f7dce4;--blush-dark:#b75b73;--blush-mid:#efb8c7;--lemon:#f7e8b9;--lemon-dark:#9a8032;--lemon-mid:#ead88a;--sage:#e2efd7;--sage-dark:#5d8f57;--sage-mid:#c5ddb9;--lilac:#efe3f5;--lilac-dark:#7f5ea5;--lilac-mid:#dbc3ed;--coral:#fde0d0;--coral-dark:#b86452;--coral-mid:#f5bca0;--steel:#e2eaf3;--steel-dark:#557093;--steel-mid:#c6d4e5;--rose:#f5e0e8;--rose-dark:#a85f7b;--rose-mid:#e8c0d0;}
 body{background:#fbf8f3!important;color:#2d2a27!important;}#sidebar{background:#fffdf9!important;color:#2d2a27!important;border-right:1px solid #e8ded2;box-shadow:4px 0 24px rgba(64,48,36,.05);}.sidebar-logo{background:linear-gradient(135deg,#e9e5f8,#dcecf6 70%,#dcefe5);border-bottom:1px solid #e8ded2;}.sidebar-logo h1{color:#2d2a27!important}.sidebar-logo p,.nav-group-label{color:#817870!important}.nav-group a{color:#5d5550!important;border-left-color:transparent;border-radius:0 12px 12px 0;margin-right:10px}.nav-group a:hover,.nav-group a.active{background:#dcecf6!important;color:#517f9b!important;border-left-color:#8bbbd2!important}.hero{background:linear-gradient(135deg,#e9e5f8 0%,#dcecf6 58%,#dcefe5 100%)!important;color:#2d2a27!important;border-bottom:1px solid #e8ded2}.hero h1{color:#2d2a27!important}.hero p{color:#5d5550!important}.hero-label{color:#7b6ab4!important}.hero-pill{background:rgba(255,255,255,.72)!important;color:#5d5550!important;border:1px solid rgba(255,255,255,.9)!important}.section{border-bottom:1px solid #e8ded2}.section-title{color:#2d2a27!important}.card,.structure-card,.answer-card,.topic-card,.formula-box,.checklist-section,.worksheet-card,.delivery-item,.safe-item{background:#fffdf9!important;border-color:#e8ded2!important;box-shadow:0 8px 24px rgba(64,48,36,.06)!important;}
+/* ── MOBILE SIDEBAR FIX ── */
+@media (max-width: 768px) {
 
+  #sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+
+  main {
+    margin-left: 0;
+  }
+
+  body {
+    flex-direction: column;
+  }
+
+}
 </style>
 </head>
 <body>
