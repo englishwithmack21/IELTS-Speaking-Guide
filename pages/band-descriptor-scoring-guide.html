@@ -662,7 +662,25 @@
   .bsc-9 { background: #fce7f3; color: #9d174d; }
 /* === PASTEL MASTER SITE PATCH === */
 :root{--ink:#2d2a27;--ink-light:#625a54;--paper:#fbf8f3;--rule:#e8ded2;--mint:#dcefe5;--lavender:#e9e5f8;--peach:#fde5d5;--butter:#f7e8b9;--mint-deep:#4f927f;--lav-deep:#7b6ab4;--peach-deep:#c97752;--butter-deep:#9a8032}#sidebar{background:#fffdf9!important;color:#2d2a27!important;border-right:1px solid var(--rule)!important}.sidebar-brand{background:linear-gradient(135deg,#e9e5f8,#dcecf6,#dcefe5)!important;border-bottom:1px solid var(--rule)!important}.sidebar-brand h1{color:#2d2a27!important}.sidebar-brand .label{color:#7b6ab4!important}.nav-section-header,.nav-sub a{color:#625a54!important}.nav-section-header:hover,.nav-sub a:hover{background:#dcecf6!important;color:#517f9b!important}.hero{background:linear-gradient(135deg,#e9e5f8,#dcecf6 60%,#dcefe5)!important;color:#2d2a27!important}.hero h2{color:#2d2a27!important}.hero p,.hero .eyebrow{color:#625a54!important;}
+/* ── MOBILE SIDEBAR FIX ── */
+@media (max-width: 768px) {
 
+  #sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+
+  main {
+    margin-left: 0;
+  }
+
+  body {
+    flex-direction: column;
+  }
+
+}
 </style>
 </head>
 <body>
